@@ -16,9 +16,13 @@
 }
 
 #setaesquerda {
-  left: 55px !important;
+  left: 15px !important;
 }
 
 #setadireita {
-  left: 45px !important;
+  left: 55px !important;
+}
+
+.big {
+  font-size: 9px !important;
 }
