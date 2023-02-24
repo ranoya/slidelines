@@ -149,11 +149,9 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     document.getElementById("loslinks").innerHTML = arr[actualpage].menu;
 
     document.getElementById("setaesquerda").innerHTML = `
-    <a class='navmouse' href='javascript:rewind();'>
     <svg width='100%' viewBox="0 0 131 222" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M96.9218 215.896L6.05198 125.026C-1.70873 117.265 -1.70874 104.683 6.05198 96.9219L96.9218 6.05208C104.682 -1.70861 117.265 -1.7086 125.026 6.05211C132.787 13.8128 132.787 26.3954 125.026 34.1562C125.018 34.1645 125.009 34.1727 125.001 34.181L48.2081 110.974L125.026 187.792C132.787 195.552 132.787 208.135 125.026 215.896C117.265 223.656 104.682 223.656 96.9218 215.896Z" fill="var(--pagination-color, #777777)"/>
     </svg>
-    </a>
     `;
 
     document.getElementById("setadireita").innerHTML = `
