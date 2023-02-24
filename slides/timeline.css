@@ -69,6 +69,7 @@ body {
   bottom: 0;
   height: 2px;
   width: 0;
+  z-index: 10000;
 }
 
 a.small div.textmenu {
@@ -164,7 +165,7 @@ a.ligado .bloquinhowrap {
   position: fixed;
   z-index: 100;
   width: 100vw;
-  height: calc(100vh - 62px);
+  height: calc(100vh - 60px);
   top: 60px;
   overflow-y: scroll;
 }
@@ -173,7 +174,7 @@ a.ligado .bloquinhowrap {
 #sliding2 iframe,
 #sliding3 iframe,
 #frontslide iframe {
-  height: calc(100vh - 62px);
+  height: calc(100vh - 60px);
 }
 
 #sliding1 {
@@ -222,7 +223,7 @@ a.ligado .bloquinhowrap {
   z-index: 105;
   width: 22px;
   height: 22px;
-  top: 20px;
+  top: 19px;
   right: var(--meta-margins, 30px);
   text-align: center;
   line-height: 22px;
@@ -285,7 +286,7 @@ a.ligado .bloquinhowrap {
 }
 
 .setas {
-  width: 15px;
+  width: 8px;
   position: fixed;
   z-index: 10000;
 }
@@ -296,15 +297,15 @@ a.ligado .bloquinhowrap {
 
 #setaesquerda {
   position: fixed;
-  top: 18px;
-  right: 80px;
+  top: 24px;
+  right: 90px;
   transition: top 0.3s ease-in;
 }
 
 #setadireita {
   position: fixed;
-  right: 50px !important;
-  top: 18px;
+  right: 60px !important;
+  top: 24px;
   transition: top 0.3s ease-in;
 }
 
