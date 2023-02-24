@@ -37,6 +37,10 @@ if ($_GET['theme'] != "" && typeof $_GET['theme'] != "undefined") {
     document.lastChild.appendChild(estilo2);
 }
 
+let minimalnav = document.createElement('div');
+minimalnav.setAttribute('id', 'minimaln');
+document.lastChild.appendChild(minimalnav);
+
 let page1 = document.createElement('div');
 page1.setAttribute('id', 'sliding1');
 document.lastChild.appendChild(page1);
@@ -257,8 +261,6 @@ forward = function (hm) {
 
         setTimeout(function () {
 
-            document.getElementById("frontslide").style.top = "60px";
-
             document.getElementById("sliding1").style.transition = "none";
             document.getElementById("sliding2").style.transition = "none";
             document.getElementById("sliding3").style.transition = "none";
@@ -328,8 +330,6 @@ rewind = function (hm) {
 
 
         setTimeout(function () {
-
-            document.getElementById("frontslide").style.top = "60px";
 
             document.getElementById("sliding1").style.transition = "none";
             document.getElementById("sliding2").style.transition = "none";

@@ -62,6 +62,15 @@ body {
   overflow: hidden;
 }
 
+#minimaln {
+  background-color: var(--timeline-text-highlight, #000000);
+  position: fixed;
+  left: 0;
+  top: 55px;
+  height: 5px;
+  width: 0;
+}
+
 a.small div.textmenu {
   transform: rotate(90deg) translate(-10px, -2px);
 }
@@ -155,8 +164,8 @@ a.ligado .bloquinhowrap {
   position: fixed;
   z-index: 100;
   width: 100vw;
-  height: calc(100vh - 65px);
-  top: 60px;
+  height: calc(100vh - 60px);
+  top: 69px;
   overflow-y: scroll;
 }
 
@@ -164,7 +173,7 @@ a.ligado .bloquinhowrap {
 #sliding2 iframe,
 #sliding3 iframe,
 #frontslide iframe {
-  height: calc(100vh - 69px);
+  height: calc(100vh - 60px);
 }
 
 #sliding1 {
