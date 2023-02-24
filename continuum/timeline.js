@@ -37,6 +37,10 @@ if ($_GET['theme'] != "" && typeof $_GET['theme'] != "undefined") {
     document.lastChild.appendChild(estilo2);
 }
 
+let minimalnav = document.createElement('div');
+minimalnav.setAttribute('id', 'minimaln');
+document.lastChild.appendChild(minimalnav);
+
 let page1 = document.createElement('div');
 page1.setAttribute('id', 'sliding1');
 document.lastChild.appendChild(page1);
@@ -252,7 +256,8 @@ forward = function (hm) {
             document.getElementById("sliding1").style.transition = "all .6s ease-in-out";
             document.getElementById("sliding2").style.transition = "all .6s ease-in-out";
             document.getElementById("sliding3").style.transition = "all .6s ease-in-out";
-    
+            document.getElementById("minimaln").style.transition = "all .6s ease-in-out";
+            document.getElementById("minimaln").style.width = parseInt((hm / arr.length) * 100) + "%";
             document.getElementById("sliding1").style.left = "-200vw";
             document.getElementById("sliding2").style.left = "-100vw";
             document.getElementById("sliding3").style.left = 0;
@@ -321,7 +326,8 @@ rewind = function (hm) {
 
             document.getElementById("sliding1").style.transition = "all .6s ease-in-out";
             document.getElementById("sliding2").style.transition = "all .6s ease-in-out";
-
+            document.getElementById("minimaln").style.transition = "all .6s ease-in-out";
+            document.getElementById("minimaln").style.width = parseInt((hm / arr.length) * 100) + "%";
             document.getElementById("sliding3").style.transition = "none";
             document.getElementById("sliding3").style.left = "-200vw";
          
