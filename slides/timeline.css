@@ -299,12 +299,14 @@ a.ligado .bloquinhowrap {
   position: fixed;
   top: 18px;
   right: 80px;
+  transition: top 0.3s ease-in;
 }
 
 #setadireita {
   position: fixed;
   right: 50px !important;
   top: 18px;
+  transition: top 0.3s ease-in;
 }
 
 .navmouse:hover svg path {
