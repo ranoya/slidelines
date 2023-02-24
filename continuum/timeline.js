@@ -271,15 +271,15 @@ forward = function (hm) {
                 if (typeof arr[hm].fundo == "undefined" || arr[hm].fundo == "") {
                     arr[hm].fundo == "#FFFFFF";
                 }
-                document.querySelector(':root').setProperty('--slidetopic-color', arr[hm].frente);
-                document.querySelector(':root').setProperty('--littlemenu-color', arr[hm].frente);
-                document.querySelector(':root').setProperty('--pagination-color', arr[hm].frente);
-                document.querySelector(':root').setProperty('--littlemenu-over', arr[hm].fundo);
+                document.querySelector(':root').style.setProperty('--slidetopic-color', arr[hm].frente);
+                document.querySelector(':root').style.setProperty('--littlemenu-color', arr[hm].frente);
+                document.querySelector(':root').style.setProperty('--pagination-color', arr[hm].frente);
+                document.querySelector(':root').style.setProperty('--littlemenu-over', arr[hm].fundo);
             } else {
-                document.querySelector(':root').setProperty('--slidetopic-color', originalslidetopiccolor);
-                document.querySelector(':root').setProperty('--littlemenu-color', originallittlemenucolor);
-                document.querySelector(':root').setProperty('--pagination-color', originalpaginationcolor);
-                document.querySelector(':root').setProperty('--littlemenu-over', originallittlemenuover);
+                document.querySelector(':root').style.setProperty('--slidetopic-color', originalslidetopiccolor);
+                document.querySelector(':root').style.setProperty('--littlemenu-color', originallittlemenucolor);
+                document.querySelector(':root').style.setProperty('--pagination-color', originalpaginationcolor);
+                document.querySelector(':root').style.setProperty('--littlemenu-over', originallittlemenuover);
             }
 
         }, 25);
@@ -355,15 +355,15 @@ rewind = function (hm) {
                 if (typeof arr[hm].fundo == "undefined" || arr[hm].fundo == "") {
                     arr[hm].fundo == "#FFFFFF";
                 }
-                document.querySelector(':root').setProperty('--slidetopic-color', arr[hm].frente);
-                document.querySelector(':root').setProperty('--littlemenu-color', arr[hm].frente);
-                document.querySelector(':root').setProperty('--pagination-color', arr[hm].frente);
-                document.querySelector(':root').setProperty('--littlemenu-over', arr[hm].fundo);
+                document.querySelector(':root').style.setProperty('--slidetopic-color', arr[hm].frente);
+                document.querySelector(':root').style.setProperty('--littlemenu-color', arr[hm].frente);
+                document.querySelector(':root').style.setProperty('--pagination-color', arr[hm].frente);
+                document.querySelector(':root').style.setProperty('--littlemenu-over', arr[hm].fundo);
             } else {
-                document.querySelector(':root').setProperty('--slidetopic-color', originalslidetopiccolor);
-                document.querySelector(':root').setProperty('--littlemenu-color', originallittlemenucolor);
-                document.querySelector(':root').setProperty('--pagination-color', originalpaginationcolor);
-                document.querySelector(':root').setProperty('--littlemenu-over', originallittlemenuover);
+                document.querySelector(':root').style.setProperty('--slidetopic-color', originalslidetopiccolor);
+                document.querySelector(':root').style.setProperty('--littlemenu-color', originallittlemenucolor);
+                document.querySelector(':root').style.setProperty('--pagination-color', originalpaginationcolor);
+                document.querySelector(':root').style.setProperty('--littlemenu-over', originallittlemenuover);
             }
          
         }, 2);
