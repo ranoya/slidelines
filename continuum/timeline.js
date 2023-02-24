@@ -85,6 +85,8 @@ metapage5.setAttribute('onclick', 'forward()');
 document.lastChild.appendChild(metapage5);
 
 
+
+
 inserecoisacerta = function (oque, onde, tipo, fundo) {
 
     if (typeof tipo == "undefined") {
