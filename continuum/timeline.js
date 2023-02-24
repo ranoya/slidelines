@@ -22,6 +22,7 @@ let originalslidetopiccolor = "";
 let originallittlemenucolor = "";
 let originalpaginationcolor = "";
 let originallittlemenuover = "";
+let originalbackground = "";
 
 if ($_GET['s'] != "" && typeof $_GET['s'] != "undefined" && $_GET['s'] != null) {
     actualpage = parseInt($_GET['s']);
@@ -150,6 +151,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     originallittlemenucolor = getComputedStyle(document.body).getPropertyValue('--littlemenu-color');
     originalpaginationcolor = getComputedStyle(document.body).getPropertyValue('--pagination-color');
     originallittlemenuover = getComputedStyle(document.body).getPropertyValue('--littlemenu-over');
+    originalbackground = getComputedStyle(document.body).getPropertyValue('--base-background');
  
    
     inserecoisacerta(arr[actualpage].link, "sliding1", arr[actualpage].tipo, arr[actualpage].fundo);
@@ -264,6 +266,13 @@ forward = function (hm) {
             document.getElementById("sliding2").style.left = "-100vw";
             document.getElementById("sliding3").style.left = 0;
 
+            if (typeof arr[hm].fundo != "undefined" && arr[hm].fundo != "") {
+
+                document.getElementsByTagName("html")[0].style.backgroundColor = arr[hm].fundo;
+            } else {
+                document.getElementsByTagName("html")[0].style.backgroundColor = originalbackground;
+            }
+
             if (typeof arr[hm].frente != "undefined" && arr[hm].frente != "") {
                 if (typeof arr[hm].fundo == "undefined" || arr[hm].fundo == "") {
                     arr[hm].fundo == "#FFFFFF";
@@ -278,6 +287,8 @@ forward = function (hm) {
                 document.querySelector(':root').style.setProperty('--pagination-color', originalpaginationcolor);
                 document.querySelector(':root').style.setProperty('--littlemenu-over', originallittlemenuover);
             }
+
+            
 
         }, 25);
 
@@ -348,6 +359,13 @@ rewind = function (hm) {
             document.getElementById("sliding3").style.transition = "none";
             document.getElementById("sliding3").style.left = "-200vw";
 
+            if (typeof arr[hm].fundo != "undefined" && arr[hm].fundo != "") {
+
+                document.getElementsByTagName("html")[0].style.backgroundColor = arr[hm].fundo;
+            } else {
+                document.getElementsByTagName("html")[0].style.backgroundColor = originalbackground;
+                    }
+            
             if (typeof arr[hm].frente != "undefined" && arr[hm].frente != "") {
                 if (typeof arr[hm].fundo == "undefined" || arr[hm].fundo == "") {
                     arr[hm].fundo == "#FFFFFF";
