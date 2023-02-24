@@ -174,9 +174,9 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 acende = function (n) {
     for (let z = 1; z < arr.length; z++) {
         if (z != n) {
-            document.getElementById("itemmenu" + z).classList.remove("ligado");
+            // document.getElementById("itemmenu" + z).classList.remove("ligado");
         } else {
-            document.getElementById("itemmenu" + z).classList.add("ligado");
+            // document.getElementById("itemmenu" + z).classList.add("ligado");
         }
     }
 }
