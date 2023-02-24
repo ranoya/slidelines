@@ -235,7 +235,7 @@ forward = function (hm) {
         document.getElementById("frontslide").style.top = "-200vw";
         inserecoisacerta(arr[hm].link, "frontslide", arr[hm].tipo, arr[hm].fundo);
 
-        inserecoisacerta(arr[hm].link, "sliding3", arr[hm].tipo, arr[hm].fundo);
+        //inserecoisacerta(arr[hm].link, "sliding3", arr[hm].tipo, arr[hm].fundo);
 
         setTimeout(function () {
 
