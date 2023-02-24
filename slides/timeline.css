@@ -66,8 +66,8 @@ body {
   background-color: var(--timeline-text-highlight, #000000);
   position: fixed;
   left: 0;
-  top: 55px;
-  height: 5px;
+  top: 60px;
+  height: 2px;
   width: 0;
 }
 
@@ -164,8 +164,8 @@ a.ligado .bloquinhowrap {
   position: fixed;
   z-index: 100;
   width: 100vw;
-  height: calc(100vh - 60px);
-  top: 69px;
+  height: calc(100vh - 62px);
+  top: 62px;
   overflow-y: scroll;
 }
 
@@ -173,7 +173,7 @@ a.ligado .bloquinhowrap {
 #sliding2 iframe,
 #sliding3 iframe,
 #frontslide iframe {
-  height: calc(100vh - 69px);
+  height: calc(100vh - 62px);
 }
 
 #sliding1 {
@@ -307,18 +307,4 @@ a.ligado .bloquinhowrap {
 
 .navmouse:hover svg path {
   fill: var(--timeline-text-over, #ff0000) !important;
-}
-
-@media screen and (max-width: 650px) {
-  #sliding1,
-  #sliding2,
-  #sliding3,
-  #frontslide {
-    height: calc(100vh - 260px);
-  }
-
-  #slider {
-    height: 175px;
-    top: calc(100vh - 190px);
-  }
 }
