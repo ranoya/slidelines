@@ -297,8 +297,8 @@ forward = function (hm) {
             changeworking = false;
             document.getElementById("slider").focus();
 
-            inserecoisacerta(arr[hm].link, "sliding1", arr[hm-1].tipo, arr[hm-1].fundo);
-            inserecoisacerta(arr[hm].link, "sliding3", arr[hm+1].tipo, arr[hm+1].fundo);
+            inserecoisacerta(arr[hm-1].link, "sliding1", arr[hm-1].tipo, arr[hm-1].fundo);
+            inserecoisacerta(arr[hm+1].link, "sliding3", arr[hm+1].tipo, arr[hm+1].fundo);
 
         }, 680);
         
@@ -374,8 +374,8 @@ rewind = function (hm) {
             document.getElementById("sliding2").style.left = 0;
             document.getElementById("sliding3").style.left = "100vw";
 
-            inserecoisacerta(arr[hm].link, "sliding1", arr[hm-1].tipo, arr[hm-1].fundo);
-            inserecoisacerta(arr[hm].link, "sliding3", arr[hm+1].tipo, arr[hm+1].fundo);
+            inserecoisacerta(arr[hm-1].link, "sliding1", arr[hm-1].tipo, arr[hm-1].fundo);
+            inserecoisacerta(arr[hm+1].link, "sliding3", arr[hm+1].tipo, arr[hm+1].fundo);
 
             changeworking = false;
             document.getElementById("slider").focus();
