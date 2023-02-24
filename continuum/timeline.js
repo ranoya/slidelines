@@ -142,7 +142,12 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     }
 
     arr = dados;
-    
+    let originalslidetopiccolor = getComputedStyle(document.querySelector(':root')).getPropertyValue('--slidetopic-color');
+    let originallittlemenucolor = getComputedStyle(document.querySelector(':root')).getPropertyValue('--littlemenu-color');
+    let originalpaginationcolor = getComputedStyle(document.querySelector(':root')).getPropertyValue('--pagination-color');
+    let originallittlemenuover = getComputedStyle(document.querySelector(':root')).getPropertyValue('--littlemenu-over');
+ 
+   
     inserecoisacerta(arr[actualpage].link, "sliding1", arr[actualpage].tipo, arr[actualpage].fundo);
     inserecoisacerta(arr[actualpage].link, "sliding2", arr[actualpage].tipo, arr[actualpage].fundo);
     inserecoisacerta(arr[actualpage + 1].link, "sliding3", arr[actualpage + 1].tipo, arr[actualpage + 1].fundo);
@@ -262,6 +267,21 @@ forward = function (hm) {
             document.getElementById("sliding2").style.left = "-100vw";
             document.getElementById("sliding3").style.left = 0;
 
+            if (typeof arr[hm].frente != "undefined" && arr[hm].frente != "") {
+                if (typeof arr[hm].fundo == "undefined" || arr[hm].fundo == "") {
+                    arr[hm].fundo == "#FFFFFF";
+                }
+                document.querySelector(':root').setProperty('--slidetopic-color', arr[hm].frente);
+                document.querySelector(':root').setProperty('--littlemenu-color', arr[hm].frente);
+                document.querySelector(':root').setProperty('--pagination-color', arr[hm].frente);
+                document.querySelector(':root').setProperty('--littlemenu-over', arr[hm].fundo);
+            } else {
+                document.querySelector(':root').setProperty('--slidetopic-color', originalslidetopiccolor);
+                document.querySelector(':root').setProperty('--littlemenu-color', originallittlemenucolor);
+                document.querySelector(':root').setProperty('--pagination-color', originalpaginationcolor);
+                document.querySelector(':root').setProperty('--littlemenu-over', originallittlemenuover);
+            }
+
         }, 25);
 
         setTimeout(function () {
@@ -330,6 +350,21 @@ rewind = function (hm) {
             document.getElementById("minimaln").style.width = parseInt((hm / arr.length) * 100) + "%";
             document.getElementById("sliding3").style.transition = "none";
             document.getElementById("sliding3").style.left = "-200vw";
+
+            if (typeof arr[hm].frente != "undefined" && arr[hm].frente != "") {
+                if (typeof arr[hm].fundo == "undefined" || arr[hm].fundo == "") {
+                    arr[hm].fundo == "#FFFFFF";
+                }
+                document.querySelector(':root').setProperty('--slidetopic-color', arr[hm].frente);
+                document.querySelector(':root').setProperty('--littlemenu-color', arr[hm].frente);
+                document.querySelector(':root').setProperty('--pagination-color', arr[hm].frente);
+                document.querySelector(':root').setProperty('--littlemenu-over', arr[hm].fundo);
+            } else {
+                document.querySelector(':root').setProperty('--slidetopic-color', originalslidetopiccolor);
+                document.querySelector(':root').setProperty('--littlemenu-color', originallittlemenucolor);
+                document.querySelector(':root').setProperty('--pagination-color', originalpaginationcolor);
+                document.querySelector(':root').setProperty('--littlemenu-over', originallittlemenuover);
+            }
          
         }, 2);
 
