@@ -271,7 +271,7 @@ forward = function (hm) {
 
         setTimeout(function () {
 
-            document.getElementById("frontslide").style.top = "60px";
+            document.getElementById("frontslide").style.top = "0";
 
             document.getElementById("sliding1").style.transition = "none";
             document.getElementById("sliding2").style.transition = "none";
@@ -351,7 +351,7 @@ rewind = function (hm) {
 
         setTimeout(function () {
 
-            document.getElementById("frontslide").style.top = "60px";
+            document.getElementById("frontslide").style.top = "0";
 
             document.getElementById("sliding1").style.transition = "none";
             document.getElementById("sliding2").style.transition = "none";
