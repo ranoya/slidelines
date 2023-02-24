@@ -194,6 +194,9 @@ changeworking = false;
 
 muda = function (wh) {
 
+    inserecoisacerta(arr[wh-1].link, "sliding1", arr[wh-1].tipo, arr[wh-1].fundo);
+    inserecoisacerta(arr[wh+1].link, "sliding3", arr[wh+1].tipo, arr[wh+1].fundo);
+
     if (!changeworking) {
         if (actualpage > wh) {
             rewind(wh);
