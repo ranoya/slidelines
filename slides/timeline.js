@@ -61,7 +61,7 @@ document.lastChild.appendChild(frontpage);
 
 let metapage = document.createElement('div');
 metapage.setAttribute('id', 'paginacao');
-metapage.setAttribute('class', 'prabaixo');
+metapage.setAttribute('class', 'pracima');
 document.lastChild.appendChild(metapage);
 
 let metapage2 = document.createElement('div');

@@ -276,10 +276,12 @@ a.ligado .bloquinhowrap {
 
 .pracima {
   top: -40px !important;
+  transition: all 0.3s ease-in;
 }
 
 .prabaixo {
   bottom: -40px !important;
+  transition: all 0.3s ease-in;
 }
 
 .setas {

@@ -239,7 +239,7 @@ forward = function (hm) {
     document.getElementById("frontslide").classList.remove('frontpageinicial');
     document.getElementById("paginacao").classList.remove('prabaixo');
     document.getElementById("setaesquerda").classList.remove('prabaixo');
-    document.getElementById("setaesquerda").classList.remove('prabaixo');
+    document.getElementById("setadireita").classList.remove('prabaixo');
     document.getElementById("titulodoslide").classList.remove('pracima');
     document.getElementById("loslinks").classList.remove('pracima');
 
