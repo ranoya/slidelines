@@ -79,12 +79,14 @@ document.lastChild.appendChild(metapage3);
 let metapage4 = document.createElement('div');
 metapage4.setAttribute('id', 'setaesquerda');
 metapage4.setAttribute('class', 'setas');
+metapage4.setAttribute('class', 'prabaixo');
 document.lastChild.appendChild(metapage4);
 
 
 let metapage5 = document.createElement('div');
 metapage5.setAttribute('id', 'setadireita');
 metapage5.setAttribute('class', 'setas');
+metapage5.setAttribute('class', 'prabaixo');
 document.lastChild.appendChild(metapage5);
 
 
@@ -127,6 +129,8 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         document.getElementById("sliding2").classList.remove('frontpageinicial');
         document.getElementById("frontslide").classList.remove('frontpageinicial');
         document.getElementById("paginacao").classList.remove('prabaixo');
+        document.getElementById("setaesquerda").classList.remove('prabaixo');
+        document.getElementById("setadireita").classList.remove('prabaixo');
         document.getElementById("titulodoslide").classList.remove('pracima');
         document.getElementById("loslinks").classList.remove('pracima');
         
@@ -236,6 +240,8 @@ forward = function (hm) {
     document.getElementById("sliding2").classList.remove('frontpageinicial');
     document.getElementById("frontslide").classList.remove('frontpageinicial');
     document.getElementById("paginacao").classList.remove('prabaixo');
+    document.getElementById("setaesquerda").classList.remove('prabaixo');
+    document.getElementById("setaesquerda").classList.remove('prabaixo');
     document.getElementById("titulodoslide").classList.remove('pracima');
     document.getElementById("loslinks").classList.remove('pracima');
 

@@ -78,12 +78,14 @@ document.lastChild.appendChild(metapage3);
 let metapage4 = document.createElement('div');
 metapage4.setAttribute('id', 'setaesquerda');
 metapage4.setAttribute('class', 'setas');
+metapage4.setAttribute('class', 'pracima');
 document.lastChild.appendChild(metapage4);
 
 
 let metapage5 = document.createElement('div');
 metapage5.setAttribute('id', 'setadireita');
 metapage5.setAttribute('class', 'setas');
+metapage5.setAttribute('class', 'pracima');
 document.lastChild.appendChild(metapage5);
 
 
@@ -124,7 +126,9 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
         document.getElementById("sliding2").classList.remove('frontpageinicial');
         document.getElementById("frontslide").classList.remove('frontpageinicial');
-        document.getElementById("paginacao").classList.remove('prabaixo');
+        document.getElementById("paginacao").classList.remove('pracima');
+        document.getElementById("setaesquerda").classList.remove('pracima');
+        document.getElementById("setadireita").classList.remove('pracima');
         document.getElementById("titulodoslide").classList.remove('pracima');
         document.getElementById("loslinks").classList.remove('pracima');
         
@@ -216,7 +220,9 @@ forward = function (hm) {
 
     document.getElementById("sliding2").classList.remove('frontpageinicial');
     document.getElementById("frontslide").classList.remove('frontpageinicial');
-    document.getElementById("paginacao").classList.remove('prabaixo');
+    document.getElementById("paginacao").classList.remove('pracima');
+    document.getElementById("setaesquerda").classList.remove('pracima');
+        document.getElementById("setadireita").classList.remove('pracima');
     document.getElementById("titulodoslide").classList.remove('pracima');
     document.getElementById("loslinks").classList.remove('pracima');
 
@@ -245,10 +251,13 @@ forward = function (hm) {
             document.getElementById("sliding1").style.transition = "all .6s ease-in-out";
             document.getElementById("sliding2").style.transition = "all .6s ease-in-out";
             document.getElementById("sliding3").style.transition = "all .6s ease-in-out";
-    
+            document.getElementById("minimaln").style.transition = "all .6s ease-in-out";
+            document.getElementById("minimaln").style.width = parseInt(hm / arr.length) + "%";
             document.getElementById("sliding1").style.left = "-200vw";
             document.getElementById("sliding2").style.left = "-100vw";
             document.getElementById("sliding3").style.left = 0;
+            
+
 
         }, 25);
 
@@ -307,7 +316,8 @@ rewind = function (hm) {
 
             document.getElementById("sliding1").style.transition = "all .6s ease-in-out";
             document.getElementById("sliding2").style.transition = "all .6s ease-in-out";
-
+            document.getElementById("minimaln").style.transition = "all .6s ease-in-out";
+            document.getElementById("minimaln").style.width = parseInt(hm / arr.length) + "%";
             document.getElementById("sliding3").style.transition = "none";
             document.getElementById("sliding3").style.left = "-200vw";
          
