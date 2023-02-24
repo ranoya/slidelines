@@ -78,15 +78,13 @@ document.lastChild.appendChild(metapage3);
 
 let metapage4 = document.createElement('div');
 metapage4.setAttribute('id', 'setaesquerda');
-metapage4.setAttribute('class', 'setas');
-metapage4.setAttribute('class', 'prabaixo');
+metapage4.setAttribute('class', 'setas prabaixo');
 document.lastChild.appendChild(metapage4);
 
 
 let metapage5 = document.createElement('div');
 metapage5.setAttribute('id', 'setadireita');
-metapage5.setAttribute('class', 'setas');
-metapage5.setAttribute('class', 'prabaixo');
+metapage5.setAttribute('class', 'setas prabaixo');
 document.lastChild.appendChild(metapage5);
 
 

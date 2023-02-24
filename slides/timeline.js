@@ -77,15 +77,13 @@ document.lastChild.appendChild(metapage3);
 
 let metapage4 = document.createElement('div');
 metapage4.setAttribute('id', 'setaesquerda');
-metapage4.setAttribute('class', 'setas');
-metapage4.setAttribute('class', 'pracima');
+metapage4.setAttribute('class', 'setas pracima');
 document.lastChild.appendChild(metapage4);
 
 
 let metapage5 = document.createElement('div');
 metapage5.setAttribute('id', 'setadireita');
-metapage5.setAttribute('class', 'setas');
-metapage5.setAttribute('class', 'pracima');
+metapage5.setAttribute('class', 'setas pracima');
 document.lastChild.appendChild(metapage5);
 
 
@@ -252,6 +250,7 @@ forward = function (hm) {
             document.getElementById("sliding2").style.transition = "all .6s ease-in-out";
             document.getElementById("sliding3").style.transition = "all .6s ease-in-out";
             document.getElementById("minimaln").style.transition = "all .6s ease-in-out";
+            console.log(hm + " / " + arr.length + " = " + parseInt(hm / arr.length));
             document.getElementById("minimaln").style.width = parseInt(hm / arr.length) + "%";
             document.getElementById("sliding1").style.left = "-200vw";
             document.getElementById("sliding2").style.left = "-100vw";
