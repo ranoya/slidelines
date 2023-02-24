@@ -290,9 +290,8 @@ a.ligado .bloquinhowrap {
   z-index: 10000;
 }
 
-.navmouse {
-  width: 100%;
-  display: block;
+.setas:hover {
+  cursor: pointer;
 }
 
 #setaesquerda {
@@ -309,6 +308,6 @@ a.ligado .bloquinhowrap {
   transition: top 0.3s ease-in;
 }
 
-.navmouse:hover svg path {
+.setas:hover svg path {
   fill: var(--timeline-text-over, #ff0000) !important;
 }
