@@ -235,7 +235,7 @@ forward = function (hm) {
         document.getElementById("frontslide").style.top = "-200vw";
         inserecoisacerta(arr[hm].link, "frontslide", arr[hm].tipo, arr[hm].fundo);
 
-        inserecoisacerta(arr[hm+1].link, "sliding3", arr[hm].tipo, arr[hm].fundo);
+        inserecoisacerta(arr[hm].link, "sliding3", arr[hm].tipo, arr[hm].fundo);
 
         setTimeout(function () {
 
@@ -251,7 +251,7 @@ forward = function (hm) {
 
         setTimeout(function () {
 
-            inserecoisacerta(arr[hm-1].link, "sliding2", arr[hm].tipo, arr[hm].fundo);
+            inserecoisacerta(arr[hm].link, "sliding2", arr[hm].tipo, arr[hm].fundo);
             actualpage = hm;
             document.getElementById("paginacao").innerHTML = actualpage;
             document.getElementById("titulodoslide").innerHTML = arr[hm].titulo;
@@ -295,7 +295,7 @@ rewind = function (hm) {
         document.getElementById("frontslide").style.top = "-200vw";
         inserecoisacerta(arr[hm].link, "frontslide", arr[hm].tipo, arr[hm].fundo);
 
-        inserecoisacerta(arr[hm-1].link, "sliding1", arr[hm].tipo, arr[hm].fundo);
+        inserecoisacerta(arr[hm].link, "sliding1", arr[hm].tipo, arr[hm].fundo);
 
         setTimeout(function () {
 
@@ -320,7 +320,7 @@ rewind = function (hm) {
 
         setTimeout(function () {
 
-            inserecoisacerta(arr[hm+1].link, "sliding2", arr[hm].tipo, arr[hm].fundo);
+            inserecoisacerta(arr[hm].link, "sliding2", arr[hm].tipo, arr[hm].fundo);
             actualpage = hm;
             document.getElementById("paginacao").innerHTML = actualpage;
             document.getElementById("titulodoslide").innerHTML = arr[hm].titulo;
