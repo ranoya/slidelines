@@ -69,6 +69,7 @@ body {
   bottom: 0;
   height: 2px;
   width: 0;
+  z-index: 10000;
 }
 
 a.small div.textmenu {
@@ -165,7 +166,7 @@ a.ligado .bloquinhowrap {
   z-index: 100;
   width: 100vw;
   top: 0;
-  height: calc(100vh - 2px);
+  height: 100vh;
   overflow-y: scroll;
 }
 
@@ -174,7 +175,6 @@ a.ligado .bloquinhowrap {
 #sliding3 iframe,
 #frontslide iframe {
   height: 100vh;
-  height: calc(100vh - 2px);
 }
 
 #sliding1 {
