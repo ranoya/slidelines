@@ -18,6 +18,10 @@ $_GET = [];
 
 let arr = [];
 let actualpage = 0;
+let originalslidetopiccolor = "";
+let originallittlemenucolor = "";
+let originalpaginationcolor = "";
+let originallittlemenuover = "";
 
 if ($_GET['s'] != "" && typeof $_GET['s'] != "undefined" && $_GET['s'] != null) {
     actualpage = parseInt($_GET['s']);
@@ -142,10 +146,10 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     }
 
     arr = dados;
-    let originalslidetopiccolor = getComputedStyle(document.body).getPropertyValue('--slidetopic-color');
-    let originallittlemenucolor = getComputedStyle(document.body).getPropertyValue('--littlemenu-color');
-    let originalpaginationcolor = getComputedStyle(document.body).getPropertyValue('--pagination-color');
-    let originallittlemenuover = getComputedStyle(document.body).getPropertyValue('--littlemenu-over');
+    originalslidetopiccolor = getComputedStyle(document.body).getPropertyValue('--slidetopic-color');
+    originallittlemenucolor = getComputedStyle(document.body).getPropertyValue('--littlemenu-color');
+    originalpaginationcolor = getComputedStyle(document.body).getPropertyValue('--pagination-color');
+    originallittlemenuover = getComputedStyle(document.body).getPropertyValue('--littlemenu-over');
  
    
     inserecoisacerta(arr[actualpage].link, "sliding1", arr[actualpage].tipo, arr[actualpage].fundo);
@@ -168,13 +172,6 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     <path d="M33.9247 6.05213L124.794 96.9219C132.555 104.683 132.555 117.265 124.794 125.026L33.9247 215.896C26.1639 223.656 13.5813 223.656 5.82061 215.896C-1.94012 208.135 -1.94012 195.552 5.82061 187.792C5.82891 187.783 5.83723 187.775 5.84552 187.767L82.6384 110.974L5.82061 34.1562C-1.94011 26.3955 -1.94011 13.8129 5.82061 6.05214C13.5813 -1.70858 26.164 -1.70859 33.9247 6.05213Z" fill="var(--pagination-color, #777777)"/>
     </svg>
     `;
-
-    
-
-
-
-    document.getElementsByClassName("bignav")[0].style.width = (arr.length * 33) + "px";
-
 
 
     acende(actualpage);
