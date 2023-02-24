@@ -113,7 +113,7 @@ inserecoisacerta = function (oque, onde, tipo, fundo) {
 
     } else {
     
-        xpto = `<iframe  style="width: 100vw;" frameborder=0 src="${oque}"></iframe>`;
+        xpto = `<iframe  style="width: 100vw;top: 60px;position: relative;height: calc(100vh - 135px);" frameborder=0 src="${oque}"></iframe>`;
         document.getElementById(onde).innerHTML = xpto;
     }
 
