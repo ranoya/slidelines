@@ -142,10 +142,10 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     }
 
     arr = dados;
-    let originalslidetopiccolor = getComputedStyle(document.querySelector(':root')).getPropertyValue('--slidetopic-color');
-    let originallittlemenucolor = getComputedStyle(document.querySelector(':root')).getPropertyValue('--littlemenu-color');
-    let originalpaginationcolor = getComputedStyle(document.querySelector(':root')).getPropertyValue('--pagination-color');
-    let originallittlemenuover = getComputedStyle(document.querySelector(':root')).getPropertyValue('--littlemenu-over');
+    let originalslidetopiccolor = getComputedStyle(document.body).getPropertyValue('--slidetopic-color');
+    let originallittlemenucolor = getComputedStyle(document.body).getPropertyValue('--littlemenu-color');
+    let originalpaginationcolor = getComputedStyle(document.body).getPropertyValue('--pagination-color');
+    let originallittlemenuover = getComputedStyle(document.body).getPropertyValue('--littlemenu-over');
  
    
     inserecoisacerta(arr[actualpage].link, "sliding1", arr[actualpage].tipo, arr[actualpage].fundo);
