@@ -261,6 +261,12 @@ forward = function (hm) {
             document.getElementById("setadireita").style.display = "block";
         }
 
+        if (hm <= 1) {
+            document.getElementById("setaesquerda").style.display = "none";
+        } else {
+            document.getElementById("setaesquerda").style.display = "block";
+        }
+
        
         
 
