@@ -133,6 +133,18 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         document.getElementById("setadireita").classList.remove('prabaixo');
         document.getElementById("titulodoslide").classList.remove('pracima');
         document.getElementById("loslinks").classList.remove('pracima');
+
+        if ($_GET['s'] >= arr.length - 1) {
+            document.getElementById("setadireita").style.display = "none";
+        } else {
+            document.getElementById("setadireita").style.display = "block";
+        }
+
+        if ($_GET['s'] <= 1) {
+            document.getElementById("setaesquerda").style.display = "none";
+        } else {
+            document.getElementById("setaesquerda").style.display = "block";
+        }
         
         
     } else {
