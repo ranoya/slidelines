@@ -139,7 +139,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         document.getElementById("titulodoslide").classList.remove('pracima');
         document.getElementById("loslinks").classList.remove('pracima');
 
-        if (parseInt($_GET['s']) >= arr.length - 1) {
+        if (parseInt($_GET['s']) >= dados.length - 1) {
             document.getElementById("setadireita").style.display = "none";
         } else {
             document.getElementById("setadireita").style.display = "block";
