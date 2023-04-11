@@ -255,6 +255,18 @@ forward = function (hm) {
 
     if (hm < arr.length) {
 
+        if (hm <= 1) {
+            document.getElementById("setaesquerda").style.display = "none";
+        } else {
+            document.getElementById("setaesquerda").style.display = "block";
+        }
+
+        if (hm >= arr.length - 1) {
+            document.getElementById("setadireita").style.display = "none";
+        } else {
+            document.getElementById("setadireita").style.display = "block";
+        }
+
         acende(hm);
 
         document.getElementById("frontslide").style.top = "-200vw";
@@ -324,6 +336,18 @@ rewind = function (hm) {
     
 
     if (hm > 0) {
+
+        if (hm <= 1) {
+            document.getElementById("setaesquerda").style.display = "none";
+        } else {
+            document.getElementById("setaesquerda").style.display = "block";
+        }
+
+        if (hm >= arr.length - 1) {
+            document.getElementById("setadireita").style.display = "none";
+        } else {
+            document.getElementById("setadireita").style.display = "block";
+        }
 
         acende(hm);
 
