@@ -107,7 +107,7 @@ inserecoisacerta = function (oque, onde, tipo, fundo) {
 
     } else if (oque.match(/\.md/i)) {
 
-        xpto = `<iframe frameborder=0 style='width: 100vw;' src='https://www.ranoya.com/aulas/tryit/markdown2/slim.html?embed=plain&file=${oque}'></iframe>`
+        xpto = `<iframe frameborder=0 style='width: 100vw;' src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${oque}'></iframe>`
 
         document.getElementById(onde).innerHTML = xpto;
 
