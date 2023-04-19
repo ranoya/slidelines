@@ -113,7 +113,7 @@ inserecoisacerta = function (oque, onde, tipo, fundo) {
 
     } else if (oque.match(/\.md/i)) {
 
-        xpto = `<iframe frameborder=0 style='width: 100vw;top: 60px;position: relative;height: calc(100vh - 135px);' src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${oque}'></iframe>`;
+        xpto = `<iframe frameborder=0 style='width: 100vw; position: relative; top: 60px;position: relative;height: calc(100vh - 135px);' src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${oque}'></iframe>`;
         document.getElementById(onde).innerHTML = xpto;
 
     } else {
