@@ -92,6 +92,12 @@ document.lastChild.appendChild(metapage5);
 
 inserecoisacerta = function (oque, onde, tipo, fundo) {
 
+    if (actualpage == 0) {
+        document.getElementById("frontslide").style.cursor = "pointer";
+    } else {
+        document.getElementById("frontslide").style.cursor = "auto";
+    }
+
     if (typeof tipo == "undefined") {
         tipo = "";
     }
@@ -164,7 +170,6 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     document.getElementById("paginacao").innerHTML = actualpage;
     document.getElementById("titulodoslide").innerHTML = arr[actualpage].titulo;
     document.getElementById("loslinks").innerHTML = arr[actualpage].menu;
-
 
     let innav = "<div class='bignav'>";
     for (let n = 1; n < arr.length; n++) {

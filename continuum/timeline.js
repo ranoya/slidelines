@@ -98,6 +98,12 @@ document.lastChild.appendChild(metapage5);
 
 inserecoisacerta = function (oque, onde, tipo, fundo) {
 
+    if (actualpage == 0) {
+        document.getElementById("frontslide").style.cursor = "pointer";
+    } else {
+        document.getElementById("frontslide").style.cursor = "auto";
+    }
+
     if (typeof tipo == "undefined") {
         tipo = "";
     }
