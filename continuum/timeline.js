@@ -294,7 +294,7 @@ forward = function (hm) {
             document.getElementById("sliding2").style.transition = "all .6s ease-in-out";
             document.getElementById("sliding3").style.transition = "all .6s ease-in-out";
             document.getElementById("minimaln").style.transition = "all .6s ease-in-out";
-            document.getElementById("minimaln").style.width = parseInt((hm / arr.length) * 100) + "%";
+            document.getElementById("minimaln").style.width = parseInt(((hm - 1) / (arr.length - 2)) * 100) + "%";
             document.getElementById("sliding1").style.left = "-200vw";
             document.getElementById("sliding2").style.left = "-100vw";
             document.getElementById("sliding3").style.left = 0;
@@ -402,7 +402,7 @@ rewind = function (hm) {
             document.getElementById("sliding1").style.transition = "all .6s ease-in-out";
             document.getElementById("sliding2").style.transition = "all .6s ease-in-out";
             document.getElementById("minimaln").style.transition = "all .6s ease-in-out";
-            document.getElementById("minimaln").style.width = parseInt((hm / arr.length) * 100) + "%";
+            document.getElementById("minimaln").style.width = parseInt(((hm - 1) / (arr.length - 2)) * 100) + "%";
             document.getElementById("sliding3").style.transition = "none";
             document.getElementById("sliding3").style.left = "-200vw";
 
