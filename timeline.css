@@ -305,6 +305,7 @@ a.ligado .bloquinhowrap {
   #sliding3,
   #frontslide {
     height: calc(100vh - 260px);
+    overflow-y: auto;
   }
 
   #slider {

@@ -168,7 +168,7 @@ a.ligado .bloquinhowrap {
   width: 100vw;
   height: calc(100vh - 60px);
   top: 60px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #sliding1 iframe,
