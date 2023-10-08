@@ -12,8 +12,8 @@
   --slidetopic-color: #777777;
   --meta-margins: 30px;
 
-  --slide-altura: calc(100vw - 120px);
-  --pagina-altura: calc(100vw - 60px);
+  --slide-altura: calc(100vh - 120px);
+  --pagina-altura: calc(100vh - 60px);
 }
 
 html {
