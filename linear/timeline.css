@@ -33,12 +33,16 @@ body {
   top: 60px;
   overflow-y: hidden;
   overflow-x: auto;
+
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-auto-columns: calc(100vh - 60px);
 }
 
 #frontslide iframe {
   height: calc(100vh - 60px);
   width: 100vw;
-  float: left;
+  grid-row: 1;
 }
 
 #frontslide div {
@@ -47,7 +51,7 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  float: left;
+  grid-row: 1;
 }
 
 #frontslide {
