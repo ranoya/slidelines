@@ -180,6 +180,9 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     i=0;
     while (i < dados.length) {
+
+        arrcolorfg = dados[i].fundo;
+        arrcolorbg = dados[i].frente;
                 
         if (dados[i].tipo == "imagem" || dados[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
             slidescode += `<div class='slidewrap' style='background-color: ${dados[i].fundo};'>
@@ -201,37 +204,9 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     lobody.innerHTML += `<div id='slides' class='slides' style='width: ${dados.length * 100}vw;'>${slidescode}</div>`;
 
 
-    let code = "";
-
-    /*
-    dados.map((d,i) => {
-
-        arrcolorfg[i] = d.frente;
-        arrcolorbg[i] = d.fundo;
-        
-        if (d.tipo == "imagem" || d.link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
-            code += `<div class='slidewrap' style='background-color: ${d.fundo};'>
-
-            <div class='slideitself' style='background-color: ${d.fundo}; background-image: url(${d.link});'></div></div>`;
-        } else if (d.link.toString().match(/\.md/i)) {
-            code += `<div class='slidewrap' style='background-color: ${d.fundo};'>
-            
-            <iframe class='slideitself' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${d.link}'></iframe></div>`;
-        } else {
-            code += `<div class='slidewrap' style='background-color: ${d.fundo};'>
-        
-            <iframe class='slideitself' frameborder=0 src='${d.link}'></iframe></div>`;
-        }
-
-    });
-
-    */
-
-    // document.getElementById("frontslide").innerHTML = code;
-});
 
 
-/*
+
 document.addEventListener("wheel", (event) => {
 
     if (!rodandoajeita) {
@@ -244,11 +219,9 @@ document.addEventListener("wheel", (event) => {
 
     let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
     
-    document.getElementById("minimaln").innerHTML = arrtitulo[posicao];
-    document.getElementById("minimaln").style.color = arrcolorfg[posicao];
     document.getElementById("indice").innerHTML = posicao + 1;
-    document.getElementById("indice").style.color = arrcolorbg[posicao];
-    document.getElementById("indice").style.backgroundColor = arrcolorfg[posicao];
+    document.getElementById("indice").style.color = arrcolorfg[posicao];
+    document.getElementById("indice").style.backgroundColor = arrcolorbg[posicao];
 
     vai = setTimeout(parou, 600);
     
@@ -266,20 +239,7 @@ let ajeita = function (fecha) {
         rodandoajeita = false;
     }
 
-    let sl = document.getElementsByClassName("slidewrap");
-
-    let slit = document.getElementsByClassName("slideitself"); 
-
-    if (typeof $_GET['noredux'] == "undefined" || $_GET['noredux'] == null || $_GET['noredux'] == "") {
-
-        for (let i = 0; i < sl.length; i++) {
-            sl[i].classList.remove("fullfrontslide");
-        }
-
-        for (let i = 0; i < slit.length; i++) {
-            slit[i].classList.remove("fullslide");
-        }
-    }
+ 
 
     if (document.getElementById("frontslide").scrollLeft % window.innerWidth < 150) {
 
@@ -287,19 +247,6 @@ let ajeita = function (fecha) {
     }
 
     
-
-        if (document.getElementById("frontslide").scrollLeft % window.innerWidth == 0) {
-            for (let i = 0; i < sl.length; i++) {
-                sl[i].classList.add("fullfrontslide");
-            }
-
-            for (let i = 0; i < slit.length; i++) {
-                slit[i].classList.add("fullslide");
-            }
-        }
-        
-    
-
 }
 
 document.getElementById("frontslide").addEventListener("scroll", (event) => {
@@ -311,13 +258,10 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
     clearTimeout(vai);
 
     let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
-    document.getElementById("minimaln").innerHTML = arrtitulo[posicao];
-    document.getElementById("minimaln").style.color = arrcolorfg[posicao];
-    document.getElementById("indice").innerHTML = posicao + 1;
-    document.getElementById("indice").style.color = arrcolorbg[posicao];
-    document.getElementById("indice").style.backgroundColor = arrcolorfg[posicao];
 
-    document.getElementById("frontslide").classList.remove("fullfrontslide");
+    document.getElementById("indice").innerHTML = posicao + 1;
+    document.getElementById("indice").style.color = arrcolorfg[posicao];
+    document.getElementById("indice").style.backgroundColor = arrcolorbg[posicao];
 
     vai = setTimeout(parou, 600);
 
@@ -397,4 +341,4 @@ onkeydown = onkeyup = function(e){
   }  
 }
 
-*/
+

@@ -84,10 +84,10 @@ body {
 
 #indice {
   position: fixed;
-  z-index: 102;
+  z-index: 502;
   width: 20px;
   height: 20px;
-  top: 20px;
+  top: calc(50vh - 10px);
   right: var(--meta-margins, 30px);
   overflow: hidden;
   line-height: 21px;
