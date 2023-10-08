@@ -20,7 +20,7 @@ let arrtitulo = [];
 let arrcolorfg = [];
 let arrcolorbg = [];
 let rodandoajeita = false;
-let lobody = document.getElementsById("frontslide");
+let lobody = document.getElementById("frontslide");
 
 let vai = "";
 
