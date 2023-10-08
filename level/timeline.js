@@ -46,10 +46,6 @@ frontpage.setAttribute('id', 'frontslide');
 frontpage.setAttribute('class', 'frontpageinicial');
 document.lastChild.appendChild(frontpage);
 
-let minimalnav = document.createElement('div');
-minimalnav.setAttribute('id', 'minimaln');
-document.lastChild.appendChild(minimalnav);
-
 let indicenav = document.createElement('div');
 indicenav.setAttribute('id', 'indice');
 document.lastChild.appendChild(indicenav);
