@@ -170,14 +170,17 @@ let ajeita = function (fecha) {
 
     let sl = document.getElementsByClassName("slidewrap");
 
-    for (let i = 0; i < sl.length; i++) {
-        sl[i].classList.remove("fullfrontslide");
-    }
-
     let slit = document.getElementsByClassName("slideitself"); 
 
-    for (let i = 0; i < slit.length; i++) {
-        slit[i].classList.remove("fullslide");
+    if (typeof $_GET['noredux'] == "undefined" || $_GET['noredux'] == null || $_GET['noredux'] == "") {
+
+        for (let i = 0; i < sl.length; i++) {
+            sl[i].classList.remove("fullfrontslide");
+        }
+
+        for (let i = 0; i < slit.length; i++) {
+            slit[i].classList.remove("fullslide");
+        }
     }
 
     if (document.getElementById("frontslide").scrollLeft % window.innerWidth < 150) {
@@ -185,15 +188,19 @@ let ajeita = function (fecha) {
         document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft - (document.getElementById("frontslide").scrollLeft % window.innerWidth);
     }
 
-    if (document.getElementById("frontslide").scrollLeft % window.innerWidth == 0) {
-        for (let i = 0; i < sl.length; i++) {
-            sl[i].classList.add("fullfrontslide");
-        }
+    
 
-        for (let i = 0; i < slit.length; i++) {
-            slit[i].classList.add("fullslide");
+        if (document.getElementById("frontslide").scrollLeft % window.innerWidth == 0) {
+            for (let i = 0; i < sl.length; i++) {
+                sl[i].classList.add("fullfrontslide");
+            }
+
+            for (let i = 0; i < slit.length; i++) {
+                slit[i].classList.add("fullslide");
+            }
         }
-    }
+        
+    
 
 }
 
