@@ -156,8 +156,14 @@ onkeydown = onkeyup = function(e){
       
       let onde = window.innerWidth * (posicao + 1);
       para = onde;
-      vai = setInterval(interpolate,1);
+
+      // vai = setInterval(interpolate,1);
       //document.getElementById("frontslide").scrollLeft = onde;
+
+      document.getElementById("frontslide").scrollTo({
+        left: onde,
+        behavior: "smooth",
+      });
   }
     
   if (keymapping[40]) {
@@ -165,8 +171,13 @@ onkeydown = onkeyup = function(e){
       
       let onde = window.innerWidth * (posicao + 1);
       para = onde;
-      vai = setInterval(interpolate,1);
+      // vai = setInterval(interpolate,1);
       //document.getElementById("frontslide").scrollLeft = onde;
+
+      document.getElementById("frontslide").scrollTo({
+        left: onde,
+        behavior: "smooth",
+      });
   }
     
   if (keymapping[37]) {
@@ -174,8 +185,13 @@ onkeydown = onkeyup = function(e){
       
       let onde = window.innerWidth * (posicao - 1);
       para = onde;
-      vai = setInterval(interpolate,1);
+      // vai = setInterval(interpolate,1);
       //document.getElementById("frontslide").scrollLeft = onde;
+
+      document.getElementById("frontslide").scrollTo({
+        left: onde,
+        behavior: "smooth",
+      });
   }
 
   if (keymapping[38]) {
@@ -183,7 +199,12 @@ onkeydown = onkeyup = function(e){
       
       let onde = window.innerWidth * (posicao - 1);
       para = onde;
-      vai = setInterval(interpolate,1);
+      // vai = setInterval(interpolate,1);
       //document.getElementById("frontslide").scrollLeft = onde;
+
+      document.getElementById("frontslide").scrollTo({
+        left: onde,
+        behavior: "smooth",
+      });
   }  
 }
