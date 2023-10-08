@@ -98,7 +98,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     // document.getElementById("frontslide").style.width = (dados.length * 100) + "vw";
 
-    let tituloscode = `<div id='fulltrack' style='width: ${dados.length * 100}vw;'>`;
+    let tituloscode = ``;
     let contat = 0;
     let i=0;
     while (i < dados.length) {
@@ -120,11 +120,16 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     }
 
-    tituloscode += "</div>";
 
-    document.write(tituloscode);
+    let insertA = document.createElement('div');
+    insertA.setAttribute('class', 'fulltrack');
+    insertA.setAttribute('style', `width: ${dados.length * 100}vw;`);
+    insertA.setAttribute('id', 'tracktitulos');
+    document.getElementsByTagName("body")[0].lastChild.appendChild(insertA);
+    document.getElementById("tracktitulos").innerHTML = tituloscode;
 
-    let subtituloscode = `<div id='fulltrack' style='width: ${dados.length * 100}vw;'>`;
+
+    let subtituloscode = ``;
     contat = 0;
     i=0;
     while (i < dados.length) {
@@ -146,11 +151,16 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     }
 
-    subtituloscode += "</div>";
 
-    document.write(subtituloscode);
+    let insertB = document.createElement('div');
+    insertB.setAttribute('class', 'fulltrack');
+    insertB.setAttribute('style', `width: ${dados.length * 100}vw;`);
+    insertB.setAttribute('id', 'tracksubtitulos');
+    document.getElementsByTagName("body")[0].lastChild.appendChild(insertB);
+    document.getElementById("tracksubtitulos").innerHTML = subtituloscode;
 
-    let topicoscode = `<div id='fulltrack' style='width: ${dados.length * 100}vw;'>`;
+
+    let topicoscode = ``;
     contat = 0;
     i=0;
     while (i < dados.length) {
@@ -172,13 +182,19 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     }
 
-    topicoscode += "</div>";
+    
 
-    document.write(topicoscode);
+    let insertC = document.createElement('div');
+    insertC.setAttribute('class', 'fulltrack');
+    insertC.setAttribute('style', `width: ${dados.length * 100}vw;`);
+    insertC.setAttribute('id', 'tracktopicos');
+    document.getElementsByTagName("body")[0].lastChild.appendChild(insertC);
+    document.getElementById("tracktopicos").innerHTML = topicoscode;
 
 
-    let slidescode = `<div id='slides' style='width: ${dados.length * 100}vw;'>`;
-    contat = 0;
+    let slidescode = ``;
+
+
     i=0;
     while (i < dados.length) {
                 
@@ -199,10 +215,14 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         i++;
     }
 
-    slidescode += "</div>";
 
-    document.write(slidescode);
 
+    let insertD = document.createElement('div');
+    insertD.setAttribute('class', 'slides');
+    insertD.setAttribute('style', `width: ${dados.length * 100}vw;`);
+    insertD.setAttribute('id', 'slides');
+    document.getElementsByTagName("body")[0].lastChild.appendChild(insertD);
+    document.getElementById("slides").innerHTML = slidescode;
 
 
 
