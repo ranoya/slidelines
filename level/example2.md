@@ -16,10 +16,10 @@ https://opensheet.elk.sh/**Sheet ID**/**Sheet Name\*\*
 
 Like:
 
-https://opensheet.elk.sh/10UW1pPs4BfNC7q0U4grAEBW8NicLP4evtPLoLyPtY1A/Example
+[https://opensheet.elk.sh/10UW1pPs4BfNC7q0U4grAEBW8NicLP4evtPLoLyPtY1A/Example](https://opensheet.elk.sh/10UW1pPs4BfNC7q0U4grAEBW8NicLP4evtPLoLyPtY1A/Example)
 
 And the Slideline URL will be (in outline mode):
 
-https://slidelines.vercel.app/level/?file=**https://opensheet.elk.sh/10UW1pPs4BfNC7q0U4grAEBW8NicLP4evtPLoLyPtY1A/Example**
+[https://slidelines.vercel.app /level/?file= **https://opensheet.elk.sh/10UW1pPs4BfNC7q0U4grAEBW8NicLP4evtPLoLyPtY1A/Example**](https://slidelines.vercel.app/level/?file=https://opensheet.elk.sh/10UW1pPs4BfNC7q0U4grAEBW8NicLP4evtPLoLyPtY1A/Example)
 
 Easy!
