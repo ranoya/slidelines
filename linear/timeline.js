@@ -191,7 +191,7 @@ onkeydown = onkeyup = function(e){
   if (keymapping[39]) {
       keymapping[39] = false; // always set them to false to release
       
-      
+      ajeita();
 
       let onde = window.innerWidth * (posicao + 1);
   
@@ -199,8 +199,6 @@ onkeydown = onkeyup = function(e){
         left: onde,
         behavior: "smooth",
       });
-
-      ajeita();
 
        vai = setTimeout(parou, 600);
   }
@@ -208,7 +206,7 @@ onkeydown = onkeyup = function(e){
   if (keymapping[40]) {
       keymapping[40] = false; // always set them to false to release
       
-      
+      ajeita();
 
       let onde = window.innerWidth * (posicao + 1);
   
@@ -217,15 +215,13 @@ onkeydown = onkeyup = function(e){
         behavior: "smooth",
       });
 
-      ajeita();
-
       vai = setTimeout(parou, 600);
   }
     
   if (keymapping[37]) {
       keymapping[37] = false; // always set them to false to release
       
-      
+      ajeita();
 
       let onde = window.innerWidth * (posicao - 1);
       
@@ -233,8 +229,6 @@ onkeydown = onkeyup = function(e){
         left: onde,
         behavior: "smooth",
       });
-
-      ajeita();
 
       vai = setTimeout(parou, 600);
   }
@@ -242,16 +236,14 @@ onkeydown = onkeyup = function(e){
   if (keymapping[38]) {
       keymapping[38] = false; // always set them to false to release
       
+      ajeita();
       
-
       let onde = window.innerWidth * (posicao - 1);
     
       document.getElementById("frontslide").scrollTo({
         left: onde,
         behavior: "smooth",
       });
-
-      ajeita();
 
       vai = setTimeout(parou, 600);
   }  
