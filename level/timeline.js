@@ -102,7 +102,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     // document.getElementById("frontslide").style.width = (dados.length * 100) + "vw";
 
-    let tituloscode = `<div id='fulltrack' style='background-color: red; width: ${dados.length * 100}vw; height: 10px; margin: 0; padding: 0;'></div>`;
+    let tituloscode = `<div id='fulltrack' style='width: ${dados.length * 100}vw;'>`;
     let contat = 0;
     let i=0;
     while (i < dados.length) {
@@ -124,16 +124,16 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     }
 
+    tituloscode += "</div>";
+
     document.write(tituloscode);
 
-
-
-    let subtituloscode = "";
+    let subtituloscode = `<div id='fulltrack' style='width: ${dados.length * 100}vw;'>`;
     contat = 0;
     i=0;
     while (i < dados.length) {
         
-        let tituloatual = dados[i].subtitulo;
+        let subtituloatual = dados[i].subtitulo;
         let contat = 0;
 
         for (let k = i; k < dados.length; k++) {
@@ -144,11 +144,19 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
         }
 
-        subtituloscode += `<div class="track" style='position: sticky; height: 60px; top: 60px; left: 0; margin-left: ${i * 100}vw; z-index: ${200 + i}; width: ${contat * 100}vw; background-color: ${dados[i].subtitulofundo}; color: ${dados[i].subtitulofrente}'>${tituloatual}</div>`;
+        subtituloscode += `<div class="track" style='display: inline-block; position: sticky; height: 30px; margin: 0; padding: 0; top: 0; left: 0; width: ${contat * 100}vw; z-index: ${200 + i}; background-color: ${dados[i].subtitulofundo}; color: ${dados[i].subtitulofrente}'>${subtituloatual}</div>`;
 
         i = i + contat;
 
     }
+
+    subtituloscode += "</div>";
+
+    document.write(subtituloscode);
+
+
+
+
 
 
 

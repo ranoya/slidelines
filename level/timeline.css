@@ -23,10 +23,14 @@ html {
   overflow: hidden;
   background-color: var(--base-background, #ffffff);
   transition: background-color 0.6s ease-in-out;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   background-color: var(--base-background, #ffffff);
+  margin: 0;
+  padding: 0;
 }
 
 #frontslide {
@@ -85,6 +89,11 @@ body {
   background-size: contain;
   padding: 0;
   transition: all 0.3s ease-out;
+}
+
+.fulltrack {
+  height: 30px;
+  background-color: red;
 }
 
 .track {
