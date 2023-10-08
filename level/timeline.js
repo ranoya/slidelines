@@ -20,6 +20,7 @@ let arrtitulo = [];
 let arrcolorfg = [];
 let arrcolorbg = [];
 let rodandoajeita = false;
+let lobody = document.getElementsByTagName("body")[0];
 
 let vai = "";
 
@@ -31,20 +32,20 @@ let estilo = document.createElement('link');
 estilo.setAttribute('rel', 'stylesheet');
 estilo.setAttribute('type', 'text/css');
 estilo.setAttribute('href', "https://slidelines.vercel.app/level/timeline.css" );
-document.body.lastChild.appendChild(estilo);
+lobody.lastChild.appendChild(estilo);
 
 if ($_GET['theme'] != "" && typeof $_GET['theme'] != "undefined") {
     let estilo2 = document.createElement('link');
     estilo2.setAttribute('rel', 'stylesheet');
     estilo2.setAttribute('type', 'text/css');
     estilo2.setAttribute('href', $_GET['theme']);
-    document.body.lastChild.appendChild(estilo2);
+    lobody.lastChild.appendChild(estilo2);
 }
 
 
 let indicenav = document.createElement('div');
 indicenav.setAttribute('id', 'indice');
-document.body.lastChild.appendChild(indicenav);
+lobody.lastChild.appendChild(indicenav);
 
 
 if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigator.platform.toString().indexOf("Linux") >= 0) || (typeof $_GET['fixascroll'] != "undefined" && $_GET['fixascroll'] != null && $_GET['fixascroll'] != "")) {
@@ -125,7 +126,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     insertA.setAttribute('class', 'fulltrack');
     insertA.setAttribute('style', `width: ${dados.length * 100}vw;`);
     insertA.setAttribute('id', 'tracktitulos');
-    document.body.lastChild.appendChild(insertA);
+    lobody.lastChild.appendChild(insertA);
     document.getElementById("tracktitulos").innerHTML = tituloscode;
 
 
@@ -156,7 +157,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     insertB.setAttribute('class', 'fulltrack');
     insertB.setAttribute('style', `width: ${dados.length * 100}vw;`);
     insertB.setAttribute('id', 'tracksubtitulos');
-    document.body.lastChild.appendChild(insertB);
+    lobody.lastChild.appendChild(insertB);
     document.getElementById("tracksubtitulos").innerHTML = subtituloscode;
 
 
@@ -188,7 +189,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     insertC.setAttribute('class', 'fulltrack');
     insertC.setAttribute('style', `width: ${dados.length * 100}vw;`);
     insertC.setAttribute('id', 'tracktopicos');
-    document.body.lastChild.appendChild(insertC);
+    lobody.lastChild.appendChild(insertC);
     document.getElementById("tracktopicos").innerHTML = topicoscode;
 
 
@@ -216,12 +217,12 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     }
 
 
-
+    
     let insertD = document.createElement('div');
     insertD.setAttribute('class', 'slides');
     insertD.setAttribute('style', `width: ${dados.length * 100}vw;`);
     insertD.setAttribute('id', 'slides');
-    document.body.lastChild.appendChild(insertD);
+    lobody.lastChild.appendChild(insertD);
     document.getElementById("slides").innerHTML = slidescode;
 
 
