@@ -124,6 +124,28 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     }
 
+    let subtituloscode = "";
+    contat = 0;
+    i=0;
+    while (i < dados.length) {
+        
+        let tituloatual = dados[i].subtitulo;
+        let contat = 0;
+
+        for (let k = i; k < dados.length; k++) {
+            
+            if (dados[k].subtitulo == dados[i].subtitulo) {
+                contat++;
+            }
+
+        }
+
+        subtituloscode += `<div class="track" style='position: sticky; height: 60px; top: 60px; left: 0; margin-left: ${i * 100}vw; z-index: ${200 + i}; width: ${contat * 100}vw; background-color: ${dados[i].subtitulofundo}; color: ${dados[i].subtitulofrente}'>${tituloatual}</div>`;
+
+        i = i + contat;
+
+    }
+
 
 
     let code = "";
@@ -148,7 +170,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     });
 
-    document.getElementById("frontslide").innerHTML = tituloscode + code;
+    document.getElementById("frontslide").innerHTML = tituloscode + subtituloscode + code;
 
 });
 
