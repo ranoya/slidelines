@@ -28,15 +28,15 @@ body {
 #frontslide {
   position: fixed;
   z-index: 100;
-  width: 70vw;
+  width: 100vw;
   height: calc(100vh - 60px);
   top: 60px;
   overflow-y: hidden;
   overflow-x: auto;
 
   display: grid;
-  grid-template-columns: 50vw;
-  grid-auto-columns: 50vw;
+  grid-template-columns: 100vw;
+  grid-auto-columns: 100vw;
   grid-template-rows: calc(100vh - 60px);
 }
 
