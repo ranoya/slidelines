@@ -154,6 +154,59 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     document.write(subtituloscode);
 
+    let topicoscode = `<div id='fulltrack' style='width: ${dados.length * 100}vw;'>`;
+    contat = 0;
+    i=0;
+    while (i < dados.length) {
+        
+        let subtituloatual = dados[i].topicos;
+        let contat = 0;
+
+        for (let k = i; k < dados.length; k++) {
+            
+            if (dados[k].topicos == dados[i].topicos) {
+                contat++;
+            }
+
+        }
+
+        topicoscode += `<div class="track" style='display: inline-block; position: sticky; height: 30px; margin: 0; padding: 0; top: 0; left: 0; width: ${contat * 100}vw; z-index: ${200 + i}; background-color: ${dados[i].fundo}; color: ${dados[i].frente}'>${subtituloatual}</div>`;
+
+        i = i + contat;
+
+    }
+
+    topicoscode += "</div>";
+
+    document.write(topicoscode);
+
+
+    let slidescode = `<div id='fulltrack' style='width: ${dados.length * 100}vw;'>`;
+    contat = 0;
+    i=0;
+    while (i < dados.length) {
+                
+        if (dados[i].tipo == "imagem" || dados[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
+            slidescode += `<div class='slidewrap' style='background-color: ${dados[i].fundo};'>
+
+            <div class='slideitself' style='background-color: ${dados[i].fundo}; background-image: url(${dados[i].link});'></div></div>`;
+        } else if (dados[i].link.toString().match(/\.md/i)) {
+            slidescode += `<div class='slidewrap' style='background-color: ${dados[i].fundo};'>
+            
+            <iframe class='slideitself' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${dados[i].link}'></iframe></div>`;
+        } else {
+            slidescode += `<div class='slidewrap' style='background-color: ${dados[i].fundo};'>
+        
+            <iframe class='slideitself' frameborder=0 src='${dados[i].link}'></iframe></div>`;
+        }
+
+        i++;
+    }
+
+    slidescode += "</div>";
+
+    document.write(slidescode);
+
 
 
 
