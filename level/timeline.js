@@ -122,7 +122,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
         }
 
-        tituloscode += `<div class="track" style='position: sticky; height: 60px; top: 0; left: ${i * 100}vw; z-index: 200; width: ${contat * 100}vw; background-color: ${dados[i].titulofundo}; color: ${dados[i].titulofrente}'>${tituloatual}</div>`;
+        tituloscode += `<div class="track" style='position: fixed; height: 60px; top: 0; left: ${i * 100}vw; z-index: ${200 + i}; width: ${contat * 100}vw; background-color: ${dados[i].titulofundo}; color: ${dados[i].titulofrente}'>${tituloatual}</div>`;
 
         i = i + contat;
 
