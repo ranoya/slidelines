@@ -20,6 +20,8 @@ let arrtitulo = [];
 let arrcolorfg = [];
 let arrcolorbg = [];
 
+let vai = "";
+
 if ($_GET['s'] != "" && typeof $_GET['s'] != "undefined" && $_GET['s'] != null) {
     actualpage = parseInt($_GET['s']);
 }
@@ -71,11 +73,11 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         arrcolorbg[i] = d.fundo;
         
         if (d.tipo == "imagem" || d.link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
-            code += `<div style='background-color: ${d.fundo};'><div style='background-color: ${d.fundo}; background-image: url(${d.link});'></div></div>`;
+            code += `<div class='slidewrap' style='background-color: ${d.fundo};'><div class='slideitself' style='background-color: ${d.fundo}; background-image: url(${d.link});'></div></div>`;
         } else if (d.link.toString().match(/\.md/i)) {
-            code += `<div style='background-color: ${d.fundo};'><iframe frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${d.link}'></iframe></div>`;
+            code += `<div class='slidewrap' style='background-color: ${d.fundo};'><iframe class='slideitself' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${d.link}'></iframe></div>`;
         } else {
-            code += `<div style='background-color: ${d.fundo};'><iframe frameborder=0 src='${d.link}'></iframe></div>`;
+            code += `<div class='slidewrap' style='background-color: ${d.fundo};'><iframe class='slideitself' frameborder=0 src='${d.link}'></iframe></div>`;
         }
 
     });
@@ -90,6 +92,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
 document.addEventListener("wheel", (event) => {
 
+    clearTimeout(vai);
     document.getElementById("frontslide").scrollLeft += event.deltaY;
 
     let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
@@ -100,9 +103,39 @@ document.addEventListener("wheel", (event) => {
     document.getElementById("indice").style.color = arrcolorbg[posicao];
     document.getElementById("indice").style.backgroundColor = arrcolorfg[posicao];
 
+    vai = setTimeout(ajeita, 600);
+    
 });
 
+let ajeita = function () {
+    
+    let sl = document.getElementsByClassName("slidewrap");
+
+    for (let i = 0; i < sl.length; i++) {
+        sl[i].classList.remove("fullfrontslide");
+    }
+
+    let slit = document.getElementsByClassName("slideitself"); 
+
+    for (let i = 0; i < slit.length; i++) {
+        slit[i].classList.remove("fullslide");
+    }
+
+    if (document.getElementById("frontslide").scrollLeft % window.innerWidth == 0) {
+        for (let i = 0; i < sl.length; i++) {
+            sl[i].classList.add("fullfrontslide");
+        }
+
+        for (let i = 0; i < slit.length; i++) {
+            slit[i].classList.add("fullslide");
+        }
+    }
+
+}
+
 document.getElementById("frontslide").addEventListener("scroll", (event) => {
+
+    clearTimeout(vai);
 
     let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
     document.getElementById("minimaln").innerHTML = arrtitulo[posicao];
@@ -110,6 +143,10 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
     document.getElementById("indice").innerHTML = posicao + 1;
     document.getElementById("indice").style.color = arrcolorbg[posicao];
     document.getElementById("indice").style.backgroundColor = arrcolorfg[posicao];
+
+    document.getElementById("frontslide").classList.remove("fullfrontslide");
+
+    vai = setTimeout(ajeita, 600);
 
 });
 
@@ -133,6 +170,8 @@ onkeydown = onkeyup = function(e){
         left: onde,
         behavior: "smooth",
       });
+
+      vai = setTimeout(ajeita, 1000);
   }
     
   if (keymapping[40]) {
@@ -144,6 +183,8 @@ onkeydown = onkeyup = function(e){
         left: onde,
         behavior: "smooth",
       });
+
+      vai = setTimeout(ajeita, 1000);
   }
     
   if (keymapping[37]) {
@@ -155,6 +196,8 @@ onkeydown = onkeyup = function(e){
         left: onde,
         behavior: "smooth",
       });
+
+      vai = setTimeout(ajeita, 1000);
   }
 
   if (keymapping[38]) {
@@ -166,5 +209,7 @@ onkeydown = onkeyup = function(e){
         left: onde,
         behavior: "smooth",
       });
+
+      vai = setTimeout(ajeita, 1000);
   }  
 }
