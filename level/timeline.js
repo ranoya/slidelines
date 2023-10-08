@@ -181,8 +181,8 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     i = 0;
     while (i < dados.length) {
 
-        arrcolorfg = dados[i].fundo;
-        arrcolorbg = dados[i].frente;
+        arrcolorfg[i] = dados[i].fundo;
+        arrcolorbg[i] = dados[i].frente;
                 
         if (dados[i].tipo == "imagem" || dados[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
             slidescode += `<div class='slidewrap' style='background-color: ${dados[i].fundo};'>
