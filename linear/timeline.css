@@ -53,8 +53,8 @@ body {
 }
 
 .fullfrontslide {
-  width: 100vw;
-  padding: 0;
+  width: 100vw !important;
+  padding: 0 !important;
   transition: all 0.4s ease-out;
 }
 
@@ -68,8 +68,8 @@ body {
 }
 
 .fullslide {
-  height: var(--slide-altura, calc(100vh - 60px));
-  width: 100vw;
+  height: var(--slide-altura, calc(100vh - 60px)) !important;
+  width: 100vw !important;
   transition: all 0.4s ease-out;
 }
 
