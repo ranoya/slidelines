@@ -30,7 +30,7 @@ if ($_GET['s'] != "" && typeof $_GET['s'] != "undefined" && $_GET['s'] != null) 
 let estilo = document.createElement('link');
 estilo.setAttribute('rel', 'stylesheet');
 estilo.setAttribute('type', 'text/css');
-estilo.setAttribute('href', "https://slidelines.vercel.app/linear/timeline.css" );
+estilo.setAttribute('href', "https://slidelines.vercel.app/level/timeline.css" );
 document.lastChild.appendChild(estilo);
 
 if ($_GET['theme'] != "" && typeof $_GET['theme'] != "undefined") {
@@ -181,7 +181,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     document.write(topicoscode);
 
 
-    let slidescode = `<div id='fulltrack' style='width: ${dados.length * 100}vw;'>`;
+    let slidescode = `<div id='slides' style='width: ${dados.length * 100}vw;'>`;
     contat = 0;
     i=0;
     while (i < dados.length) {

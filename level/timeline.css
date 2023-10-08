@@ -93,12 +93,18 @@ body {
 
 .fulltrack {
   height: 30px;
-  background-color: red;
+  background-color: transparent;
 }
 
 .track {
   line-height: 30px;
   font-size: 16px;
+}
+
+.slides {
+  height: calc(100vh - 100px);
+  margin: 0;
+  padding: 0;
 }
 
 .slidewrap {
