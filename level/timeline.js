@@ -99,7 +99,12 @@ if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigato
 
 // FUNÇÃO DE FETCH DE ARQUIVO JSON
 
-arquivojson = $_GET['file'];
+let arquivojson = "https://opensheet.elk.sh/10UW1pPs4BfNC7q0U4grAEBW8NicLP4evtPLoLyPtY1A/Example";
+
+if (typeof $_GET['file'] != "undefined" && $_GET['file'] != null && $_GET['file'] != "") {
+    arquivojson = $_GET['file'];
+}
+
 fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     // document.getElementById("frontslide").style.width = (dados.length * 100) + "vw";
