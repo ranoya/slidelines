@@ -115,7 +115,7 @@ document.addEventListener("wheel", (event) => {
 
 let parou = function () {
     if (rodandoajeita) {
-        rodandoajeita == false;
+        rodandoajeita = false;
     }
 }
 
