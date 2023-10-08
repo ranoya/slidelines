@@ -102,7 +102,8 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     // document.getElementById("frontslide").style.width = (dados.length * 100) + "vw";
 
-    let tituloscode = "";
+    let tituloscode = `<div id='trackA' style='display: grid; grid-template-columns: 100vw;
+  grid-auto-columns: 100vw;'>`;
     let contat = 0;
     let i=0;
     while (i < dados.length) {
@@ -118,11 +119,13 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
         }
 
-        tituloscode += `<div class="track" style='position: sticky; height: 60px; top: 0; left: 0; margin-left: ${i * 100}vw; z-index: ${200 + i}; width: ${contat * 100}vw; background-color: ${dados[i].titulofundo}; color: ${dados[i].titulofrente}'>${tituloatual}</div>`;
+        tituloscode += `<div class="track" style='position: sticky; height: 30px; top: 0; left: 0; grid-column: span ${contat}; z-index: ${200 + i}; background-color: ${dados[i].titulofundo}; color: ${dados[i].titulofrente}'>${tituloatual}</div>`;
 
         i = i + contat;
 
     }
+
+    tituloscode += '</div>';
 
     let subtituloscode = "";
     contat = 0;
