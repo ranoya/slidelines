@@ -46,7 +46,7 @@ document.lastChild.appendChild(frontpage);
 arquivojson = $_GET['file'];
 fetch(arquivojson).then(response => response.json()).then((dados) => {
 
-    document.getElementById("frontslide").style.width = (dados.length * 100) + "vw";
+    // document.getElementById("frontslide").style.width = (dados.length * 100) + "vw";
 
     let code = "";
     dados.map((d) => {
