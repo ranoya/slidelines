@@ -65,3 +65,9 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
 
 });
+
+document.addEventListener("wheel", (event) => {
+
+    document.getElementById("frontslide").scrollLeft += event.deltaY;
+
+});
