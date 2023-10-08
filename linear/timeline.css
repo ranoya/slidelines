@@ -53,13 +53,13 @@ body {
 
 #frontslide div iframe {
   height: var(--slide-altura, calc(100vh - 60px));
-  width: 100vw;
+  width: calc(100vw - (2 * var(--slide-margem, 0)));
   margin-top: 60px;
 }
 
 #frontslide div div {
   height: var(--slide-altura, calc(100vh - 60px));
-  width: 100vw;
+  width: calc(100vw - (2 * var(--slide-margem, 0)));
   margin-top: 60px;
   background-repeat: no-repeat;
   background-position: center center;
