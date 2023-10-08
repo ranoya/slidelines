@@ -75,12 +75,17 @@ if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigato
         background: var(--timeline-text-over, #ff0000);
         }
 
-        :root {
-        --slide-altura: calc(100vh - 70px);
-        }
-
         #frontslide {
             overflow-x: scroll;
+        }
+
+        .slides {
+            height: calc(100vh - (3 * var(--track-height, 60px)) - 10px);
+
+        }
+
+        .slidewrap {
+            height: calc(100vh - (3 * var(--track-height, 60px)) - 10px);
         }
 
     </style>
