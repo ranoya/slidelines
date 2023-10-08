@@ -58,6 +58,49 @@ let menunav = document.createElement('div');
 menunav.setAttribute('id', 'menu');
 document.lastChild.appendChild(menunav);
 
+if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigator.platform.toString().indexOf("Linux") >= 0) || (typeof $_GET['fixascroll'] != "undefined" && $_GET['fixascroll'] != null && $_GET['fixascroll'] != "")) {
+
+    let restora = `
+    <style>
+
+        ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+        background-color: var(--base-background, #ffffff);
+        }
+
+        ::-webkit-scrollbar-track {
+        background: var(--base-background, #ffffff);
+        }
+
+        ::-webkit-scrollbar:hover {
+        background-color: var(--palco-c1, #afb9bb);
+        }
+
+        ::-webkit-scrollbar-thumb {
+        background: var(--timeline-text-color, #777777);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+        background: var(--timeline-text-over, #ff0000);
+        }
+
+        :root {
+        --slide-altura: calc(100vh - 70px);
+        }
+
+        #frontslide {
+            overflow-x: scroll;
+        }
+
+    </style>
+
+    `;
+
+    document.write(restora);
+
+}
+
 
 // FUNÇÃO DE FETCH DE ARQUIVO JSON
 
@@ -237,7 +280,7 @@ onkeydown = onkeyup = function(e){
       keymapping[38] = false; // always set them to false to release
       
       ajeita();
-      
+
       let onde = window.innerWidth * (posicao - 1);
     
       document.getElementById("frontslide").scrollTo({
