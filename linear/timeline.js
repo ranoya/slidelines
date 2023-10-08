@@ -83,6 +83,14 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
 });
 
+document.addEventListener("resize", (event) => {
+
+    if (typeof vai != "undefined" && vai != null) {
+            clearInterval(vai);
+        }
+
+});
+
 document.addEventListener("wheel", (event) => {
 
     document.getElementById("frontslide").scrollLeft += event.deltaY;
