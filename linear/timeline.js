@@ -114,14 +114,16 @@ document.addEventListener("wheel", (event) => {
 });
 
 let parou = function () {
-    if (rodandoajeita) {
-        rodandoajeita = false;
-    }
+    ajeita("finaliza");
 }
 
-let ajeita = function () {
+let ajeita = function (fecha) {
     
     rodandoajeita = true;
+
+    if (fecha == "finaliza") {
+        rodandoajeita = false;
+    }
 
     let sl = document.getElementsByClassName("slidewrap");
 
