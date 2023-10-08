@@ -235,11 +235,11 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     */
 
-    document.getElementById("frontslide").innerHTML = code;
+    // document.getElementById("frontslide").innerHTML = code;
 });
 
 
-
+/*
 document.addEventListener("wheel", (event) => {
 
     if (!rodandoajeita) {
@@ -404,3 +404,5 @@ onkeydown = onkeyup = function(e){
       vai = setTimeout(parou, 600);
   }  
 }
+
+*/
