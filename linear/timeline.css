@@ -48,6 +48,7 @@ body {
   height: var(--pagina-altura, calc(100vh - 60px));
   width: calc(100vw - (2 * var(--slide-margem, 0)));
   padding: var(--slide-margem, 0);
+  padding-top: 0;
   grid-row: 1;
   transition: all 0.3s ease-out;
 }

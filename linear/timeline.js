@@ -137,6 +137,11 @@ let ajeita = function (fecha) {
         slit[i].classList.remove("fullslide");
     }
 
+    if (document.getElementById("frontslide").scrollLeft % window.innerWidth < 150) {
+
+        document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft - (document.getElementById("frontslide").scrollLeft % window.innerWidth);
+    }
+
     if (document.getElementById("frontslide").scrollLeft % window.innerWidth == 0) {
         for (let i = 0; i < sl.length; i++) {
             sl[i].classList.add("fullfrontslide");
