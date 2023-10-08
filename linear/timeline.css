@@ -93,3 +93,34 @@ body {
   border-radius: 10px;
   text-align: center;
 }
+
+#menu {
+  position: fixed;
+  bottom: 0;
+  height: 120px;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100vw;
+}
+
+#menu div {
+  border: 5px solid transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  transform: all 0.4s ease-out;
+}
+
+#menu div:hover {
+  border: 5px solid var(--slidetopic-color);
+  cursor: pointer;
+  transform: all 0.4s ease-out;
+}
+
+#menu div div {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  margin-top: 0 !important;
+  height: 100% !important;
+}

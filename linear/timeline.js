@@ -53,6 +53,10 @@ let indicenav = document.createElement('div');
 indicenav.setAttribute('id', 'indice');
 document.lastChild.appendChild(indicenav);
 
+let menunav = document.createElement('div');
+menunav.setAttribute('id', 'menu');
+document.lastChild.appendChild(menunav);
+
 
 // FUNÇÃO DE FETCH DE ARQUIVO JSON
 
@@ -79,6 +83,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     });
 
     document.getElementById("frontslide").innerHTML = code;
+    document.getElementById("menu").innerHTML = code;
 
 
 });
