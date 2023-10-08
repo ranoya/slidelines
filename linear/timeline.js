@@ -52,11 +52,11 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     dados.map((d) => {
         
         if (d.tipo == "imagem" || d.link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
-            code += `<div style='background-color: ${d.fundo}; background-image: url(${d.link});'></div>`;
+            code += `<div style='background-color: ${d.fundo};'><div style='background-color: ${d.fundo}; background-image: url(${d.link});'></div></div>`;
         } else if (d.link.toString().match(/\.md/i)) {
-            code += `<iframe frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${d.link}'></iframe>`;
+            code += `<div style='background-color: ${d.fundo};'><iframe frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${d.link}'></iframe></div>`;
         } else {
-            code += `<iframe frameborder=0 src='${d.link}'></iframe>`;
+            code += `<div style='background-color: ${d.fundo};'><iframe frameborder=0 src='${d.link}'></iframe></div>`;
         }
 
     });

@@ -40,21 +40,25 @@ body {
   grid-template-rows: calc(100vh - 60px);
 }
 
-#frontslide iframe {
-  height: calc(100vh - 60px);
+#frontslide div {
+  height: 100vh;
   width: 100vw;
   grid-row: 1;
+}
+
+#frontslide div iframe {
+  height: calc(100vh - 60px);
+  width: 100vw;
   margin-top: 60px;
 }
 
-#frontslide div {
+#frontslide div div {
   height: calc(100vh - 60px);
   width: 100vw;
   margin-top: 60px;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  grid-row: 1;
 }
 
 #frontslide {
