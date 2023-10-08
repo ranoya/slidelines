@@ -12,9 +12,30 @@
   --slidetopic-color: #777777;
   --meta-margins: 30px;
 
-  --slide-altura: calc(100vh - 120px);
-  --pagina-altura: calc(100vh - 60px);
+  --slide-altura: calc(100vh - 60px);
+  --pagina-altura: 100vh;
   --slide-margem: 30px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--base-background, #ffffff);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--timeline-text-color, #777777);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--timeline-text-over, #ff0000);
 }
 
 html {
@@ -36,7 +57,7 @@ body {
   height: 100vh;
   top: 0;
   overflow-y: hidden;
-  overflow-x: auto;
+  overflow-x: scroll;
 
   display: grid;
   grid-template-columns: 100vw;
