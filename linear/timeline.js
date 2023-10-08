@@ -185,10 +185,14 @@ onkeydown = onkeyup = function(e){
     
   let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
 
+  clearTimeout(vai);
+
   // Exemple of two keys together
   if (keymapping[39]) {
       keymapping[39] = false; // always set them to false to release
       
+      ajeita();
+
       let onde = window.innerWidth * (posicao + 1);
   
       document.getElementById("frontslide").scrollTo({
@@ -196,12 +200,14 @@ onkeydown = onkeyup = function(e){
         behavior: "smooth",
       });
 
-      vai = setTimeout(ajeita, 1000);
+       vai = setTimeout(parou, 600);
   }
     
   if (keymapping[40]) {
       keymapping[40] = false; // always set them to false to release
       
+      ajeita();
+
       let onde = window.innerWidth * (posicao + 1);
   
       document.getElementById("frontslide").scrollTo({
@@ -209,12 +215,14 @@ onkeydown = onkeyup = function(e){
         behavior: "smooth",
       });
 
-      vai = setTimeout(ajeita, 1000);
+      vai = setTimeout(parou, 600);
   }
     
   if (keymapping[37]) {
       keymapping[37] = false; // always set them to false to release
       
+      ajeita();
+
       let onde = window.innerWidth * (posicao - 1);
       
       document.getElementById("frontslide").scrollTo({
@@ -222,11 +230,13 @@ onkeydown = onkeyup = function(e){
         behavior: "smooth",
       });
 
-      vai = setTimeout(ajeita, 1000);
+      vai = setTimeout(parou, 600);
   }
 
   if (keymapping[38]) {
       keymapping[38] = false; // always set them to false to release
+      
+      ajeita();
       
       let onde = window.innerWidth * (posicao - 1);
     
@@ -235,6 +245,6 @@ onkeydown = onkeyup = function(e){
         behavior: "smooth",
       });
 
-      vai = setTimeout(ajeita, 1000);
+      vai = setTimeout(parou, 600);
   }  
 }
