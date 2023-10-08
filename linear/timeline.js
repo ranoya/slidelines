@@ -19,6 +19,8 @@ let actualpage = 0;
 let arrtitulo = [];
 let arrcolorfg = [];
 let arrcolorbg = [];
+let para = 0;
+let vai = "";
 
 if ($_GET['s'] != "" && typeof $_GET['s'] != "undefined" && $_GET['s'] != null) {
     actualpage = parseInt($_GET['s']);
@@ -106,6 +108,26 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
 });
 
+
+
+let interpolate = function () {
+    
+    if (document.getElementById("frontslide").scrollLeft > para) {
+        document.getElementById("frontslide").scrollLeft--;
+    }
+
+    if (document.getElementById("frontslide").scrollLeft < para) {
+        document.getElementById("frontslide").scrollLeft++;
+    }
+
+    if (document.getElementById("frontslide").scrollLeft == para) {
+
+        if (typeof vai != "undefined" && vai != null) {
+            clearInterval(vai);
+        }
+    }
+}
+
 var keymapping = {};
 onkeydown = onkeyup = function(e){
   e = e || event;
@@ -118,27 +140,35 @@ onkeydown = onkeyup = function(e){
       keymapping[39] = false; // always set them to false to release
       
       let onde = window.innerWidth * (posicao + 1);
-      document.getElementById("frontslide").scrollLeft = onde;
+      para = onde;
+      vai = setInterval(interpolate,10);
+      //document.getElementById("frontslide").scrollLeft = onde;
   }
     
   if (keymapping[40]) {
       keymapping[40] = false; // always set them to false to release
       
       let onde = window.innerWidth * (posicao + 1);
-      document.getElementById("frontslide").scrollLeft = onde;
+      para = onde;
+      vai = setInterval(interpolate,10);
+      //document.getElementById("frontslide").scrollLeft = onde;
   }
     
   if (keymapping[37]) {
       keymapping[37] = false; // always set them to false to release
       
       let onde = window.innerWidth * (posicao - 1);
-      document.getElementById("frontslide").scrollLeft = onde;
+      para = onde;
+      vai = setInterval(interpolate,10);
+      //document.getElementById("frontslide").scrollLeft = onde;
   }
 
   if (keymapping[38]) {
       keymapping[38] = false; // always set them to false to release
       
       let onde = window.innerWidth * (posicao - 1);
-      document.getElementById("frontslide").scrollLeft = onde;
+      para = onde;
+      vai = setInterval(interpolate,10);
+      //document.getElementById("frontslide").scrollLeft = onde;
   }  
 }
