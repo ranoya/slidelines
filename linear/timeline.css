@@ -29,8 +29,8 @@ body {
   position: fixed;
   z-index: 100;
   width: 100vw;
-  height: calc(100vh - 60px);
-  top: 60px;
+  height: 100vh;
+  top: 0;
   overflow-y: hidden;
   overflow-x: auto;
 
@@ -44,11 +44,13 @@ body {
   height: calc(100vh - 60px);
   width: 100vw;
   grid-row: 1;
+  margin-top: 60px;
 }
 
 #frontslide div {
   height: calc(100vh - 60px);
   width: 100vw;
+  margin-top: 60px;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
