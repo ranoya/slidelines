@@ -101,7 +101,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     let tituloscode = ``;
     let contat = 0;
-    let i=0;
+    let i = 0;
     while (i < dados.length) {
         
         let tituloatual = dados[i].titulo;
@@ -126,7 +126,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     let subtituloscode = ``;
     contat = 0;
-    i=0;
+    i = 0;
     while (i < dados.length) {
         
         let subtituloatual = dados[i].subtitulo;
@@ -152,7 +152,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     let topicoscode = ``;
     contat = 0;
-    i=0;
+    i = 0;
     while (i < dados.length) {
         
         let subtituloatual = dados[i].topicos;
@@ -178,7 +178,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     let slidescode = ``;
 
 
-    i=0;
+    i = 0;
     while (i < dados.length) {
 
         arrcolorfg = dados[i].fundo;
@@ -202,6 +202,8 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     }
 
     lobody.innerHTML += `<div id='slides' class='slides' style='width: ${dados.length * 100}vw;'>${slidescode}</div>`;
+
+});
 
 
 
