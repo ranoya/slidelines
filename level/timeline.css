@@ -34,61 +34,10 @@ body {
 }
 
 #frontslide {
-  position: fixed;
-  z-index: 100;
   width: 100vw;
   height: 100vh;
-  top: 0;
   overflow-y: hidden;
   overflow-x: auto;
-
-  display: grid;
-  grid-template-columns: 100vw;
-  grid-auto-columns: 100vw;
-  grid-template-rows: var(--pagina-altura, calc(100vh - 60px));
-}
-
-#frontslide div {
-  height: var(--pagina-altura, calc(100vh - 60px));
-  width: calc(100vw - (2 * var(--slide-margem, 0)));
-  padding: var(--slide-margem, 0);
-  padding-top: 0;
-  grid-row: 1;
-  transition: all 0.3s ease-out;
-}
-
-.fullfrontslide {
-  width: 100vw !important;
-  padding: 0 !important;
-  transition: all 0.3s ease-out;
-}
-
-#frontslide div iframe {
-  height: calc(
-    var(--slide-altura, calc(100vh - 60px)) - var(--slide-margem, 0)
-  );
-  width: calc(100vw - (2 * var(--slide-margem, 0)));
-  margin-top: 60px;
-  transition: all 0.3s ease-out;
-}
-
-.fullslide {
-  height: var(--slide-altura, calc(100vh - 60px)) !important;
-  width: 100vw !important;
-  transition: all 0.3s ease-out;
-}
-
-#frontslide div div {
-  height: calc(
-    var(--slide-altura, calc(100vh - 60px)) - var(--slide-margem, 0)
-  );
-  width: calc(100vw - (2 * var(--slide-margem, 0)));
-  margin-top: 60px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-  padding: 0;
-  transition: all 0.3s ease-out;
 }
 
 .fulltrack {

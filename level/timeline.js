@@ -20,7 +20,7 @@ let arrtitulo = [];
 let arrcolorfg = [];
 let arrcolorbg = [];
 let rodandoajeita = false;
-let lobody = document.getElementsByTagName("body")[0];
+let lobody = document.getElementsById("frontslide");
 
 let vai = "";
 
@@ -87,7 +87,7 @@ if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigato
 
     `;
 
-    document.getElementsByTagName("body")[0].innerHTML += restora;
+    lobody.innerHTML += restora;
 
 }
 
@@ -122,9 +122,9 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     }
 
 
-    document.getElementsByTagName("body")[0].innerHTML += `<div id='tracktitulos' class='fulltrack' style='width: ${dados.length * 100}vw;'>`;
-    document.getElementsByTagName("body")[0].innerHTML += tituloscode;
-    document.getElementsByTagName("body")[0].innerHTML += `</div>`;
+    lobody.innerHTML += `<div id='tracktitulos' class='fulltrack' style='width: ${dados.length * 100}vw;'>`;
+    lobody.innerHTML += tituloscode;
+    lobody.innerHTML += `</div>`;
 
 
     let subtituloscode = ``;
@@ -150,9 +150,9 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     }
 
 
-    document.getElementsByTagName("body")[0].innerHTML += `<div id='tracksubtitulos' class='fulltrack' style='width: ${dados.length * 100}vw;'>`;
-    document.getElementsByTagName("body")[0].innerHTML += subtituloscode;
-    document.getElementsByTagName("body")[0].innerHTML += `</div>`;
+    lobody.innerHTML += `<div id='tracksubtitulos' class='fulltrack' style='width: ${dados.length * 100}vw;'>`;
+    lobody.innerHTML += subtituloscode;
+    lobody.innerHTML += `</div>`;
 
 
     let topicoscode = ``;
@@ -178,9 +178,9 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     }
 
 
-    document.getElementsByTagName("body")[0].innerHTML += `<div id='tracktopicos' class='fulltrack' style='width: ${dados.length * 100}vw;'>`;
-    document.getElementsByTagName("body")[0].innerHTML += topicoscode;
-    document.getElementsByTagName("body")[0].innerHTML += `</div>`;
+    lobody.innerHTML += `<div id='tracktopicos' class='fulltrack' style='width: ${dados.length * 100}vw;'>`;
+    lobody.innerHTML += topicoscode;
+    lobody.innerHTML += `</div>`;
 
 
     let slidescode = ``;
@@ -206,9 +206,9 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         i++;
     }
 
-    document.getElementsByTagName("body")[0].innerHTML += `<div id='slides' class='slides' style='width: ${dados.length * 100}vw;'>`;
-    document.getElementsByTagName("body")[0].innerHTML += slidescode;
-    document.getElementsByTagName("body")[0].innerHTML += `</div>`;
+    lobody.innerHTML += `<div id='slides' class='slides' style='width: ${dados.length * 100}vw;'>`;
+    lobody.innerHTML += slidescode;
+    lobody.innerHTML += `</div>`;
 
 
 
