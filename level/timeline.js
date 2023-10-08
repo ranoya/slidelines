@@ -122,10 +122,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     }
 
 
-    lobody.innerHTML += `<div id='tracktitulos' class='fulltrack' style='width: ${dados.length * 100}vw;'>`;
-    lobody.innerHTML += tituloscode;
-    lobody.innerHTML += `</div>`;
-
+    lobody.innerHTML += `<div id='tracktitulos' class='fulltrack' style='width: ${dados.length * 100}vw;'>${tituloscode}</div>`;
 
     let subtituloscode = ``;
     contat = 0;
@@ -150,9 +147,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     }
 
 
-    lobody.innerHTML += `<div id='tracksubtitulos' class='fulltrack' style='width: ${dados.length * 100}vw;'>`;
-    lobody.innerHTML += subtituloscode;
-    lobody.innerHTML += `</div>`;
+    lobody.innerHTML += `<div id='tracksubtitulos' class='fulltrack' style='width: ${dados.length * 100}vw;'>${subtituloscode}</div>`;
 
 
     let topicoscode = ``;
@@ -178,10 +173,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     }
 
 
-    lobody.innerHTML += `<div id='tracktopicos' class='fulltrack' style='width: ${dados.length * 100}vw;'>`;
-    lobody.innerHTML += topicoscode;
-    lobody.innerHTML += `</div>`;
-
+    lobody.innerHTML += `<div id='tracktopicos' class='fulltrack' style='width: ${dados.length * 100}vw;'>${topicoscode}</div>`;
 
     let slidescode = ``;
 
@@ -206,13 +198,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         i++;
     }
 
-    lobody.innerHTML += `<div id='slides' class='slides' style='width: ${dados.length * 100}vw;'>`;
-    lobody.innerHTML += slidescode;
-    lobody.innerHTML += `</div>`;
-
-
-
-
+    lobody.innerHTML += `<div id='slides' class='slides' style='width: ${dados.length * 100}vw;'>${slidescode}</div>`;
 
 
     let code = "";
