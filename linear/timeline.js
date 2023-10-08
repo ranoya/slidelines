@@ -19,6 +19,7 @@ let actualpage = 0;
 let arrtitulo = [];
 let arrcolorfg = [];
 let arrcolorbg = [];
+let rodandoajeita = false;
 
 let vai = "";
 
@@ -92,7 +93,12 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
 document.addEventListener("wheel", (event) => {
 
+    if (!rodandoajeita) {
+        ajeita();
+    }
+    
     clearTimeout(vai);
+
     document.getElementById("frontslide").scrollLeft += event.deltaY;
 
     let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
@@ -103,12 +109,20 @@ document.addEventListener("wheel", (event) => {
     document.getElementById("indice").style.color = arrcolorbg[posicao];
     document.getElementById("indice").style.backgroundColor = arrcolorfg[posicao];
 
-    vai = setTimeout(ajeita, 600);
+    vai = setTimeout(parou, 600);
     
 });
 
+let parou = function () {
+    if (rodandoajeita) {
+        rodandoajeita == false;
+    }
+}
+
 let ajeita = function () {
     
+    rodandoajeita = true;
+
     let sl = document.getElementsByClassName("slidewrap");
 
     for (let i = 0; i < sl.length; i++) {
@@ -135,6 +149,10 @@ let ajeita = function () {
 
 document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
+    if (!rodandoajeita) {
+        ajeita();
+    }
+    
     clearTimeout(vai);
 
     let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
@@ -146,7 +164,7 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
     document.getElementById("frontslide").classList.remove("fullfrontslide");
 
-    vai = setTimeout(ajeita, 600);
+    vai = setTimeout(parou, 600);
 
 });
 
