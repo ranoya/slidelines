@@ -19,8 +19,6 @@ let actualpage = 0;
 let arrtitulo = [];
 let arrcolorfg = [];
 let arrcolorbg = [];
-let para = 0;
-let vai = "";
 
 if ($_GET['s'] != "" && typeof $_GET['s'] != "undefined" && $_GET['s'] != null) {
     actualpage = parseInt($_GET['s']);
@@ -88,13 +86,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
 });
 
-document.addEventListener("resize", (event) => {
 
-    if (typeof vai != "undefined" && vai != null) {
-            clearInterval(vai);
-        }
-
-});
 
 document.addEventListener("wheel", (event) => {
 
@@ -123,25 +115,6 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
 
 
-let interpolate = function () {
-    
-    if (document.getElementById("frontslide").scrollLeft > para + 5) {
-        document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft - 10;
-    }
-
-    if (document.getElementById("frontslide").scrollLeft < para - 5) {
-        document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft + 10;
-    }
-
-    if (document.getElementById("frontslide").scrollLeft >= para - 5 && document.getElementById("frontslide").scrollLeft <= para + 5) {
-
-        document.getElementById("frontslide").scrollLeft = para;
-
-        if (typeof vai != "undefined" && vai != null) {
-            clearInterval(vai);
-        }
-    }
-}
 
 var keymapping = {};
 onkeydown = onkeyup = function(e){
@@ -155,11 +128,7 @@ onkeydown = onkeyup = function(e){
       keymapping[39] = false; // always set them to false to release
       
       let onde = window.innerWidth * (posicao + 1);
-      para = onde;
-
-      // vai = setInterval(interpolate,1);
-      //document.getElementById("frontslide").scrollLeft = onde;
-
+  
       document.getElementById("frontslide").scrollTo({
         left: onde,
         behavior: "smooth",
@@ -170,10 +139,7 @@ onkeydown = onkeyup = function(e){
       keymapping[40] = false; // always set them to false to release
       
       let onde = window.innerWidth * (posicao + 1);
-      para = onde;
-      // vai = setInterval(interpolate,1);
-      //document.getElementById("frontslide").scrollLeft = onde;
-
+  
       document.getElementById("frontslide").scrollTo({
         left: onde,
         behavior: "smooth",
@@ -184,10 +150,7 @@ onkeydown = onkeyup = function(e){
       keymapping[37] = false; // always set them to false to release
       
       let onde = window.innerWidth * (posicao - 1);
-      para = onde;
-      // vai = setInterval(interpolate,1);
-      //document.getElementById("frontslide").scrollLeft = onde;
-
+      
       document.getElementById("frontslide").scrollTo({
         left: onde,
         behavior: "smooth",
@@ -198,10 +161,7 @@ onkeydown = onkeyup = function(e){
       keymapping[38] = false; // always set them to false to release
       
       let onde = window.innerWidth * (posicao - 1);
-      para = onde;
-      // vai = setInterval(interpolate,1);
-      //document.getElementById("frontslide").scrollLeft = onde;
-
+    
       document.getElementById("frontslide").scrollTo({
         left: onde,
         behavior: "smooth",
