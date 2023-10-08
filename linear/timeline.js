@@ -141,7 +141,7 @@ onkeydown = onkeyup = function(e){
       
       let onde = window.innerWidth * (posicao + 1);
       para = onde;
-      vai = setInterval(interpolate,10);
+      vai = setInterval(interpolate,1);
       //document.getElementById("frontslide").scrollLeft = onde;
   }
     
@@ -150,7 +150,7 @@ onkeydown = onkeyup = function(e){
       
       let onde = window.innerWidth * (posicao + 1);
       para = onde;
-      vai = setInterval(interpolate,10);
+      vai = setInterval(interpolate,1);
       //document.getElementById("frontslide").scrollLeft = onde;
   }
     
@@ -159,7 +159,7 @@ onkeydown = onkeyup = function(e){
       
       let onde = window.innerWidth * (posicao - 1);
       para = onde;
-      vai = setInterval(interpolate,10);
+      vai = setInterval(interpolate,1);
       //document.getElementById("frontslide").scrollLeft = onde;
   }
 
@@ -168,7 +168,7 @@ onkeydown = onkeyup = function(e){
       
       let onde = window.innerWidth * (posicao - 1);
       para = onde;
-      vai = setInterval(interpolate,10);
+      vai = setInterval(interpolate,1);
       //document.getElementById("frontslide").scrollLeft = onde;
   }  
 }
