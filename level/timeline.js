@@ -41,10 +41,6 @@ if ($_GET['theme'] != "" && typeof $_GET['theme'] != "undefined") {
     document.lastChild.appendChild(estilo2);
 }
 
-let frontpage = document.createElement('div');
-frontpage.setAttribute('id', 'frontslide');
-frontpage.setAttribute('class', 'frontpageinicial');
-document.lastChild.appendChild(frontpage);
 
 let indicenav = document.createElement('div');
 indicenav.setAttribute('id', 'indice');
