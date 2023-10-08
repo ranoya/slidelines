@@ -12,6 +12,8 @@
   --slidetopic-color: #777777;
   --meta-margins: 30px;
 
+  --track-height: 60px;
+
   --slide-altura: calc(100vh - 60px);
   --pagina-altura: 100vh;
   --slide-margem: 30px;
@@ -41,26 +43,33 @@ body {
 }
 
 .fulltrack {
-  height: 30px;
+  height: var(--track-height, 60px);
   background-color: transparent;
+  font-family: sans-serif;
+  font-family: Arial;
+  font-family: var(--meta-font);
 }
 
 .track {
-  line-height: 30px;
+  line-height: var(--track-height, 60px);
   font-size: 16px;
+  font-family: sans-serif;
+  font-family: Arial;
+  font-family: var(--meta-font);
 }
 
 .slides {
-  height: calc(100vh - 100px);
+  height: calc(100vh - (3 * var(--track-height, 60px)) - 10px);
   margin: 0;
   padding: 0;
 }
 
 .slidewrap {
   width: 100vw;
-  height: calc(100vh - 100px);
+  height: calc(100vh - (3 * var(--track-height, 60px)) - 10px);
   margin: 0;
   padding: 0;
+  display: inline-block;
 }
 
 .slideitself {
