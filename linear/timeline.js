@@ -183,9 +183,32 @@ let ajeita = function (fecha) {
         }
     }
 
-    if (document.getElementById("frontslide").scrollLeft % window.innerWidth < 150) {
+    if (document.getElementById("frontslide").scrollLeft % window.innerWidth < window.innerWidth / 3) {
 
-        document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft - (document.getElementById("frontslide").scrollLeft % window.innerWidth);
+        let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
+
+        let onde = window.innerWidth * posicao;
+  
+        document.getElementById("frontslide").scrollTo({
+            left: onde,
+            behavior: "smooth",
+        });
+
+        //document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft - (document.getElementById("frontslide").scrollLeft % window.innerWidth);
+    }
+
+    if (document.getElementById("frontslide").scrollLeft % window.innerWidth > 800) {
+
+        let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
+
+        let onde = window.innerWidth * (posicao + 1);
+  
+        document.getElementById("frontslide").scrollTo({
+            left: onde,
+            behavior: "smooth",
+        });
+
+        // document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft + (document.getElementById("frontslide").scrollLeft % window.innerWidth);
     }
 
     
