@@ -18,6 +18,7 @@ let arr = [];
 let actualpage = 0;
 let arrtitulo = [];
 let arrcolorfg = [];
+let arrcolorbg = [];
 
 if ($_GET['s'] != "" && typeof $_GET['s'] != "undefined" && $_GET['s'] != null) {
     actualpage = parseInt($_GET['s']);
@@ -46,6 +47,10 @@ let minimalnav = document.createElement('div');
 minimalnav.setAttribute('id', 'minimaln');
 document.lastChild.appendChild(minimalnav);
 
+let indicenav = document.createElement('div');
+indicenav.setAttribute('id', 'indice');
+document.lastChild.appendChild(indicenav);
+
 
 // FUNÇÃO DE FETCH DE ARQUIVO JSON
 
@@ -59,6 +64,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
         arrtitulo[i] = d.titulo;
         arrcolorfg[i] = d.frente;
+        arrcolorbg[i] = d.fundo;
         
         if (d.tipo == "imagem" || d.link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
             code += `<div style='background-color: ${d.fundo};'><div style='background-color: ${d.fundo}; background-image: url(${d.link});'></div></div>`;
@@ -80,9 +86,12 @@ document.addEventListener("wheel", (event) => {
     document.getElementById("frontslide").scrollLeft += event.deltaY;
 
     let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
-
+    
     document.getElementById("minimaln").innerHTML = arrtitulo[posicao];
     document.getElementById("minimaln").style.color = arrcolorfg[posicao];
+    document.getElementById("indice").innerHTML = posicao + 1;
+    document.getElementById("indice").style.color = arrcolorbg[posicao];
+    document.getElementById("indice").style.backgroundColor = arrcolorfg[posicao];
 
 });
 
@@ -91,5 +100,8 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
     let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
     document.getElementById("minimaln").innerHTML = arrtitulo[posicao];
     document.getElementById("minimaln").style.color = arrcolorfg[posicao];
+    document.getElementById("indice").innerHTML = posicao + 1;
+    document.getElementById("indice").style.color = arrcolorbg[posicao];
+    document.getElementById("indice").style.backgroundColor = arrcolorfg[posicao];
 
 });

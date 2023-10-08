@@ -10,7 +10,10 @@
   --littlemenu-over: #ffffff;
   --pagination-color: #777777;
   --slidetopic-color: #777777;
-  --meta-margins: 15px;
+  --meta-margins: 30px;
+
+  --slide-altura: calc(100vw - 120px);
+  --pagina-altura: calc(100vw - 60px);
 }
 
 html {
@@ -37,23 +40,23 @@ body {
   display: grid;
   grid-template-columns: 100vw;
   grid-auto-columns: 100vw;
-  grid-template-rows: calc(100vh - 60px);
+  grid-template-rows: var(--pagina-altura, calc(100vh - 60px));
 }
 
 #frontslide div {
-  height: 100vh;
+  height: var(--pagina-altura, calc(100vh - 60px));
   width: 100vw;
   grid-row: 1;
 }
 
 #frontslide div iframe {
-  height: calc(100vh - 60px);
+  height: var(--slide-altura, calc(100vh - 60px));
   width: 100vw;
   margin-top: 60px;
 }
 
 #frontslide div div {
-  height: calc(100vh - 60px);
+  height: var(--slide-altura, calc(100vh - 60px));
   width: 100vw;
   margin-top: 60px;
   background-repeat: no-repeat;
@@ -71,8 +74,21 @@ body {
   width: calc(100vw - 60px);
   height: 60px;
   top: 0;
-  left: 30px;
+  left: var(--meta-margins, 30px);
   overflow: hidden;
   line-height: 60px;
   font-size: 16px;
+}
+
+#indice {
+  position: fixed;
+  z-index: 102;
+  width: 20px;
+  height: 20px;
+  top: 20px;
+  right: var(--meta-margins, 30px);
+  overflow: hidden;
+  line-height: 60px;
+  font-size: 13px;
+  border-radius: 10px;
 }
