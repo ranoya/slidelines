@@ -125,7 +125,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     insertA.setAttribute('class', 'fulltrack');
     insertA.setAttribute('style', `width: ${dados.length * 100}vw;`);
     insertA.setAttribute('id', 'tracktitulos');
-    document.getElementsByTagName("body")[0].lastChild.appendChild(insertA);
+    document.lastChild.appendChild(insertA);
     document.getElementById("tracktitulos").innerHTML = tituloscode;
 
 
@@ -156,7 +156,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     insertB.setAttribute('class', 'fulltrack');
     insertB.setAttribute('style', `width: ${dados.length * 100}vw;`);
     insertB.setAttribute('id', 'tracksubtitulos');
-    document.getElementsByTagName("body")[0].lastChild.appendChild(insertB);
+    document.lastChild.appendChild(insertB);
     document.getElementById("tracksubtitulos").innerHTML = subtituloscode;
 
 
@@ -188,7 +188,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     insertC.setAttribute('class', 'fulltrack');
     insertC.setAttribute('style', `width: ${dados.length * 100}vw;`);
     insertC.setAttribute('id', 'tracktopicos');
-    document.getElementsByTagName("body")[0].lastChild.appendChild(insertC);
+    document.lastChild.appendChild(insertC);
     document.getElementById("tracktopicos").innerHTML = topicoscode;
 
 
@@ -221,7 +221,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     insertD.setAttribute('class', 'slides');
     insertD.setAttribute('style', `width: ${dados.length * 100}vw;`);
     insertD.setAttribute('id', 'slides');
-    document.getElementsByTagName("body")[0].lastChild.appendChild(insertD);
+    document.lastChild.appendChild(insertD);
     document.getElementById("slides").innerHTML = slidescode;
 
 
