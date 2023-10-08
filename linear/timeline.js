@@ -112,15 +112,17 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
 let interpolate = function () {
     
-    if (document.getElementById("frontslide").scrollLeft > para) {
-        document.getElementById("frontslide").scrollLeft--;
+    if (document.getElementById("frontslide").scrollLeft > para - 4) {
+        document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft - 5;
     }
 
-    if (document.getElementById("frontslide").scrollLeft < para) {
-        document.getElementById("frontslide").scrollLeft++;
+    if (document.getElementById("frontslide").scrollLeft < para + 4) {
+        document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft + 5;
     }
 
-    if (document.getElementById("frontslide").scrollLeft == para) {
+    if (document.getElementById("frontslide").scrollLeft >= para - 2.5 && document.getElementById("frontslide").scrollLeft <= para + 2.5) {
+
+        document.getElementById("frontslide").scrollLeft = para;
 
         if (typeof vai != "undefined" && vai != null) {
             clearInterval(vai);
