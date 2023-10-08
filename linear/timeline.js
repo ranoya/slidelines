@@ -105,3 +105,40 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
     document.getElementById("indice").style.backgroundColor = arrcolorfg[posicao];
 
 });
+
+var keymapping = {};
+onkeydown = onkeyup = function(e){
+  e = e || event;
+  keymapping[e.keyCode] = e.type == 'keydown';
+    
+  let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
+
+  // Exemple of two keys together
+  if (keymapping[39]) {
+      keymapping[39] = false; // always set them to false to release
+      
+      let onde = window.innerWidth * (posicao + 1);
+      document.getElementById("frontslide").scrollLeft = onde;
+  }
+    
+  if (keymapping[40]) {
+      keymapping[40] = false; // always set them to false to release
+      
+      let onde = window.innerWidth * (posicao + 1);
+      document.getElementById("frontslide").scrollLeft = onde;
+  }
+    
+  if (keymapping[37]) {
+      keymapping[37] = false; // always set them to false to release
+      
+      let onde = window.innerWidth * (posicao - 1);
+      document.getElementById("frontslide").scrollLeft = onde;
+  }
+
+  if (keymapping[38]) {
+      keymapping[38] = false; // always set them to false to release
+      
+      let onde = window.innerWidth * (posicao - 1);
+      document.getElementById("frontslide").scrollLeft = onde;
+  }  
+}
