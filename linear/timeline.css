@@ -68,10 +68,11 @@ body {
 #minimaln {
   position: fixed;
   z-index: 101;
-  width: 100vw;
+  width: calc(100vw - 60px);
   height: 60px;
   top: 0;
+  left: 30px;
   overflow: hidden;
   line-height: 60px;
-  font-size: 14px;
+  font-size: 16px;
 }

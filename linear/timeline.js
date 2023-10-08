@@ -85,3 +85,11 @@ document.addEventListener("wheel", (event) => {
     document.getElementById("minimaln").style.color = arrcolorfg[posicao];
 
 });
+
+document.getElementById("frontslide").addEventListener("scroll", (event) => {
+
+    let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
+    document.getElementById("minimaln").innerHTML = arrtitulo[posicao];
+    document.getElementById("minimaln").style.color = arrcolorfg[posicao];
+
+});
