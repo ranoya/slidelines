@@ -1,0 +1,107 @@
+:root {
+  --timeline-font: Helvetica;
+  --meta-font: Helvetica;
+  --timeline-text-color: #777777;
+  --timeline-text-highlight: #000000;
+  --timeline-text-over: #ff0000;
+  --base-background: #ffffff;
+  --timeline-points: #666666;
+  --littlemenu-color: #777777;
+  --littlemenu-over: #ffffff;
+  --pagination-color: #777777;
+  --slidetopic-color: #777777;
+  --meta-margins: 30px;
+
+  --slide-altura: calc(100vh - 60px);
+  --pagina-altura: 100vh;
+  --slide-margem: 30px;
+}
+
+html {
+  position: fixed;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--base-background, #ffffff);
+  transition: background-color 0.6s ease-in-out;
+}
+
+body {
+  background-color: var(--base-background, #ffffff);
+}
+
+#frontslide {
+  position: fixed;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  overflow-y: hidden;
+  overflow-x: auto;
+
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-auto-columns: 100vw;
+  grid-template-rows: var(--pagina-altura, calc(100vh - 60px));
+}
+
+#frontslide div {
+  height: var(--pagina-altura, calc(100vh - 60px));
+  width: calc(100vw - (2 * var(--slide-margem, 0)));
+  padding: var(--slide-margem, 0);
+  padding-top: 0;
+  grid-row: 1;
+  transition: all 0.3s ease-out;
+}
+
+.fullfrontslide {
+  width: 100vw !important;
+  padding: 0 !important;
+  transition: all 0.3s ease-out;
+}
+
+#frontslide div iframe {
+  height: calc(
+    var(--slide-altura, calc(100vh - 60px)) - var(--slide-margem, 0)
+  );
+  width: calc(100vw - (2 * var(--slide-margem, 0)));
+  margin-top: 60px;
+  transition: all 0.3s ease-out;
+}
+
+.fullslide {
+  height: var(--slide-altura, calc(100vh - 60px)) !important;
+  width: 100vw !important;
+  transition: all 0.3s ease-out;
+}
+
+#frontslide div div {
+  height: calc(
+    var(--slide-altura, calc(100vh - 60px)) - var(--slide-margem, 0)
+  );
+  width: calc(100vw - (2 * var(--slide-margem, 0)));
+  margin-top: 60px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  padding: 0;
+  transition: all 0.3s ease-out;
+}
+
+.track {
+  line-height: 60px;
+  font-size: 16px;
+}
+
+#indice {
+  position: fixed;
+  z-index: 102;
+  width: 20px;
+  height: 20px;
+  top: 20px;
+  right: var(--meta-margins, 30px);
+  overflow: hidden;
+  line-height: 21px;
+  font-size: 9px;
+  border-radius: 10px;
+  text-align: center;
+}
