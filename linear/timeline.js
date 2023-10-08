@@ -276,6 +276,21 @@ onkeydown = onkeyup = function(e){
        vai = setTimeout(parou, 600);
   }
     
+    if (keymapping[34]) {
+      keymapping[34] = false; // always set them to false to release
+      
+      ajeita();
+
+      let onde = window.innerWidth * (posicao + 1);
+  
+      document.getElementById("frontslide").scrollTo({
+        left: onde,
+        behavior: "smooth",
+      });
+
+       vai = setTimeout(parou, 600);
+  }
+    
   if (keymapping[40]) {
       keymapping[40] = false; // always set them to false to release
       
@@ -308,6 +323,21 @@ onkeydown = onkeyup = function(e){
 
   if (keymapping[38]) {
       keymapping[38] = false; // always set them to false to release
+      
+      ajeita();
+
+      let onde = window.innerWidth * (posicao - 1);
+    
+      document.getElementById("frontslide").scrollTo({
+        left: onde,
+        behavior: "smooth",
+      });
+
+      vai = setTimeout(parou, 600);
+    }  
+    
+    if (keymapping[33]) {
+      keymapping[33] = false; // always set them to false to release
       
       ajeita();
 
