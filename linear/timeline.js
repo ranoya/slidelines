@@ -112,11 +112,11 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
 let interpolate = function () {
     
-    if (document.getElementById("frontslide").scrollLeft > para + 10) {
+    if (document.getElementById("frontslide").scrollLeft > para + 5) {
         document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft - 10;
     }
 
-    if (document.getElementById("frontslide").scrollLeft < para - 10) {
+    if (document.getElementById("frontslide").scrollLeft < para - 5) {
         document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft + 10;
     }
 
