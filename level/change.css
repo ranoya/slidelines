@@ -1,0 +1,11 @@
+:root {
+  --timeline-font: Helvetica;
+  --meta-font: Helvetica;
+
+  --timeline-text-color: #777777;
+  --timeline-text-over: #ff0000;
+  --base-background: #ffffff;
+
+  --meta-margins: 50px;
+  --track-height: 30px;
+}

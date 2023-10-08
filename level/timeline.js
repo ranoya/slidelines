@@ -64,7 +64,7 @@ if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigato
         }
 
         ::-webkit-scrollbar:hover {
-        background-color: var(--palco-c1, #afb9bb);
+        background-color: var(--timeline-text-over, #ff0000);
         }
 
         ::-webkit-scrollbar-thumb {
