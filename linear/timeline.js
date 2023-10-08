@@ -16,6 +16,8 @@ $_GET = [];
 
 let arr = [];
 let actualpage = 0;
+let arrtitulo = [];
+let arrcolorfg = [];
 
 if ($_GET['s'] != "" && typeof $_GET['s'] != "undefined" && $_GET['s'] != null) {
     actualpage = parseInt($_GET['s']);
@@ -40,6 +42,10 @@ frontpage.setAttribute('id', 'frontslide');
 frontpage.setAttribute('class', 'frontpageinicial');
 document.lastChild.appendChild(frontpage);
 
+let minimalnav = document.createElement('div');
+minimalnav.setAttribute('id', 'minimaln');
+document.lastChild.appendChild(minimalnav);
+
 
 // FUNÇÃO DE FETCH DE ARQUIVO JSON
 
@@ -49,7 +55,10 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     // document.getElementById("frontslide").style.width = (dados.length * 100) + "vw";
 
     let code = "";
-    dados.map((d) => {
+    dados.map((d,i) => {
+
+        arrtitulo[i] = d.titulo;
+        arrcolorfg[i] = d.frente;
         
         if (d.tipo == "imagem" || d.link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
             code += `<div style='background-color: ${d.fundo};'><div style='background-color: ${d.fundo}; background-image: url(${d.link});'></div></div>`;
@@ -69,5 +78,10 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 document.addEventListener("wheel", (event) => {
 
     document.getElementById("frontslide").scrollLeft += event.deltaY;
+
+    let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
+
+    document.getElementById("minimaln").innerHTML = arrtitulo[posicao];
+    document.getElementById("minimaln").style.color = arrcolorfg[posicao];
 
 });

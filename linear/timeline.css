@@ -64,3 +64,14 @@ body {
 #frontslide {
   transition: none;
 }
+
+#minimaln {
+  position: fixed;
+  z-index: 101;
+  width: 100vw;
+  height: 60px;
+  top: 0;
+  overflow: hidden;
+  line-height: 60px;
+  font-size: 14px;
+}
