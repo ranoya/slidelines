@@ -32,20 +32,20 @@ let estilo = document.createElement('link');
 estilo.setAttribute('rel', 'stylesheet');
 estilo.setAttribute('type', 'text/css');
 estilo.setAttribute('href', "https://slidelines.vercel.app/level/timeline.css" );
-lobody.lastChild.appendChild(estilo);
+document.lastChild.appendChild(estilo);
 
 if ($_GET['theme'] != "" && typeof $_GET['theme'] != "undefined") {
     let estilo2 = document.createElement('link');
     estilo2.setAttribute('rel', 'stylesheet');
     estilo2.setAttribute('type', 'text/css');
     estilo2.setAttribute('href', $_GET['theme']);
-    lobody.lastChild.appendChild(estilo2);
+    document.lastChild.appendChild(estilo2);
 }
 
 
 let indicenav = document.createElement('div');
 indicenav.setAttribute('id', 'indice');
-lobody.lastChild.appendChild(indicenav);
+document.lastChild.appendChild(indicenav);
 
 
 if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigator.platform.toString().indexOf("Linux") >= 0) || (typeof $_GET['fixascroll'] != "undefined" && $_GET['fixascroll'] != null && $_GET['fixascroll'] != "")) {
@@ -87,7 +87,7 @@ if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigato
 
     `;
 
-    document.write(restora);
+    document.getElementsByTagName("body")[0].innerHTML += restora;
 
 }
 
@@ -122,12 +122,9 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     }
 
 
-    let insertA = document.createElement('div');
-    insertA.setAttribute('class', 'fulltrack');
-    insertA.setAttribute('style', `width: ${dados.length * 100}vw;`);
-    insertA.setAttribute('id', 'tracktitulos');
-    lobody.lastChild.appendChild(insertA);
-    document.getElementById("tracktitulos").innerHTML = tituloscode;
+    document.getElementsByTagName("body")[0].innerHTML += `<div id='tracktitulos' class='fulltrack' style='width: ${dados.length * 100}vw;'>`;
+    document.getElementsByTagName("body")[0].innerHTML += tituloscode;
+    document.getElementsByTagName("body")[0].innerHTML += `</div>`;
 
 
     let subtituloscode = ``;
@@ -153,12 +150,9 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     }
 
 
-    let insertB = document.createElement('div');
-    insertB.setAttribute('class', 'fulltrack');
-    insertB.setAttribute('style', `width: ${dados.length * 100}vw;`);
-    insertB.setAttribute('id', 'tracksubtitulos');
-    lobody.lastChild.appendChild(insertB);
-    document.getElementById("tracksubtitulos").innerHTML = subtituloscode;
+    document.getElementsByTagName("body")[0].innerHTML += `<div id='tracksubtitulos' class='fulltrack' style='width: ${dados.length * 100}vw;'>`;
+    document.getElementsByTagName("body")[0].innerHTML += subtituloscode;
+    document.getElementsByTagName("body")[0].innerHTML += `</div>`;
 
 
     let topicoscode = ``;
@@ -183,14 +177,10 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     }
 
-    
 
-    let insertC = document.createElement('div');
-    insertC.setAttribute('class', 'fulltrack');
-    insertC.setAttribute('style', `width: ${dados.length * 100}vw;`);
-    insertC.setAttribute('id', 'tracktopicos');
-    lobody.lastChild.appendChild(insertC);
-    document.getElementById("tracktopicos").innerHTML = topicoscode;
+    document.getElementsByTagName("body")[0].innerHTML += `<div id='tracktopicos' class='fulltrack' style='width: ${dados.length * 100}vw;'>`;
+    document.getElementsByTagName("body")[0].innerHTML += topicoscode;
+    document.getElementsByTagName("body")[0].innerHTML += `</div>`;
 
 
     let slidescode = ``;
@@ -216,14 +206,9 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         i++;
     }
 
-
-    
-    let insertD = document.createElement('div');
-    insertD.setAttribute('class', 'slides');
-    insertD.setAttribute('style', `width: ${dados.length * 100}vw;`);
-    insertD.setAttribute('id', 'slides');
-    lobody.lastChild.appendChild(insertD);
-    document.getElementById("slides").innerHTML = slidescode;
+    document.getElementsByTagName("body")[0].innerHTML += `<div id='slides' class='slides' style='width: ${dados.length * 100}vw;'>`;
+    document.getElementsByTagName("body")[0].innerHTML += slidescode;
+    document.getElementsByTagName("body")[0].innerHTML += `</div>`;
 
 
 
