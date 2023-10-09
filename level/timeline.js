@@ -121,6 +121,8 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
             
             if (dados[k].titulo == dados[i].titulo) {
                 contat++;
+            } else {
+                break;
             }
 
         }
@@ -146,6 +148,8 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
             
             if (dados[k].subtitulo == dados[i].subtitulo) {
                 contat++;
+            } else {
+                break;
             }
 
         }
@@ -172,6 +176,8 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
             
             if (dados[k].topicos == dados[i].topicos) {
                 contat++;
+            } else {
+                break;
             }
 
         }
