@@ -241,7 +241,7 @@ document.addEventListener("wheel", (event) => {
     document.getElementById("indice").style.color = arrcolorfg[posicao];
     document.getElementById("indice").style.backgroundColor = arrcolorbg[posicao];
 
-    vai = setTimeout(parou, 600);
+    vai = setTimeout(parou, 300);
     
 });
 
@@ -259,7 +259,7 @@ let ajeita = function (fecha) {
 
  
 
-    if (document.getElementById("frontslide").scrollLeft % window.innerWidth < window.innerWidth / 3) {
+    if (document.getElementById("frontslide").scrollLeft % window.innerWidth < window.innerWidth / 2.5) {
         
         let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
 
@@ -273,7 +273,7 @@ let ajeita = function (fecha) {
         // document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft - (document.getElementById("frontslide").scrollLeft % window.innerWidth);
     }
 
-    if (document.getElementById("frontslide").scrollLeft % window.innerWidth > 800) {
+    if (document.getElementById("frontslide").scrollLeft % window.innerWidth > 600) {
 
         let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
 
@@ -304,7 +304,7 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
     document.getElementById("indice").style.color = arrcolorfg[posicao];
     document.getElementById("indice").style.backgroundColor = arrcolorbg[posicao];
 
-    vai = setTimeout(parou, 600);
+    vai = setTimeout(parou, 300);
 
 });
 
@@ -333,7 +333,7 @@ onkeydown = onkeyup = function(e){
         behavior: "smooth",
       });
 
-       vai = setTimeout(parou, 600);
+       vai = setTimeout(parou, 300);
   }
     
   if (keymapping[34]) {
@@ -348,7 +348,7 @@ onkeydown = onkeyup = function(e){
         behavior: "smooth",
       });
 
-       vai = setTimeout(parou, 600);
+       vai = setTimeout(parou, 300);
   }
     
   if (keymapping[40]) {
@@ -363,7 +363,7 @@ onkeydown = onkeyup = function(e){
         behavior: "smooth",
       });
 
-      vai = setTimeout(parou, 600);
+      vai = setTimeout(parou, 300);
   }
     
   if (keymapping[37]) {
@@ -378,7 +378,7 @@ onkeydown = onkeyup = function(e){
         behavior: "smooth",
       });
 
-      vai = setTimeout(parou, 600);
+      vai = setTimeout(parou, 300);
   }
 
   if (keymapping[38]) {
@@ -393,7 +393,7 @@ onkeydown = onkeyup = function(e){
         behavior: "smooth",
       });
 
-      vai = setTimeout(parou, 600);
+      vai = setTimeout(parou, 300);
     }  
     
   if (keymapping[33]) {
@@ -408,7 +408,7 @@ onkeydown = onkeyup = function(e){
         behavior: "smooth",
       });
 
-      vai = setTimeout(parou, 600);
+      vai = setTimeout(parou, 300);
   }  
 }
 
