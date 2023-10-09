@@ -127,7 +127,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
         }
 
-        tituloscode += `<div class="track" style='display: inline-block; position: sticky; margin: 0; padding: 0; top: 0; left: 0; width: ${contat * 100}vw; z-index: ${200 + i}; background-color: ${dados[i].titulofundo}; color: ${dados[i].titulofrente}'><span style='margin-left: var(--meta-margins, 30px);'>${tituloatual}</span></div>`;
+        tituloscode += `<div class="track" style='display: inline-block; position: sticky; margin: 0; padding: 0; top: 0; left: 0; width: 100vw; margin-right: ${(contat - 1) * 100}vw; z-index: ${200 + i}; background-color: ${dados[i].titulofundo}; color: ${dados[i].titulofrente}'><span style='margin-left: var(--meta-margins, 30px);'>${tituloatual}</span></div>`;
 
         i = i + contat;
 
@@ -154,7 +154,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
         }
 
-        subtituloscode += `<div class="track" style='display: inline-block; position: sticky; margin: 0; padding: 0; top: 0; left: 0; width: ${contat * 100}vw; z-index: ${200 + i}; background-color: ${dados[i].subtitulofundo}; color: ${dados[i].subtitulofrente}'><span style='margin-left: var(--meta-margins, 30px);'>${subtituloatual}</span></div>`;
+        subtituloscode += `<div class="track" style='display: inline-block; position: sticky; margin: 0; padding: 0; top: 0; left: 0; width: 100vw; margin-right: ${(contat - 1) * 100}vw; z-index: ${200 + i}; background-color: ${dados[i].subtitulofundo}; color: ${dados[i].subtitulofrente}'><span style='margin-left: var(--meta-margins, 30px);'>${subtituloatual}</span></div>`;
 
         i = i + contat;
 
@@ -182,7 +182,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
         }
 
-        topicoscode += `<div class="track" style='display: inline-block; position: sticky; margin: 0; padding: 0; top: 0; left: 0; width: ${contat * 100}vw; z-index: ${200 + i}; background-color: ${dados[i].fundo}; color: ${dados[i].frente}'><span style='margin-left: var(--meta-margins, 30px);'>${subtituloatual}</span></div>`;
+        topicoscode += `<div class="track" style='display: inline-block; position: sticky; margin: 0; padding: 0; top: 0; left: 0; width: 100vw; margin-right: ${(contat - 1) * 100}vw; z-index: ${200 + i}; background-color: ${dados[i].fundo}; color: ${dados[i].frente}'><span style='margin-left: var(--meta-margins, 30px);'>${subtituloatual}</span></div>`;
 
         i = i + contat;
 
