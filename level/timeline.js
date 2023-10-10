@@ -47,6 +47,7 @@ let indicenav = document.createElement('div');
 indicenav.setAttribute('id', 'indice');
 document.lastChild.appendChild(indicenav);
 
+/*
 let nextnav = document.createElement('div');
 nextnav.setAttribute('id', 'next');
 nextnav.setAttribute('onclick', 'gonext');
@@ -56,6 +57,7 @@ let prevnav = document.createElement('div');
 prevnav.setAttribute('id', 'prev');
 prevnav.setAttribute('onclick', 'goprev');
 document.lastChild.appendChild(prevnav);
+*/
 
 
 if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigator.platform.toString().indexOf("Linux") >= 0) || (typeof $_GET['fixascroll'] != "undefined" && $_GET['fixascroll'] != null && $_GET['fixascroll'] != "")) {
