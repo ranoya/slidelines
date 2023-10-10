@@ -5,7 +5,7 @@
   --timeline-text-highlight: #000000;
   --timeline-text-over: #ff0000;
   --base-background: #ffffff;
-  --button-color: #777777;
+  --button-color: #77777700;
   --timeline-points: #666666;
   --littlemenu-color: #777777;
   --littlemenu-over: #ffffff;
@@ -105,7 +105,7 @@ body {
   background-color: var(--button-color, #777777);
   border-radius: 16px;
   top: calc(50vh + 20px);
-  right: calc(var(--meta-margins, 30px) + 3px);
+  right: calc(var(--meta-margins, 30px) + 4px);
   outline-color: var(--button-color, #777777);
   outline-style: solid;
   outline-width: 0;
@@ -125,7 +125,7 @@ body {
   background-color: var(--button-color, #777777);
   border-radius: 16px;
   top: calc(50vh - 31px);
-  right: calc(var(--meta-margins, 30px) + 3px);
+  right: calc(var(--meta-margins, 30px) + 4px);
   outline-color: var(--button-color, #777777);
   outline-style: solid;
   outline-width: 0;
