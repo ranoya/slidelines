@@ -109,6 +109,7 @@ body {
   outline-color: var(--button-color, #777777);
   outline-style: solid;
   outline-width: 0;
+  cursor: pointer;
 }
 
 #next:hover {
@@ -128,6 +129,7 @@ body {
   outline-color: var(--button-color, #777777);
   outline-style: solid;
   outline-width: 0;
+  cursor: pointer;
 }
 
 #prev:hover {

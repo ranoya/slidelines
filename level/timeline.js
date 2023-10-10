@@ -50,12 +50,12 @@ document.lastChild.appendChild(indicenav);
 
 let nextnav = document.createElement('div');
 nextnav.setAttribute('id', 'next');
-nextnav.setAttribute('onclick', 'gonext');
+nextnav.setAttribute('onclick', 'gonext()');
 document.lastChild.appendChild(nextnav);
 
 let prevnav = document.createElement('div');
 prevnav.setAttribute('id', 'prev');
-prevnav.setAttribute('onclick', 'goprev');
+prevnav.setAttribute('onclick', 'goprev()');
 document.lastChild.appendChild(prevnav);
 
 
@@ -429,6 +429,9 @@ onkeydown = onkeyup = function(e){
 }
 
 let gonext = function () {
+
+    let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
+
     ajeita();
 
       let onde = window.innerWidth * (posicao + 1);
@@ -443,6 +446,8 @@ let gonext = function () {
 }
 
 let goprev = function () {
+
+    let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
     
     ajeita();
 
