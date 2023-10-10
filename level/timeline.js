@@ -252,8 +252,8 @@ document.addEventListener("wheel", (event) => {
     document.getElementById("indice").innerHTML = posicao + 1;
     document.getElementById("indice").style.color = arrcolorfg[posicao];
     document.getElementById("indice").style.backgroundColor = arrcolorbg[posicao];
-    document.getElementById("next").style.backgroundColor = arrcolorbg[posicao];
-    document.getElementById("prev").style.backgroundColor = arrcolorbg[posicao];
+    //document.getElementById("next").style.backgroundColor = arrcolorbg[posicao];
+    //document.getElementById("prev").style.backgroundColor = arrcolorbg[posicao];
 
     vai = setTimeout(parou, 300);
     
