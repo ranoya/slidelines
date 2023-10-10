@@ -252,8 +252,8 @@ document.addEventListener("wheel", (event) => {
     document.getElementById("indice").innerHTML = posicao + 1;
     document.getElementById("indice").style.color = arrcolorfg[posicao];
     document.getElementById("indice").style.backgroundColor = arrcolorbg[posicao];
-    document.getElementById("next").style.backgroundColor = arrcolorbg[posicao];
-    document.getElementById("prev").style.backgroundColor = arrcolorbg[posicao];
+
+    document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
 
     vai = setTimeout(parou, 300);
     
@@ -317,6 +317,8 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
     document.getElementById("indice").innerHTML = posicao + 1;
     document.getElementById("indice").style.color = arrcolorfg[posicao];
     document.getElementById("indice").style.backgroundColor = arrcolorbg[posicao];
+
+    document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
 
     vai = setTimeout(parou, 300);
 
