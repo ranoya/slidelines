@@ -47,6 +47,16 @@ let indicenav = document.createElement('div');
 indicenav.setAttribute('id', 'indice');
 document.lastChild.appendChild(indicenav);
 
+let nextnav = document.createElement('div');
+nextnav.setAttribute('id', 'next');
+nextnav.setAttribute('onclick', 'gonext');
+document.lastChild.appendChild(nextnav);
+
+let prevnav = document.createElement('div');
+prevnav.setAttribute('id', 'prev');
+prevnav.setAttribute('onclick', 'goprev');
+document.lastChild.appendChild(prevnav);
+
 
 if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigator.platform.toString().indexOf("Linux") >= 0) || (typeof $_GET['fixascroll'] != "undefined" && $_GET['fixascroll'] != null && $_GET['fixascroll'] != "")) {
 
@@ -240,6 +250,8 @@ document.addEventListener("wheel", (event) => {
     document.getElementById("indice").innerHTML = posicao + 1;
     document.getElementById("indice").style.color = arrcolorfg[posicao];
     document.getElementById("indice").style.backgroundColor = arrcolorbg[posicao];
+    document.getElementById("next").style.backgroundColor = arrcolorbg[posicao];
+    document.getElementById("prev").style.backgroundColor = arrcolorbg[posicao];
 
     vai = setTimeout(parou, 300);
     
@@ -410,6 +422,34 @@ onkeydown = onkeyup = function(e){
 
       vai = setTimeout(parou, 300);
   }  
+}
+
+let gonext = function () {
+    ajeita();
+
+      let onde = window.innerWidth * (posicao + 1);
+  
+      document.getElementById("frontslide").scrollTo({
+        left: onde,
+        behavior: "smooth",
+      });
+
+       vai = setTimeout(parou, 300);
+    
+}
+
+let goprev = function () {
+    
+    ajeita();
+
+      let onde = window.innerWidth * (posicao - 1);
+    
+      document.getElementById("frontslide").scrollTo({
+        left: onde,
+        behavior: "smooth",
+      });
+
+      vai = setTimeout(parou, 300);
 }
 
 

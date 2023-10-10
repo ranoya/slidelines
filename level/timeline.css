@@ -5,6 +5,7 @@
   --timeline-text-highlight: #000000;
   --timeline-text-over: #ff0000;
   --base-background: #ffffff;
+  --button-color: #777777;
   --timeline-points: #666666;
   --littlemenu-color: #777777;
   --littlemenu-over: #ffffff;
@@ -94,4 +95,40 @@ body {
   font-size: 9px;
   border-radius: 10px;
   text-align: center;
+}
+
+#next {
+  width: 12px;
+  transform: all 0.4s ease-out;
+  background-color: var(--button-color, #777777);
+  border-radius: 8px;
+  border: 1px solid var(--button-color, #777777);
+  margin: 0;
+  top: calc(50vh + 20px);
+  right: calc(var(--meta-margins, 30px) - 7px);
+}
+
+#next:hover {
+  border: 4px solid var(--button-color, #777777);
+  transform: all 0.4s ease-out;
+  margin-left: -3px;
+  margin-top: -3px;
+}
+
+#prev {
+  width: 12px;
+  background-color: var(--button-color, #777777);
+  border-radius: 8px;
+  transform: all 0.4s ease-out;
+  border: 1px solid var(--button-color, #777777);
+  margin: 0;
+  top: calc(50vh - 33px);
+  right: calc(var(--meta-margins, 30px) - 7px);
+}
+
+#prev:hover {
+  border: 4px solid var(--button-color, #777777);
+  transform: all 0.4s ease-out;
+  margin-left: -3px;
+  margin-top: -3px;
 }
