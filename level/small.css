@@ -1,0 +1,9 @@
+:root {
+  --track-height: 40px;
+}
+
+.track {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
