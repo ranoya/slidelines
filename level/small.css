@@ -7,18 +7,3 @@
   text-transform: uppercase;
   font-weight: lighter;
 }
-
-#indice {
-  left: calc(50vw - 10px);
-  top: calc(100vh - 45px);
-}
-
-#prev {
-  top: calc(100vh - 40px);
-  right: calc(50vw + 20px);
-}
-
-#next {
-  top: calc(100vh - 40px);
-  right: calc(50vw - 31px);
-}

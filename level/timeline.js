@@ -239,24 +239,28 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
 document.addEventListener("wheel", (event) => {
 
-    if (!rodandoajeita) {
-        ajeita();
+    if (typeof $_GET['allowverticalscroll'] != "undefined" && $_GET['allowverticalscroll'] != null && $_GET['allowverticalscroll'] != "") {
+
+        if (!rodandoajeita) {
+            ajeita();
+        }
+    
+        clearTimeout(vai);
+
+        document.getElementById("frontslide").scrollLeft += event.deltaY;
+
+        let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
+    
+        document.getElementById("indice").innerHTML = posicao + 1;
+        document.getElementById("indice").style.color = arrcolorfg[posicao];
+        document.getElementById("indice").style.backgroundColor = arrcolorbg[posicao];
+
+        document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
+        document.documentElement.style.setProperty('--track-fg', arrcolorfg[posicao]);
+        document.documentElement.style.setProperty('--track-ng', arrcolorbg[posicao]);
+
+        vai = setTimeout(parou, 300);
     }
-    
-    clearTimeout(vai);
-
-    document.getElementById("frontslide").scrollLeft += event.deltaY;
-
-    let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
-    
-    document.getElementById("indice").innerHTML = posicao + 1;
-    document.getElementById("indice").style.color = arrcolorfg[posicao];
-    document.getElementById("indice").style.backgroundColor = arrcolorbg[posicao];
-
-    document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
-
-    vai = setTimeout(parou, 300);
-    
 });
 
 let parou = function () {
@@ -319,6 +323,8 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
     document.getElementById("indice").style.backgroundColor = arrcolorbg[posicao];
 
     document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
+    document.documentElement.style.setProperty('--track-fg', arrcolorfg[posicao]);
+    document.documentElement.style.setProperty('--track-ng', arrcolorbg[posicao]);
 
     vai = setTimeout(parou, 300);
 
@@ -462,3 +468,17 @@ let goprev = function () {
 }
 
 
+document.addEventListener("DOMContentLoaded", (e) => {
+
+    let posicao = 0;
+
+    document.getElementById("indice").innerHTML = posicao + 1;
+    document.getElementById("indice").style.color = arrcolorfg[posicao];
+    document.getElementById("indice").style.backgroundColor = arrcolorbg[posicao];
+
+    document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
+    document.documentElement.style.setProperty('--track-fg', arrcolorfg[posicao]);
+    document.documentElement.style.setProperty('--track-ng', arrcolorbg[posicao]);
+
+
+});

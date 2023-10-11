@@ -15,3 +15,18 @@
   text-transform: uppercase;
   font-weight: lighter;
 }
+
+#indice {
+  top: calc(50vh - 10px);
+  right: var(--meta-margins, 30px);
+}
+
+#prev {
+  top: calc(50vh - 31px);
+  right: calc(var(--meta-margins, 30px) + 4px);
+}
+
+#next {
+  top: calc(50vh + 20px);
+  right: calc(var(--meta-margins, 30px) + 4px);
+}

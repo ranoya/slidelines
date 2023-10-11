@@ -6,6 +6,8 @@
   --timeline-text-over: #777777;
   --base-background: #ffffff;
   --button-color: #77777700;
+  --track-fg: #ffffff;
+  --track-bg: #000000;
   --timeline-points: #666666;
   --littlemenu-color: #777777;
   --littlemenu-over: #ffffff;
@@ -59,6 +61,21 @@ body {
   font-family: var(--meta-font);
 }
 
+.track span a {
+  color: var(--track-fg, #ffffff);
+  background-color: var(--track-fg, #000000);
+  transition: all 0.3s ease-in;
+  font-weight: bolder;
+  padding: 4px 8px 4px 8px;
+  margin: -4px -8px -4px -8px;
+}
+
+.track span a:hover {
+  background-color: var(--track-fg, #ffffff);
+  color: var(--track-fg, #000000);
+  transition: all 0.3s ease-in;
+}
+
 .slides {
   height: calc(100vh - (3 * var(--track-height, 60px)));
   margin: 0;
@@ -83,13 +100,23 @@ body {
   background-position: center center;
 }
 
+#prev {
+  top: calc(100vh - 40px);
+  right: calc(50vw + 20px);
+}
+
+#next {
+  top: calc(100vh - 40px);
+  right: calc(50vw - 31px);
+}
+
 #indice {
   position: fixed;
   z-index: 502;
   width: 20px;
   height: 20px;
-  top: calc(50vh - 10px);
-  right: var(--meta-margins, 30px);
+  left: calc(50vw - 10px);
+  top: calc(100vh - 45px);
   overflow: hidden;
   line-height: 21px;
   font-size: 9px;
@@ -104,8 +131,8 @@ body {
   transition: all 0.2s ease-in;
   background-color: var(--button-color, #777777);
   border-radius: 16px;
-  top: calc(50vh + 20px);
-  right: calc(var(--meta-margins, 30px) + 4px);
+  top: calc(100vh - 40px);
+  right: calc(50vw - 31px);
   outline-color: var(--button-color, #777777);
   outline-style: solid;
   outline-width: 0;
@@ -124,8 +151,8 @@ body {
   transition: all 0.2s ease-in;
   background-color: var(--button-color, #777777);
   border-radius: 16px;
-  top: calc(50vh - 31px);
-  right: calc(var(--meta-margins, 30px) + 4px);
+  top: calc(100vh - 40px);
+  right: calc(50vw + 20px);
   outline-color: var(--button-color, #777777);
   outline-style: solid;
   outline-width: 0;
