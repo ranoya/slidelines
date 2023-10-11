@@ -68,6 +68,7 @@ body {
   font-weight: bolder;
   padding: 4px 10px 4px 10px;
   margin: -4px -10px -4px -10px;
+  text-decoration: none;
 }
 
 .track span a:hover {
@@ -122,6 +123,7 @@ body {
   font-size: 9px;
   border-radius: 10px;
   text-align: center;
+  color: transparent;
 }
 
 #next {

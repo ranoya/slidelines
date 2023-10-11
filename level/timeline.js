@@ -256,8 +256,8 @@ document.addEventListener("wheel", (event) => {
         document.getElementById("indice").style.backgroundColor = arrcolorbg[posicao];
 
         document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
-        document.documentElement.style.setProperty('--track-fg', arrcolorfg[posicao]);
-        document.documentElement.style.setProperty('--track-bg', arrcolorbg[posicao]);
+        document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
+        document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
 
         vai = setTimeout(parou, 300);
     }
@@ -323,8 +323,8 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
     document.getElementById("indice").style.backgroundColor = arrcolorbg[posicao];
 
     document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
-    document.documentElement.style.setProperty('--track-fg', arrcolorfg[posicao]);
-    document.documentElement.style.setProperty('--track-bg', arrcolorbg[posicao]);
+    document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
+    document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
 
     vai = setTimeout(parou, 300);
 
@@ -477,8 +477,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
     document.getElementById("indice").style.backgroundColor = arrcolorbg[posicao];
 
     document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
-    document.documentElement.style.setProperty('--track-fg', arrcolorfg[posicao]);
-    document.documentElement.style.setProperty('--track-ng', arrcolorbg[posicao]);
+    document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
+    document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
 
 
 });
