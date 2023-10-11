@@ -63,7 +63,7 @@ body {
 
 .track span a {
   color: var(--track-fg, #ffffff);
-  background-color: var(--track-bg, #000000);
+  background-color: transparent;
   transition: all 0.3s ease-in;
   font-weight: bolder;
   padding: 4px 10px 4px 10px;
