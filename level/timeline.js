@@ -213,7 +213,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         arrcolorbg[i] = dados[i].frente;
                 
         if (dados[i].tipo == "imagem" || dados[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
-            slidescode += `<div onclick="gonext" class='slidewrap' style='cursos: pointer; background-color: ${dados[i].fundo};'>
+            slidescode += `<div onclick="gonext()" class='slidewrap' style='cursos: pointer; background-color: ${dados[i].fundo};'>
 
             <div class='slideitself' style='background-color: ${dados[i].fundo}; background-image: url(${dados[i].link});'></div></div>`;
         } else if (dados[i].link.toString().match(/\.md/i)) {
