@@ -465,27 +465,9 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
 document.getElementById("tempo").addEventListener("scroll", (event) => {
 
-    if (!rodandoajeita) {
-        ajeita();
-    }
-    
-    clearTimeout(vai);
 
     document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft * 20;
-
-    let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
-
-    document.getElementById("indice").innerHTML = posicao + 1;
-    document.getElementById("indice").style.color = arrcolorfg[posicao];
-    document.getElementById("indice").style.backgroundColor = arrcolorbg[posicao];
-
-    document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
-    document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
-    document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
-
-    vai = setTimeout(parou, 300);
-
-    putslides(posicao);
+    clearTimeout(vai);
 
 });
 
