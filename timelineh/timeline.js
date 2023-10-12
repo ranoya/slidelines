@@ -337,8 +337,21 @@ const putslides = function (posicao) {
 }
 
 
+let mudaviatempo = false;
+
+document.getElementById("tempo").onmouseover = function () {
+        mudaviatempo = true;
+}
+        
+document.getElementById("tempo").onmouseout = function () {
+        mudaviatempo = false;
+};
+
+
+
 
 document.addEventListener("wheel", (event) => {
+
 
     if (typeof $_GET['allowverticalscroll'] != "undefined" && $_GET['allowverticalscroll'] != null && $_GET['allowverticalscroll'] != "") {
 
@@ -348,12 +361,16 @@ document.addEventListener("wheel", (event) => {
             ajeita();
         }
     
+
         clearTimeout(vai);
 
-        document.getElementById("frontslide").scrollLeft += event.deltaY;
+        if (!mudaviatempo) {
 
-        document.getElementById("tempo").scrollLeft += event.deltaY/5;
+            document.getElementById("frontslide").scrollLeft += event.deltaY;
 
+            document.getElementById("tempo").scrollLeft += event.deltaY / 20;
+
+        }
         
     
         document.getElementById("indice").innerHTML = posicao + 1;
@@ -446,7 +463,11 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
     let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
 
-    document.getElementById("tempo").scrollLeft = document.getElementById("frontslide").scrollLeft / 20;
+    if (!mudaviatempo) {
+
+        document.getElementById("tempo").scrollLeft = document.getElementById("frontslide").scrollLeft / 20;
+        
+    }
 
     document.getElementById("indice").innerHTML = posicao + 1;
     document.getElementById("indice").style.color = arrcolorfg[posicao];
@@ -466,8 +487,10 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 document.getElementById("tempo").addEventListener("scroll", (event) => {
 
 
-    document.getElementById("frontslide").scrollLeft = document.getElementById("tempo").scrollLeft * 20;
-    clearTimeout(vai);
+    if (mudaviatempo) {
+        document.getElementById("frontslide").scrollLeft = document.getElementById("tempo").scrollLeft * 20;
+       
+    }
 
 });
 
