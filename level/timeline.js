@@ -372,11 +372,14 @@ let ajeita = function (fecha) {
         rodandoajeita = false;
     }
 
+    let posicao = 0;
+
+
  
 
     if (document.getElementById("frontslide").scrollLeft % window.innerWidth < window.innerWidth / 2.5) {
         
-        let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
+        posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
 
         let onde = window.innerWidth * posicao;
   
@@ -390,7 +393,7 @@ let ajeita = function (fecha) {
 
     if (document.getElementById("frontslide").scrollLeft % window.innerWidth > 600) {
 
-        let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
+        posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
 
         let onde = window.innerWidth * (posicao + 1);
   
