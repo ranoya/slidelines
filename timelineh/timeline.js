@@ -32,7 +32,7 @@ if ($_GET['s'] != "" && typeof $_GET['s'] != "undefined" && $_GET['s'] != null) 
 let estilo = document.createElement('link');
 estilo.setAttribute('rel', 'stylesheet');
 estilo.setAttribute('type', 'text/css');
-estilo.setAttribute('href', "https://slidelines.vercel.app/level/timeline.css" );
+estilo.setAttribute('href', "https://slidelines.vercel.app/timelineh/timeline.css" );
 document.lastChild.appendChild(estilo);
 
 if ($_GET['theme'] != "" && typeof $_GET['theme'] != "undefined") {
