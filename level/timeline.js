@@ -268,7 +268,7 @@ const putslides = function (posicao) {
 
     for (let i = 0; i < todosslides.length; i++) {
 
-            if (i > actualpage - 3 && i < actualpage + 3 && document.getElementById('allslides' + i).innerHTML == "") {
+            if (i >= actualpage - 3 && i <= actualpage + 3 && document.getElementById('allslides' + i).innerHTML == "") {
 
                 if (todosslides[i].tipo == "imagem" || todosslides[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
                     
@@ -285,22 +285,7 @@ const putslides = function (posicao) {
 
             }
 
-            if (i == actualpage - 3 || i == actualpage + 3) {
 
-                if (todosslides[i].tipo == "imagem" || todosslides[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
-                    
-                    document.getElementById('allslides' + i).innerHTML = `<div class='slideitself' style='background-color: ${todosslides[i].fundo}; background-image: url(${todosslides[i].link});'></div>`;
-                } else if (todosslides[i].link.toString().match(/\.md/i)) {
-
-                    document.getElementById('allslides' + i).innerHTML = `<iframe class='slideitself' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${todosslides[i].link}'></iframe>`;
-
-                } else {
-                    
-                    document.getElementById('allslides' + i).innerHTML = `<iframe class='slideitself' frameborder=0 src='${todosslides[i].link}'></iframe>`;
-
-                }
-
-            }
 
             if (i < actualpage - 3 || i > actualpage + 3) {
 
