@@ -400,7 +400,7 @@ let ajeita = function (fecha) {
         });
 
         document.getElementById("tempo").scrollTo({
-            left: onde/5,
+            left: onde/20,
             behavior: "smooth",
         });
 
@@ -419,7 +419,7 @@ let ajeita = function (fecha) {
         });
 
         document.getElementById("tempo").scrollTo({
-            left: onde/5,
+            left: onde/20,
             behavior: "smooth",
         });
 
