@@ -466,7 +466,7 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 document.getElementById("tempo").addEventListener("scroll", (event) => {
 
 
-    document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft * 20;
+    document.getElementById("frontslide").scrollLeft = document.getElementById("tempo").scrollLeft * 20;
     clearTimeout(vai);
 
 });
