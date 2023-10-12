@@ -361,6 +361,8 @@ document.addEventListener("wheel", (event) => {
 
         document.getElementById("frontslide").scrollLeft += event.deltaY;
 
+        document.getElementById("tempo").scrollLeft += event.deltaY/5;
+
         
     
         document.getElementById("indice").innerHTML = posicao + 1;
@@ -406,6 +408,11 @@ let ajeita = function (fecha) {
             behavior: "smooth",
         });
 
+        document.getElementById("tempo").scrollTo({
+            left: onde/5,
+            behavior: "smooth",
+        });
+
         // document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft - (document.getElementById("frontslide").scrollLeft % window.innerWidth);
     }
 
@@ -417,6 +424,11 @@ let ajeita = function (fecha) {
   
         document.getElementById("frontslide").scrollTo({
             left: onde,
+            behavior: "smooth",
+        });
+
+        document.getElementById("tempo").scrollTo({
+            left: onde/5,
             behavior: "smooth",
         });
 
@@ -440,6 +452,34 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
     }
     
     clearTimeout(vai);
+
+    let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
+
+    document.getElementById("tempo").scrollLeft = document.getElementById("frontslide").scrollLeft / 5;
+
+    document.getElementById("indice").innerHTML = posicao + 1;
+    document.getElementById("indice").style.color = arrcolorfg[posicao];
+    document.getElementById("indice").style.backgroundColor = arrcolorbg[posicao];
+
+    document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
+    document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
+    document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
+
+    vai = setTimeout(parou, 300);
+
+    putslides(posicao);
+
+});
+
+document.getElementById("tempo").addEventListener("scroll", (event) => {
+
+    if (!rodandoajeita) {
+        ajeita();
+    }
+    
+    clearTimeout(vai);
+
+    document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft * 5;
 
     let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
 
