@@ -261,38 +261,29 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 });
 
 
+const putslides = function (posicao) {
+
+    actualpage = posicao;
 
 
+    for (let i = 0; i < todosslides.length; i++) {
 
-document.addEventListener("wheel", (event) => {
+            if (i > actualpage - 3 && i < actualpage + 3 && document.getElementById('allslides' + i).innerHTML == "") {
 
-    if (typeof $_GET['allowverticalscroll'] != "undefined" && $_GET['allowverticalscroll'] != null && $_GET['allowverticalscroll'] != "") {
+                if (todosslides[i].tipo == "imagem" || todosslides[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
+                    
+                    document.getElementById('allslides' + i).innerHTML = `<div class='slideitself' style='background-color: ${todosslides[i].fundo}; background-image: url(${todosslides[i].link});'></div>`;
+                } else if (todosslides[i].link.toString().match(/\.md/i)) {
 
-        let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
+                    document.getElementById('allslides' + i).innerHTML = `<iframe class='slideitself' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${todosslides[i].link}'></iframe>`;
 
-        actualpage = posicao;
+                } else {
+                    
+                    document.getElementById('allslides' + i).innerHTML = `<iframe class='slideitself' frameborder=0 src='${todosslides[i].link}'></iframe>`;
 
-        if (!rodandoajeita) {
-            ajeita();
-        }
-    
-        clearTimeout(vai);
+                }
 
-        document.getElementById("frontslide").scrollLeft += event.deltaY;
-
-        
-    
-        document.getElementById("indice").innerHTML = posicao + 1;
-        document.getElementById("indice").style.color = arrcolorfg[posicao];
-        document.getElementById("indice").style.backgroundColor = arrcolorbg[posicao];
-
-        document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
-        document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
-        document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
-
-        vai = setTimeout(parou, 300);
-
-        for (let i = 0; i < todosslides.length; i++) {
+            }
 
             if (i == actualpage - 3 || i == actualpage + 3) {
 
@@ -332,9 +323,40 @@ document.addEventListener("wheel", (event) => {
 
 
         }
+
+    
+}
+
+
+
+document.addEventListener("wheel", (event) => {
+
+    if (typeof $_GET['allowverticalscroll'] != "undefined" && $_GET['allowverticalscroll'] != null && $_GET['allowverticalscroll'] != "") {
+
+        let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
+
+        if (!rodandoajeita) {
+            ajeita();
+        }
+    
+        clearTimeout(vai);
+
+        document.getElementById("frontslide").scrollLeft += event.deltaY;
+
         
+    
+        document.getElementById("indice").innerHTML = posicao + 1;
+        document.getElementById("indice").style.color = arrcolorfg[posicao];
+        document.getElementById("indice").style.backgroundColor = arrcolorbg[posicao];
 
+        document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
+        document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
+        document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
 
+        vai = setTimeout(parou, 300);
+
+        putslides(posicao);
+        
     }
 });
 
@@ -380,53 +402,12 @@ let ajeita = function (fecha) {
         // document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft + (document.getElementById("frontslide").scrollLeft % window.innerWidth);
     }
 
-    actualpage = posicao;
+    putslides(posicao);
 
-    for (let i = 0; i < todosslides.length; i++) {
-
-            if (i == actualpage - 3 || i == actualpage + 3) {
-
-                if (todosslides[i].tipo == "imagem" || todosslides[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
-                    
-                    document.getElementById('allslides' + i).innerHTML = `<div class='slideitself' style='background-color: ${todosslides[i].fundo}; background-image: url(${todosslides[i].link});'></div>`;
-                } else if (todosslides[i].link.toString().match(/\.md/i)) {
-
-                    document.getElementById('allslides' + i).innerHTML = `<iframe class='slideitself' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${todosslides[i].link}'></iframe>`;
-
-                } else {
-                    
-                    document.getElementById('allslides' + i).innerHTML = `<iframe class='slideitself' frameborder=0 src='${todosslides[i].link}'></iframe>`;
-
-                }
-
-            }
-
-            if (i < actualpage - 3 || i > actualpage + 3) {
-
-                if (todosslides[i].tipo == "imagem" || todosslides[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
-                    
-                    document.getElementById('allslides' + i).innerHTML = ``;
-                } else if (todosslides[i].link.toString().match(/\.md/i)) {
-
-                    document.getElementById('allslides' + i).innerHTML = ``;
-
-                } else {
-                    
-                    document.getElementById('allslides' + i).innerHTML = ``;
-                    
-                }
-
-            }
-
-
-
-
-        }
-        
-
-        if (!rodandoajeita) {
-            ajeita();
-        }
+            
+    if (!rodandoajeita) {
+        ajeita();
+    }
 
     
 }
@@ -451,48 +432,7 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
     vai = setTimeout(parou, 300);
 
-    actualpage = posicao;
-
-    for (let i = 0; i < todosslides.length; i++) {
-
-            if (i == actualpage - 3 || i == actualpage + 3) {
-
-                if (todosslides[i].tipo == "imagem" || todosslides[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
-                    
-                    document.getElementById('allslides' + i).innerHTML = `<div class='slideitself' style='background-color: ${todosslides[i].fundo}; background-image: url(${todosslides[i].link});'></div>`;
-                } else if (todosslides[i].link.toString().match(/\.md/i)) {
-
-                    document.getElementById('allslides' + i).innerHTML = `<iframe class='slideitself' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${todosslides[i].link}'></iframe>`;
-
-                } else {
-                    
-                    document.getElementById('allslides' + i).innerHTML = `<iframe class='slideitself' frameborder=0 src='${todosslides[i].link}'></iframe>`;
-
-                }
-
-            }
-
-            if (i < actualpage - 3 || i > actualpage + 3) {
-
-                if (todosslides[i].tipo == "imagem" || todosslides[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
-                    
-                    document.getElementById('allslides' + i).innerHTML = ``;
-                } else if (todosslides[i].link.toString().match(/\.md/i)) {
-
-                    document.getElementById('allslides' + i).innerHTML = ``;
-
-                } else {
-                    
-                    document.getElementById('allslides' + i).innerHTML = ``;
-                    
-                }
-
-            }
-
-
-
-
-        }
+    putslides(posicao);
 
 });
 
