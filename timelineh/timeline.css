@@ -71,6 +71,7 @@ body {
   display: inline-block;
   background-color: grey;
   color: white;
+  vertical-align: top;
 }
 
 .fulltrack {

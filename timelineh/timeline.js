@@ -462,7 +462,7 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
 });
 
-/*
+
 document.getElementById("tempo").addEventListener("scroll", (event) => {
 
     if (!rodandoajeita) {
@@ -489,7 +489,7 @@ document.getElementById("tempo").addEventListener("scroll", (event) => {
 
 });
 
-*/
+
 
 
 
