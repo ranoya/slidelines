@@ -95,15 +95,6 @@ if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigato
             overflow-x: scroll;
         }
 
-        .slides {
-            height: calc(100vh - (3 * var(--track-height, 60px)) - 10px);
-
-        }
-
-        .slidewrap {
-            height: calc(100vh - (3 * var(--track-height, 60px)) - 10px);
-        }
-
     </style>
 
     `;
@@ -471,6 +462,7 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
 });
 
+/*
 document.getElementById("tempo").addEventListener("scroll", (event) => {
 
     if (!rodandoajeita) {
@@ -496,6 +488,8 @@ document.getElementById("tempo").addEventListener("scroll", (event) => {
     putslides(posicao);
 
 });
+
+*/
 
 
 
