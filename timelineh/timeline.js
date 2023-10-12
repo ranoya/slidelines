@@ -170,7 +170,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     }
 
-    document.getElementById("tempo").innerHTML = anoscode;
+    document.getElementById("tempo").innerHTML = `<div id="fulltempo" style="width: ${i*5}vw;">${anoscode}</div>`;
 
 
     
