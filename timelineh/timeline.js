@@ -446,7 +446,7 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
     let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
 
-    document.getElementById("tempo").scrollLeft = document.getElementById("frontslide").scrollLeft / 5;
+    document.getElementById("tempo").scrollLeft = document.getElementById("frontslide").scrollLeft / 20;
 
     document.getElementById("indice").innerHTML = posicao + 1;
     document.getElementById("indice").style.color = arrcolorfg[posicao];
@@ -471,7 +471,7 @@ document.getElementById("tempo").addEventListener("scroll", (event) => {
     
     clearTimeout(vai);
 
-    document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft * 5;
+    document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft * 20;
 
     let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
 
