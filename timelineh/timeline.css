@@ -213,7 +213,6 @@ body {
   z-index: 699;
   display: none;
   bottom: 0;
-  left: 0;
   height: calc(var(--timeline-tempo-height) - 8px);
   background-color: var(--timeline-tempo, grey);
   padding-top: 8px;
