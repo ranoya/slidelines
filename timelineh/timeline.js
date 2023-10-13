@@ -381,6 +381,13 @@ document.addEventListener("wheel", (event) => {
         document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
         document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
 
+        if (typeof $_GET['followbg'] != "undefined" && $_GET['followbg'] != null && $_GET['followbg'] != "") {
+
+            document.documentElement.style.setProperty('--timeline-tempo', arrcolorbg[posicao]);
+            document.documentElement.style.setProperty('--valor-tempo', arrcolorfg[posicao]);
+
+        }
+
         vai = setTimeout(parou, 300);
 
         putslides(posicao);
@@ -440,7 +447,7 @@ let ajeita = function (fecha) {
             behavior: "smooth",
         });
 
-        // document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft + (document.getElementById("frontslide").scrollLeft % window.innerWidth);
+   
     }
 
     putslides(posicao);
@@ -476,6 +483,13 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
     document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
     document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
     document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
+
+    if (typeof $_GET['followbg'] != "undefined" && $_GET['followbg'] != null && $_GET['followbg'] != "") {
+
+            document.documentElement.style.setProperty('--timeline-tempo', arrcolorbg[posicao]);
+            document.documentElement.style.setProperty('--valor-tempo', arrcolorfg[posicao]);
+
+        }
 
     vai = setTimeout(parou, 300);
 
