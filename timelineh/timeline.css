@@ -20,6 +20,8 @@
   --slide-altura: calc(100vh - 60px);
   --pagina-altura: 100vh;
   --slide-margem: 30px;
+
+  --timeline-tempo: grey;
 }
 
 html {
@@ -54,7 +56,7 @@ body {
   height: 120px;
   overflow: hidden;
   overflow-x: scroll;
-  border: 1px solid red;
+  background-color: var(--timeline-tempo, grey);
 }
 
 #fulltempo {
@@ -62,14 +64,14 @@ body {
 }
 
 #tempo::-webkit-scrollbar {
-  height: 1px;
+  height: 0;
 }
 
 .linhadotempo {
   height: 118px;
   width: 5vw;
   display: inline-block;
-  background-color: grey;
+  background-color: var(--timeline-tempo, grey);
   color: white;
   vertical-align: top;
 }
@@ -129,7 +131,6 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-  padding-bottom: 120px;
 }
 
 #prev {
