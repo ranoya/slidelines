@@ -191,7 +191,7 @@ div#next:hover {
   border: 1px solid red;
 }
 
-div#next:hover svg path {
+.setas:hover path {
   fill: red;
 }
 
