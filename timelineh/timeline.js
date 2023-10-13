@@ -337,7 +337,7 @@ const putslides = function (posicao) {
     actualpage = posicao;
 
 
-    console.loeg("pagina: " + actualpage);
+    console.log("pagina: " + actualpage);
 
     if (actualpage == 0) {
 
