@@ -623,7 +623,7 @@ onkeydown = onkeyup = function(e){
         behavior: "smooth",
       });
 
-       vai = setTimeout(parou, 500);
+       vai = setTimeout(parou, 300);
   }
     
   if (keymapping[34]) {
@@ -638,7 +638,7 @@ onkeydown = onkeyup = function(e){
         behavior: "smooth",
       });
 
-       vai = setTimeout(parou, 500);
+       vai = setTimeout(parou, 300);
   }
     
   if (keymapping[40]) {
@@ -653,7 +653,7 @@ onkeydown = onkeyup = function(e){
         behavior: "smooth",
       });
 
-      vai = setTimeout(parou, 500);
+      vai = setTimeout(parou, 300);
   }
     
   if (keymapping[37]) {
@@ -668,7 +668,7 @@ onkeydown = onkeyup = function(e){
         behavior: "smooth",
       });
 
-      vai = setTimeout(parou, 500);
+      vai = setTimeout(parou, 300);
   }
 
   if (keymapping[38]) {
@@ -683,7 +683,7 @@ onkeydown = onkeyup = function(e){
         behavior: "smooth",
       });
 
-      vai = setTimeout(parou, 500);
+      vai = setTimeout(parou, 300);
     }  
     
   if (keymapping[33]) {
@@ -698,7 +698,7 @@ onkeydown = onkeyup = function(e){
         behavior: "smooth",
       });
 
-      vai = setTimeout(parou, 500);
+      vai = setTimeout(parou, 300);
   }  
 }
 
@@ -715,7 +715,7 @@ let gonext = function () {
         behavior: "smooth",
       });
 
-       vai = setTimeout(parou, 500);
+       vai = setTimeout(parou, 300);
     
 }
 
@@ -732,13 +732,11 @@ let goprev = function () {
         behavior: "smooth",
       });
 
-      vai = setTimeout(parou, 500);
+      vai = setTimeout(parou, 300);
 }
 
 
 document.addEventListener("DOMContentLoaded", (e) => {
-
-    console.log("conteúdo carregado");
 
     let posicao = 0;
 
@@ -749,9 +747,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
     document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
     document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
     document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
-
-    
-
 
 });
 
