@@ -755,12 +755,18 @@ document.addEventListener("DOMContentLoaded", (e) => {
         for (let i = 0; i < todosslides.length; i++) {
             if (todosslides[i].id == $_GET['s']) {
 
+                console.log("Achou o slide na posição " + i);
+                
                 let onde = window.innerWidth * i;
   
-                document.getElementById("frontslide").scrollTo({
-                    left: onde,
-                    behavior: "smooth",
-                });
+                setTimeout(function () {
+                    document.getElementById("frontslide").scrollTo({
+                        left: onde,
+                        behavior: "smooth",
+                    });
+                    
+                    
+                }, 1000);
 
                 break;
             }
