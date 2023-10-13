@@ -230,7 +230,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
         }
 
-        if (typeof $_GET['milestrone'] != "undefined" && $_GET['milestrone'] != null && $_GET['milestrone'] != "") {
+        if (typeof $_GET['milestone'] != "undefined" && $_GET['milestone'] != null && $_GET['milestone'] != "") {
             milestone = `display: block; position: absolute; z-index: 10000; width: calc(${contat * 5}vw - 30px); transform: translate(15px,0);`;
         }
 
