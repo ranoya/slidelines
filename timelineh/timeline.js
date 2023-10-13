@@ -336,15 +336,12 @@ const putslides = function (posicao) {
 
     actualpage = posicao;
 
-
-    console.log("pagina: " + actualpage);
-
     if (actualpage == 0) {
 
         document.getElementById("prev").style.display = "none";
         document.getElementById("next").style.display = "block";
 
-    } else if (actualpage == todosslides.length) {
+    } else if (actualpage >= todosslides.length - 1) {
 
         document.getElementById("prev").style.display = "block";
         document.getElementById("next").style.display = "none";
