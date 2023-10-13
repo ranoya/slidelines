@@ -52,13 +52,13 @@ let timeframe = document.createElement('div');
 timeframe.setAttribute('id', 'tempo');
 document.lastChild.appendChild(timeframe);
 
-/*
+
 let nextnav = document.createElement('div');
 nextnav.setAttribute('id', 'next');
 nextnav.setAttribute('class', 'setas');
 nextnav.setAttribute('onclick', 'gonext()');
 document.lastChild.appendChild(nextnav);
-*/
+
 
 let prevnav = document.createElement('div');
 prevnav.setAttribute('id', 'prev');
