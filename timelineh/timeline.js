@@ -103,12 +103,12 @@ if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigato
         }
 
         .slidewrap {
-            height: calc(100vh - (3 * var(--track-height, 60px)) - 130px);
+            height: calc(100vh - (3 * var(--track-height, 60px)) - 130px) !important;
         }
 
         #tempo {
-            height: 112px;
-            bottom: 10px;
+            height: 112px !important;
+            bottom: 10px !important;
         }
 
     </style>
