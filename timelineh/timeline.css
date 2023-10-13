@@ -23,6 +23,7 @@
 
   --timeline-tempo: #ffffff;
   --valor-tempo: #999999;
+  --timeline-tempo-height: 130px;
 }
 
 html {
@@ -54,7 +55,7 @@ body {
   left: 0;
   z-index: 600;
   width: 100vw;
-  height: 122px;
+  height: calc(var(--timeline-tempo-height) - 8px);
   overflow: hidden;
   overflow-x: scroll;
   background-color: var(--timeline-tempo, grey);
@@ -63,7 +64,7 @@ body {
 }
 
 #fulltempo {
-  height: 120px;
+  height: calc(var(--timeline-tempo-height) - 10px);
 }
 
 #tempo::-webkit-scrollbar {
@@ -71,7 +72,7 @@ body {
 }
 
 .linhadotempo {
-  height: 105px;
+  height: calc(var(--timeline-tempo-height) - 25px);
   width: 5vw;
   display: inline-block;
   background-color: var(--timeline-tempo, grey);
@@ -90,7 +91,7 @@ body {
   font-family: var(--timeline-font, Helvetica), Arial, sans-serif;
   font-size: 14px;
   line-height: 18px;
-  width: 120px;
+  width: calc(var(--timeline-tempo-height) - 10px);
   text-align: right;
 }
 
