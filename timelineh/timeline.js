@@ -748,11 +748,17 @@ document.addEventListener("DOMContentLoaded", (e) => {
     document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
     document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
 
-    if (typeof $_GET['s'] != "undefined" && $_GET['s'] != null && $_GET['s'] != "") {
+    
+
+
+});
+
+
+if (typeof $_GET['s'] != "undefined" && $_GET['s'] != null && $_GET['s'] != "") {
         
         console.log("o valor de S é " + $_GET['s']);
 
-        let posicao = 0;
+        console.log("não é possível.... " + todosslides.length);
 
         for (let i = 0; i < todosslides.length; i++) {
 
@@ -781,6 +787,3 @@ document.addEventListener("DOMContentLoaded", (e) => {
         }
 
     }
-
-
-});
