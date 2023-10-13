@@ -66,6 +66,10 @@ prevnav.setAttribute('class', 'setas');
 prevnav.setAttribute('onclick', 'goprev()');
 document.lastChild.appendChild(prevnav);
 
+let backcontrol = document.createElement('div');
+backcontrol.setAttribute('id', 'backcontrol');
+document.lastChild.appendChild(backcontrol);
+
 
 let corbgtimelineoriginal = getComputedStyle(document.documentElement).getPropertyValue('--timeline-tempo');
 let corfgtimelineoriginal = getComputedStyle(document.documentElement).getPropertyValue('--valor-tempo');
@@ -123,6 +127,11 @@ if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigato
         }
 
         #tempo {
+            height: calc(var(--timeline-tempo-height) - 18px) !important;
+            bottom: 10px !important;
+        }
+
+        #backcontrol {
             height: calc(var(--timeline-tempo-height) - 18px) !important;
             bottom: 10px !important;
         }

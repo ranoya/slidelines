@@ -24,16 +24,26 @@
 }
 
 #prev {
-  top: calc(100vh - 48px);
+  top: calc(100vh - var(--timeline-tempo-height) + 7px);
   right: 105px;
 }
 
 #next {
-  top: calc(100vh - 48px);
+  top: calc(100vh - var(--timeline-tempo-height) + 7px);
   right: 70px;
 }
 
 #indice {
   left: calc(100vw - 45px);
-  top: calc(100vh - 50px);
+  top: calc(100vh - var(--timeline-tempo-height) + 5px);
+}
+
+#backcontrol {
+  display: block;
+  right: 0;
+  width: 150px;
+}
+
+#tempo {
+  width: calc(100vw - 150px);
 }
