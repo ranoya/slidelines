@@ -241,7 +241,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
                 
         if (i > actualpage - 3 && i < actualpage + 3) {
         if (dados[i].tipo == "imagem" || dados[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
-            slidescode += `<div id='allslides${i}' onclick="gonext()" class='slidewrap' style='cursos: pointer; background-color: ${dados[i].fundo};'>
+            slidescode += `<div id='allslides${i}' onclick="gonext()" class='slidewrap' style='cursor: pointer; background-color: ${dados[i].fundo};'>
 
             <div class='slideitself' style='background-color: ${dados[i].fundo}; background-image: url(${dados[i].link});'></div>
 
@@ -263,7 +263,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         } else {
             
             if (dados[i].tipo == "imagem" || dados[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
-            slidescode += `<div id='allslides${i}' onclick="gonext()" class='slidewrap' style='cursos: pointer; background-color: ${dados[i].fundo};'>
+            slidescode += `<div id='allslides${i}' onclick="gonext()" class='slidewrap' style='cursor: pointer; background-color: ${dados[i].fundo};'>
 
             </div>`;
         } else if (dados[i].link.toString().match(/\.md/i)) {
