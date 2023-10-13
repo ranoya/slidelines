@@ -187,6 +187,10 @@ body {
   z-index: 700;
 }
 
+div#next:hover {
+  border: 5px solid red;
+}
+
 #next:hover svg path {
   fill: var(--timeline-text-over, #ff0000) !important;
 }
