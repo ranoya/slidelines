@@ -193,7 +193,12 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     let anoscode = ``;
     contat = 0;
     i = 0;
+
+    let milestone = "";
+
     while (i < dados.length) {
+
+        milestone = "";
         
         let tituloatual = dados[i].ano;
         let contat = 0;
@@ -208,7 +213,11 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
         }
 
-        anoscode += `<div class="linhadotempo" style='display: inline-block; margin: 0; padding: 0; top: 0; left: 0; width: 5vw; margin-right: ${(contat - 1) * 5}vw; z-index: ${600 + i};'><span class='registroano'>${tituloatual}</span></div>`;
+        if (typeof $_GET['milestrone'] != "undefined" && $_GET['milestrone'] != null && $_GET['milestrone'] != "") {
+            milestone = `display: block; position: absolute; z-index: 10000; width: calc(${contat * 5}vw - 15px); transform: translate(0,0) !important;`;
+        }
+
+        anoscode += `<div class="linhadotempo" style='display: inline-block; margin: 0; padding: 0; top: 0; left: 0; width: 5vw; margin-right: ${(contat - 1) * 5}vw; z-index: ${600 + i};'><span class='registroano' style='${milestone}'>${tituloatual}</span></div>`;
 
         i = i + contat;
 
