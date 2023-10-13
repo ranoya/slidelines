@@ -31,3 +31,7 @@
   background-color: var(--valor-tempo) !important;
   color: #09d0eb !important;
 }
+
+#tempo {
+  bottom: -10px;
+}
