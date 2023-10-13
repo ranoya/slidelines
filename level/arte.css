@@ -16,7 +16,7 @@
 }
 
 #next:hover svg path {
-  fill: #09d0eb;
+  fill: #09d0eb !important;
 }
 
 #prev svg path {
@@ -24,5 +24,5 @@
 }
 
 #prev:hover svg path {
-  fill: #09d0eb;
+  fill: #09d0eb !important;
 }
