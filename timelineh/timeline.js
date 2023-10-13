@@ -102,6 +102,10 @@ if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigato
             overflow-x: scroll;
         }
 
+        .slidewrap {
+            height: calc(100vh - (3 * var(--track-height, 60px)));
+        }
+
     </style>
 
     `;
