@@ -12,3 +12,11 @@
   font-weight: bold;
   font-size: 20px;
 }
+
+.linhadotempo {
+  border-left-style: dotted !important;
+}
+
+.registroano {
+  font-weight: bolder;
+}
