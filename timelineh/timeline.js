@@ -342,6 +342,8 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     lobody.innerHTML += `<div id='slides' class='slides' style='width: ${dados.length * 100}vw;'>${slidescode}</div>`;
 
+    acionagoto();
+
 });
 
 
@@ -754,7 +756,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
 });
 
 
-if (typeof $_GET['s'] != "undefined" && $_GET['s'] != null && $_GET['s'] != "") {
+
+let actionagoto = function () {
+    if (typeof $_GET['s'] != "undefined" && $_GET['s'] != null && $_GET['s'] != "") {
         
         console.log("o valor de S é " + $_GET['s']);
 
@@ -764,7 +768,7 @@ if (typeof $_GET['s'] != "undefined" && $_GET['s'] != null && $_GET['s'] != "") 
 
             console.log($_GET['s'] + "é igual a " + todosslides[i].id + " ??? " + (todosslides[i].id == $_GET['s']));
 
-            /*
+            
             if (todosslides[i].id == $_GET['s']) {
 
                 console.log("Achou o slide na posição " + i);
@@ -779,11 +783,14 @@ if (typeof $_GET['s'] != "undefined" && $_GET['s'] != null && $_GET['s'] != "") 
                     
                     
                 }, 1000);
+
+                break;
            
 
                 
             }
-            */
+            
         }
 
     }
+}
