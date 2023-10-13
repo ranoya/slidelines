@@ -760,38 +760,26 @@ document.addEventListener("DOMContentLoaded", (e) => {
 let acionagoto = function () {
 
     let onde = "";
-
     if (typeof $_GET['s'] != "undefined" && $_GET['s'] != null && $_GET['s'] != "") {
         
         for (let i = 0; i < todosslides.length; i++) {
 
             if (todosslides[i].id == $_GET['s']) {
-
                 onde = window.innerWidth * i;
-  
                 break;
                 
             }
             
         }
+        document.getElementById("frontslide").scrollLeft = window.innerWidth;
 
-
-        document.getElementById("frontslide").scrollLeft = 0;  // window.innerWidth;
-
-        setTimeout(function () {
-            
-            console.log(document.getElementById("frontslide"));
-
-            
+        setTimeout(function () {    
             document.getElementById("frontslide").scrollTo({
                         left: onde,
                         behavior: "smooth",
             });
-
             vai = setTimeout(parou, 500);
-
         }, 1000);
-        
-
+    
     }
 }
