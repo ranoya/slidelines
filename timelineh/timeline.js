@@ -412,7 +412,7 @@ document.addEventListener("wheel", (event) => {
             document.documentElement.style.setProperty('--valor-tempo', corfgtimelineoriginal);
         }
 
-        vai = setTimeout(parou, 300);
+        vai = setTimeout(parou, 500);
 
         putslides(posicao);
         
@@ -520,7 +520,7 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
         
     }
 
-    vai = setTimeout(parou, 300);
+    vai = setTimeout(parou, 500);
 
     putslides(posicao);
 
@@ -564,7 +564,7 @@ onkeydown = onkeyup = function(e){
         behavior: "smooth",
       });
 
-       vai = setTimeout(parou, 300);
+       vai = setTimeout(parou, 500);
   }
     
   if (keymapping[34]) {
@@ -579,7 +579,7 @@ onkeydown = onkeyup = function(e){
         behavior: "smooth",
       });
 
-       vai = setTimeout(parou, 300);
+       vai = setTimeout(parou, 500);
   }
     
   if (keymapping[40]) {
@@ -594,7 +594,7 @@ onkeydown = onkeyup = function(e){
         behavior: "smooth",
       });
 
-      vai = setTimeout(parou, 300);
+      vai = setTimeout(parou, 500);
   }
     
   if (keymapping[37]) {
@@ -609,7 +609,7 @@ onkeydown = onkeyup = function(e){
         behavior: "smooth",
       });
 
-      vai = setTimeout(parou, 300);
+      vai = setTimeout(parou, 500);
   }
 
   if (keymapping[38]) {
@@ -624,7 +624,7 @@ onkeydown = onkeyup = function(e){
         behavior: "smooth",
       });
 
-      vai = setTimeout(parou, 300);
+      vai = setTimeout(parou, 500);
     }  
     
   if (keymapping[33]) {
@@ -639,7 +639,7 @@ onkeydown = onkeyup = function(e){
         behavior: "smooth",
       });
 
-      vai = setTimeout(parou, 300);
+      vai = setTimeout(parou, 500);
   }  
 }
 
@@ -656,7 +656,7 @@ let gonext = function () {
         behavior: "smooth",
       });
 
-       vai = setTimeout(parou, 300);
+       vai = setTimeout(parou, 500);
     
 }
 
@@ -673,7 +673,7 @@ let goprev = function () {
         behavior: "smooth",
       });
 
-      vai = setTimeout(parou, 300);
+      vai = setTimeout(parou, 500);
 }
 
 
