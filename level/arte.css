@@ -26,3 +26,7 @@
 #prev:hover svg path {
   fill: #09d0eb !important;
 }
+
+#indice {
+  background-color: var(--valor-tempo) !important;
+}
