@@ -63,6 +63,13 @@ prevnav.setAttribute('onclick', 'goprev()');
 document.lastChild.appendChild(prevnav);
 
 
+let corbgtimelineoriginal = document.documentElement.style.getProperty('--timeline-tempo');
+let corfgtimelineoriginal = document.documentElement.style.getProperty('--valor-tempo');
+
+document.documentElement.style.setProperty('--timeline-tempo', 'transparent');
+document.documentElement.style.setProperty('--valor-tempo', 'transparent');
+
+
 
 if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigator.platform.toString().indexOf("Linux") >= 0) || (typeof $_GET['fixascroll'] != "undefined" && $_GET['fixascroll'] != null && $_GET['fixascroll'] != "")) {
 
@@ -386,6 +393,10 @@ document.addEventListener("wheel", (event) => {
             document.documentElement.style.setProperty('--timeline-tempo', arrcolorfg[posicao]);
             document.documentElement.style.setProperty('--valor-tempo', arrcolorbg[posicao]);
 
+        } else {
+
+            document.documentElement.style.setProperty('--timeline-tempo', corbgtimelineoriginal);
+            document.documentElement.style.setProperty('--valor-tempo', corfgtimelineoriginal);
         }
 
         vai = setTimeout(parou, 300);
@@ -489,7 +500,12 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
             document.documentElement.style.setProperty('--timeline-tempo', arrcolorfg[posicao]);
             document.documentElement.style.setProperty('--valor-tempo', arrcolorbg[posicao]);
 
-        }
+    } else {
+            
+            document.documentElement.style.setProperty('--timeline-tempo', corbgtimelineoriginal);
+            document.documentElement.style.setProperty('--valor-tempo', corfgtimelineoriginal);
+        
+    }
 
     vai = setTimeout(parou, 300);
 
