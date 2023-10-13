@@ -758,6 +758,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
             console.log($_GET['s'] + "é igual a " + todosslides[i].id + " ??? " + (todosslides[i].id == $_GET['s']));
 
+            /*
             if (todosslides[i].id == $_GET['s']) {
 
                 console.log("Achou o slide na posição " + i);
@@ -772,9 +773,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
                     
                     
                 }, 1000);
+           
 
-                break;
+                
             }
+            */
         }
 
     }
