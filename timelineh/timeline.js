@@ -166,7 +166,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     document.getElementById("prev").style.display = "none";
     
-    document.documentElement.style.setProperty('--timeline-tempo', 'transparent');
+    // document.documentElement.style.setProperty('--timeline-tempo', 'transparent');
     document.documentElement.style.setProperty('--valor-tempo', 'transparent');
 
     if (typeof $_GET['followbg'] != "undefined" && $_GET['followbg'] != null && $_GET['followbg'] != "") {
