@@ -182,6 +182,10 @@ body {
   fill: var(--timeline-text-over, #ff0000) !important;
 }
 
+.setas:hover svg path {
+  fill: var(--timeline-text-over, #ff0000) !important;
+}
+
 #prev {
   position: fixed;
   display: block;

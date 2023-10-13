@@ -54,11 +54,13 @@ document.lastChild.appendChild(timeframe);
 
 let nextnav = document.createElement('div');
 nextnav.setAttribute('id', 'next');
+nextnav.setAttribute('class', 'setas');
 nextnav.setAttribute('onclick', 'gonext()');
 document.lastChild.appendChild(nextnav);
 
 let prevnav = document.createElement('div');
 prevnav.setAttribute('id', 'prev');
+prevnav.setAttribute('class', 'setas');
 prevnav.setAttribute('onclick', 'goprev()');
 document.lastChild.appendChild(prevnav);
 
@@ -206,7 +208,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     }
 
-    document.getElementById("tempo").innerHTML = `<div id="fulltempo" style="width: ${i*5}vw;">${anoscode}</div>`;
+    document.getElementById("tempo").innerHTML = `<div id="fulltempo" style="width: ${(i+1)*5}vw;">${anoscode}</div>`;
 
 
     
