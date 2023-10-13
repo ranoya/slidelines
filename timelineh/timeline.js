@@ -74,7 +74,10 @@ document.lastChild.appendChild(backcontrol);
 let corbgtimelineoriginal = getComputedStyle(document.documentElement).getPropertyValue('--timeline-tempo');
 let corfgtimelineoriginal = getComputedStyle(document.documentElement).getPropertyValue('--valor-tempo');
 
-document.documentElement.style.setProperty('--timeline-tempo', 'transparent');
+if (typeof $_GET['followbg'] != 'undefined' && $_GET['followbg'] != null && $_GET['followbg'] != '') {
+   document.documentElement.style.setProperty('--timeline-tempo', 'transparent');
+}
+
 document.documentElement.style.setProperty('--valor-tempo', 'transparent');
 
 
