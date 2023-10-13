@@ -148,7 +148,7 @@ if (typeof $_GET['file'] != "undefined" && $_GET['file'] != null && $_GET['file'
 
 fetch(arquivojson).then(response => response.json()).then((dados) => {
 
-    
+    document.getElementById("prev").style.display = "none";
     
     document.documentElement.style.setProperty('--timeline-tempo', 'transparent');
     document.documentElement.style.setProperty('--valor-tempo', 'transparent');
@@ -335,6 +335,9 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 const putslides = function (posicao) {
 
     actualpage = posicao;
+
+
+    console.loeg("pagina: " + actualpage);
 
     if (actualpage == 0) {
 
