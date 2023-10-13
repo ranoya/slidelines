@@ -736,6 +736,8 @@ let goprev = function () {
 
 document.addEventListener("DOMContentLoaded", (e) => {
 
+    console.log("conteúdo carregado");
+
     let posicao = 0;
 
     document.getElementById("indice").innerHTML = posicao + 1;
@@ -745,6 +747,26 @@ document.addEventListener("DOMContentLoaded", (e) => {
     document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
     document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
     document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
+
+    if(typeof $_GET['s'] != "undefined" && $_GET['s'] != null && $_GET['s'] != "") {
+
+        let posicao = 0;
+
+        for (let i = 0; i < todosslides.length; i++) {
+            if (todosslides[i].id == $_GET['s']) {
+
+                let onde = window.innerWidth * i;
+  
+                document.getElementById("frontslide").scrollTo({
+                    left: onde,
+                    behavior: "smooth",
+                });
+
+                break;
+            }
+        }
+
+    }
 
 
 });
