@@ -115,11 +115,11 @@ if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigato
         }
 
         .slidewrap {
-            height: calc(100vh - (3 * var(--track-height, 60px)) - 130px) !important;
+            height: calc(100vh - (3 * var(--track-height, 60px)) - var(--timeline-tempo-height)) !important;
         }
 
         #tempo {
-            height: 112px !important;
+            height: calc(var(--timeline-tempo-height) - 18px) !important;
             bottom: 10px !important;
         }
 
