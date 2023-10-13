@@ -82,7 +82,8 @@ body {
 }
 
 .registroano {
-  transform: rotate(270deg) translate(10px, -100px);
+  transform: rotate(270deg)
+    translate(10px, calc(35px - var(--timeline-tempo-height)));
   transform-origin: bottom right;
 
   display: block;
