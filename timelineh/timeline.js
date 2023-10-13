@@ -103,7 +103,7 @@ if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigato
         }
 
         .slidewrap {
-            height: calc(100vh - (3 * var(--track-height, 60px)));
+            height: calc(100vh - (3 * var(--track-height, 60px)) - 130px);
         }
 
     </style>
