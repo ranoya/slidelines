@@ -767,11 +767,7 @@ let acionagoto = function () {
 
             if (todosslides[i].id == $_GET['s']) {
 
-                console.log("Achou o slide na posição " + i);
-
                 onde = window.innerWidth * i;
-
-                
   
                 break;
                 
@@ -779,14 +775,13 @@ let acionagoto = function () {
             
         }
 
-        console.log("onde é " + onde);
 
-        document.getElementById("frontslide").scrollLeft = window.innerWidth;
+        document.getElementById("frontslide").scrollLeft = 0;  // window.innerWidth;
 
         setTimeout(function () {
             
             console.log(document.getElementById("frontslide"));
-            console.log(onde);
+
             
             document.getElementById("frontslide").scrollTo({
                         left: onde,
@@ -795,7 +790,7 @@ let acionagoto = function () {
 
             vai = setTimeout(parou, 500);
 
-        }, 5000);
+        }, 1000);
         
 
     }
