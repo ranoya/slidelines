@@ -50,11 +50,11 @@ body {
 
 #tempo {
   position: fixed;
-  bottom: 10px;
+  bottom: 0;
   left: 0;
   z-index: 600;
   width: 100vw;
-  height: 112px;
+  height: 122px;
   overflow: hidden;
   overflow-x: scroll;
   background-color: var(--timeline-tempo, grey);
