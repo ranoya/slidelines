@@ -63,8 +63,8 @@ prevnav.setAttribute('onclick', 'goprev()');
 document.lastChild.appendChild(prevnav);
 
 
-let corbgtimelineoriginal = document.documentElement.style.getProperty('--timeline-tempo');
-let corfgtimelineoriginal = document.documentElement.style.getProperty('--valor-tempo');
+let corbgtimelineoriginal = getComputedStyle(document.documentElement).getPropertyValue('--timeline-tempo');
+let corfgtimelineoriginal = getComputedStyle(document.documentElement).getPropertyValue('--valor-tempo');
 
 document.documentElement.style.setProperty('--timeline-tempo', 'transparent');
 document.documentElement.style.setProperty('--valor-tempo', 'transparent');
