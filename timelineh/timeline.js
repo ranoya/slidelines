@@ -758,39 +758,33 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 
 let acionagoto = function () {
+
+    let onde = "";
+
     if (typeof $_GET['s'] != "undefined" && $_GET['s'] != null && $_GET['s'] != "") {
         
-        console.log("o valor de S é " + $_GET['s']);
-
-        console.log("não é possível.... " + todosslides.length);
-
         for (let i = 0; i < todosslides.length; i++) {
 
-            console.log($_GET['s'] + "é igual a " + todosslides[i].id + " ??? " + (todosslides[i].id == $_GET['s']));
-
-            
             if (todosslides[i].id == $_GET['s']) {
 
                 console.log("Achou o slide na posição " + i);
 
-                let onde = window.innerWidth * i;
+                onde = window.innerWidth * i;
+
+                console.log("onde é " + onde);
   
-                setTimeout(function () {
-                    document.getElementById("frontslide").scrollTo({
-                        left: onde,
-                        behavior: "smooth",
-                    });
-                    
-                    
-                }, 1000);
-
                 break;
-           
-
                 
             }
             
         }
+
+        setTimeout(function () {
+                    document.getElementById("frontslide").scrollTo({
+                        left: onde,
+                        behavior: "smooth",
+                    });           
+        }, 1500);
 
     }
 }
