@@ -52,11 +52,13 @@ let timeframe = document.createElement('div');
 timeframe.setAttribute('id', 'tempo');
 document.lastChild.appendChild(timeframe);
 
+/*
 let nextnav = document.createElement('div');
 nextnav.setAttribute('id', 'next');
 nextnav.setAttribute('class', 'setas');
 nextnav.setAttribute('onclick', 'gonext()');
 document.lastChild.appendChild(nextnav);
+*/
 
 let prevnav = document.createElement('div');
 prevnav.setAttribute('id', 'prev');
@@ -71,10 +73,12 @@ let corfgtimelineoriginal = getComputedStyle(document.documentElement).getProper
 document.documentElement.style.setProperty('--timeline-tempo', 'transparent');
 document.documentElement.style.setProperty('--valor-tempo', 'transparent');
 
+/*
 document.getElementById("next").innerHTML = `
 <svg width="100%" viewBox="0 0 131 222" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M33.9247 6.05213L124.794 96.9219C132.555 104.683 132.555 117.265 124.794 125.026L33.9247 215.896C26.1639 223.656 13.5813 223.656 5.82061 215.896C-1.94012 208.135 -1.94012 195.552 5.82061 187.792C5.82891 187.783 5.83723 187.775 5.84552 187.767L82.6384 110.974L5.82061 34.1562C-1.94011 26.3955 -1.94011 13.8129 5.82061 6.05214C13.5813 -1.70858 26.164 -1.70859 33.9247 6.05213Z" fill="var(--pagination-color, #777777)"></path>
     </svg>`;
+*/
 
 document.getElementById("prev").innerHTML = `
 <svg width="100%" viewBox="0 0 131 222" fill="none" xmlns="http://www.w3.org/2000/svg">
