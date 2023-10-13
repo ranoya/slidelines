@@ -214,7 +214,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         }
 
         if (typeof $_GET['milestrone'] != "undefined" && $_GET['milestrone'] != null && $_GET['milestrone'] != "") {
-            milestone = `display: block; position: absolute; z-index: 10000; width: calc(${contat * 5}vw - 30px); transform: translate(15px,0); !important;`;
+            milestone = `display: block; position: absolute; z-index: 10000; width: calc(${contat * 5}vw - 30px); transform: translate(15px,0);`;
         }
 
         anoscode += `<div class="linhadotempo" style='display: inline-block; margin: 0; padding: 0; top: 0; left: 0; width: 5vw; margin-right: ${(contat - 1) * 5}vw; z-index: ${600 + i};'><span class='registroano' style='${milestone}'>${tituloatual}</span></div>`;
@@ -335,6 +335,23 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 const putslides = function (posicao) {
 
     actualpage = posicao;
+
+    if (actualpage == 0) {
+
+        document.getElementById("prev").style.display = "none";
+        document.getElementById("next").style.display = "block";
+
+    } else if (actualpage == todosslides.length) {
+
+        document.getElementById("prev").style.display = "block";
+        document.getElementById("next").style.display = "none";
+
+    } else {
+
+        document.getElementById("prev").style.display = "block";
+        document.getElementById("next").style.display = "block";
+
+    }
 
 
     for (let i = 0; i < todosslides.length; i++) {
