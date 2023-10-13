@@ -755,6 +755,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
         let posicao = 0;
 
         for (let i = 0; i < todosslides.length; i++) {
+
+            console.log($_GET['s'] + "é igual a " + todosslides[i].id + " ??? " + (todosslides[i].id == $_GET['s']));
+
             if (todosslides[i].id == $_GET['s']) {
 
                 console.log("Achou o slide na posição " + i);
