@@ -81,7 +81,7 @@ body {
 }
 
 .registroano {
-  transform: otate(270deg) translate(10px, -100px);
+  transform: rotate(270deg) translate(10px, -100px);
   transform-origin: bottom right;
 
   display: block;

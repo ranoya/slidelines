@@ -383,8 +383,8 @@ document.addEventListener("wheel", (event) => {
 
         if (typeof $_GET['followbg'] != "undefined" && $_GET['followbg'] != null && $_GET['followbg'] != "") {
 
-            document.documentElement.style.setProperty('--timeline-tempo', arrcolorbg[posicao]);
-            document.documentElement.style.setProperty('--valor-tempo', arrcolorfg[posicao]);
+            document.documentElement.style.setProperty('--timeline-tempo', arrcolorfg[posicao]);
+            document.documentElement.style.setProperty('--valor-tempo', arrcolorbg[posicao]);
 
         }
 
@@ -486,8 +486,8 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
     if (typeof $_GET['followbg'] != "undefined" && $_GET['followbg'] != null && $_GET['followbg'] != "") {
 
-            document.documentElement.style.setProperty('--timeline-tempo', arrcolorbg[posicao]);
-            document.documentElement.style.setProperty('--valor-tempo', arrcolorfg[posicao]);
+            document.documentElement.style.setProperty('--timeline-tempo', arrcolorfg[posicao]);
+            document.documentElement.style.setProperty('--valor-tempo', arrcolorbg[posicao]);
 
         }
 
