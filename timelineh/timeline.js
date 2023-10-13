@@ -757,7 +757,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 
 
-let actionagoto = function () {
+let acionagoto = function () {
     if (typeof $_GET['s'] != "undefined" && $_GET['s'] != null && $_GET['s'] != "") {
         
         console.log("o valor de S é " + $_GET['s']);
