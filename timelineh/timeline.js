@@ -781,10 +781,20 @@ let acionagoto = function () {
 
         console.log("onde é " + onde);
 
-        setTimeout(function() { document.getElementById("frontslide").scrollTo({
-                        left: 18000,
+        setTimeout(function () {
+            
+            console.log(document.getElementById("frontslide"));
+            console.log(onde);
+            
+            document.getElementById("frontslide").scrollTo({
+                        left: onde,
                         behavior: "smooth",
-                    }); }, 5000);
+            });
+
+            vai = setTimeout(parou, 500);
+            
+        }, 5000);
+        
 
     }
 }
