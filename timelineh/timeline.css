@@ -151,16 +151,6 @@ body {
   background-position: center center;
 }
 
-#prev {
-  top: calc(100vh - 40px);
-  right: calc(50vw + 20px);
-}
-
-#next {
-  top: calc(100vh - 40px);
-  right: calc(50vw - 31px);
-}
-
 #indice {
   position: fixed;
   z-index: 702;
@@ -171,7 +161,6 @@ body {
   overflow: hidden;
   line-height: 21px;
   font-size: 7px;
-  border-radius: 10px;
   text-align: center;
   color: transparent;
   font-family: var(--timeline-font, Helvetica), Arial, sans-serif;
@@ -180,10 +169,10 @@ body {
 #next {
   position: fixed;
   display: block;
-  width: 15px;
+  width: 10px;
   transition: all 0.2s ease-in;
 
-  top: calc(100vh - 52px);
+  top: calc(100vh - 48px);
   right: 70px;
   cursor: pointer;
   z-index: 700;
@@ -196,11 +185,12 @@ body {
 #prev {
   position: fixed;
   display: block;
-  width: 15px;
+  width: 10px;
   transition: all 0.2s ease-in;
 
-  top: calc(100vh - 52px);
-  right: 95px;
+  top: calc(100vh - 48px);
+
+  right: 105px;
 
   cursor: pointer;
   z-index: 700;
