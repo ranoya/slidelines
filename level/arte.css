@@ -29,4 +29,5 @@
 
 #indice {
   background-color: var(--valor-tempo) !important;
+  color: var(--timeline-tempo, grey) !important;
 }
