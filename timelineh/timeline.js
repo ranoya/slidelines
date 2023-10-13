@@ -256,7 +256,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         arrcolorfg[i] = dados[i].fundo;
         arrcolorbg[i] = dados[i].frente;
                 
-        if (i > actualpage - 3 && i < actualpage + 3) {
+        if (i >= actualpage - 3 && i <= actualpage + 3) {
         if (dados[i].tipo == "imagem" || dados[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
             slidescode += `<div id='allslides${i}' onclick="gonext()" class='slidewrap' style='cursor: pointer; background-color: ${dados[i].fundo};'>
 
@@ -280,17 +280,11 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         } else {
             
             if (dados[i].tipo == "imagem" || dados[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
-            slidescode += `<div id='allslides${i}' onclick="gonext()" class='slidewrap' style='cursor: pointer; background-color: ${dados[i].fundo};'>
-
-            </div>`;
+            slidescode += `<div id='allslides${i}' onclick="gonext()" class='slidewrap' style='cursor: pointer; background-color: ${dados[i].fundo};'></div>`;
         } else if (dados[i].link.toString().match(/\.md/i)) {
-            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'>
-            
-            </div>`;
+            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
         } else {
-            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'>
-        
-            </div>`;
+            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
         }
     }
 
@@ -309,7 +303,7 @@ const putslides = function (posicao) {
 
     for (let i = 0; i < todosslides.length; i++) {
 
-            if (i >= actualpage - 3 && i <= actualpage + 3 && document.getElementById('allslides' + i).innerHTML == "") {
+            if ((i >= actualpage - 3) && i <= (actualpage + 3) && document.getElementById('allslides' + i).innerHTML == "") {
 
                 if (todosslides[i].tipo == "imagem" || todosslides[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
                     
