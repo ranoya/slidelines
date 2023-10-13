@@ -781,6 +781,8 @@ let acionagoto = function () {
 
         console.log("onde é " + onde);
 
+        document.getElementById("frontslide").scrollLeft = window.innerWidth;
+
         setTimeout(function () {
             
             console.log(document.getElementById("frontslide"));
@@ -792,7 +794,7 @@ let acionagoto = function () {
             });
 
             vai = setTimeout(parou, 500);
-            
+
         }, 5000);
         
 
