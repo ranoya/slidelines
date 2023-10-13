@@ -1,0 +1,28 @@
+:root {
+  --track-height: 50px;
+}
+
+.bigyear {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.linhadotempo {
+  height: 120px;
+}
+
+#next svg path {
+  fill: var(--valor-tempo);
+}
+
+#next:hover svg path {
+  fill: #09d0eb;
+}
+
+#prev svg path {
+  fill: var(--valor-tempo);
+}
+
+#prev:hover svg path {
+  fill: #09d0eb;
+}
