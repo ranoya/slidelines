@@ -771,7 +771,7 @@ let acionagoto = function () {
 
                 onde = window.innerWidth * i;
 
-                console.log("onde é " + onde);
+                
   
                 break;
                 
@@ -779,12 +779,12 @@ let acionagoto = function () {
             
         }
 
-        setTimeout(function () {
-                    document.getElementById("frontslide").scrollTo({
-                        left: onde,
+        console.log("onde é " + onde);
+
+        setTimeout(function() { document.getElementById("frontslide").scrollTo({
+                        left: 18000,
                         behavior: "smooth",
-                    });           
-        }, 1500);
+                    }); }, 5000);
 
     }
 }
