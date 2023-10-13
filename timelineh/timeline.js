@@ -131,6 +131,12 @@ if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigato
 
 }
 
+if (typeof $_GET['timeheight'] != "undefined" && $_GET['timeheight'] != null && $_GET['timeheight'] != "") {
+
+    document.documentElement.style.setProperty('--timeline-tempo-height', $_GET['timeheight'] + "px");
+
+}
+
 
 // FUNÇÃO DE FETCH DE ARQUIVO JSON
 
