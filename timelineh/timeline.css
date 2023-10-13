@@ -129,7 +129,10 @@ body {
 }
 
 .slides {
-  height: calc(100vh - (3 * var(--track-height, 60px)) - 130px);
+  height: calc(
+    100vh - (3 * var(--track-height, 60px)) -
+      var(--timeline-tempo-height, 130px)
+  );
   margin: 0;
   padding: 0;
 }
@@ -145,7 +148,10 @@ body {
 
 .slideitself {
   width: 100%;
-  height: calc(100vh - (3 * var(--track-height, 60px)) - 130px);
+  height: calc(
+    100vh - (3 * var(--track-height, 60px)) -
+      var(--timeline-tempo-height, 130px)
+  );
   margin: 0;
   padding: 0;
   background-repeat: no-repeat;
