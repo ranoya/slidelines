@@ -121,7 +121,17 @@ if (typeof $_GET['file'] != "undefined" && $_GET['file'] != null && $_GET['file'
 
 fetch(arquivojson).then(response => response.json()).then((dados) => {
 
-    // document.getElementById("frontslide").style.width = (dados.length * 100) + "vw";
+    
+    
+    document.documentElement.style.setProperty('--timeline-tempo', 'transparent');
+    document.documentElement.style.setProperty('--valor-tempo', 'transparent');
+
+    if (typeof $_GET['followbg'] != "undefined" && $_GET['followbg'] != null && $_GET['followbg'] != "") {
+
+        document.documentElement.style.setProperty('--timeline-tempo', dados[0].fundo);
+        document.documentElement.style.setProperty('--valor-tempo', dados[0].fundo);
+        
+    }
 
     todosslides = dados;
 
