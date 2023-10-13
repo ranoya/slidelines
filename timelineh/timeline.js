@@ -748,7 +748,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
     document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
     document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
 
-    if(typeof $_GET['s'] != "undefined" && $_GET['s'] != null && $_GET['s'] != "") {
+    if (typeof $_GET['s'] != "undefined" && $_GET['s'] != null && $_GET['s'] != "") {
+        
+        console.log("o valor de S é " + $_GET['s']);
 
         let posicao = 0;
 
@@ -756,7 +758,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
             if (todosslides[i].id == $_GET['s']) {
 
                 console.log("Achou o slide na posição " + i);
-                
+
                 let onde = window.innerWidth * i;
   
                 setTimeout(function () {
