@@ -191,6 +191,10 @@ div#next:hover {
   border: 5px solid red;
 }
 
+div#next:hover svg path {
+  fill: red;
+}
+
 #next:hover svg path {
   fill: var(--timeline-text-over, #ff0000) !important;
 }
