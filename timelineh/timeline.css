@@ -183,15 +183,14 @@ body {
   width: 15px;
   transition: all 0.2s ease-in;
 
-  top: 15px;
-  right: 35px;
+  top: calc(100vh - 52px);
+  right: 70px;
   cursor: pointer;
   z-index: 700;
 }
 
 #next:hover svg path {
   fill: var(--timeline-text-over, #ff0000) !important;
-  transition: all 0.2s ease-in;
 }
 
 #prev {
@@ -200,8 +199,8 @@ body {
   width: 15px;
   transition: all 0.2s ease-in;
 
-  top: 15px;
-  right: 60px;
+  top: calc(100vh - 52px);
+  right: 95px;
 
   cursor: pointer;
   z-index: 700;
@@ -209,5 +208,4 @@ body {
 
 #prev:hover svg path {
   fill: var(--timeline-text-over, #ff0000) !important;
-  transition: all 0.2s ease-in;
 }
