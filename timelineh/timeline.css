@@ -188,7 +188,7 @@ body {
 }
 
 div#next:hover {
-  border: 5px solid red;
+  border: 1px solid red;
 }
 
 div#next:hover svg path {
