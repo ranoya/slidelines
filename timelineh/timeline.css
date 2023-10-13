@@ -3,7 +3,7 @@
   --meta-font: Helvetica;
   --timeline-text-color: #999999;
   --timeline-text-highlight: #777777;
-  --timeline-text-over: #777777;
+  --timeline-text-over: #000000;
   --base-background: #ffffff;
   --button-color: #77777700;
   --track-fg: #ffffff;
@@ -185,14 +185,6 @@ body {
 
   cursor: pointer;
   z-index: 700;
-}
-
-div#next:hover {
-  border: 1px solid red;
-}
-
-.setas:hover path {
-  fill: red;
 }
 
 #next:hover svg path {
