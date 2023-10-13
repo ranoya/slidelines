@@ -1,5 +1,7 @@
 :root {
   --track-height: 40px;
+
+  --timeline-text-over: #83e377;
 }
 
 .track {
