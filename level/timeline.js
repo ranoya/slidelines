@@ -374,6 +374,8 @@ document.addEventListener("wheel", (event) => {
         document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
         document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
 
+        document.documentElement.style.setProperty('--timeline-text-over', arrcolorbg[posicao]);
+
         vai = setTimeout(parou, 300);
 
         putslides(posicao);
@@ -453,6 +455,8 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
     document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
     document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
     document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
+
+    document.documentElement.style.setProperty('--timeline-text-over', arrcolorbg[posicao]);
 
     vai = setTimeout(parou, 300);
 
@@ -609,6 +613,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
     document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
     document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
     document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
+
+    document.documentElement.style.setProperty('--timeline-text-over', arrcolorbg[posicao]);
 
 
 });
