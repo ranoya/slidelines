@@ -120,6 +120,10 @@ if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigato
             top: calc(100vh - 40px);
         }
 
+        #indice {
+            top: calc(100vh - 42px);
+        }
+
     </style>
 
     `;
