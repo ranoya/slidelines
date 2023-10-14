@@ -102,12 +102,12 @@ body {
 }
 
 #prev {
-  top: calc(100vh - 40px);
+  top: calc(100vh - 30px);
   right: calc(50vw + 20px);
 }
 
 #next {
-  top: calc(100vh - 40px);
+  top: calc(100vh - 30px);
   right: calc(50vw - 31px);
 }
 
