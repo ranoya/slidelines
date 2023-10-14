@@ -59,6 +59,17 @@ prevnav.setAttribute('id', 'prev');
 prevnav.setAttribute('onclick', 'goprev()');
 document.lastChild.appendChild(prevnav);
 
+document.getElementById("next").innerHTML = `
+<svg width="100%" viewBox="0 0 131 222" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M33.9247 6.05213L124.794 96.9219C132.555 104.683 132.555 117.265 124.794 125.026L33.9247 215.896C26.1639 223.656 13.5813 223.656 5.82061 215.896C-1.94012 208.135 -1.94012 195.552 5.82061 187.792C5.82891 187.783 5.83723 187.775 5.84552 187.767L82.6384 110.974L5.82061 34.1562C-1.94011 26.3955 -1.94011 13.8129 5.82061 6.05214C13.5813 -1.70858 26.164 -1.70859 33.9247 6.05213Z" fill="var(--pagination-color, #777777)"></path>
+    </svg>`;
+
+
+document.getElementById("prev").innerHTML = `
+<svg width="100%" viewBox="0 0 131 222" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M96.9218 215.896L6.05198 125.026C-1.70873 117.265 -1.70874 104.683 6.05198 96.9219L96.9218 6.05208C104.682 -1.70861 117.265 -1.7086 125.026 6.05211C132.787 13.8128 132.787 26.3954 125.026 34.1562C125.018 34.1645 125.009 34.1727 125.001 34.181L48.2081 110.974L125.026 187.792C132.787 195.552 132.787 208.135 125.026 215.896C117.265 223.656 104.682 223.656 96.9218 215.896Z" fill="var(--pagination-color, #777777)"></path>
+    </svg>`;
+
 
 
 if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigator.platform.toString().indexOf("Linux") >= 0) || (typeof $_GET['fixascroll'] != "undefined" && $_GET['fixascroll'] != null && $_GET['fixascroll'] != "")) {
@@ -119,6 +130,8 @@ if (typeof $_GET['file'] != "undefined" && $_GET['file'] != null && $_GET['file'
 }
 
 fetch(arquivojson).then(response => response.json()).then((dados) => {
+
+    document.getElementById("prev").style.display = "none";
 
     // document.getElementById("frontslide").style.width = (dados.length * 100) + "vw";
 
@@ -258,6 +271,23 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 const putslides = function (posicao) {
 
     actualpage = posicao;
+
+    if (actualpage == 0) {
+
+        document.getElementById("prev").style.display = "none";
+        document.getElementById("next").style.display = "block";
+
+    } else if (actualpage >= todosslides.length - 1) {
+
+        document.getElementById("prev").style.display = "block";
+        document.getElementById("next").style.display = "none";
+
+    } else {
+
+        document.getElementById("prev").style.display = "block";
+        document.getElementById("next").style.display = "block";
+
+    }
 
 
     for (let i = 0; i < todosslides.length; i++) {
