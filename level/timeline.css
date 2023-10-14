@@ -101,16 +101,6 @@ body {
   background-position: center center;
 }
 
-#prev {
-  top: calc(100vh - 30px);
-  right: calc(50vw + 20px);
-}
-
-#next {
-  top: calc(100vh - 30px);
-  right: calc(50vw - 31px);
-}
-
 #indice {
   position: fixed;
   z-index: 502;
@@ -132,8 +122,8 @@ body {
   width: 10px;
   transition: all 0.2s ease-in;
 
-  top: calc(100vh - 40px);
-  right: calc(50vw - 36px);
+  top: calc(100vh - 30px);
+  right: calc(50vw - 31px);
 
   cursor: pointer;
   z-index: 700;
@@ -149,8 +139,8 @@ body {
   width: 10px;
   transition: all 0.2s ease-in;
 
-  top: calc(100vh - 40px);
-  right: calc(50vw + 25px);
+  top: calc(100vh - 30px);
+  right: calc(50vw + 20px);
 
   cursor: pointer;
   z-index: 700;
