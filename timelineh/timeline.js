@@ -602,9 +602,12 @@ document.getElementById("tempo").addEventListener("scroll", (event) => {
 
 
     if (mudaviatempo) {
-        document.getElementById("frontslide").scrollLeft = (document.getElementById("tempo").scrollLeft + (window.innerWidth / todosslides.length)) * 20;
+        document.getElementById("frontslide").scrollLeft = document.getElementById("tempo").scrollLeft * (todosslides.length * 100) / ((todosslides.length * 5) - window.innerWidth);
        
     }
+
+    // ("tempo").scrollLeft * (todosslides.length * 100) = ("frontlside").scrollLeft * ((todosslides.length * 5) - window.innerWidth)
+    // document.getElementById("tempo").scrollLeft * (todosslides.length * 100) / ((todosslides.length * 5) - window.innerWidth) = ("frontlside").scrollLeft
 
 });
 
