@@ -1,0 +1,52 @@
+:root {
+  --track-height: 50px;
+}
+
+.bigyear {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+#next svg path {
+  fill: var(--valor-tempo);
+}
+
+#next:hover svg path {
+  fill: #09d0eb !important;
+}
+
+#prev svg path {
+  fill: var(--valor-tempo);
+}
+
+#prev:hover svg path {
+  fill: #09d0eb !important;
+}
+
+#tempo {
+  bottom: -10px;
+  width: calc(100vw - 150px);
+}
+
+#prev {
+  top: calc(100vh - var(--timeline-tempo-height) + 7px);
+  right: 105px;
+}
+
+#next {
+  top: calc(100vh - var(--timeline-tempo-height) + 7px);
+  right: 70px;
+}
+
+#indice {
+  left: calc(100vw - 45px);
+  top: calc(100vh - var(--timeline-tempo-height) + 5px);
+  background-color: var(--valor-tempo) !important;
+  color: #72e7f7 !important;
+}
+
+#backcontrol {
+  display: block;
+  right: 0;
+  width: 150px;
+}
