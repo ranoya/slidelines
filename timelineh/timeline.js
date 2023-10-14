@@ -602,7 +602,7 @@ document.getElementById("tempo").addEventListener("scroll", (event) => {
 
 
     if (mudaviatempo) {
-        document.getElementById("frontslide").scrollLeft = (document.getElementById("tempo").scrollLeft * 20) + (window.innerWidth / todosslides.length);
+        document.getElementById("frontslide").scrollLeft = (document.getElementById("tempo").scrollLeft + (window.innerWidth / todosslides.length)) * 20;
        
     }
 
