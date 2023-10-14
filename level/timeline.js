@@ -277,7 +277,8 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     lobody.innerHTML += `<div id='slides' class='slides' style='width: ${dados.length * 100}vw;'>${slidescode}</div>`;
 
-    acionagoto();
+    setTimeout(
+    acionagoto, 1000);
 
 });
 
