@@ -29,18 +29,18 @@
 }
 
 #prev {
-  top: calc(100vh - var(--timeline-tempo-height) + 7px);
+  top: calc(100vh - var(--timeline-tempo-height) + 27px);
   right: 105px;
 }
 
 #next {
-  top: calc(100vh - var(--timeline-tempo-height) + 7px);
+  top: calc(100vh - var(--timeline-tempo-height) + 27px);
   right: 70px;
 }
 
 #indice {
   left: calc(100vw - 45px);
-  top: calc(100vh - var(--timeline-tempo-height) + 5px);
+  top: calc(100vh - var(--timeline-tempo-height) + 25px);
   background-color: var(--valor-tempo) !important;
   color: #72e7f7 !important;
 }
@@ -49,4 +49,5 @@
   display: block;
   right: 0;
   width: 150px;
+  bottom: -10px;
 }
