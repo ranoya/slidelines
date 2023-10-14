@@ -277,6 +277,8 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     lobody.innerHTML += `<div id='slides' class='slides' style='width: ${dados.length * 100}vw;'>${slidescode}</div>`;
 
+    acionagoto();
+
 });
 
 
@@ -618,3 +620,30 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 
 });
+
+let acionagoto = function () {
+
+    let onde = "";
+    if (typeof $_GET['s'] != "undefined" && $_GET['s'] != null && $_GET['s'] != "") {
+        
+        for (let i = 0; i < todosslides.length; i++) {
+
+            if (todosslides[i].id == $_GET['s']) {
+                onde = window.innerWidth * i;
+                break;
+                
+            }
+            
+        }
+        document.getElementById("frontslide").scrollLeft = window.innerWidth;
+
+        setTimeout(function () {    
+            document.getElementById("frontslide").scrollTo({
+                        left: onde,
+                        behavior: "smooth",
+            });
+            vai = setTimeout(parou, 500);
+        }, 1000);
+    
+    }
+}
