@@ -168,12 +168,18 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     
     // document.documentElement.style.setProperty('--timeline-tempo', 'transparent');
     document.documentElement.style.setProperty('--valor-tempo', 'transparent');
+    
 
     if (typeof $_GET['followbg'] != "undefined" && $_GET['followbg'] != null && $_GET['followbg'] != "") {
 
         //document.documentElement.style.setProperty('--timeline-tempo', dados[0].fundo);
         document.documentElement.style.setProperty('--timeline-tempo', 'transparent');
-        document.documentElement.style.setProperty('--valor-tempo', dados[0].fundo);
+
+        if (typeof $_GET['startvisible'] != 'undefined' && $_GET['startvisible'] != null && $_GET['startvisible'] != '') {
+            document.documentElement.style.setProperty('--valor-tempo', dados[0].frente);
+        } else {
+            document.documentElement.style.setProperty('--valor-tempo', dados[0].fundo);
+        }
         
     }
 
