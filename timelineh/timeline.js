@@ -246,7 +246,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     }
 
-    document.getElementById("tempo").innerHTML = `<div id="fulltempo" style="width: ${(i+20)*5}vw;">${anoscode}</div>`;
+    document.getElementById("tempo").innerHTML = `<div id="fulltempo" style="width: ${(i)*5}vw;">${anoscode}</div>`;
 
 
     
@@ -602,7 +602,7 @@ document.getElementById("tempo").addEventListener("scroll", (event) => {
 
 
     if (mudaviatempo) {
-        document.getElementById("frontslide").scrollLeft = (document.getElementById("tempo").scrollLeft * 20);
+        document.getElementById("frontslide").scrollLeft = (document.getElementById("tempo").scrollLeft * 20) + ((19/todosslides.length) * 100 * (document.getElementById("tempo").scrollLeft / (5 * todosslides.length)) );
        
     }
 
