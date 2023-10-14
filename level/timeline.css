@@ -117,51 +117,45 @@ body {
   width: 20px;
   height: 20px;
   left: calc(50vw - 10px);
-  top: calc(100vh - 45px);
+  top: calc(100vh - 42px);
   overflow: hidden;
   line-height: 21px;
   font-size: 9px;
-  border-radius: 10px;
   text-align: center;
   color: transparent;
+  font-family: var(--timeline-font, Helvetica), Arial, sans-serif;
 }
 
 #next {
   position: fixed;
-  height: 11px;
-  width: 11px;
+  display: block;
+  width: 10px;
   transition: all 0.2s ease-in;
-  background-color: var(--button-color, #777777);
-  border-radius: 16px;
+
   top: calc(100vh - 40px);
-  right: calc(50vw - 31px);
-  outline-color: var(--button-color, #777777);
-  outline-style: solid;
-  outline-width: 0;
+  right: calc(50vw - 36px);
+
   cursor: pointer;
+  z-index: 700;
 }
 
-#next:hover {
-  transition: all 0.2s ease-in;
-  outline-width: 3px;
+#next:hover svg path {
+  fill: var(--timeline-text-over, #ff0000) !important;
 }
 
 #prev {
   position: fixed;
-  height: 11px;
-  width: 11px;
+  display: block;
+  width: 10px;
   transition: all 0.2s ease-in;
-  background-color: var(--button-color, #777777);
-  border-radius: 16px;
+
   top: calc(100vh - 40px);
-  right: calc(50vw + 20px);
-  outline-color: var(--button-color, #777777);
-  outline-style: solid;
-  outline-width: 0;
+  right: calc(50vw + 25px);
+
   cursor: pointer;
+  z-index: 700;
 }
 
-#prev:hover {
-  transition: all 0.2s ease-in;
-  outline-width: 3px;
+#prev:hover svg path {
+  fill: var(--timeline-text-over, #ff0000) !important;
 }
