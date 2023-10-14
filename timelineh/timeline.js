@@ -566,7 +566,7 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
     if (!mudaviatempo) {
 
-        document.getElementById("tempo").scrollLeft = document.getElementById("frontslide").scrollLeft / 20;
+        document.getElementById("tempo").scrollLeft = (document.getElementById("frontslide").scrollLeft / 20) - (window.innerWidth / todosslides.length);
         
     }
 
@@ -602,7 +602,7 @@ document.getElementById("tempo").addEventListener("scroll", (event) => {
 
 
     if (mudaviatempo) {
-        document.getElementById("frontslide").scrollLeft = document.getElementById("tempo").scrollLeft * 20;
+        document.getElementById("frontslide").scrollLeft = (document.getElementById("tempo").scrollLeft * 20) + (window.innerWidth / todosslides.length);
        
     }
 
