@@ -737,7 +737,11 @@ onkeydown = onkeyup = function(e){
 
 let gonext = function () {
 
-    let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
+    let posicao = 0;
+
+    posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
+
+    clearTimeout(vai);
 
     //ajeita();
 
@@ -754,7 +758,11 @@ let gonext = function () {
 
 let goprev = function () {
 
-    let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
+    let posicao = 0;
+
+    posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
+
+    clearTimeout(vai);
     
     //ajeita();
 
