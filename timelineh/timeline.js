@@ -743,7 +743,7 @@ let gonext = function () {
 
     clearTimeout(vai);
 
-    //ajeita();
+    ajeita();
 
       let onde = window.innerWidth * (posicao + 1);
   
@@ -752,7 +752,7 @@ let gonext = function () {
         behavior: "smooth",
       });
 
-    //vai = setTimeout(parou, 300);
+    vai = setTimeout(parou, 300);
     
 }
 
@@ -764,7 +764,7 @@ let goprev = function () {
 
     clearTimeout(vai);
     
-    //ajeita();
+    ajeita();
 
       let onde = window.innerWidth * (posicao - 1);
     
@@ -773,7 +773,7 @@ let goprev = function () {
         behavior: "smooth",
       });
 
-      //vai = setTimeout(parou, 300);
+      vai = setTimeout(parou, 300);
 }
 
 
