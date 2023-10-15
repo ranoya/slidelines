@@ -155,7 +155,11 @@ if (typeof $_GET['timeheight'] != "undefined" && $_GET['timeheight'] != null && 
 
 }
 
-document.getElementById("tempo").style.display = "none";
+if (typeof $_GET['followbg'] != 'undefined' && $_GET['followbg'] != null && $_GET['followbg'] != '') {
+    document.getElementById("tempo").style.display = "none";
+} else {
+    document.getElementById("tempo").style.display = "block";
+}
 
 
 // FUNÇÃO DE FETCH DE ARQUIVO JSON
