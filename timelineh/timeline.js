@@ -222,12 +222,21 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     let anoscode = ``;
 
+    let patternbg = ``;
+    if (typeof $_GET['pattern'] != 'undefined' && $_GET['pattern'] != null && $_GET['pattern'] != '') {
+       
+        patternbg = `background-size: 4px 4px;
+    background-image: repeating-linear-gradient(45deg, var(--valor-tempo) 0, var(--valor-tempo) 0.4px, #DD000000 0, #00000000 50%);`;
+        
+    }
+    
+
     if (typeof $_GET['startmiddle'] != 'undefined' && $_GET['startmiddle'] != null && $_GET['startmiddle'] != '') {
 
-        anoscode += `<div class="linhadotempo nohover" style='display: inline-block; margin: 0; padding: 0; top: 0; left: 0; width: 50vw; margin-right: 0; z-index: 599;'></div>`;
+        anoscode += `<div class="linhadotempo nohover" style='display: inline-block; margin: 0; padding: 0; top: 0; left: 0; width: 50vw; margin-right: 0; z-index: 599; ${patternbg}'></div>`;
        
     } else {
-        anoscode += `<div class="linhadotempo nohover" style='display: inline-block; margin: 0; padding: 0; top: 0; left: 0; width: var(--meta-margins, 30px); margin-right: 0; z-index: 599;'></div>`;
+        anoscode += `<div class="linhadotempo nohover" style='display: inline-block; margin: 0; padding: 0; top: 0; left: 0; width: var(--meta-margins, 30px); margin-right: 0; z-index: 599; ${patternbg}'></div>`;
     }
     
     contat = 0;
