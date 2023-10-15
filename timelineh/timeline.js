@@ -275,12 +275,12 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     if (typeof $_GET['startmiddle'] != 'undefined' && $_GET['startmiddle'] != null && $_GET['startmiddle'] != '') {
 
         anoscode += `
-    <div class='linhadotempo nohover' style='display: inline-block; margin: 0; padding: 0; top: 0; width: calc(45vw - var(--meta-margins)); ${patternbg}'></div>
+    <div class='linhadotempo nohover' style='display: inline-block; margin: 0; padding: 0; top: 0; width: calc(45vw - var(--meta-margins) - var(--back-control-width)); ${patternbg}'></div>
     `;
        
     } else {
         anoscode += `
-    <div class='linhadotempo nohover' style='display: inline-block; margin: 0; padding: 0; top: 0; width: calc(94vw - var(--meta-margins)); ${patternbg}'></div>
+    <div class='linhadotempo nohover' style='display: inline-block; margin: 0; padding: 0; top: 0; width: calc(94vw - var(--meta-margins) - var(--back-control-width)); ${patternbg}'></div>
     `;
     }
     

@@ -1,5 +1,6 @@
 :root {
   --track-height: 50px;
+  --back-control-width: 150px;
 }
 
 .bigyear {
@@ -48,6 +49,5 @@
 #backcontrol {
   display: block;
   right: 0;
-  width: 150px;
   bottom: -10px;
 }

@@ -26,6 +26,8 @@
   --timeline-tempo-height: 130px;
 
   --add-transparencia: #999999;
+
+  --back-control-width: 0;
 }
 
 html {
@@ -235,6 +237,7 @@ body {
 #backcontrol {
   position: fixed;
   z-index: 699;
+  width: var(--back-control-width, 0);
   display: none;
   bottom: 0;
   height: calc(var(--timeline-tempo-height) - 8px);

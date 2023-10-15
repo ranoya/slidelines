@@ -2,6 +2,8 @@
   --track-height: 40px;
 
   --timeline-text-over: #83e377;
+
+  --back-control-width: 150px;
 }
 
 .track {
@@ -41,7 +43,6 @@
 #backcontrol {
   display: block;
   right: 0;
-  width: 150px;
 }
 
 #tempo {
