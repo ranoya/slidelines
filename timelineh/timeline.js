@@ -733,7 +733,7 @@ let gonext = function () {
 
     let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
 
-    ajeita();
+    //ajeita();
 
       let onde = window.innerWidth * (posicao + 1);
   
@@ -742,7 +742,7 @@ let gonext = function () {
         behavior: "smooth",
       });
 
-       vai = setTimeout(parou, 300);
+    //vai = setTimeout(parou, 300);
     
 }
 
@@ -750,7 +750,7 @@ let goprev = function () {
 
     let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
     
-    ajeita();
+    //ajeita();
 
       let onde = window.innerWidth * (posicao - 1);
     
@@ -759,7 +759,7 @@ let goprev = function () {
         behavior: "smooth",
       });
 
-      vai = setTimeout(parou, 300);
+      //vai = setTimeout(parou, 300);
 }
 
 
