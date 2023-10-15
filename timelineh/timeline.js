@@ -226,7 +226,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     if (typeof $_GET['pattern'] != 'undefined' && $_GET['pattern'] != null && $_GET['pattern'] != '') {
        
         patternbg = `background-size: 4px 4px;
-    background-image: repeating-linear-gradient(45deg, var(--valor-tempo) 0, var(--valor-tempo) 0.4px, #DD000000 0, #00000000 50%);`;
+    background-image: repeating-linear-gradient(45deg, var(--valor-tempo) 0, var(--valor-tempo) 0.4px, #DD000000 0, #00000000 50%); opacity: 0.5;`;
         
     }
     
