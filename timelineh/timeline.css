@@ -81,6 +81,7 @@ body {
   color: var(--valor-tempo, white);
   vertical-align: top;
   border-left: 1px solid var(--valor-tempo, white);
+  transition: all 0.6s ease-in-out;
 }
 
 .registroano {

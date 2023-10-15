@@ -155,6 +155,8 @@ if (typeof $_GET['timeheight'] != "undefined" && $_GET['timeheight'] != null && 
 
 }
 
+document.getElementById("tempo").style.display = "none";
+
 
 // FUNÇÃO DE FETCH DE ARQUIVO JSON
 
@@ -180,6 +182,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         if (typeof $_GET['startvisible'] != 'undefined' && $_GET['startvisible'] != null && $_GET['startvisible'] != '') {
             document.documentElement.style.setProperty('--valor-tempo', dados[0].frente);
             document.documentElement.style.setProperty('--add-transparencia', '#00000001');
+            document.getElementById("tempo").style.display = "block";
         } else {
             document.documentElement.style.setProperty('--valor-tempo', dados[0].fundo);
             document.documentElement.style.setProperty('--add-transparencia', dados[0].fundo);
@@ -218,6 +221,13 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
 
     let anoscode = ``;
+
+    if (typeof $_GET['startmiddle'] != 'undefined' && $_GET['startmiddle'] != null && $_GET['startmiddle'] != '') {
+
+        anoscode += `<div class="linhadotempo" style='display: inline-block; margin: 0; padding: 0; top: 0; left: 0; width: 50vw; margin-right: 0; z-index: 599;'></div>`;
+       
+    }
+    
     contat = 0;
     i = 0;
 
@@ -568,6 +578,8 @@ let ajeita = function (fecha) {
 }
 
 document.getElementById("frontslide").addEventListener("scroll", (event) => {
+
+    document.getElementById("tempo").style.display = "block";
 
     if (!rodandoajeita) {
         ajeita();
