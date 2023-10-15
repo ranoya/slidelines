@@ -571,7 +571,7 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
     if (!mudaviatempo) {
 
-        document.getElementById("tempo").scrollLeft = (document.getElementById("frontslide").scrollLeft / 20);
+        document.getElementById("tempo").scrollLeft = (document.getElementById("frontslide").scrollLeft / 20.5);
         
     }
 
