@@ -458,7 +458,7 @@ document.addEventListener("wheel", (event) => {
 
             document.getElementById("frontslide").scrollLeft += event.deltaY;
 
-            document.getElementById("tempo").scrollLeft += event.deltaY / 22;
+            document.getElementById("tempo").scrollLeft += event.deltaY / 20;
 
         }
         
@@ -571,7 +571,7 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
     if (!mudaviatempo) {
 
-        document.getElementById("tempo").scrollLeft = (document.getElementById("frontslide").scrollLeft / 22);
+        document.getElementById("tempo").scrollLeft = (document.getElementById("frontslide").scrollLeft / 20);
         
     }
 
@@ -608,8 +608,7 @@ document.getElementById("tempo").addEventListener("scroll", (event) => {
 
     if (mudaviatempo) {
 
-        let compensa = (2000 / todosslides.length)
-        document.getElementById("frontslide").scrollLeft = (document.getElementById("tempo").scrollLeft + compensa)  * 22 ;
+        document.getElementById("frontslide").scrollLeft = (document.getElementById("tempo").scrollLeft + (document.getElementById("tempo").scrollLeft / 20))  * 20;
        
     }
 
