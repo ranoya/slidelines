@@ -280,7 +280,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
        
     } else {
         anoscode += `
-    <div class='linhadotempo nohover' style='display: inline-block; margin: 0; padding: 0; top: 0; width: calc(95vw - var(--meta-margins)); ${patternbg}'></div>
+    <div class='linhadotempo nohover' style='display: inline-block; margin: 0; padding: 0; top: 0; width: calc(94vw - var(--meta-margins)); ${patternbg}'></div>
     `;
     }
     
