@@ -98,7 +98,7 @@ body {
 }
 
 .linhadotempo:hover {
-  background-color: color-mix(in srgb, var(--valor-tempo), #00000033);
+  background-color: color-mix(in srgb, var(--valor-tempo), #00000001);
 }
 
 .fulltrack {
