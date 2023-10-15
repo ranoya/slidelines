@@ -286,7 +286,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     
     
 
-    document.getElementById("tempo").innerHTML = `<div id="fulltempo" style="width: ${(i + 19)*5}vw;">${anoscode}</div>`;
+    document.getElementById("tempo").innerHTML = `<div id="fulltempo" style="width: calc(${(i + 19)*5}vw - var(--back-control-width));">${anoscode}</div>`;
 
 
     
