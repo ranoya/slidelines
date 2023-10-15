@@ -608,7 +608,9 @@ document.getElementById("tempo").addEventListener("scroll", (event) => {
 
     if (mudaviatempo) {
 
-        document.getElementById("frontslide").scrollLeft = (document.getElementById("tempo").scrollLeft + (document.getElementById("tempo").scrollLeft / 10))  * 20;
+        let compensa = (todosslides.length + 20) / todosslides.length;
+
+        document.getElementById("frontslide").scrollLeft = (document.getElementById("tempo").scrollLeft)  * (20 * compensa);
        
     }
 
