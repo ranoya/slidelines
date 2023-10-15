@@ -816,4 +816,9 @@ let nowgo = function (sl) {
         behavior: "smooth",
       });
     
+      document.getElementById("tempo").scrollTo({
+            left: onde/20,
+            behavior: "smooth",
+        });
+    
 }
