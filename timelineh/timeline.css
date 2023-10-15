@@ -102,6 +102,10 @@ body {
   text-decoration: underline;
 }
 
+.linhadotempo .registroano:hover {
+  background-color: #00000033;
+}
+
 .fulltrack {
   height: var(--track-height, 60px);
   background-color: transparent;
