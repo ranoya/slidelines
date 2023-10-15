@@ -23,7 +23,7 @@ let arrcolorbg = [];
 let rodandoajeita = false;
 let lobody = document.getElementById("frontslide");
 
-let vai = "";
+let vai = setTimeout(function () { }, 0);
 
 if ($_GET['s'] != "" && typeof $_GET['s'] != "undefined" && $_GET['s'] != null) {
     actualpage = parseInt($_GET['s']);
