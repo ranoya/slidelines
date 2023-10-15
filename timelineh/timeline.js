@@ -226,6 +226,8 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
         anoscode += `<div class="linhadotempo" style='display: inline-block; margin: 0; padding: 0; top: 0; left: 0; width: 50vw; margin-right: 0; z-index: 599;'></div>`;
        
+    } else {
+        anoscode += `<div class="linhadotempo" style='display: inline-block; margin: 0; padding: 0; top: 0; left: 0; width: var(--meta-margins, 30px); margin-right: 0; z-index: 599;'></div>`;
     }
     
     contat = 0;
@@ -260,7 +262,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     }
 
-    document.getElementById("tempo").innerHTML = `<div id="fulltempo" style="width: ${(i + 20)*5}vw;">${anoscode}</div>`;
+    document.getElementById("tempo").innerHTML = `<div id="fulltempo" style="width: ${(i + 19)*5}vw;">${anoscode}</div>`;
 
 
     
