@@ -458,7 +458,9 @@ document.addEventListener("wheel", (event) => {
 
             document.getElementById("frontslide").scrollLeft += event.deltaY;
 
-            document.getElementById("tempo").scrollLeft += event.deltaY / 20;
+            let compensa = (todosslides.length + 22) / todosslides.length;
+
+            document.getElementById("tempo").scrollLeft += event.deltaY / (20 * compensa);
 
         }
         
@@ -571,7 +573,9 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
     if (!mudaviatempo) {
 
-        document.getElementById("tempo").scrollLeft = (document.getElementById("frontslide").scrollLeft / 20);
+        let compensa = (todosslides.length + 22) / todosslides.length;
+
+        document.getElementById("tempo").scrollLeft = (document.getElementById("frontslide").scrollLeft / (20 * compensa));
         
     }
 
