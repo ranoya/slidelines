@@ -94,11 +94,11 @@ body {
   line-height: 18px;
   width: calc(var(--timeline-tempo-height) - 10px);
   text-align: right;
-  cursor: pointer;
 }
 
 .linhadotempo:hover {
   background-color: color-mix(in srgb, var(--valor-tempo), #00000001);
+  cursor: pointer;
 }
 
 .fulltrack {
