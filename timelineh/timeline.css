@@ -24,6 +24,8 @@
   --timeline-tempo: #ffffff;
   --valor-tempo: #999999;
   --timeline-tempo-height: 130px;
+
+  --add-transparencia: #999999;
 }
 
 html {
@@ -97,7 +99,11 @@ body {
 }
 
 .linhadotempo:hover {
-  background-color: color-mix(in srgb, var(--valor-tempo), #00000001);
+  background-color: color-mix(
+    in srgb,
+    var(--valor-tempo),
+    var(--add-transparencia)
+  );
   cursor: pointer;
 }
 
