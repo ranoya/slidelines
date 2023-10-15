@@ -95,15 +95,11 @@ body {
   width: calc(var(--timeline-tempo-height) - 10px);
   text-align: right;
   cursor: pointer;
-  text-decoration: none;
-}
-
-.registroano:hover {
-  text-decoration: underline;
 }
 
 .linhadotempo:hover {
-  background-color: #00000033;
+  background-color: var(--valor-tempo);
+  color: var(--timeline-tempo);
 }
 
 .fulltrack {
