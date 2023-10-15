@@ -246,7 +246,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     }
 
-    document.getElementById("tempo").innerHTML = `<div id="fulltempo" style="width: ${(i)*5}vw;">${anoscode}</div>`;
+    document.getElementById("tempo").innerHTML = `<div id="fulltempo" style="width: ${(i + 20)*5}vw;">${anoscode}</div>`;
 
 
     
@@ -458,9 +458,10 @@ document.addEventListener("wheel", (event) => {
 
             document.getElementById("frontslide").scrollLeft += event.deltaY;
 
-            let compensa = (todosslides.length + 22) / todosslides.length;
+            // let compensa = (todosslides.length + 22) / todosslides.length;
+            // (20 * compensa)
 
-            document.getElementById("tempo").scrollLeft += event.deltaY / (20 * compensa);
+            document.getElementById("tempo").scrollLeft += event.deltaY / (20);
 
         }
         
@@ -573,9 +574,10 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
     if (!mudaviatempo) {
 
-        let compensa = (todosslides.length + 22) / todosslides.length;
+        // let compensa = (todosslides.length + 22) / todosslides.length;
+        // (20 * compensa)
 
-        document.getElementById("tempo").scrollLeft = (document.getElementById("frontslide").scrollLeft / (20 * compensa));
+        document.getElementById("tempo").scrollLeft = (document.getElementById("frontslide").scrollLeft / (20));
         
     }
 
@@ -612,9 +614,10 @@ document.getElementById("tempo").addEventListener("scroll", (event) => {
 
     if (mudaviatempo) {
 
-        let compensa = (todosslides.length + 22) / todosslides.length;
+        //let compensa = (todosslides.length + 22) / todosslides.length;
+        // (20 * compensa)
 
-        document.getElementById("frontslide").scrollLeft = (document.getElementById("tempo").scrollLeft)  * (20 * compensa);
+        document.getElementById("frontslide").scrollLeft = (document.getElementById("tempo").scrollLeft)  * (20);
        
     }
 
