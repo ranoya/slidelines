@@ -102,7 +102,7 @@ body {
   transform-origin: bottom right;
 
   display: block;
-  background-color: var(--timeline-tempo, grey);
+  /* background-color: var(--timeline-tempo, grey); */
   color: var(--valor-tempo, white);
   font-family: var(--timeline-font, Helvetica), Arial, sans-serif;
   font-size: 14px;
