@@ -85,13 +85,13 @@ body {
 }
 
 .nohover {
-  background-color: var(--timeline-tempo, grey);
-  border-left: 1px solid transparent;
-  cursor: default;
+  background-color: var(--timeline-tempo, grey) !important;
+  border-left: 1px solid transparent !important;
+  cursor: default !important;
 }
 
 .nohover:hover {
-  background-color: var(--timeline-tempo, grey);
+  background-color: var(--timeline-tempo, grey) !important;
   border-left: 1px solid transparent;
   cursor: default;
 }
