@@ -240,7 +240,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
             milestone = `display: block; position: absolute; z-index: 10000; width: calc(${contat * 5}vw - 30px); transform: translate(15px,0);`;
         }
 
-        anoscode += `<div class="linhadotempo" style='display: inline-block; margin: 0; padding: 0; top: 0; left: 0; width: 5vw; margin-right: ${(contat - 1) * 5}vw; z-index: ${600 + i};'><span class='registroano' style='${milestone}'>${tituloatual}</span></div>`;
+        anoscode += `<div class="linhadotempo" style='display: inline-block; margin: 0; padding: 0; top: 0; left: 0; width: 5vw; margin-right: ${(contat - 1) * 5}vw; z-index: ${600 + i};'><div class='registroano' style='${milestone}'>${tituloatual}</div onclick='nowgo(${i});'></div>`;
 
         i = i + contat;
 
@@ -804,4 +804,16 @@ let acionagoto = function () {
         }, 1000);
     
     }
+}
+
+let nowgo = function (sl) {
+
+
+      let onde = window.innerWidth * (sl);
+    
+      document.getElementById("frontslide").scrollTo({
+        left: onde,
+        behavior: "smooth",
+      });
+    
 }
