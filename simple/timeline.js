@@ -163,10 +163,10 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     document.documentElement.style.setProperty('--cor-fundo', todosslides[0].fundo);
     
 
-    lobody.innerHTML += `<div id='tracktitulos' class='fulltrack'><div class="track" style='color: var(--cor-frente); background-color: var(--cor-fundo);'>${todosslides[0].titulo}</div></div>`;
+    lobody.innerHTML += `<div id='tracktitulos' class='fulltrack'><div class="track">${todosslides[0].titulo}</div></div>`;
 
 
-    lobody.innerHTML += `<div id='tracktopicos' class='fulltrack'><div class="track" style='color: var(--cor-frente); background-color: var(--cor-fundo);'>${todosslides[0].topicos}</div></div>`;
+    lobody.innerHTML += `<div id='tracktopicos' class='fulltrack'><div class="track">${todosslides[0].topicos}</div></div>`;
 
     let slidescode = ``;
 

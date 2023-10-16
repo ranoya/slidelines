@@ -28,6 +28,9 @@
   --add-transparencia: #999999;
 
   --back-control-width: 0px;
+
+  --cor-frente: white;
+  --cor-fundo: black;
 }
 
 html {
@@ -79,6 +82,8 @@ body {
   font-family: sans-serif;
   font-family: Arial;
   font-family: var(--meta-font);
+  color: var(--cor-frente);
+  background-color: var(--cor-fundo);
 }
 
 .track {
