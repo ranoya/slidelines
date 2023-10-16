@@ -123,14 +123,6 @@ if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigato
         background: var(--timeline-text-over, #ff0000);
         }
 
-        #frontslide {
-            height: calc(100vh - 10px) !important;
-        }
-
-        .slidewrap {
-            height: calc(100% - 10px) !important;
-        }
-
     </style>
 
     `;
