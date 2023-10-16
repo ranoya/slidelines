@@ -204,11 +204,11 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         } else {
             
             if (dados[i].tipo == "imagem" || dados[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
-            slidescode += `<div id='allslides${i}' onclick="gonext()" class='slidewrap' style='cursor: pointer; background-color: ${dados[i].fundo};'></div>`;
+            slidescode += `<div id='allslides${i}' onclick="gonext()" class='slidewrap' style='cursor: pointer; background-color: ${fundotrack};'></div>`;
         } else if (dados[i].link.toString().match(/\.md/i)) {
-            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
+            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'></div>`;
         } else {
-            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
+            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'></div>`;
         }
     }
 
