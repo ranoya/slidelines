@@ -179,10 +179,10 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     todosslides = dados;
 
     
-    lobody.innerHTML += `<div id='tracktitulos' class='fulltrack'><div class="track">${dados[0].titulo}</div></div>`;
+    lobody.innerHTML += `<div id='tracktitulos' class='fulltrack'><div class="track">${todosslides[0].titulo}</div></div>`;
 
 
-    lobody.innerHTML += `<div id='tracktopicos' class='fulltrack'><div class="track">${dados[0].topicos}</div></div>`;
+    lobody.innerHTML += `<div id='tracktopicos' class='fulltrack'><div class="track">${todosslides[0].topicos}</div></div>`;
 
     let slidescode = ``;
 
@@ -257,10 +257,10 @@ const putslides = function (posicao) {
 
     }
 
-    lobody.innerHTML += `<div id='tracktitulos' class='fulltrack'><div id="titulo">class="track">${dados[posicao].titulo}</div>`;
+    lobody.innerHTML += `<div id='tracktitulos' class='fulltrack'><div id="titulo">class="track">${todosslides[posicao].titulo}</div>`;
 
 
-    lobody.innerHTML += `<div id='tracktopicos' class='fulltrack'><div class="track">${dados[posicao].topicos}</div></div>`;
+    lobody.innerHTML += `<div id='tracktopicos' class='fulltrack'><div class="track">${todosslides[posicao].topicos}</div></div>`;
 
 
 
