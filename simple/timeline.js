@@ -127,12 +127,8 @@ if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigato
             height: calc(100vh - 10px) !important;
         }
 
-        .slides {
-            height: calc(100vh - 10px) !important;
-        }
-
         .slidewrap {
-            height: calc(100vh - 10px) !important;
+            height: calc(100% - 10px) !important;
         }
 
     </style>

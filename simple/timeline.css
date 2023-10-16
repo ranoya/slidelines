@@ -130,7 +130,9 @@ body {
 
 .slideitself {
   width: 100%;
-  height: calc(100vh - calc(2 * (var(--track-height, 60px))));
+  height: calc(
+    100vh - calc(2 * (var(--track-height, 60px))) - var(--inclui-scroll, 0px)
+  );
   margin: 0;
   margin-top: var(--track-height, 60px);
   padding: 0;
