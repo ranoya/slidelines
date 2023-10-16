@@ -87,9 +87,11 @@ body {
   font-family: sans-serif;
   font-family: Arial;
   font-family: var(--meta-font);
+  margin-left: var(--meta-margins, 30px);
+  margin-right: var(--meta-margins, 30px);
 }
 
-.track span a {
+.track a {
   color: var(--track-fg, #ffffff);
   background-color: transparent;
   transition: all 0.3s ease-in;
@@ -99,7 +101,7 @@ body {
   text-decoration: none;
 }
 
-.track span a:hover {
+.track a:hover {
   background-color: var(--track-fg, #ffffff);
   color: var(--track-bg, #000000);
   transition: all 0.3s ease-in;
@@ -113,9 +115,8 @@ body {
 
 .slidewrap {
   width: 100vw;
-  height: calc(100vh - calc(2 * (var(--track-height, 60px))));
+  height: 100vh;
   margin: 0;
-  margin-top: var(--track-height, 60px);
   padding: 0;
   display: inline-block;
   vertical-align: top;
@@ -125,6 +126,7 @@ body {
   width: 100%;
   height: calc(100vh - calc(2 * (var(--track-height, 60px))));
   margin: 0;
+  margin-top: var(--track-height, 60px);
   padding: 0;
   background-repeat: no-repeat;
   background-size: contain;
