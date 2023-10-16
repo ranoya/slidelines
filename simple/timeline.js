@@ -159,9 +159,18 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     document.getElementById("prev").style.display = "none";
     
-    document.documentElement.style.setProperty('--cor-frente', todosslides[0].frente);
-    document.documentElement.style.setProperty('--cor-fundo', todosslides[0].fundo);
+
+    if (typeof $_GET['followbg'] != 'undefined' && $_GET['followbg'] != null && $_GET['followbg'] != '') {
+       
+        document.documentElement.style.setProperty('--cor-frente', todosslides[0].frente);
+        document.documentElement.style.setProperty('--cor-fundo', todosslides[0].fundo);
+        
+    } else {
+        document.documentElement.style.setProperty('--cor-frente', 'var(--timeline-text-color, #999999)');
+        document.documentElement.style.setProperty('--cor-fundo', 'transparent');
+    }
     
+        
 
     lobody.innerHTML += `<div id='tracktitulos' class='fulltrack'><div class="track">${todosslides[0].titulo}</div></div>`;
 
@@ -304,8 +313,15 @@ document.addEventListener("wheel", (event) => {
 
         let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
 
-        document.documentElement.style.setProperty('--cor-frente', todosslides[posicao].frente);
-        document.documentElement.style.setProperty('--cor-fundo', todosslides[posicao].fundo);
+        if (typeof $_GET['followbg'] != 'undefined' && $_GET['followbg'] != null && $_GET['followbg'] != '') {
+        
+            document.documentElement.style.setProperty('--cor-frente', todosslides[posicao].frente);
+            document.documentElement.style.setProperty('--cor-fundo', todosslides[posicao].fundo);
+            
+        } else {
+            document.documentElement.style.setProperty('--cor-frente', 'var(--timeline-text-color, #999999)');
+            document.documentElement.style.setProperty('--cor-fundo', 'transparent');
+        }
 
         if (!rodandoajeita) {
             ajeita();
@@ -408,8 +424,15 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
     let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
 
-    document.documentElement.style.setProperty('--cor-frente', todosslides[posicao].frente);
-    document.documentElement.style.setProperty('--cor-fundo', todosslides[posicao].fundo);
+    if (typeof $_GET['followbg'] != 'undefined' && $_GET['followbg'] != null && $_GET['followbg'] != '') {
+    
+        document.documentElement.style.setProperty('--cor-frente', todosslides[posicao].frente);
+        document.documentElement.style.setProperty('--cor-fundo', todosslides[posicao].fundo);
+        
+    } else {
+        document.documentElement.style.setProperty('--cor-frente', 'var(--timeline-text-color, #999999)');
+        document.documentElement.style.setProperty('--cor-fundo', 'transparent');
+    }
 
 
     document.getElementById("indice").innerHTML = posicao + 1;
@@ -421,21 +444,6 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
     document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
     document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
     document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
-
-    
-
-    if (typeof $_GET['followbg'] != "undefined" && $_GET['followbg'] != null && $_GET['followbg'] != "") {
-
-        //document.documentElement.style.setProperty('--timeline-tempo', arrcolorfg[posicao]);
-            document.documentElement.style.setProperty('--timeline-tempo', 'transparent');
-            document.documentElement.style.setProperty('--valor-tempo', arrcolorbg[posicao]);
-
-    } else {
-            
-            document.documentElement.style.setProperty('--timeline-tempo', corbgtimelineoriginal);
-            document.documentElement.style.setProperty('--valor-tempo', corfgtimelineoriginal);
-        
-    }
 
     vai = setTimeout(parou, 500);
 
