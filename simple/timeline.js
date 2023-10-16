@@ -111,7 +111,7 @@ if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigato
         }
 
         ::-webkit-scrollbar:hover {
-        background-color: var(--timeline-text-over, #ff0000);
+        background-color: var(--cor-fundo, #000000);
         }
 
         ::-webkit-scrollbar-thumb {
@@ -188,13 +188,13 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
             </div>`;
         } else if (dados[i].link.toString().match(/\.md/i)) {
-            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'>
+            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
 
             <iframe class='slideitself' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${dados[i].link}'></iframe>
             
             </div>`;
         } else {
-            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'>
+            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
 
             <iframe class='slideitself' frameborder=0 src='${dados[i].link}'></iframe>
         
