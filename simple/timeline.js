@@ -97,6 +97,10 @@ if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigato
     let restora = `
     <style>
 
+        :root {
+            --inclui-scroll: 10px !important;
+        }
+
         ::-webkit-scrollbar {
         width: 10px;
         height: 10px;
@@ -120,21 +124,15 @@ if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigato
         }
 
         #frontslide {
-            overflow-x: scroll;
+            height: calc(100vh - 10px) !important;
+        }
+
+        .slides {
+            height: calc(100vh - 10px) !important;
         }
 
         .slidewrap {
-            height: calc(100vh - (3 * var(--track-height, 60px)) - var(--timeline-tempo-height)) !important;
-        }
-
-        #tempo {
-            height: calc(var(--timeline-tempo-height) - 18px) !important;
-            bottom: 10px !important;
-        }
-
-        #backcontrol {
-            height: calc(var(--timeline-tempo-height) - 18px) !important;
-            bottom: 10px !important;
+            height: calc(100vh - 10px) !important;
         }
 
     </style>

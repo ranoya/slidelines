@@ -31,6 +31,7 @@
 
   --cor-frente: white;
   --cor-fundo: black;
+  --inclui-scroll: 0px;
 }
 
 html {
@@ -144,7 +145,7 @@ body {
   width: 20px;
   height: 20px;
   left: var(--meta-margins, 30px);
-  top: calc(100vh - 42px);
+  top: calc(100vh - 42px - var(--inclui-scroll, 0px));
   overflow: hidden;
   line-height: 21px;
   font-size: 7px;
@@ -159,7 +160,7 @@ body {
   width: 10px;
   transition: all 0.2s ease-in;
 
-  top: calc(100vh - 40px);
+  top: calc(100vh - 40px - var(--inclui-scroll, 0px));
   right: var(--meta-margins, 30px);
 
   cursor: pointer;
@@ -176,7 +177,7 @@ body {
   width: 10px;
   transition: all 0.2s ease-in;
 
-  top: calc(100vh - 40px);
+  top: calc(100vh - 40px - var(--inclui-scroll, 0px));
   right: calc(var(--meta-margins, 30px) + 45px);
 
   cursor: pointer;
