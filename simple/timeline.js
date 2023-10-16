@@ -75,7 +75,7 @@ if (typeof $_GET['followbg'] != 'undefined' && $_GET['followbg'] != null && $_GE
 
 
 document.documentElement.style.setProperty('--valor-tempo', 'transparent');
-document.documentElement.style.setProperty('--add-transparencia', 'transparent');
+
 
 
 document.getElementById("next").innerHTML = `
@@ -160,21 +160,6 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     // document.documentElement.style.setProperty('--timeline-tempo', 'transparent');
     document.documentElement.style.setProperty('--valor-tempo', 'transparent');
     
-
-    if (typeof $_GET['followbg'] != "undefined" && $_GET['followbg'] != null && $_GET['followbg'] != "") {
-
-        //document.documentElement.style.setProperty('--timeline-tempo', dados[0].fundo);
-        document.documentElement.style.setProperty('--timeline-tempo', 'transparent');
-
-        if (typeof $_GET['startvisible'] != 'undefined' && $_GET['startvisible'] != null && $_GET['startvisible'] != '') {
-            document.documentElement.style.setProperty('--valor-tempo', dados[0].frente);
-            document.documentElement.style.setProperty('--add-transparencia', '#00000001');
-        } else {
-            document.documentElement.style.setProperty('--valor-tempo', dados[0].fundo);
-            document.documentElement.style.setProperty('--add-transparencia', dados[0].fundo);
-        }
-        
-    }
 
     todosslides = dados;
 
@@ -329,15 +314,13 @@ document.addEventListener("wheel", (event) => {
 
         document.getElementById("indice").innerHTML = posicao + 1;
 
-        /*
+        
         document.getElementById("indice").style.color = arrcolorfg[posicao];
         document.getElementById("indice").style.backgroundColor = arrcolorbg[posicao];
 
         document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
         document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
         document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
-        document.documentElement.style.setProperty('--add-transparencia', '#00000001');
-        */
 
         if (typeof $_GET['followbg'] != "undefined" && $_GET['followbg'] != null && $_GET['followbg'] != "") {
 
@@ -426,15 +409,15 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
     document.getElementById("indice").innerHTML = posicao + 1;
 
-    /*
+    
     document.getElementById("indice").style.color = arrcolorfg[posicao];
     document.getElementById("indice").style.backgroundColor = arrcolorbg[posicao];
 
     document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
     document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
     document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
-    document.documentElement.style.setProperty('--add-transparencia', '#00000001');
-    */
+
+    
 
     if (typeof $_GET['followbg'] != "undefined" && $_GET['followbg'] != null && $_GET['followbg'] != "") {
 
