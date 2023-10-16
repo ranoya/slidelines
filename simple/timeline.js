@@ -32,7 +32,7 @@ if ($_GET['s'] != "" && typeof $_GET['s'] != "undefined" && $_GET['s'] != null) 
 let estilo = document.createElement('link');
 estilo.setAttribute('rel', 'stylesheet');
 estilo.setAttribute('type', 'text/css');
-estilo.setAttribute('href', "https://slidelines.vercel.app/timelineh/timeline.css" );
+estilo.setAttribute('href', "https://slidelines.vercel.app/simple/timeline.css" );
 document.lastChild.appendChild(estilo);
 
 if ($_GET['theme'] != "" && typeof $_GET['theme'] != "undefined") {
@@ -257,7 +257,7 @@ const putslides = function (posicao) {
 
     }
 
-    lobody.innerHTML += `<div id='tracktitulos' class='fulltrack'><div id="titulo">class="track">${todosslides[posicao].titulo}</div>`;
+    lobody.innerHTML += `<div id='tracktitulos' class='fulltrack'><div class="track">${todosslides[posicao].titulo}</div></div>`;
 
 
     lobody.innerHTML += `<div id='tracktopicos' class='fulltrack'><div class="track">${todosslides[posicao].topicos}</div></div>`;
