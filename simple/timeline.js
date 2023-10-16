@@ -155,19 +155,18 @@ if (typeof $_GET['file'] != "undefined" && $_GET['file'] != null && $_GET['file'
 
 fetch(arquivojson).then(response => response.json()).then((dados) => {
 
-    document.getElementById("prev").style.display = "none";
-    
-    // document.documentElement.style.setProperty('--timeline-tempo', 'transparent');
-    document.documentElement.style.setProperty('--valor-tempo', 'transparent');
-    
-
     todosslides = dados;
 
+    document.getElementById("prev").style.display = "none";
     
-    lobody.innerHTML += `<div id='tracktitulos' class='fulltrack'><div class="track">${todosslides[0].titulo}</div></div>`;
+    document.documentElement.style.setProperty('--cor-frente', todosslides[0].frente);
+    document.documentElement.style.setProperty('--cor-fundo', todosslides[0].fundo);
+    
+
+    lobody.innerHTML += `<div id='tracktitulos' class='fulltrack'><div class="track" style='color: var(--cor-frente); background-color: var(--cor-fundo);'>${todosslides[0].titulo}</div></div>`;
 
 
-    lobody.innerHTML += `<div id='tracktopicos' class='fulltrack'><div class="track">${todosslides[0].topicos}</div></div>`;
+    lobody.innerHTML += `<div id='tracktopicos' class='fulltrack'><div class="track" style='color: var(--cor-frente); background-color: var(--cor-fundo);'>${todosslides[0].topicos}</div></div>`;
 
     let slidescode = ``;
 
@@ -305,6 +304,9 @@ document.addEventListener("wheel", (event) => {
 
         let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
 
+        document.documentElement.style.setProperty('--cor-frente', todosslides[posicao].frente);
+        document.documentElement.style.setProperty('--cor-fundo', todosslides[posicao].fundo);
+
         if (!rodandoajeita) {
             ajeita();
         }
@@ -405,6 +407,9 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
     clearTimeout(vai);
 
     let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
+
+    document.documentElement.style.setProperty('--cor-frente', todosslides[posicao].frente);
+    document.documentElement.style.setProperty('--cor-fundo', todosslides[posicao].fundo);
 
 
     document.getElementById("indice").innerHTML = posicao + 1;
