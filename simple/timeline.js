@@ -185,6 +185,11 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
         arrcolorfg[i] = dados[i].fundo;
         arrcolorbg[i] = dados[i].frente;
+
+        if (typeof $_GET['follobg'] == 'undefined' ||  $_GET['follobg'] == null || $_GET['follobg'] == '') {
+            dados[i].fundo = "transparent";
+        }
+        
                 
         if (i >= actualpage - 3 && i <= actualpage + 3) {
         if (dados[i].tipo == "imagem" || dados[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
@@ -259,6 +264,10 @@ const putslides = function (posicao) {
 
 
     for (let i = 0; i < todosslides.length; i++) {
+
+            if (typeof $_GET['follobg'] == 'undefined' ||  $_GET['follobg'] == null || $_GET['follobg'] == '') {
+                todosslides[i].fundo = "transparent";
+            }
 
             if ((i >= actualpage - 3) && i <= (actualpage + 3) && document.getElementById('allslides' + i).innerHTML == "") {
 
