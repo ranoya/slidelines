@@ -32,7 +32,7 @@ if ($_GET['s'] != "" && typeof $_GET['s'] != "undefined" && $_GET['s'] != null) 
 let estilo = document.createElement('link');
 estilo.setAttribute('rel', 'stylesheet');
 estilo.setAttribute('type', 'text/css');
-estilo.setAttribute('href', "https://slidelines.vercel.app/level/timeline.css" );
+estilo.setAttribute('href', "https://slidelines.vercel.app/timelineh/timeline.css" );
 document.lastChild.appendChild(estilo);
 
 if ($_GET['theme'] != "" && typeof $_GET['theme'] != "undefined") {
@@ -48,16 +48,35 @@ let indicenav = document.createElement('div');
 indicenav.setAttribute('id', 'indice');
 document.lastChild.appendChild(indicenav);
 
-
 let nextnav = document.createElement('div');
 nextnav.setAttribute('id', 'next');
+nextnav.setAttribute('class', 'setas');
 nextnav.setAttribute('onclick', 'gonext()');
 document.lastChild.appendChild(nextnav);
 
+
 let prevnav = document.createElement('div');
 prevnav.setAttribute('id', 'prev');
+prevnav.setAttribute('class', 'setas');
 prevnav.setAttribute('onclick', 'goprev()');
 document.lastChild.appendChild(prevnav);
+
+let backcontrol = document.createElement('div');
+backcontrol.setAttribute('id', 'backcontrol');
+document.lastChild.appendChild(backcontrol);
+
+
+let corbgtimelineoriginal = getComputedStyle(document.documentElement).getPropertyValue('--timeline-tempo');
+let corfgtimelineoriginal = getComputedStyle(document.documentElement).getPropertyValue('--valor-tempo');
+
+if (typeof $_GET['followbg'] != 'undefined' && $_GET['followbg'] != null && $_GET['followbg'] != '') {
+   document.documentElement.style.setProperty('--timeline-tempo', 'transparent');
+}
+
+
+document.documentElement.style.setProperty('--valor-tempo', 'transparent');
+document.documentElement.style.setProperty('--add-transparencia', 'transparent');
+
 
 document.getElementById("next").innerHTML = `
 <svg width="100%" viewBox="0 0 131 222" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -103,25 +122,18 @@ if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigato
             overflow-x: scroll;
         }
 
-        .slides {
-            height: calc(100vh - (3 * var(--track-height, 60px)) - 10px);
-
-        }
-
         .slidewrap {
-            height: calc(100vh - (3 * var(--track-height, 60px)) - 10px);
+            height: calc(100vh - (3 * var(--track-height, 60px)) - var(--timeline-tempo-height)) !important;
         }
 
-        #prev {
-            top: calc(100vh - 40px);
+        #tempo {
+            height: calc(var(--timeline-tempo-height) - 18px) !important;
+            bottom: 10px !important;
         }
 
-        #next {
-            top: calc(100vh - 40px);
-        }
-
-        #indice {
-            top: calc(100vh - 42px);
+        #backcontrol {
+            height: calc(var(--timeline-tempo-height) - 18px) !important;
+            bottom: 10px !important;
         }
 
     </style>
@@ -144,92 +156,33 @@ if (typeof $_GET['file'] != "undefined" && $_GET['file'] != null && $_GET['file'
 fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     document.getElementById("prev").style.display = "none";
+    
+    // document.documentElement.style.setProperty('--timeline-tempo', 'transparent');
+    document.documentElement.style.setProperty('--valor-tempo', 'transparent');
+    
 
-    // document.getElementById("frontslide").style.width = (dados.length * 100) + "vw";
+    if (typeof $_GET['followbg'] != "undefined" && $_GET['followbg'] != null && $_GET['followbg'] != "") {
+
+        //document.documentElement.style.setProperty('--timeline-tempo', dados[0].fundo);
+        document.documentElement.style.setProperty('--timeline-tempo', 'transparent');
+
+        if (typeof $_GET['startvisible'] != 'undefined' && $_GET['startvisible'] != null && $_GET['startvisible'] != '') {
+            document.documentElement.style.setProperty('--valor-tempo', dados[0].frente);
+            document.documentElement.style.setProperty('--add-transparencia', '#00000001');
+        } else {
+            document.documentElement.style.setProperty('--valor-tempo', dados[0].fundo);
+            document.documentElement.style.setProperty('--add-transparencia', dados[0].fundo);
+        }
+        
+    }
 
     todosslides = dados;
 
-    let tituloscode = ``;
-    let contat = 0;
-    let i = 0;
-    while (i < dados.length) {
-        
-        let tituloatual = dados[i].titulo;
-        let contat = 0;
-
-        for (let k = i; k < dados.length; k++) {
-            
-            if (dados[k].titulo == dados[i].titulo) {
-                contat++;
-            } else {
-                break;
-            }
-
-        }
-
-        tituloscode += `<div class="track" style='display: inline-block; position: sticky; margin: 0; padding: 0; top: 0; left: 0; width: 100vw; margin-right: ${(contat - 1) * 100}vw; z-index: ${200 + i}; background-color: ${dados[i].titulofundo}; color: ${dados[i].titulofrente}'><span style='margin-left: var(--meta-margins, 30px);'>${tituloatual}</span></div>`;
-
-        i = i + contat;
-
-    }
+    
+    lobody.innerHTML += `<div id='tracktitulos' class='fulltrack'><div id="titulo">class="track">${dados[0].titulo}</div>`;
 
 
-    lobody.innerHTML += `<div id='tracktitulos' class='fulltrack' style='width: ${dados.length * 100}vw;'>${tituloscode}</div>`;
-
-    let subtituloscode = ``;
-    contat = 0;
-    i = 0;
-    while (i < dados.length) {
-        
-        let subtituloatual = dados[i].subtitulo;
-        let contat = 0;
-
-        for (let k = i; k < dados.length; k++) {
-            
-            if (dados[k].subtitulo == dados[i].subtitulo) {
-                contat++;
-            } else {
-                break;
-            }
-
-        }
-
-        subtituloscode += `<div class="track" style='display: inline-block; position: sticky; margin: 0; padding: 0; top: 0; left: 0; width: 100vw; margin-right: ${(contat - 1) * 100}vw; z-index: ${200 + i}; background-color: ${dados[i].subtitulofundo}; color: ${dados[i].subtitulofrente}'><span style='margin-left: var(--meta-margins, 30px);'>${subtituloatual}</span></div>`;
-
-        i = i + contat;
-
-    }
-
-
-    lobody.innerHTML += `<div id='tracksubtitulos' class='fulltrack' style='width: ${dados.length * 100}vw;'>${subtituloscode}</div>`;
-
-
-    let topicoscode = ``;
-    contat = 0;
-    i = 0;
-    while (i < dados.length) {
-        
-        let subtituloatual = dados[i].topicos;
-        let contat = 0;
-
-        for (let k = i; k < dados.length; k++) {
-            
-            if (dados[k].topicos == dados[i].topicos) {
-                contat++;
-            } else {
-                break;
-            }
-
-        }
-
-        topicoscode += `<div class="track" style='display: inline-block; position: sticky; margin: 0; padding: 0; top: 0; left: 0; width: 100vw; margin-right: ${(contat - 1) * 100}vw; z-index: ${200 + i}; background-color: ${dados[i].fundo}; color: ${dados[i].frente}'><span style='margin-left: var(--meta-margins, 30px);'>${subtituloatual}</span></div>`;
-
-        i = i + contat;
-
-    }
-
-
-    lobody.innerHTML += `<div id='tracktopicos' class='fulltrack' style='width: ${dados.length * 100}vw;'>${topicoscode}</div>`;
+    lobody.innerHTML += `<div id='tracktopicos' class='fulltrack'><div class="track">${dados[0].topicos}</div></div>`;
 
     let slidescode = ``;
 
@@ -304,10 +257,17 @@ const putslides = function (posicao) {
 
     }
 
+    lobody.innerHTML += `<div id='tracktitulos' class='fulltrack'><div id="titulo">class="track">${dados[posicao].titulo}</div>`;
+
+
+    lobody.innerHTML += `<div id='tracktopicos' class='fulltrack'><div class="track">${dados[posicao].topicos}</div></div>`;
+
+
+
 
     for (let i = 0; i < todosslides.length; i++) {
 
-            if (i >= (actualpage - 3) && i <= (actualpage + 3) && document.getElementById('allslides' + i).innerHTML == "") {
+            if ((i >= actualpage - 3) && i <= (actualpage + 3) && document.getElementById('allslides' + i).innerHTML == "") {
 
                 if (todosslides[i].tipo == "imagem" || todosslides[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
                     
@@ -355,6 +315,7 @@ const putslides = function (posicao) {
 
 document.addEventListener("wheel", (event) => {
 
+
     if (typeof $_GET['allowverticalscroll'] != "undefined" && $_GET['allowverticalscroll'] != null && $_GET['allowverticalscroll'] != "") {
 
         let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
@@ -363,23 +324,34 @@ document.addEventListener("wheel", (event) => {
             ajeita();
         }
     
+
         clearTimeout(vai);
 
-        document.getElementById("frontslide").scrollLeft += event.deltaY;
-
-        
-    
         document.getElementById("indice").innerHTML = posicao + 1;
+
+        /*
         document.getElementById("indice").style.color = arrcolorfg[posicao];
         document.getElementById("indice").style.backgroundColor = arrcolorbg[posicao];
 
         document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
         document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
         document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
+        document.documentElement.style.setProperty('--add-transparencia', '#00000001');
+        */
 
-        document.documentElement.style.setProperty('--timeline-text-over', arrcolorbg[posicao]);
+        if (typeof $_GET['followbg'] != "undefined" && $_GET['followbg'] != null && $_GET['followbg'] != "") {
 
-        vai = setTimeout(parou, 300);
+            //document.documentElement.style.setProperty('--timeline-tempo', arrcolorfg[posicao]);
+            document.documentElement.style.setProperty('--timeline-tempo', 'transparent');
+            document.documentElement.style.setProperty('--valor-tempo', arrcolorbg[posicao]);
+
+        } else {
+
+            document.documentElement.style.setProperty('--timeline-tempo', corbgtimelineoriginal);
+            document.documentElement.style.setProperty('--valor-tempo', corfgtimelineoriginal);
+        }
+
+        vai = setTimeout(parou, 500);
 
         putslides(posicao);
         
@@ -414,7 +386,7 @@ let ajeita = function (fecha) {
             behavior: "smooth",
         });
 
-        // document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft - (document.getElementById("frontslide").scrollLeft % window.innerWidth);
+      
     }
 
     if (document.getElementById("frontslide").scrollLeft % window.innerWidth > 600) {
@@ -428,7 +400,6 @@ let ajeita = function (fecha) {
             behavior: "smooth",
         });
 
-        // document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft + (document.getElementById("frontslide").scrollLeft % window.innerWidth);
     }
 
     putslides(posicao);
@@ -443,6 +414,7 @@ let ajeita = function (fecha) {
 
 document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
+
     if (!rodandoajeita) {
         ajeita();
     }
@@ -451,21 +423,40 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
     let posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
 
+
     document.getElementById("indice").innerHTML = posicao + 1;
+
+    /*
     document.getElementById("indice").style.color = arrcolorfg[posicao];
     document.getElementById("indice").style.backgroundColor = arrcolorbg[posicao];
 
     document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
     document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
     document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
+    document.documentElement.style.setProperty('--add-transparencia', '#00000001');
+    */
 
-    document.documentElement.style.setProperty('--timeline-text-over', arrcolorbg[posicao]);
+    if (typeof $_GET['followbg'] != "undefined" && $_GET['followbg'] != null && $_GET['followbg'] != "") {
 
-    vai = setTimeout(parou, 300);
+        //document.documentElement.style.setProperty('--timeline-tempo', arrcolorfg[posicao]);
+            document.documentElement.style.setProperty('--timeline-tempo', 'transparent');
+            document.documentElement.style.setProperty('--valor-tempo', arrcolorbg[posicao]);
+
+    } else {
+            
+            document.documentElement.style.setProperty('--timeline-tempo', corbgtimelineoriginal);
+            document.documentElement.style.setProperty('--valor-tempo', corfgtimelineoriginal);
+        
+    }
+
+    vai = setTimeout(parou, 500);
 
     putslides(posicao);
 
 });
+
+
+
 
 
 
@@ -578,7 +569,7 @@ let gonext = function () {
     posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
 
     clearTimeout(vai);
-    
+
     ajeita();
 
       let onde = window.innerWidth * (posicao + 1);
@@ -588,7 +579,7 @@ let gonext = function () {
         behavior: "smooth",
       });
 
-       vai = setTimeout(parou, 300);
+    vai = setTimeout(parou, 300);
     
 }
 
@@ -597,7 +588,7 @@ let goprev = function () {
     let posicao = 0;
 
     posicao = parseInt(document.getElementById("frontslide").scrollLeft / window.innerWidth);
-    
+
     clearTimeout(vai);
     
     ajeita();
@@ -625,10 +616,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
     document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
     document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
 
-    document.documentElement.style.setProperty('--timeline-text-over', arrcolorbg[posicao]);
-
-
 });
+
+
 
 let acionagoto = function () {
 

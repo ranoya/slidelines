@@ -1,0 +1,194 @@
+:root {
+  --timeline-font: Helvetica;
+  --meta-font: Helvetica;
+  --timeline-text-color: #999999;
+  --timeline-text-highlight: #777777;
+  --timeline-text-over: #000000;
+  --base-background: #ffffff;
+  --button-color: #77777700;
+  --track-fg: #ffffff;
+  --track-bg: #000000;
+  --timeline-points: #666666;
+  --littlemenu-color: #777777;
+  --littlemenu-over: #ffffff;
+  --pagination-color: #777777;
+  --slidetopic-color: #777777;
+  --meta-margins: 30px;
+
+  --track-height: 60px;
+
+  --slide-altura: calc(100vh - 60px);
+  --pagina-altura: 100vh;
+  --slide-margem: 30px;
+
+  --timeline-tempo: #ffffff;
+  --valor-tempo: #999999;
+  --timeline-tempo-height: 130px;
+
+  --add-transparencia: #999999;
+
+  --back-control-width: 0px;
+}
+
+html {
+  position: fixed;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--base-background, #ffffff);
+  transition: background-color 0.6s ease-in-out;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--base-background, #ffffff);
+  margin: 0;
+  padding: 0;
+}
+
+#frontslide {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+#tracktitulos {
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: left;
+  height: var(--track-height, 60px);
+  width: 50vw;
+}
+
+#tracktopicos {
+  position: fixed;
+  top: 0;
+  right: 0;
+  text-align: right;
+  height: var(--track-height, 60px);
+}
+
+.fulltrack {
+  height: var(--track-height, 60px);
+  background-color: transparent;
+  font-family: sans-serif;
+  font-family: Arial;
+  font-family: var(--meta-font);
+}
+
+.track {
+  line-height: var(--track-height, 60px);
+  font-size: 16px;
+  font-family: sans-serif;
+  font-family: Arial;
+  font-family: var(--meta-font);
+}
+
+.track span a {
+  color: var(--track-fg, #ffffff);
+  background-color: transparent;
+  transition: all 0.3s ease-in;
+  font-weight: bolder;
+  padding: 4px 10px 4px 10px;
+  margin: -4px -10px -4px -10px;
+  text-decoration: none;
+}
+
+.track span a:hover {
+  background-color: var(--track-fg, #ffffff);
+  color: var(--track-bg, #000000);
+  transition: all 0.3s ease-in;
+}
+
+.slides {
+  height: calc(
+    100vh - (3 * var(--track-height, 60px)) -
+      var(--timeline-tempo-height, 130px)
+  );
+  margin: 0;
+  padding: 0;
+}
+
+.slidewrap {
+  width: 100vw;
+  height: calc(100vh - (3 * var(--track-height, 60px)));
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.slideitself {
+  width: 100%;
+  height: calc(
+    100vh - (3 * var(--track-height, 60px)) -
+      var(--timeline-tempo-height, 130px)
+  );
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+#indice {
+  position: fixed;
+  z-index: 702;
+  width: 20px;
+  height: 20px;
+  left: var(--meta-margins, 30px);
+  top: calc(100vh - 42px);
+  overflow: hidden;
+  line-height: 21px;
+  font-size: 7px;
+  text-align: center;
+  color: transparent;
+  font-family: var(--timeline-font, Helvetica), Arial, sans-serif;
+}
+
+#next {
+  position: fixed;
+  display: block;
+  width: 10px;
+  transition: all 0.2s ease-in;
+
+  top: calc(100vh - 40px);
+  right: var(--meta-margins, 30px);
+
+  cursor: pointer;
+  z-index: 700;
+}
+
+#next:hover svg path {
+  fill: var(--timeline-text-over, #ff0000) !important;
+}
+
+#prev {
+  position: fixed;
+  display: block;
+  width: 10px;
+  transition: all 0.2s ease-in;
+
+  top: calc(100vh - 40px);
+  right: calc(var(--meta-margins, 30px) - 30px);
+
+  cursor: pointer;
+  z-index: 700;
+}
+
+#prev:hover svg path {
+  fill: var(--timeline-text-over, #ff0000) !important;
+}
+
+#backcontrol {
+  position: fixed;
+  z-index: 699;
+  width: var(--back-control-width, 0);
+  display: none;
+  bottom: 0;
+  height: calc(var(--timeline-tempo-height) - 8px);
+  background-color: var(--timeline-tempo, grey);
+  padding-top: 8px;
+}
