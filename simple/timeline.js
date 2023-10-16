@@ -130,6 +130,34 @@ if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigato
 
 }
 
+if ((typeof $_GET['continuum'] != "undefined" && $_GET['continuum'] != null && $_GET['continuum'] != "")) {
+
+    let restoraC = `
+    <style>
+
+        .slideitself {
+            margin-top: 0 !important;
+            height: calc(100vh - var(--inclui-scroll, 0px)) !important;
+        }
+
+        iframe.slideitself {
+            margin-top: var(--track-height, 60px);
+            height: calc(
+    100vh - calc((var(--track-height, 60px))) - var(--inclui-scroll, 0px)
+  ) !important;
+        }
+
+        .fulltrack {
+            background-color: transparent !important;
+        }
+    </style>
+
+    `;
+
+    lobody.innerHTML += restoraC;
+
+}
+
 
 // FUNÇÃO DE FETCH DE ARQUIVO JSON
 
