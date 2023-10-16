@@ -852,10 +852,8 @@ let acionagoto = function () {
         document.getElementById("frontslide").scrollLeft = window.innerWidth;
 
         setTimeout(function () {    
-            document.getElementById("frontslide").scrollTo({
-                        left: onde,
-                        behavior: "smooth",
-            });
+            document.getElementById("frontslide").scrollLeft = onde; 
+            document.getElementById("tempo").scrollLeft = onde/20; 
             vai = setTimeout(parou, 500);
         }, 1000);
     
