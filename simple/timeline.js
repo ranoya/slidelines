@@ -179,7 +179,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     todosslides = dados;
 
     
-    lobody.innerHTML += `<div id='tracktitulos' class='fulltrack'><div id="titulo">class="track">${dados[0].titulo}</div>`;
+    lobody.innerHTML += `<div id='tracktitulos' class='fulltrack'><div class="track">${dados[0].titulo}</div></div>`;
 
 
     lobody.innerHTML += `<div id='tracktopicos' class='fulltrack'><div class="track">${dados[0].topicos}</div></div>`;
