@@ -60,6 +60,7 @@ body {
   text-align: left;
   height: var(--track-height, 60px);
   width: 50vw;
+  z-index: 201;
 }
 
 #tracktopicos {
@@ -68,6 +69,8 @@ body {
   right: 0;
   text-align: right;
   height: var(--track-height, 60px);
+  width: 50vw;
+  z-index: 200;
 }
 
 .fulltrack {
@@ -103,17 +106,16 @@ body {
 }
 
 .slides {
-  height: calc(
-    100vh - (var(--track-height, 60px)) - var(--timeline-tempo-height, 130px)
-  );
+  height: 100vh;
   margin: 0;
   padding: 0;
 }
 
 .slidewrap {
   width: 100vw;
-  height: calc(100vh - (var(--track-height, 60px)));
+  height: calc(100vh - calc(2 * (var(--track-height, 60px))));
   margin: 0;
+  margin-top: var(--track-height, 60px);
   padding: 0;
   display: inline-block;
   vertical-align: top;
@@ -121,9 +123,7 @@ body {
 
 .slideitself {
   width: 100%;
-  height: calc(
-    100vh - (var(--track-height, 60px)) - var(--timeline-tempo-height, 130px)
-  );
+  height: calc(100vh - calc(2 * (var(--track-height, 60px))));
   margin: 0;
   padding: 0;
   background-repeat: no-repeat;
@@ -170,7 +170,7 @@ body {
   transition: all 0.2s ease-in;
 
   top: calc(100vh - 40px);
-  right: calc(var(--meta-margins, 30px) - 30px);
+  right: calc(var(--meta-margins, 30px) + 45px);
 
   cursor: pointer;
   z-index: 700;
