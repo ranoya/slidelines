@@ -257,10 +257,10 @@ const putslides = function (posicao) {
 
     }
 
-    lobody.innerHTML += `<div id='tracktitulos' class='fulltrack'><div class="track">${todosslides[posicao].titulo}</div></div>`;
+    document.getElementById("tracktitulos").innerHTML = `<div class="track">${todosslides[posicao].titulo}</div>`;
 
 
-    lobody.innerHTML += `<div id='tracktopicos' class='fulltrack'><div class="track">${todosslides[posicao].topicos}</div></div>`;
+    document.getElementById("tracktopicos").innerHTML = `<div class="track">${todosslides[posicao].topicos}</div>`;
 
 
 
