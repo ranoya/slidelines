@@ -22,6 +22,7 @@ let arrcolorfg = [];
 let arrcolorbg = [];
 let rodandoajeita = false;
 let lobody = document.getElementById("frontslide");
+let fundotrack = ``;
 
 let vai = setTimeout(function () { }, 0);
 
@@ -178,6 +179,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     lobody.innerHTML += `<div id='tracktopicos' class='fulltrack'><div class="track">${todosslides[0].topicos}</div></div>`;
 
     let slidescode = ``;
+    
 
 
     i = 0;
@@ -186,14 +188,16 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         arrcolorfg[i] = dados[i].fundo;
         arrcolorbg[i] = dados[i].frente;
 
-        if (typeof $_GET['follobg'] == 'undefined' ||  $_GET['follobg'] == null || $_GET['follobg'] == '') {
-            dados[i].fundo = "transparent";
+        fundotrack = `transparent`;
+        
+        if (typeof $_GET['followbg'] != 'undefined' && $_GET['followbg'] != null && $_GET['followbg'] != '') {
+            fundotrack = dados[i].fundo;
         }
         
-                
+
         if (i >= actualpage - 3 && i <= actualpage + 3) {
         if (dados[i].tipo == "imagem" || dados[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
-            slidescode += `<div id='allslides${i}' onclick="gonext()" class='slidewrap' style='cursor: pointer; background-color: ${dados[i].fundo};'>
+            slidescode += `<div id='allslides${i}' onclick="gonext()" class='slidewrap' style='cursor: pointer; background-color: ${fundotrack};'>
 
             <div class='slideitself' style='background-color: ${dados[i].fundo}; background-image: url(${dados[i].link});'></div>
 
@@ -264,10 +268,6 @@ const putslides = function (posicao) {
 
 
     for (let i = 0; i < todosslides.length; i++) {
-
-            if (typeof $_GET['follobg'] == 'undefined' ||  $_GET['follobg'] == null || $_GET['follobg'] == '') {
-                todosslides[i].fundo = "transparent";
-            }
 
             if ((i >= actualpage - 3) && i <= (actualpage + 3) && document.getElementById('allslides' + i).innerHTML == "") {
 
