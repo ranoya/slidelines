@@ -91,7 +91,6 @@ document.getElementById("prev").innerHTML = `
     </svg>`;
 
 
-
 if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigator.platform.toString().indexOf("Linux") >= 0) || (typeof $_GET['fixascroll'] != "undefined" && $_GET['fixascroll'] != null && $_GET['fixascroll'] != "")) {
 
     let restora = `
@@ -104,11 +103,11 @@ if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigato
         ::-webkit-scrollbar {
         width: 10px;
         height: 10px;
-        background-color: var(--base-background, #ffffff);
+        background-color: var(--cor-fundo, #000000);
         }
 
         ::-webkit-scrollbar-track {
-        background: var(--base-background, #ffffff);
+        background: var(--cor-fundo, #000000);
         }
 
         ::-webkit-scrollbar:hover {
@@ -116,7 +115,7 @@ if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigato
         }
 
         ::-webkit-scrollbar-thumb {
-        background: var(--timeline-text-color, #777777);
+        background: var(--cor-frente, #FFFFFF);
         }
 
         ::-webkit-scrollbar-thumb:hover {
