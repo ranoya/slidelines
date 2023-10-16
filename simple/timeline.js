@@ -141,7 +141,7 @@ if ((typeof $_GET['continuum'] != "undefined" && $_GET['continuum'] != null && $
         }
 
         iframe.slideitself {
-            margin-top: var(--track-height, 60px);
+            margin-top: var(--track-height, 60px) !important;
             height: calc(
     100vh - calc((var(--track-height, 60px))) - var(--inclui-scroll, 0px)
   ) !important;
