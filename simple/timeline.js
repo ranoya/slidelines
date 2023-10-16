@@ -655,10 +655,7 @@ let acionagoto = function () {
         document.getElementById("frontslide").scrollLeft = window.innerWidth;
 
         setTimeout(function () {    
-            document.getElementById("frontslide").scrollTo({
-                        left: onde,
-                        behavior: "smooth",
-            });
+            document.getElementById("frontslide").scrollLeft = onde;
             vai = setTimeout(parou, 500);
         }, 1000);
     
