@@ -18,7 +18,6 @@ body {
 }
 
 #tempo {
-  overflow-x: hidden !important;
   left: 20px !important;
   width: calc(100vw - 40px) !important;
 }
