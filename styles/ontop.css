@@ -1,0 +1,32 @@
+.track {
+  text-transform: uppercase;
+}
+
+#tracktopicos {
+  right: 105px;
+}
+
+#tracktitulos {
+  width: calc(50vw - 105px);
+}
+
+#indice {
+  left: calc(100vw - 20px - var(--meta-margins, 30px));
+  top: 20px;
+}
+
+#next {
+  top: 22px;
+  right: calc(var(--meta-margins, 30px) + 40px);
+}
+
+#prev {
+  top: 22px;
+  right: calc(var(--meta-margins, 30px) + 75px);
+}
+
+.slideitself {
+  height: calc(
+    100vh - calc((var(--track-height, 60px))) - var(--inclui-scroll, 0px)
+  );
+}
