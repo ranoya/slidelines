@@ -1,0 +1,50 @@
+:root {
+  --meta-margins: 0px;
+}
+
+body {
+  margin: 20px !important;
+}
+
+.track {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#tracktopicos {
+  right: 125px;
+}
+
+#tracktitulos {
+  width: calc(50vw - 145px);
+  left: 20px;
+}
+
+#indice {
+  left: calc(100vw - 40px - var(--meta-margins, 30px));
+  top: 20px;
+  background-color: var(--timeline-text-over, #000000);
+  color: var(--base-background, #ffffff);
+}
+
+#next {
+  top: 22px;
+  right: calc(var(--meta-margins, 30px) + 60px);
+}
+
+#prev {
+  top: 22px;
+  right: calc(var(--meta-margins, 30px) + 95px);
+}
+
+.slideitself {
+  height: calc(
+    100vh - calc((var(--track-height, 60px))) - var(--inclui-scroll, 0px) - 50px
+  ) !important;
+  width: calc(100% - 40px) !important;
+}
+
+#frontslide {
+  width: calc(100vw - 40px) !important;
+}
