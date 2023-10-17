@@ -47,4 +47,5 @@ body {
 
 #frontslide {
   width: calc(100vw - 40px) !important;
+  height: calc(100vh - 10px - var(--inclui-scroll));
 }
