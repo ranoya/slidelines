@@ -39,16 +39,19 @@ body {
 }
 
 #next {
-  right: 45px !important;
+  right: 35px !important;
+  top: calc(100vh - 45px) !important;
 }
 
 #indice {
   left: auto !important;
-  right: 65px !important;
+  right: 55px !important;
+  top: calc(100vh - 47px) !important;
 }
 
 #prev {
-  right: 96px !important;
+  right: 86px !important;
+  top: calc(100vh - 45px) !important;
 }
 
 .registroano {
