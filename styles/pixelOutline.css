@@ -19,13 +19,14 @@
 
 .track {
   font-size: 12px;
+  text-transform: uppercase;
 }
 
 #backcontrol {
   display: block;
   right: auto;
   left: 0;
-  bottom: -10px;
+  bottom: 0px;
   background-color: #f154d8 !important;
 }
 
