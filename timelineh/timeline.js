@@ -505,7 +505,9 @@ document.addEventListener("wheel", (event) => {
             // let compensa = (todosslides.length + 22) / todosslides.length;
             // (20 * compensa)
 
-            document.getElementById("tempo").scrollLeft += event.deltaY / (20);
+            if (todosslides.length > 20) {
+                document.getElementById("tempo").scrollLeft += event.deltaY / (20);
+            }
 
         }
         
@@ -624,8 +626,9 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
         // let compensa = (todosslides.length + 22) / todosslides.length;
         // (20 * compensa)
 
-        document.getElementById("tempo").scrollLeft = (document.getElementById("frontslide").scrollLeft / (20));
-        
+        if (todosslides.length > 20) {
+            document.getElementById("tempo").scrollLeft = (document.getElementById("frontslide").scrollLeft / (20));
+        }
     }
 
     document.getElementById("indice").innerHTML = posicao + 1;
@@ -852,8 +855,11 @@ let acionagoto = function () {
         document.getElementById("frontslide").scrollLeft = window.innerWidth;
 
         setTimeout(function () {    
-            document.getElementById("frontslide").scrollLeft = onde; 
-            document.getElementById("tempo").scrollLeft = onde/20; 
+            document.getElementById("frontslide").scrollLeft = onde;
+
+            if (todosslides.length > 20) {
+                document.getElementById("tempo").scrollLeft = onde / 20;
+            }
             vai = setTimeout(parou, 500);
         }, 1000);
     
@@ -870,9 +876,11 @@ let nowgo = function (sl) {
         behavior: "smooth",
       });
     
-      document.getElementById("tempo").scrollTo({
-            left: onde/20,
+    if (todosslides.length > 20) {
+        document.getElementById("tempo").scrollTo({
+            left: onde / 20,
             behavior: "smooth",
         });
+    }
     
 }
