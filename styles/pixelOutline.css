@@ -13,8 +13,12 @@
   --pagination-color: #6a2369;
   --slidetopic-color: #ffffff;
   --meta-margins: 15px;
-  --track-height: 50px;
+  --track-height: 30px;
   --back-control-width: 130px;
+}
+
+.track {
+  font-size: 12px;
 }
 
 #backcontrol {
@@ -22,6 +26,7 @@
   right: auto;
   left: 0;
   bottom: -10px;
+  background-color: #f154d8 !important;
 }
 
 #prev {
@@ -37,6 +42,7 @@
 }
 
 #indice {
-  left: 60px !important;
+  left: 55px !important;
+  font-size: 6px;
   top: calc(100vh - var(--timeline-tempo-height) + 25px) !important;
 }
