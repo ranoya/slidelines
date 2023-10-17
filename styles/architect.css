@@ -5,10 +5,52 @@
   --meta-font: "IBM Plex Mono";
   --timeline-text-over: #e342ff;
   --base-background: black;
-  --meta-margins: 30px;
+  --meta-margins: 0;
   --track-height: 20px;
 }
 
+body {
+  margin: 20px !important;
+}
+
 .track {
-  font-size: 11px;
+  font-size: 11px !important;
+}
+
+#tempo {
+  overflow-x: hidden !important;
+  left: 20px !important;
+  width: calc(100vw - 40px) !important;
+}
+
+.slideitself {
+  height: calc(
+    100vh - (3 * var(--track-height, 60px)) -
+      var(--timeline-tempo-height, 130px) - 50px
+  ) !important;
+}
+
+.slides {
+  margin-top: 20px !important;
+}
+
+#frontslide {
+  width: calc(100vw - 40px) !important;
+}
+
+#next {
+  right: 45px !important;
+}
+
+#indice {
+  left: auto !important;
+  right: 65px !important;
+}
+
+#prev {
+  right: 96px !important;
+}
+
+.registroano {
+  font-size: 11px !important;
 }
