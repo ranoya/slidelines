@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
+
+:root {
+  --timeline-font: "IBM Plex Mono";
+  --meta-font: "IBM Plex Mono";
+  --timeline-text-over: #e342ff;
+  --base-background: black;
+  --meta-margins: 30px;
+  --track-height: 20px;
+}
+
+.track {
+  font-size: 11px;
+}
