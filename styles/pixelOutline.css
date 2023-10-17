@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+:root {
+  --timeline-font: "Press Start 2P";
+  --meta-font: "Press Start 2P";
+  --timeline-text-color: #9d4c8e;
+  --timeline-text-highlight: #ffffff;
+  --timeline-text-over: #56ecf0;
+  --base-background: #f154d8;
+  --timeline-points: #9d4c8e;
+  --littlemenu-color: #ffffff;
+  --littlemenu-over: #ffffff;
+  --pagination-color: #6a2369;
+  --slidetopic-color: #ffffff;
+  --meta-margins: 15px;
+  --track-height: 50px;
+  --back-control-width: 130px;
+}
+
+#backcontrol {
+  display: block;
+  right: auto;
+  left: 0;
+  bottom: -10px;
+}
+
+#prev {
+  top: calc(100vh - var(--timeline-tempo-height) + 27px) !important;
+  right: auto !important;
+  left: 30px !important;
+}
+
+#next {
+  top: calc(100vh - var(--timeline-tempo-height) + 27px) !important;
+  right: auto !important;
+  left: 90px !important;
+}
+
+#indice {
+  left: 60px !important;
+  top: calc(100vh - var(--timeline-tempo-height) + 25px) !important;
+}
