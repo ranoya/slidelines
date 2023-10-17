@@ -28,6 +28,7 @@ body {
     100vh - (3 * var(--track-height, 60px)) -
       var(--timeline-tempo-height, 130px) - 50px
   ) !important;
+  width: calc(100% - 40px) !important;
 }
 
 .slides {
