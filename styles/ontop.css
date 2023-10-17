@@ -1,5 +1,7 @@
 .track {
   text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 #tracktopicos {
@@ -13,6 +15,8 @@
 #indice {
   left: calc(100vw - 20px - var(--meta-margins, 30px));
   top: 20px;
+  background-color: var(--timeline-text-over, #000000);
+  color: var(--base-background, #ffffff);
 }
 
 #next {
