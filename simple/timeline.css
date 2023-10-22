@@ -200,3 +200,30 @@ body {
   background-color: var(--timeline-tempo, grey);
   padding-top: 8px;
 }
+
+/* ---- MARKDOWN ------ */
+
+div.markd div.conteudomd {
+  width: calc(100% - 80px);
+  height: calc(100% - 80px);
+  padding: 40px;
+  font-family: var(--timeline-font, Helvetica);
+  color: var(--track-fg, #ffffff);
+  background-color: var(--track-bg, #000000);
+}
+
+div.markd div.conteudomd a {
+  color: var(--track-fg, #ffffff);
+  background-color: transparent;
+  transition: all 0.3s ease-in;
+  font-weight: bolder;
+  padding: 4px 10px 4px 10px;
+  margin: -4px -10px -4px -10px;
+  text-decoration: none;
+}
+
+div.markd div.conteudomd a:hover {
+  background-color: var(--track-fg, #ffffff);
+  color: var(--track-bg, #000000);
+  transition: all 0.3s ease-in;
+}
