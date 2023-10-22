@@ -1,3 +1,8 @@
+const converter = new showdown.Converter({
+    tables: true,
+    simpleLineBreaks: true,
+});
+
 // FUNÇÃO URL GET
 
 $_GET = [];
