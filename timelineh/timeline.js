@@ -386,7 +386,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
                 book = "bookstyle";
             }
 
-            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
+            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'>
                 <div class='slideitself markd'>
                     <div class='conteudomd ${book}'>${code}</div>
                     </div>
