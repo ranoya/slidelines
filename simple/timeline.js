@@ -220,7 +220,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
             <div class='slideitself' style='background-color: ${dados[i].fundo}; background-image: url(${dados[i].link});'></div>
 
             </div>`;
-        } else if (dados[i].link.toString().match(/\.md/i) && dados[i].tipo != "texto") {
+        } else if (dados[i].link.toString().match(/\.md/i)) {
             slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
 
             <iframe class='slideitself' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${dados[i].link}'></iframe>
@@ -229,11 +229,9 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         } else if (dados[i].tipo == "texto") {
             slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
 
-            <iframe class='slideitself' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTranspBook.html?embed=plain&css=https://www.ranoya.com/Assets/JSLibs/markdown/md2colSlimTranspLESS.css&file=${dados[i].link}'></iframe>
-            
             </div>`;
         } else {
-            slidescode += `<div id='allslides${i}' class='slidewrap markd' style='background-color: ${fundotrack};'>
+            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
 
             </div>`;
         }
@@ -306,9 +304,9 @@ const putslides = function (posicao) {
                     let code = converter.makeHtml(text);
                     
                     
-                    document.getElementById('allslides' + i).innerHTML = `<div id='allslides${i}' class='slidewrap markd' style='background-color: ${fundotrack};'>
+                    document.getElementById('allslides' + i).innerHTML = `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
 
-                    ${code}
+                    <div class='slideitself markd'>${code}</div>
 
                     </div>`;
                 } else {
