@@ -406,7 +406,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         } else if (dados[i].link.toString().match(/\.md/i)) {
                 slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
         } else if (dados[i].tipo == "texto") {
-            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'></div>`;
+            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
         } else {
             slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
         }
