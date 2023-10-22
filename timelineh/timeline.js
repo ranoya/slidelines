@@ -366,7 +366,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
             <div class='slideitself' style='background-color: ${dados[i].fundo}; background-image: url(${dados[i].link});'></div>
 
             </div>`;
-        } else if (dados[i].link.toString().match(/\.md/i) && dados[i].tipo != "texto") {
+        } else if (dados[i].link.toString().match(/\.md/i)) {
             slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'>
 
             <iframe class='slideitself' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${dados[i].link}'></iframe>
