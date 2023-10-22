@@ -241,6 +241,8 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
             if (dados[i].tipo == "imagem" || dados[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
             slidescode += `<div id='allslides${i}' onclick="gonext()" class='slidewrap' style='cursor: pointer; background-color: ${fundotrack};'></div>`;
         } else if (dados[i].link.toString().match(/\.md/i)) {
+                slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'></div>`;
+        } else if (dados[i].tipo == "texto") {
             slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'></div>`;
         } else {
             slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'></div>`;
@@ -334,6 +336,10 @@ const putslides = function (posicao) {
 
                     document.getElementById('allslides' + i).innerHTML = ``;
 
+                } else if (todosslides[i].tipo == "texto") {
+
+                    document.getElementById('allslides' + i).innerHTML = ``;
+    
                 } else {
                     
                     document.getElementById('allslides' + i).innerHTML = ``;

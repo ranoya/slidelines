@@ -253,6 +253,10 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
             <iframe class='slideitself' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${dados[i].link}'></iframe>
             
             </div>`;
+        } else if (dados[i].tipo == "texto") {
+            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
+
+            </div>`;
         } else {
             slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'>
 
@@ -266,7 +270,9 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
             if (dados[i].tipo == "imagem" || dados[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
             slidescode += `<div id='allslides${i}' onclick="gonext()" class='slidewrap' style='cursor: pointer; background-color: ${dados[i].fundo};'></div>`;
         } else if (dados[i].link.toString().match(/\.md/i)) {
-            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
+                slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
+        } else if (dados[i].tipo == "texto") {
+            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'></div>`;
         } else {
             slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
         }
@@ -316,6 +322,24 @@ const putslides = function (posicao) {
 
                     document.getElementById('allslides' + i).innerHTML = `<iframe class='slideitself' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${todosslides[i].link}'></iframe>`;
 
+                 } else if (todosslides[i].tipo == "texto") {
+
+                    let text = todosslides[i].link;
+                    let code = converter.makeHtml(text);
+                    let book = "";
+                    if (todosslides[i].link.length < 3500) {
+                        book = "bookstyle";
+                    }
+                    
+                    
+                    document.getElementById('allslides' + i).innerHTML = `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
+
+                    <div class='slideitself markd'>
+                    <div class='conteudomd ${book}'>${code}</div>
+                    </div>
+
+                    </div>`;
+
                 } else {
                     
                     document.getElementById('allslides' + i).innerHTML = `<iframe class='slideitself' frameborder=0 src='${todosslides[i].link}'></iframe>`;
@@ -334,7 +358,11 @@ const putslides = function (posicao) {
                 } else if (todosslides[i].link.toString().match(/\.md/i)) {
 
                     document.getElementById('allslides' + i).innerHTML = ``;
+                
+                } else if (todosslides[i].tipo == "texto") {
 
+                    document.getElementById('allslides' + i).innerHTML = ``;
+    
                 } else {
                     
                     document.getElementById('allslides' + i).innerHTML = ``;
