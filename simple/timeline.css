@@ -232,3 +232,94 @@ div.markd div.conteudomd a:hover {
   color: var(--track-bg, #000000);
   transition: all 0.3s ease-in;
 }
+
+div.markd div.conteudomd h1,
+div.markd div.conteudomd h2 {
+  column-span: all;
+}
+
+div.markd div.conteudomd h1,
+div.markd div.conteudomd h2,
+div.markd div.conteudomd h3,
+div.markd div.conteudomd h4,
+div.markd div.conteudomd h5,
+div.markd div.conteudomd h6 {
+  font-weight: bolder;
+}
+
+div.markd div.conteudomd blockquote {
+  padding-left: min(15px, 1.5rem);
+  border-left: 4px solid var(--md-h1, #000000);
+}
+
+div.markd div.conteudomd code {
+}
+
+div.markd div.conteudomd pre {
+}
+
+div.markd div.conteudomd pre code {
+  margin-bottom: 15px;
+  display: block;
+  overflow: scroll;
+  width: 100%;
+}
+
+div.markd div.conteudomd p code {
+  padding-left: var(--md-inlinecodepadding, 4px);
+  padding-right: var(--md-inlinecodepadding, 4px);
+  border-radius: var(--md-inlinecoderound, 2px);
+}
+
+div.markd div.conteudomd ol {
+  list-style-type: decimal;
+}
+
+div.markd div.conteudomd ul,
+div.markd div.conteudomd ol {
+  margin: 0;
+  padding: 0;
+  margin-left: 20px;
+}
+
+div.markd div.conteudomd ul,
+div.markd div.conteudomdol {
+  margin-bottom: 3vh;
+}
+
+div.markd div.conteudomd ul p,
+div.markd div.conteudomd ol p {
+  margin: 0;
+  padding: 0;
+  margin-left: 20px;
+  margin-bottom: 8px;
+}
+
+div.markd div.conteudomd iframe {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+div.markd div.conteudomd table {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+div.markd div.conteudomd thead {
+  font-size: 10px;
+  line-height: 13px;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+
+div.markd div.conteudomd thead th,
+div.markd div.conteudomd tbody td {
+  border-bottom: 1px solid var(--md-detalhe, #dddddd);
+}
+
+div.markd div.conteudomd th {
+  font-weight: lighter;
+  padding-bottom: 2px;
+}
