@@ -221,6 +221,12 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
             <iframe class='slideitself' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${dados[i].link}'></iframe>
             
             </div>`;
+        } else if (dados[i].tipo == "texto") {
+            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
+
+            <iframe class='slideitself' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&css=https://www.ranoya.com/Assets/JSLibs/markdown/md2colSlimTranspLESS.css&file=${dados[i].link}'></iframe>
+            
+            </div>`;
         } else {
             slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
 
