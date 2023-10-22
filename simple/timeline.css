@@ -217,6 +217,7 @@ div.markd div.conteudomd {
   font-family: var(--timeline-font, Helvetica);
   color: var(--track-fg, #ffffff);
   background-color: var(--track-bg, #000000);
+  text-align: justify;
 
   font-size: var(--md-fontsize);
 }
@@ -253,7 +254,7 @@ div.markd div.conteudomd h6 {
 
 div.markd div.conteudomd p {
   font-size: 1em;
-  line-height: 1.4em;
+  line-height: 1.5em;
 }
 
 div.markd div.conteudomd blockquote {
@@ -335,6 +336,10 @@ div.markd div.conteudomd th {
 
 @media screen and (min-width: 1200px) {
   div.markd div.conteudomd {
-    font-size: 20px;
+    font-size: 16px;
+  }
+
+  div.markd div.conteudomd h1 {
+    font-size: 3em;
   }
 }
