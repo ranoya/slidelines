@@ -32,6 +32,8 @@
   --cor-frente: white;
   --cor-fundo: black;
   --inclui-scroll: 0px;
+
+  --md-fontsize: 18px;
 }
 
 html {
@@ -215,6 +217,8 @@ div.markd div.conteudomd {
   font-family: var(--timeline-font, Helvetica);
   color: var(--track-fg, #ffffff);
   background-color: var(--track-bg, #000000);
+
+  font-size: var(--md-fontsize);
 }
 
 div.markd div.conteudomd a {
@@ -245,6 +249,11 @@ div.markd div.conteudomd h4,
 div.markd div.conteudomd h5,
 div.markd div.conteudomd h6 {
   font-weight: bolder;
+}
+
+div.markd div.conteudomd p {
+  font-size: 1em;
+  line-height: 1.4em;
 }
 
 div.markd div.conteudomd blockquote {
@@ -283,7 +292,7 @@ div.markd div.conteudomd ol {
 }
 
 div.markd div.conteudomd ul,
-div.markd div.conteudomdol {
+div.markd div.conteudomd ol {
   margin-bottom: 3vh;
 }
 
@@ -322,4 +331,10 @@ div.markd div.conteudomd tbody td {
 div.markd div.conteudomd th {
   font-weight: lighter;
   padding-bottom: 2px;
+}
+
+@media screen and (min-width: 1200) {
+  div.markd div.conteudomd {
+    font-size: 20px;
+  }
 }
