@@ -224,7 +224,7 @@ div.markd div.conteudomd {
 
 div.markd div.conteudomd a {
   color: var(--track-fg, #ffffff);
-  background-color: transparent;
+  background-color: color-mix(in srgb, var(--track-fg, #ffffff) 10%, #00000000);
   transition: all 0.3s ease-in;
   font-weight: bolder;
   padding: 4px 10px 4px 10px;
@@ -325,7 +325,7 @@ div.markd div.conteudomd thead {
 }
 
 div.markd div.conteudomd thead th {
-  font-size: 1em;
+  font-size: 0.7em;
   line-height: 1.5em;
   border-bottom: 1px solid var(--track-fg, #ffffff);
   text-transform: uppercase;
@@ -333,7 +333,7 @@ div.markd div.conteudomd thead th {
 }
 div.markd div.conteudomd tbody td {
   border-bottom: 1px solid
-    color-mix(in srgb, var(--track-fg, #ffffff) 80%, #00000000);
+    color-mix(in srgb, var(--track-fg, #ffffff) 30%, #00000000);
   font-size: 0.9em;
   line-height: 1.3em;
   text-align: left;
