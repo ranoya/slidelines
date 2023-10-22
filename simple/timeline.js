@@ -1,3 +1,8 @@
+const converter = new showdown.Converter({
+    tables: true,
+    simpleLineBreaks: true,
+});
+
 // FUNÇÃO URL GET
 
 $_GET = [];
@@ -228,10 +233,8 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
             
             </div>`;
         } else {
-            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
+            slidescode += `<div id='allslides${i}' class='slidewrap markd' style='background-color: ${fundotrack};'>
 
-            <iframe class='slideitself' frameborder=0 src='${dados[i].link}'></iframe>
-        
             </div>`;
         }
             
@@ -298,10 +301,15 @@ const putslides = function (posicao) {
                     document.getElementById('allslides' + i).innerHTML = `<iframe class='slideitself' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${todosslides[i].link}'></iframe>`;
 
                 } else if (todosslides[i].tipo == "texto") {
-                    document.getElementById('allslides' + i).innerHTML = `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
 
-                    <iframe class='slideitself' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTranspBook.html?embed=plain&css=https://www.ranoya.com/Assets/JSLibs/markdown/md2colSlimTranspLESS.css&file=${todosslides[i].link}'></iframe>
+                    let text = todosslides[i].link;
+                    let code = converter.makeHtml(text);
                     
+                    
+                    document.getElementById('allslides' + i).innerHTML = `<div id='allslides${i}' class='slidewrap markd' style='background-color: ${fundotrack};'>
+
+                    ${code}
+
                     </div>`;
                 } else {
                     
