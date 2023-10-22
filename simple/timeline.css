@@ -292,6 +292,10 @@ div.markd div.conteudomd ol {
   margin-left: max(var(--meta-margins), 2vw);
 }
 
+div.markd div.conteudomd li {
+  margin-bottom: 0.2em;
+}
+
 div.markd div.conteudomd ul,
 div.markd div.conteudomd ol {
   margin-bottom: 3vh;
@@ -314,19 +318,27 @@ div.markd div.conteudomd table {
 }
 
 div.markd div.conteudomd thead {
-  font-size: 10px;
-  line-height: 13px;
-  font-weight: lighter;
+  font-size: 1em;
+  line-height: 1.5em;
   text-transform: uppercase;
+  font-weight: lighter;
 }
 
-div.markd div.conteudomd thead th,
-div.markd div.conteudomd tbody td {
+div.markd div.conteudomd thead th {
+  font-size: 1em;
+  line-height: 1.5em;
   border-bottom: 1px solid var(--track-fg, #ffffff);
-  font-size: 0.6em;
-  line-height: 0.8em;
   text-transform: uppercase;
   font-weight: lighter;
+}
+div.markd div.conteudomd tbody td {
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--track-fg, #ffffff) 80%, #00000000);
+  font-size: 0.9em;
+  line-height: 1.3em;
+  text-align: left;
+  padding-top: 0.22em;
+  padding-bottom: 0.22em;
 }
 
 div.markd div.conteudomd th {
