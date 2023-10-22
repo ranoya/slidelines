@@ -207,7 +207,7 @@ body {
 
 .bookstyle {
   column-count: 2;
-  column-gap: max(10vw, var(--meta-margins));
+  column-gap: max(6vw, var(--meta-margins));
 }
 
 div.markd div.conteudomd {
