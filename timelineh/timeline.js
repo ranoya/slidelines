@@ -466,7 +466,7 @@ const putslides = function (posicao) {
                     }
                     
                     
-                    document.getElementById('allslides' + i).innerHTML = `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
+                    document.getElementById('allslides' + i).innerHTML = `<div id='allslides${i}' class='slidewrap' style='background-color: ${todosslides[i].fundo};'>
 
                     <div class='slideitself markd'>
                     <div class='conteudomd ${book}'>${code}</div>
