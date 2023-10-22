@@ -203,10 +203,15 @@ body {
 
 /* ---- MARKDOWN ------ */
 
+.bookstyle {
+  column-count: 2;
+  column-gap: max(10vw, var(--meta-margins));
+}
+
 div.markd div.conteudomd {
-  width: calc(100% - 80px);
-  height: calc(100% - 80px);
-  padding: 40px;
+  width: calc(100% - (2 * var(--meta-margins)));
+  height: calc(100% - (2 * var(--meta-margins)));
+  padding: var(--meta-margins);
   font-family: var(--timeline-font, Helvetica);
   color: var(--track-fg, #ffffff);
   background-color: var(--track-bg, #000000);

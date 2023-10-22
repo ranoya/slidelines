@@ -302,12 +302,16 @@ const putslides = function (posicao) {
 
                     let text = todosslides[i].link;
                     let code = converter.makeHtml(text);
+                    let book = "";
+                    if (todosslides[i].link.length < 3500) {
+                        book = "bookstyle";
+                    }
                     
                     
                     document.getElementById('allslides' + i).innerHTML = `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
 
                     <div class='slideitself markd'>
-                    <div class='conteudomd'>${code}</div>
+                    <div class='conteudomd ${book}'>${code}</div>
                     </div>
 
                     </div>`;
