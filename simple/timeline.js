@@ -220,15 +220,25 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
             <div class='slideitself' style='background-color: ${dados[i].fundo}; background-image: url(${dados[i].link});'></div>
 
             </div>`;
-        } else if (dados[i].link.toString().match(/\.md/i)) {
+        } else if (dados[i].link.toString().match(/\.md/i) && dados[i].tipo != "texto") {
             slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
 
             <iframe class='slideitself' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${dados[i].link}'></iframe>
             
             </div>`;
         } else if (dados[i].tipo == "texto") {
-            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
 
+            let text = todosslides[i].link;
+            let code = converter.makeHtml(text);
+            let book = "";
+            if (todosslides[i].link.length < 3500) {
+                book = "bookstyle";
+            }
+            
+            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
+                <div class='slideitself markd'>
+                <div class='conteudomd ${book}'>${code}</div>
+                </div>
             </div>`;
         } else {
             slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
