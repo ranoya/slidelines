@@ -259,7 +259,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
             
             </div>`;
         } else if (dados[i].tipo == "texto") {
-            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'>
+            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};  margin-top: calc(0 - var(--track-height, 60px));'>
 
             </div>`;
         } else {
@@ -277,7 +277,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         } else if (dados[i].link.toString().match(/\.md/i)) {
                 slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
         } else if (dados[i].tipo == "texto") {
-            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
+            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};  margin-top: calc(0 - var(--track-height, 60px));'></div>`;
         } else {
             slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
         }
@@ -337,7 +337,7 @@ const putslides = function (posicao) {
                     }
                     
                     
-                    document.getElementById('allslides' + i).innerHTML = `<div id='allslides${i}' class='slidewrap' style='background-color: ${todosslides[i].fundo};'>
+                    document.getElementById('allslides' + i).innerHTML = `<div id='allslides${i}' class='slidewrap' style='background-color: ${todosslides[i].fundo}; margin-top: calc(0 - var(--track-height, 60px));'>
 
                     <div class='slideitself markd'>
                     <div class='conteudomd ${book}'>${code}</div>
