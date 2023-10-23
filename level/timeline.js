@@ -267,7 +267,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
                 book = "bookstyle";
             }
 
-                    slidescode +=  `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'>
+                    slidescode +=  `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo}; calc(10px - var(--track-height, 60px));'>
 
                     <div class='slideitself markd'>
                     <div class='conteudomd ${book}'>${code}</div>
@@ -289,7 +289,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         } else if (dados[i].link.toString().match(/\.md/i)) {
                 slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
         } else if (dados[i].tipo == "texto") {
-            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
+            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo}; calc(10px - var(--track-height, 60px));'></div>`;
         } else {
             slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
         }
