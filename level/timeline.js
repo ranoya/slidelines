@@ -302,7 +302,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
             if (typeof $_GET['fixascroll'] != "undefined" && $_GET['fixascroll'] != null && $_GET['fixascroll'] != "") {
                 base = "10px";
             }
-            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo}; calc(${base} - var(--track-height, 60px));'></div>`;
+            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo}; margin-top: calc(${base} - var(--track-height, 60px));'></div>`;
         } else {
             slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
         }
