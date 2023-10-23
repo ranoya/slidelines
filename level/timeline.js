@@ -79,6 +79,8 @@ document.getElementById("prev").innerHTML = `
 
 if ((window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigator.platform.toString().indexOf("Linux") >= 0) || (typeof $_GET['fixascroll'] != "undefined" && $_GET['fixascroll'] != null && $_GET['fixascroll'] != "")) {
 
+    $_GET['fixascroll'] = true;
+
     let restora = `
     <style>
 
@@ -267,7 +269,13 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
                 book = "bookstyle";
             }
 
-                    slidescode +=  `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo}; calc(10px - var(--track-height, 60px));'>
+            let base = "0px";
+
+            if (typeof $_GET['fixascroll'] != "undefined" && $_GET['fixascroll'] != null && $_GET['fixascroll'] != "") {
+                base = "10px";
+            }
+
+                    slidescode +=  `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo}; margin-top: calc(${base} - var(--track-height, 60px));'>
 
                     <div class='slideitself markd'>
                     <div class='conteudomd ${book}'>${code}</div>
@@ -288,8 +296,13 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
             slidescode += `<div id='allslides${i}' onclick="gonext()" class='slidewrap' style='cursor: pointer; background-color: ${dados[i].fundo};'></div>`;
         } else if (dados[i].link.toString().match(/\.md/i)) {
                 slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
-        } else if (dados[i].tipo == "texto") {
-            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo}; calc(10px - var(--track-height, 60px));'></div>`;
+            } else if (dados[i].tipo == "texto") {
+            let base = "0px";
+
+            if (typeof $_GET['fixascroll'] != "undefined" && $_GET['fixascroll'] != null && $_GET['fixascroll'] != "") {
+                base = "10px";
+            }
+            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo}; calc(${base} - var(--track-height, 60px));'></div>`;
         } else {
             slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
         }
