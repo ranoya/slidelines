@@ -259,9 +259,21 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
             
             </div>`;
         } else if (dados[i].tipo == "texto") {
-            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};  margin-top: calc(0 - var(--track-height, 60px));'>
 
-            </div>`;
+            let text = todosslides[i].link;
+            let code = converter.makeHtml(text);
+            let book = "";
+            if (dados[i].link.length < 3500) {
+                book = "bookstyle";
+            }
+
+                    slidescode +=  `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'>
+
+                    <div class='slideitself markd'>
+                    <div class='conteudomd ${book}'>${code}</div>
+                    </div>
+
+                    </div>`;
         } else {
             slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'>
 
@@ -277,7 +289,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         } else if (dados[i].link.toString().match(/\.md/i)) {
                 slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
         } else if (dados[i].tipo == "texto") {
-            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};  margin-top: calc(0 - var(--track-height, 60px));'></div>`;
+            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
         } else {
             slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
         }
@@ -337,12 +349,10 @@ const putslides = function (posicao) {
                     }
                     
                     
-                    document.getElementById('allslides' + i).innerHTML = `<div id='allslides${i}' class='slidewrap' style='background-color: ${todosslides[i].fundo}; margin-top: calc(0 - var(--track-height, 60px));'>
+                    document.getElementById('allslides' + i).innerHTML = `
 
                     <div class='slideitself markd'>
                     <div class='conteudomd ${book}'>${code}</div>
-                    </div>
-
                     </div>`;
 
                 } else {
