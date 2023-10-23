@@ -161,7 +161,7 @@ body {
 
 .markd {
   position: relative;
-  top: calc(var(--track-height, 60px) - 10px);
+  top: calc(0px - var(--track-height, 60px) + 10px);
 }
 
 div.markd div.conteudomd {
