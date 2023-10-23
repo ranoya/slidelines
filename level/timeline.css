@@ -160,8 +160,7 @@ body {
 }
 
 .markd {
-  position: relative;
-  top: calc(0px - var(--track-height, 60px) + 10px);
+  overflow-x: hidden;
 }
 
 div.markd div.conteudomd {
