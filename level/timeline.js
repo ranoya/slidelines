@@ -269,13 +269,9 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
                 book = "bookstyle";
             }
 
-            let base = "0px";
 
-            if (typeof $_GET['fixascroll'] != "undefined" && $_GET['fixascroll'] != null && $_GET['fixascroll'] != "") {
-                base = "10px";
-            }
 
-                    slidescode +=  `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo}; margin-top: calc(${base} - var(--track-height, 60px));'>
+                    slidescode +=  `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'>
 
                     <div class='slideitself markd'>
                     <div class='conteudomd ${book}'>${code}</div>
@@ -297,12 +293,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         } else if (dados[i].link.toString().match(/\.md/i)) {
                 slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
             } else if (dados[i].tipo == "texto") {
-            let base = "0px";
-
-            if (typeof $_GET['fixascroll'] != "undefined" && $_GET['fixascroll'] != null && $_GET['fixascroll'] != "") {
-                base = "10px";
-            }
-            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo}; margin-top: calc(${base} - var(--track-height, 60px));'></div>`;
+            slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
         } else {
             slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${dados[i].fundo};'></div>`;
         }

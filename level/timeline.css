@@ -159,6 +159,11 @@ body {
   column-gap: max(6vw, var(--meta-margins));
 }
 
+.markd {
+  position: relative;
+  top: calc(var(--track-height, 60px) - 10px);
+}
+
 div.markd div.conteudomd {
   width: calc(100% - (2 * var(--meta-margins)));
   height: calc(100% - (2 * var(--meta-margins)));
