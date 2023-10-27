@@ -242,7 +242,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
             </div>`;
         } else {
             slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
-
+                 <iframe class='slideitself' frameborder=0 src='${dados[i].link}'></iframe>
             </div>`;
         }
             
