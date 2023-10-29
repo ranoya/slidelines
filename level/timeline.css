@@ -161,6 +161,7 @@ body {
 
 .markd {
   overflow-x: hidden;
+  margin-block-start: 0px;
 }
 
 div.markd div.conteudomd {
@@ -173,6 +174,7 @@ div.markd div.conteudomd {
   text-align: justify;
 
   font-size: var(--md-fontsize);
+  margin-block-start: 0px;
 }
 
 div.markd div.conteudomd a {
@@ -203,6 +205,7 @@ div.markd div.conteudomd h4,
 div.markd div.conteudomd h5,
 div.markd div.conteudomd h6 {
   font-weight: bolder;
+  margin-block-start: 0px;
 }
 
 div.markd div.conteudomd h1 {
