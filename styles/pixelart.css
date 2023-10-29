@@ -28,18 +28,18 @@
 }
 
 #prev {
-  top: 10px;
+  top: 12px;
   right: 105px;
 }
 
 #next {
-  top: 10px;
+  top: 12px;
   right: 70px;
 }
 
 #indice {
   left: calc(100vw - 45px);
-  top: 8px;
+  top: 10px;
 }
 
 #backcontrol {
