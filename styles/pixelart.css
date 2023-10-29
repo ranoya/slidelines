@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "Atari";
+  src: url("./AtariST8x16SystemFont.ttf");
+}
+
+:root {
+  --track-height: 40px;
+
+  --timeline-text-over: #83e377;
+
+  --back-control-width: 150px;
+  --timeline-font: Atari;
+  --meta-font: Atari;
+}
+
+.track {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+.linhadotempo {
+  border-left-style: dotted !important;
+}
+
+.registroano {
+  font-size: 12px;
+}
+
+#prev {
+  top: 10px;
+  right: 105px;
+}
+
+#next {
+  top: 10px;
+  right: 70px;
+}
+
+#indice {
+  left: calc(100vw - 45px);
+  top: 8px;
+}
+
+#backcontrol {
+  display: block;
+  right: 0;
+  top: 0;
+}
+
+#tempo {
+  width: calc(100vw - 150px);
+}
