@@ -11,6 +11,8 @@
   --back-control-width: 150px;
   --timeline-font: Atari;
   --meta-font: Atari;
+
+  --meta-margins: 55px;
 }
 
 .track {
