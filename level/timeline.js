@@ -28,6 +28,21 @@ let arrcolorbg = [];
 let rodandoajeita = false;
 let lobody = document.getElementById("frontslide");
 
+
+
+let originalTitulos = [];
+let ofstTitulos = [];
+let originalSubtitulos = [];
+let ofstSubtitulos = [];
+let originalTopicos = [];
+let ofstTopicos = [];
+
+let divsTitulos = "";
+let divsSubtitulos = "";
+let divsTopicos = "";
+
+ 
+
 let vai = setTimeout(function () { }, 0);
 
 if ($_GET['s'] != "" && typeof $_GET['s'] != "undefined" && $_GET['s'] != null) {
@@ -158,10 +173,10 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     let tituloscode = ``;
     let contat = 0;
-    let i = 0;
+    let i = 1;
     while (i < dados.length) {
         
-        let tituloatual = dados[i].titulo;
+        let tituloatual = dados[i-1].titulo;
         let contat = 0;
 
         for (let k = i; k < dados.length; k++) {
@@ -174,7 +189,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
         }
 
-        tituloscode += `<div class="track" style='display: inline-block; position: sticky; margin: 0; padding: 0; top: 0; left: 0; width: 100vw; margin-right: ${(contat - 1) * 100}vw; z-index: ${200 + i}; background-color: ${dados[i].titulofundo}; color: ${dados[i].titulofrente}'><span style='margin-left: var(--meta-margins, 30px);'>${tituloatual}</span></div>`;
+        tituloscode += `<div class="track" style='display: inline-block; position: absolute; margin: 0; padding: 0; top: 0; left: ${(contat) * 100}vw; width: 100vw; z-index: ${200 + i}; margin-right: 0; background-color: ${dados[i].titulofundo}; color: ${dados[i].titulofrente}'><span style='margin-left: var(--meta-margins, 30px);'>${tituloatual}</span></div>`;
 
         i = i + contat;
 
@@ -185,10 +200,10 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     let subtituloscode = ``;
     contat = 0;
-    i = 0;
+    i = 1;
     while (i < dados.length) {
         
-        let subtituloatual = dados[i].subtitulo;
+        let subtituloatual = dados[i-1].subtitulo;
         let contat = 0;
 
         for (let k = i; k < dados.length; k++) {
@@ -201,7 +216,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
         }
 
-        subtituloscode += `<div class="track" style='display: inline-block; position: sticky; margin: 0; padding: 0; top: 0; left: 0; width: 100vw; margin-right: ${(contat - 1) * 100}vw; z-index: ${200 + i}; background-color: ${dados[i].subtitulofundo}; color: ${dados[i].subtitulofrente}'><span style='margin-left: var(--meta-margins, 30px);'>${subtituloatual}</span></div>`;
+        subtituloscode += `<div class="track" style='display: inline-block; position: absolute; margin: 0; padding: 0; top: var(--track-height, 60px); left: ${(contat) * 100}vw; width: 100vw; margin-right: 0; z-index: ${200 + i}; background-color: ${dados[i].subtitulofundo}; color: ${dados[i].subtitulofrente}'><span style='margin-left: var(--meta-margins, 30px);'>${subtituloatual}</span></div>`;
 
         i = i + contat;
 
@@ -213,10 +228,10 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
     let topicoscode = ``;
     contat = 0;
-    i = 0;
+    i = 1;
     while (i < dados.length) {
         
-        let subtituloatual = dados[i].topicos;
+        let subtituloatual = dados[i-1].topicos;
         let contat = 0;
 
         for (let k = i; k < dados.length; k++) {
@@ -229,7 +244,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
         }
 
-        topicoscode += `<div class="track" style='display: inline-block; position: sticky; margin: 0; padding: 0; top: 0; left: 0; width: 100vw; margin-right: ${(contat - 1) * 100}vw; z-index: ${200 + i}; background-color: ${dados[i].fundo}; color: ${dados[i].frente}'><span style='margin-left: var(--meta-margins, 30px);'>${subtituloatual}</span></div>`;
+        topicoscode += `<div class="track" style='display: inline-block; position: sticky; margin: 0; padding: 0; top: calc( 2 * var(--track-height, 60px)); left: ${(contat) * 100}vw; width: 100vw; margin-right: 0; z-index: ${200 + i}; background-color: ${dados[i].fundo}; color: ${dados[i].frente}'><span style='margin-left: var(--meta-margins, 30px);'>${subtituloatual}</span></div>`;
 
         i = i + contat;
 
@@ -249,7 +264,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
                 
         if (i >= actualpage - 3 && i <= actualpage + 3) {
         if (dados[i].tipo == "imagem" || dados[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
-            slidescode += `<div id='allslides${i}' onclick="gonext()" class='slidewrap' style='cursor: pointer; background-color: ${dados[i].fundo};'>
+            slidescode += `<div id='allslides${i}' onclick="gonext()" class='slidewrap' style='cursor: pointer; background-color: ${dados[i].fundo}; margin-top: calc( 3 * var(--track-height, 60px));'>
 
             <div class='slideitself' style='background-color: ${dados[i].fundo}; background-image: url(${dados[i].link});'></div>
 
@@ -303,6 +318,26 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     }
 
     lobody.innerHTML += `<div id='slides' class='slides' style='width: ${dados.length * 100}vw;'>${slidescode}</div>`;
+
+
+    let divsTitulos = document.querySelectorAll("#tractitulos .track");
+    let divsSubtitulos = document.querySelectorAll("#tracksubtitulos .track");
+    let divsTopicos = document.querySelectorAll("#tracktopicos .track");
+
+    for (let i = 0; i < divsTitulos.length; i++) {
+        originalTitulos[i] = parseInt(divsTitulos[i].style.left);
+        ofstTitulos[i] = parseInt(divsTitulos[i].offsetLeft);
+    }
+
+    for (let i = 0; i < divsSubtitulos.length; i++) {
+        originalSubtitulos[i] = parseInt(divsSubtitulos[i].style.left);
+        ofstSubtitulos[i] = parseInt(divsSubtitulos[i].offsetLeft);
+    }
+
+    for (let i = 0; i < divsTopicos.length; i++) {
+        originalTopicos[i] = parseInt(divsTopicos[i].style.left);
+        ofstTopicos[i] = parseInt(divsTopicos[i].offsetLeft);
+    }
 
     setTimeout(
     acionagoto, 1000);
@@ -489,6 +524,60 @@ let ajeita = function (fecha) {
 }
 
 document.getElementById("frontslide").addEventListener("scroll", (event) => {
+
+    for (let i = 0; i < divsTitulos.length; i++) {
+      if (
+        divsTitulos[i].getBoundingClientRect().left <= 0 &&
+        document.getElementById("frontslide").scrollLeft < ofstTitulos[originalTitulos.length - 1] - 1
+      ) {
+        divsTitulos[i].style.position = "fixed";
+        divsTitulos[i].style.left = "0px";
+      }
+
+      if (
+        (document.getElementById("frontslide").scrollLeft * 100) / window.innerWidth < originalTitulos[i] &&
+        document.getElementById("frontslide").scrollLeft < ofst[originalTitulos.length - 1] - 1
+      ) {
+        divsTitulos[i].style.position = "absolute";
+        divsTitulos[i].style.left = original[i] + "vw";
+      }
+    }
+
+    for (let i = 0; i < divsSubtitulos.length; i++) {
+      if (
+        divsSubtitulos[i].getBoundingClientRect().left <= 0 &&
+        document.getElementById("frontslide").scrollLeft < ofstSubtitulos[originalSubtitulos.length - 1] - 1
+      ) {
+        divsSubtitulos[i].style.position = "fixed";
+        divsSubtitulos[i].style.left = "0px";
+      }
+
+      if (
+        (document.getElementById("frontslide").scrollLeft * 100) / window.innerWidth < originalSubtitulos[i] &&
+        document.getElementById("frontslide").scrollLeft < ofst[originalSubtitulos.length - 1] - 1
+      ) {
+        divsSubtitulos[i].style.position = "absolute";
+        divsSubtitulos[i].style.left = original[i] + "vw";
+      }
+    }
+
+    for (let i = 0; i < divsTopicos.length; i++) {
+      if (
+        divsTopicos[i].getBoundingClientRect().left <= 0 &&
+        document.getElementById("frontslide").scrollLeft < ofstTopicos[originalTopicos.length - 1] - 1
+      ) {
+        divsTopicos[i].style.position = "fixed";
+        divsTopicos[i].style.left = "0px";
+      }
+
+      if (
+        (document.getElementById("frontslide").scrollLeft * 100) / window.innerWidth < originalTopicos[i] &&
+        document.getElementById("frontslide").scrollLeft < ofst[originalTopicos.length - 1] - 1
+      ) {
+        divsTopicos[i].style.position = "absolute";
+        divsTopicos[i].style.left = original[i] + "vw";
+      }
+    }
 
     if (!rodandoajeita) {
         ajeita();
