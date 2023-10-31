@@ -45,8 +45,11 @@ let absoluteoriginalTopicos = [];
 let topTopicos = [];
 let absoluteTopTopicos = [];
 
- 
+let divsTitulo = "";
+let divsSubtitulo = "";
+let divsTopicos = "";
 
+ 
 let vai = setTimeout(function () { }, 0);
 
 if ($_GET['s'] != "" && typeof $_GET['s'] != "undefined" && $_GET['s'] != null) {
