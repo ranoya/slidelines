@@ -30,16 +30,20 @@ let lobody = document.getElementById("frontslide");
 
 
 
-let originalTitulos = [];
-let ofstTitulos = [];
-let originalSubtitulos = [];
-let ofstSubtitulos = [];
-let originalTopicos = [];
-let ofstTopicos = [];
+let originalTitulo = [];
+let absoluteoriginalTitulo = [];
+let topTitulo = [];
+let absoluteTopTitulo = [];
 
-let divsTitulos = "";
-let divsSubtitulos = "";
-let divsTopicos = "";
+let originalSubtitulo = [];
+let absoluteoriginalSubtitulo = [];
+let topSubtitulo = [];
+let absoluteTopSubtitulo = [];
+
+let originalTopicos = [];
+let absoluteoriginalTopicos = [];
+let topTopicos = [];
+let absoluteTopTopicos = [];
 
  
 
@@ -190,7 +194,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
         }
 
-        tituloscode += `<div class="track" style='display: inline-block; position: absolute; margin: 0; padding: 0; top: 0; left: ${positi * 100}vw; width: 100vw; z-index: ${200 + i}; margin-right: 0; background-color: ${dados[i].titulofundo}; color: ${dados[i].titulofrente}'><span style='margin-left: var(--meta-margins, 30px);'>${tituloatual}</span></div>`;
+        tituloscode += `<div class="track" style='position: relative; margin: 0; padding: 0; top: calc(0 - (${i} * var(--track-height))); left: ${positi * 100}vw; width: 100vw; z-index: ${200 + i}; margin-right: 0; background-color: ${dados[i].titulofundo}; color: ${dados[i].titulofrente}'><span style='margin-left: var(--meta-margins, 30px);'>${tituloatual}</span></div>`;
 
         i = i + contat;
         positi = i - 1;
@@ -219,7 +223,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
         }
 
-        subtituloscode += `<div class="track" style='display: inline-block; position: absolute; margin: 0; padding: 0; top: var(--track-height, 60px); left: ${positi * 100}vw; width: 100vw; margin-right: 0; z-index: ${200 + i}; background-color: ${dados[i].subtitulofundo}; color: ${dados[i].subtitulofrente}'><span style='margin-left: var(--meta-margins, 30px);'>${subtituloatual}</span></div>`;
+        subtituloscode += `<div class="track" style='position: relative; margin: 0; padding: 0; top: calc(0 - (${i} * var(--track-height))); left: ${positi * 100}vw; width: 100vw; margin-right: 0; z-index: ${200 + i}; background-color: ${dados[i].subtitulofundo}; color: ${dados[i].subtitulofrente}'><span style='margin-left: var(--meta-margins, 30px);'>${subtituloatual}</span></div>`;
 
         i = i + contat;
         positi = i - 1;
@@ -250,7 +254,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
         }
 
-        topicoscode += `<div class="track" style='display: inline-block; position: sticky; margin: 0; padding: 0; top: calc( 2 * var(--track-height, 60px)); left: ${positi * 100}vw; width: 100vw; margin-right: 0; z-index: ${200 + i}; background-color: ${dados[i].fundo}; color: ${dados[i].frente}'><span style='margin-left: var(--meta-margins, 30px);'>${subtituloatual}</span></div>`;
+        topicoscode += `<div class="track" style='position: relative; margin: 0; padding: 0; top: calc(0 - (${i} * var(--track-height))); left: ${positi * 100}vw; width: 100vw; margin-right: 0; z-index: ${200 + i}; background-color: ${dados[i].fundo}; color: ${dados[i].frente}'><span style='margin-left: var(--meta-margins, 30px);'>${subtituloatual}</span></div>`;
 
         i = i + contat;
         positi = i - 1;
@@ -327,23 +331,38 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     lobody.innerHTML += `<div id='slides' class='slides' style='width: ${dados.length * 100}vw;'>${slidescode}</div>`;
 
 
-    let divsTitulos = document.querySelectorAll("#tractitulos .track");
-    let divsSubtitulos = document.querySelectorAll("#tracksubtitulos .track");
+    let divsTitulo = document.querySelectorAll("#tracktitulos .track");
+    let divsSubtitulo = document.querySelectorAll("#tracksubtitulos .track");
     let divsTopicos = document.querySelectorAll("#tracktopicos .track");
 
-    for (let i = 0; i < divsTitulos.length; i++) {
-        originalTitulos[i] = parseInt(divsTitulos[i].style.left);
-        ofstTitulos[i] = parseInt(divsTitulos[i].offsetLeft);
+    // Titulo
+    for (let i = 0; i < divsTitulo.length; i++) {
+      originalTitulo[i] = parseInt(divsTitulo[i].style.left);
+      absoluteoriginalTitulo[i] =
+        divsTitulo[i].getBoundingClientRect().left -
+        document.getElementById("frontslide").getBoundingClientRect().left;
+      topTitulo[i] = parseInt(divsTitulo[i].style.top);
+      absoluteTopTitulo[i] = divsTitulo[i].getBoundingClientRect().top;
     }
 
-    for (let i = 0; i < divsSubtitulos.length; i++) {
-        originalSubtitulos[i] = parseInt(divsSubtitulos[i].style.left);
-        ofstSubtitulos[i] = parseInt(divsSubtitulos[i].offsetLeft);
+    // Subtitulo
+    for (let i = 0; i < divsSubtitulo.length; i++) {
+      originalSubtitulo[i] = parseInt(divsSubtitulo[i].style.left);
+      absoluteoriginalSubtitulo[i] =
+        divsSubtitulo[i].getBoundingClientRect().left -
+        document.getElementById("frontslide").getBoundingClientRect().left;
+      topSubtitulo[i] = parseInt(divsSubtitulo[i].style.top);
+      absoluteTopSubtitulo[i] = divsSubtitulo[i].getBoundingClientRect().top;
     }
 
+    // Topicos
     for (let i = 0; i < divsTopicos.length; i++) {
-        originalTopicos[i] = parseInt(divsTopicos[i].style.left);
-        ofstTopicos[i] = parseInt(divsTopicos[i].offsetLeft);
+      originalTopicos[i] = parseInt(divsTopicos[i].style.left);
+      absoluteoriginalTopicos[i] =
+        divsTopicos[i].getBoundingClientRect().left -
+        document.getElementById("frontslide").getBoundingClientRect().left;
+      topTopicos[i] = parseInt(divsTopicos[i].style.top);
+      absoluteTopTopicos[i] = divsTopicos[i].getBoundingClientRect().top;
     }
 
     setTimeout(
@@ -532,59 +551,72 @@ let ajeita = function (fecha) {
 
 document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
-    for (let i = 0; i < divsTitulos.length; i++) {
-      if (
-        divsTitulos[i].getBoundingClientRect().left <= 0 &&
-        document.getElementById("frontslide").scrollLeft < ofstTitulos[originalTitulos.length - 1] - 1
-      ) {
-        divsTitulos[i].style.position = "fixed";
-        divsTitulos[i].style.left = "0px";
+    // Titulo
+      let shiftTitulo = 0;
+      for (let i = 0; i < divsTitulo.length; i++) {
+        if (
+          document.getElementById("frontslide").scrollLeft >=
+          absoluteoriginalTitulo[i]
+        ) {
+          divsTitulo[i].style.position = "fixed";
+          divsTitulo[i].style.left =
+            document.getElementById("frontslide").getBoundingClientRect().left +
+            "px";
+
+          divsTitulo[i].style.top = absoluteTopTitulo[i] + "px";
+
+          shiftTitulo = shiftTitulo + 30;
+        } else {
+          divsTitulo[i].style.position = "relative";
+          divsTitulo[i].style.top = topTitulo[i] + shiftTitulo + "px";
+          divsTitulo[i].style.left = originalTitulo[i] + "vw";
+        }
       }
 
-      if (
-        (document.getElementById("frontslide").scrollLeft * 100) / window.innerWidth < originalTitulos[i] &&
-        document.getElementById("frontslide").scrollLeft < ofst[originalTitulos.length - 1] - 1
-      ) {
-        divsTitulos[i].style.position = "absolute";
-        divsTitulos[i].style.left = original[i] + "vw";
-      }
-    }
+      // Subtitulo
+      let shiftSubtitulo = 0;
+      for (let i = 0; i < divsSubtitulo.length; i++) {
+        if (
+          document.getElementById("frontslide").scrollLeft >=
+          absoluteoriginalSubtitulo[i]
+        ) {
+          divsSubtitulo[i].style.position = "fixed";
+          divsSubtitulo[i].style.left =
+            document.getElementById("frontslide").getBoundingClientRect().left +
+            "px";
 
-    for (let i = 0; i < divsSubtitulos.length; i++) {
-      if (
-        divsSubtitulos[i].getBoundingClientRect().left <= 0 &&
-        document.getElementById("frontslide").scrollLeft < ofstSubtitulos[originalSubtitulos.length - 1] - 1
-      ) {
-        divsSubtitulos[i].style.position = "fixed";
-        divsSubtitulos[i].style.left = "0px";
-      }
+          divsSubtitulo[i].style.top = absoluteTopSubtitulo[i] + "px";
 
-      if (
-        (document.getElementById("frontslide").scrollLeft * 100) / window.innerWidth < originalSubtitulos[i] &&
-        document.getElementById("frontslide").scrollLeft < ofst[originalSubtitulos.length - 1] - 1
-      ) {
-        divsSubtitulos[i].style.position = "absolute";
-        divsSubtitulos[i].style.left = original[i] + "vw";
-      }
-    }
-
-    for (let i = 0; i < divsTopicos.length; i++) {
-      if (
-        divsTopicos[i].getBoundingClientRect().left <= 0 &&
-        document.getElementById("frontslide").scrollLeft < ofstTopicos[originalTopicos.length - 1] - 1
-      ) {
-        divsTopicos[i].style.position = "fixed";
-        divsTopicos[i].style.left = "0px";
+          shiftSubtitulo = shiftSubtitulo + 30;
+        } else {
+          divsSubtitulo[i].style.position = "relative";
+          divsSubtitulo[i].style.top = topSubtitulo[i] + shiftSubtitulo + "px";
+          divsSubtitulo[i].style.left = originalSubtitulo[i] + "vw";
+        }
       }
 
-      if (
-        (document.getElementById("frontslide").scrollLeft * 100) / window.innerWidth < originalTopicos[i] &&
-        document.getElementById("frontslide").scrollLeft < ofst[originalTopicos.length - 1] - 1
-      ) {
-        divsTopicos[i].style.position = "absolute";
-        divsTopicos[i].style.left = original[i] + "vw";
+      // Topicos
+      let shiftTopicos = 0;
+      for (let i = 0; i < divsTopicos.length; i++) {
+        if (
+          document.getElementById("frontslide").scrollLeft >=
+          absoluteoriginalTopicos[i]
+        ) {
+          divsTopicos[i].style.position = "fixed";
+          divsTopicos[i].style.left =
+            document.getElementById("frontslide").getBoundingClientRect().left +
+            "px";
+
+          divsTopicos[i].style.top = absoluteTopTopicos[i] + "px";
+
+          shiftTopicos = shiftTopicos + 30;
+        } else {
+          divsTopicos[i].style.position = "relative";
+          divsTopicos[i].style.top = topTopicos[i] + shiftTopicos + "px";
+          divsTopicos[i].style.left = originalTopicos[i] + "vw";
+        }
       }
-    }
+
 
     if (!rodandoajeita) {
         ajeita();
