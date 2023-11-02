@@ -1,0 +1,883 @@
+<style>
+  html,
+  body {
+    margin: 0;
+  }
+
+  :root {
+    --track-height: 30px;
+    
+  }
+
+  div {
+    height: 30px;
+  }
+
+  #frontslide {
+    outline: 4px solid blue;
+    margin-top: 30px;
+    margin-left: 50px;
+    height: 80vh;
+    width: 70vw;
+    overflow: hidden;
+    overflow-x: auto;
+  }
+
+
+
+  .swrap {
+    background-color: blue;
+  }
+
+  #progressbarwrap {
+    background-color: grey;
+  }
+
+</style>
+
+<div id="frontslide">
+
+ <!---
+  <div id="tracktitulos">
+    <div
+      class="track"
+      style="
+        position: relative;
+        width: 70vw;
+        top: 0;
+        left: 50vw;
+        z-index: 10;
+        background-color: #ffffff;
+      "
+    >
+      1
+    </div>
+    <div
+      class="track"
+      style="
+        position: relative;
+        width: 70vw;
+        top: -30px;
+        left: 70vw;
+        z-index: 11;
+        background-color: #aaaaaa;
+      "
+    >
+      2
+    </div>
+    <div
+      class="track"
+      style="
+        position: relative;
+        width: 70vw;
+        left: 280vw;
+        top: -60px;
+        z-index: 12;
+        background-color: #888888;
+      "
+    >
+      3
+    </div>
+  </div>
+
+  <div id="tracksubtitulos">
+    <div
+      class="track"
+      style="
+        position: relative;
+        width: 70vw;
+        top: 0;
+        left: 20vw;
+        z-index: 10;
+        background-color: #ffffff;
+      "
+    >
+      1
+    </div>
+    <div
+      class="track"
+      style="
+        position: relative;
+        width: 70vw;
+        top: -30px;
+        left: 190vw;
+        z-index: 11;
+        background-color: #aaaaaa;
+      "
+    >
+      2
+    </div>
+    <div
+      class="track"
+      style="
+        position: relative;
+        width: 70vw;
+        left: 480vw;
+        top: -60px;
+        z-index: 12;
+        background-color: #888888;
+      "
+    >
+      3
+    </div>
+  </div>
+
+  <div id="tracktopicos">
+    <div
+      class="track"
+      style="
+        position: relative;
+        width: 70vw;
+        top: 0;
+        left: 0vw;
+        z-index: 10;
+        background-color: #ffffff;
+      "
+    >
+      1
+    </div>
+    <div
+      class="track"
+      style="
+        position: relative;
+        width: 70vw;
+        top: -30px;
+        left: 100vw;
+        z-index: 11;
+        background-color: #aaaaaa;
+      "
+    >
+      2
+    </div>
+    <div
+      class="track"
+      style="
+        position: relative;
+        width: 70vw;
+        left: 380vw;
+        top: -60px;
+        z-index: 12;
+        background-color: #888888;
+      "
+    >
+      3
+    </div>
+
+    <div
+      class="track"
+      style="
+        position: relative;
+        width: 70vw;
+        left: 680vw;
+        top: -90px;
+        z-index: 12;
+        background-color: #666666;
+      "
+    >
+      4
+    </div>
+  </div>
+
+  <div id="slides">
+    <div class="slidewrap" style="width: 70vw; background-color: #ffffff">
+      1
+    </div>
+    <div class="slidewrap" style="width: 70vw; background-color: #c05151">
+      2
+    </div>
+    <div class="slidewrap" style="width: 70vw; background-color: #f1c0c0">
+      3
+    </div>
+    <div class="slidewrap" style="width: 70vw; background-color: #c08d8d">
+      4
+    </div>
+    <div class="slidewrap" style="width: 70vw; background-color: #ff9f9f">
+      5
+    </div>
+    <div class="slidewrap" style="width: 70vw; background-color: #ffffff">
+      6
+    </div>
+    <div class="slidewrap" style="width: 70vw; background-color: #969696">
+      7
+    </div>
+    <div class="slidewrap" style="width: 70vw; background-color: #cb0606">
+      8
+    </div>
+
+-->
+  </div>
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+
+
+  <script>
+    let json = [
+      {
+        id: "1",
+        OLtitulo: "           &nbsp;",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "     &nbsp;",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#8f8f8f",
+        OLtopicos: "       &nbsp;",
+        OLlink: "https://drive.google.com/uc?export=view&id=1JX8MzelkIbK2pOJl4Ee2tX6fZ1K8YzOd&usp=drive_fs",
+        tipo: "imagem",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#999999",
+      },
+      {
+        id: "2",
+        OLtitulo: "contexto",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "&nbsp;",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#8f8f8f",
+        OLtopicos: "  &nbsp;&nbsp;&nbsp;      ",
+        OLlink: "https://drive.google.com/uc?export=view&id=1IWitGf8hPa30elxLk9ZKk2bFGfwVtWie&usp=drive_fs",
+        tipo: "imagem",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#999999",
+      },
+      {
+        id: "3",
+        OLtitulo: "contexto",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "visualizações de dados?",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#8f8f8f",
+        OLtopicos: "      &nbsp;",
+        OLlink: "https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html",
+        tipo: "",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#999999",
+      },
+      {
+        id: "4",
+        OLtitulo: "contexto",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "design de visualização de dados?",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#8f8f8f",
+        OLtopicos: "&nbsp; &nbsp;",
+        OLlink: "https://drive.google.com/uc?export=view&id=1IxqRkbeVJTYzKGJ0juM6jKTkoQZy8bZ2&usp=drive_fs",
+        tipo: "imagem",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#999999",
+      },
+      {
+        id: "5",
+        OLtitulo: "problemas presentes",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "            &nbsp;",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#d08007",
+        OLtopicos: "       &nbsp;&nbsp;",
+        OLlink: "https://drive.google.com/uc?export=view&id=1IY3c_sa-DAn6jsGaQiTzMFEWa9acxZV6&usp=drive_fs",
+        tipo: "imagem",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#ff9900",
+      },
+      {
+        id: "6",
+        OLtitulo: "problemas presentes",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "linguagem",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#d08007",
+        OLtopicos: "&nbsp;",
+        OLlink: "https://drive.google.com/uc?export=view&id=1IaWmLQgYofHzsoJUeswR2XjXNpcIYnrA&usp=drive_fs",
+        tipo: "imagem",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#ff9900",
+      },
+      {
+        id: "7",
+        OLtitulo: "problemas presentes",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "linguagem",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#ef930a",
+        OLtopicos: "linguagem gráfico-interativa",
+        OLlink: "https://drive.google.com/uc?export=view&id=1IiOqjJ9gz_SX3C9Wo5unNpFZIeWYeJhv&usp=drive_fs",
+        tipo: "imagem",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#ff9900",
+      },
+      {
+        id: "8",
+        OLtitulo: "problemas presentes",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "linguagem",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#ef930a",
+        OLtopicos: "linguagem gráfico-interativa",
+        OLlink: "https://drive.google.com/uc?export=view&id=1Ij428PVMBVSeHnlKWDfzPrLC0LD4uCMi&usp=drive_fs",
+        tipo: "imagem",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#ff9900",
+      },
+      {
+        id: "9",
+        OLtitulo: "problemas presentes",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "projeto",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#d36c57",
+        OLtopicos: "&nbsp;",
+        OLlink: "https://drive.google.com/uc?export=view&id=1IqGRKwaYd_CPckUEy462JCAxgNaWGkJq&usp=drive_fs",
+        tipo: "imagem",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#dd7e6b",
+      },
+      {
+        id: "10",
+        OLtitulo: "problemas presentes          &nbsp;",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "projeto",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#d36c57",
+        OLtopicos: "metodologias de projeto para visualização",
+        OLlink: "https://drive.google.com/uc?export=view&id=1Iov0bpu12J-VAzHTmlhxUNfBpPCfKNAC&usp=drive_fs",
+        tipo: "imagem",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#dd7e6b",
+      },
+      {
+        id: "11",
+        OLtitulo: "problemas presentes          &nbsp;",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "projeto",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#d36c57",
+        OLtopicos: "estudos de caso de projeto",
+        OLlink: "https://drive.google.com/uc?export=view&id=1Iurm4slaBRzByrA3Fbs58lkhAqyi-LIy&usp=drive_fs",
+        tipo: "imagem",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#dd7e6b",
+      },
+      {
+        id: "12",
+        OLtitulo: "problemas presentes          &nbsp;",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "mídia e mediações",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#97a350",
+        OLtopicos: "&nbsp;",
+        OLlink: "https://drive.google.com/uc?export=view&id=1JSdAsqZDtW6zgQVdIF8-WVyGT7kbbrGU&usp=drive_fs",
+        tipo: "imagem",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#aab65f",
+      },
+      {
+        id: "13",
+        OLtitulo: "problemas presentes          &nbsp;",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "mídia e mediações",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#97a350",
+        OLtopicos: "apreensão e produção de sentido",
+        OLlink: "https://drive.google.com/uc?export=view&id=1JHo_bELKrEE7WYoMaTQxMJ-CO7ItF3k9&usp=drive_fs",
+        tipo: "imagem",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#aab65f",
+      },
+      {
+        id: "14",
+        OLtitulo: "problemas presentes&nbsp;",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "mídia e mediações",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#97a350",
+        OLtopicos: "literacia de dados",
+        OLlink: "https://drive.google.com/uc?export=view&id=1J5nNCTXTGqdlRonAkzJiIvZ8EdCuJsXR&usp=drive_fs",
+        tipo: "imagem",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#aab65f",
+      },
+      {
+        id: "15",
+        OLtitulo: "problemas presentes&nbsp;",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "mídia e mediações",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#97a350",
+        OLtopicos: "o discurso dos dados",
+        OLlink: "https://drive.google.com/uc?export=view&id=1JVLggOwGN2SqDAA7ClcETmxIJrIB7fpi&usp=drive_fs",
+        tipo: "imagem",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#aab65f",
+      },
+      {
+        id: "16",
+        OLtitulo: "problemas presentes&nbsp;",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "inovação",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#7564a6",
+        OLtopicos: "&nbsp;",
+        OLlink: "https://drive.google.com/uc?export=view&id=1JXYQ3tDuKkTWbDiQB15yMSn2BbgR_08T&usp=drive_fs",
+        tipo: "imagem",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#8372b5",
+      },
+      {
+        id: "17",
+        OLtitulo: "problemas presentes&nbsp;",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "inovação",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#7564a6",
+        OLtopicos: "design + inovação + wicked problems",
+        OLlink: "https://www.youtube.com/embed/q7LRxKHdao8?si=dyUZEWujSico4NuR",
+        tipo: "",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#8372b5",
+      },
+      {
+        id: "18",
+        OLtitulo: "problemas presentes&nbsp;",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "inovação&nbsp;",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#7564a6",
+        OLtopicos: "impactos e processos",
+        OLlink: "https://drive.google.com/uc?export=view&id=1JYrj6GBT82C6nLKW78dm1MQkxhlCAMrP&usp=drive_fs",
+        tipo: "imagem",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#8372b5",
+      },
+      {
+        id: "19",
+        OLtitulo: "problemas presentes&nbsp;&nbsp;",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "inovação&nbsp;",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#7564a6",
+        OLtopicos: "narrativas com dados",
+        OLlink: "https://drive.google.com/uc?export=view&id=1JbwcFd_EDPGjnVIdHMLctvmrYop5e6WZ&usp=drive_fs",
+        tipo: "imagem",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#8372b5",
+      },
+      {
+        id: "20",
+        OLtitulo: "problemas presentes&nbsp;&nbsp;",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "inovação&nbsp;",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#7564a6",
+        OLtopicos: "narrativas processuais / procedural rethoric",
+        OLlink: "https://drive.google.com/uc?export=view&id=1K3euvuzPFjiMdYdUqXEPa617UDY1jR35&usp=drive_fs",
+        tipo: "imagem",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#8372b5",
+      },
+      {
+        id: "21",
+        OLtitulo: "problemas presentes&nbsp;&nbsp;",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "inovação&nbsp;",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#7564a6",
+        OLtopicos: "narrativas processuais / procedural rethoric",
+        OLlink: "https://mkorostoff.github.io/1-pixel-wealth/",
+        tipo: "",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#8372b5",
+      },
+      {
+        id: "22",
+        OLtitulo: "problemas presentes&nbsp;&nbsp;&nbsp;",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "inovação",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#7564a6",
+        OLtopicos: "narrativas processuais / procedural rethoric",
+        OLlink: "https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?filtra=proceduralrethoric",
+        tipo: "",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#8372b5",
+      },
+      {
+        id: "23",
+        OLtitulo: "problemas presentes&nbsp;&nbsp;&nbsp;",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "inovação",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#7564a6",
+        OLtopicos: "narrativas processuais / procedural rethoric",
+        OLlink: "https://drive.google.com/uc?export=view&id=1Ju1Dlw3R3_XuFLrUB_dZ4NVBxNUrtUxo&usp=drive_fs",
+        tipo: "imagem",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#8372b5",
+      },
+      {
+        id: "24",
+        OLtitulo: "síntese",
+        titulofrente: "#FFFFFF",
+        titulofundo: "#7b7a7a",
+        OLsubtitulo: "     &nbsp;&nbsp;&nbsp;",
+        subtitulofrente: "#FFFFFF",
+        subtitulofundo: "#8f8f8f",
+        OLtopicos: "    &nbsp;&nbsp;",
+        OLlink: "https://drive.google.com/uc?export=view&id=1K3pWiqezv57uj_ZCF4gorIKEhx6gPCP5&usp=drive_fs",
+        tipo: "imagem",
+        topicosfrente: "#FFFFFF",
+        topicosfundo: "#999999",
+      },
+    ];
+
+    // 1 Inicializa
+
+    /*
+    window.onscroll = function() {
+        // nada a ver... só um teste de detecção;
+    }
+    */
+   
+    if (window.onscroll != null) {
+        window.alert("conflito com o evento window.onscroll. implemente a função resetadefaults() no seu evento, e retire do outline, do contrário a função será sobrescrita");
+    }
+
+    let trackelements = [];
+    let outline = [];
+    let shift = [];
+    let trackheight = 30;
+    let slidewidth = 70;
+    let scrollbar = 0;
+    let trackY = false;
+    let progressbarheight = 10;
+    let slideatual = 0;
+    let slidefraction = 0;
+
+    // 1 Extrai Chaves de Outlines do JSON (OLalgumacoisa)
+
+    let tracknames = [];
+    for (let i = 0; i < json.length; i++) {
+      for (let k in json[i]) {
+        if (k.match(/OL(.*)/i)) {
+          tracknames[k.match(/OL(.*)/i)[1]] = true;
+        }
+      }
+    }
+
+    // define tamanho dos slides
+
+    document.documentElement.style
+    .setProperty('--track-height', trackheight + "px");
+    document.documentElement.style
+    .setProperty('--outline-height', ((tracknames.length - 1) * trackheight) + "px");
+    
+    
+    document.documentElement.style
+    .setProperty('--slide-height', (document.getElementById("frontslide").getBoundingClientRect().height - ((Object.keys(tracknames).length - 1) * trackheight)) - scrollbar - progressbarheight + "px");
+    
+    
+
+    // 2 Cria os elementos no documento
+
+    let codeinsert = "";
+    for (let i in tracknames) {
+
+      
+      trackelements[i] = "";
+      shift[i] = 0;
+      outline[i] = {};
+      outline[i].original = [];
+      outline[i].absoluteoriginal = [];
+      outline[i].Top = [];
+      outline[i].absoluteTop = [];
+      outline[i].trackheight = trackheight;
+
+      let lastone = "";
+      let slds = "";
+      if (i == Object.keys(tracknames)[Object.keys(tracknames).length - 1]) {
+        lastone = "lasttrack";
+        slds = "swrap";
+        outline[i].trackheight = (document.getElementById("frontslide").getBoundingClientRect().height - ((Object.keys(tracknames).length - 1) * trackheight)) - scrollbar;
+      }
+
+      codeinsert += `<div id="track${i}" class="outlinetrack ${lastone}">`;
+
+      let quanta = 0;
+      let count = 0;
+      for(let j=0; j<json.length; j++) {
+
+
+        if (i == Object.keys(tracknames)[Object.keys(tracknames).length - 1]) {
+
+            codeinsert += `<div class='track ${slds}' style='position: relative; width: ${slidewidth}vw; top: ${j * outline[i].trackheight * -1}px; left: ${j * slidewidth}vw; z-index: ${100+j}; height: ${outline[i].trackheight}px; background-color: ${json[j][i + "fundo"]};'>`;
+
+            if (typeof json[j]['tipo'] == 'undefined' || json[j]['tipo'] == null || json[j]['tipo'] == '') {
+
+              codeinsert += `<iframe frameborder=0 style='width: ${slidewidth}vw; height: ${outline[i].trackheight}px;background-color: ${json[j][i + "fundo"]};' src='${json[j].OLlink}'></iframe>`;
+               
+            }
+
+            if (json[j]['tipo'] == 'imagem') {
+
+              codeinsert += `<div style='width: ${slidewidth}vw; height: ${outline[i].trackheight}px; background-color: ${json[j][i + "fundo"]}; background-repeat: no-repeat; background-size: contain; background-position: center center; background-image: url(${json[j].OLlink});'></div>`;
+               
+            }
+
+            codeinsert += `</div>`;
+
+          } else {
+           
+            codeinsert += `<div class='track ${slds}' style='position: relative; width: ${slidewidth}vw; top: ${count * outline[i].trackheight * -1}px; left: ${j * slidewidth}vw; z-index: ${100+j}; height: ${outline[i].trackheight}px; background-color: ${json[j][i + "fundo"]};'>${json[j]["OL" + i]}</div>`;
+
+            quanta = 0;
+
+            for (let q=j; q<json.length; q++) {
+                if (json[q]["OL" + i] == json[j]["OL" + i]) {
+                    quanta++;
+                }
+            }
+
+            j = j + quanta - 1;
+            count++;
+
+
+          }
+
+    
+        }
+
+      /*
+      codeinsert += `<div id='progressbarwrap' style='position: relative; left: 0; width: ${slidewidth}vw; height: ${progressbarheight};'><div id='progressbar'></div>`;
+      */
+
+      codeinsert += `</div>`;
+
+    }
+
+    document.getElementById("frontslide").innerHTML = codeinsert;
+
+
+    // 3 Captura elementos e preenche matrizes
+
+    for (let i in tracknames) {
+        trackelements[i] = document.querySelectorAll("#track" + i + " .track");
+    }
+
+    for (let el in trackelements) {
+      for (let i = 0; i < trackelements[el].length; i++) {
+        outline[el].original[i] = parseInt(trackelements[el][i].style.left);
+        outline[el].absoluteoriginal[i] =
+          trackelements[el][i].getBoundingClientRect().left -
+          document.getElementById("frontslide").getBoundingClientRect().left;
+        outline[el].Top[i] = parseInt(trackelements[el][i].style.top);
+        outline[el].absoluteTop[i] =
+          trackelements[el][i].getBoundingClientRect().top;
+      }
+    }
+
+    // 4 gerencia movimentos
+
+    let outlinemanager = function (e) {
+
+        slideatual = parseInt( (document.getElementById("frontslide").scrollLeft / document.getElementById("frontslide").scrollWidth) * json.length );
+
+        slidefraction = document.getElementById("frontslide").scrollWidth / json.length;
+
+      for (let el in trackelements) {
+
+        if (document.getElementById("frontslide").scrollLeft < document.getElementById("frontslide").scrollWidth - window.innerWidth && el != Object.keys(tracknames)[Object.keys(tracknames).length - 1]) {
+
+        // Titulo
+        shift[el] = 0;
+        for (let i = 0; i < trackelements[el].length; i++) {
+      
+            
+                if (
+                    document.getElementById("frontslide").scrollLeft >=
+                    outline[el].absoluteoriginal[i]
+                ) {
+                    trackelements[el][i].style.position = "fixed";
+                    trackelements[el][i].style.left =
+                    document.getElementById("frontslide").getBoundingClientRect()
+                        .left + "px";
+
+                    trackelements[el][i].style.top = outline[el].absoluteTop[i] + "px";
+
+                    shift[el] = shift[el] + outline[el].trackheight;
+                } else {
+                    trackelements[el][i].style.position = "relative";
+                    trackelements[el][i].style.top =
+                    outline[el].Top[i] + shift[el] + "px";
+                    trackelements[el][i].style.left = outline[el].original[i] + "vw";
+                }
+            }
+            
+        }
+      }
+
+    };
+
+    const makescroll = function(e) {
+
+        let delta = 0;
+        if (trackY) {
+           delta = e.deltaX + e.deltaY;
+        } else {
+           delta = e.deltaX;
+        }
+        document.getElementById("frontslide").scrollLeft += delta;
+
+        outlinemanager();
+    }
+
+    const resetadefaults = function(e) {
+
+        let oldscroll = document.getElementById("frontslide").scrollLeft;
+
+        document.getElementById("frontslide").scrollLeft = 0;
+        outlinemanager();
+
+        let codeinsert = "";
+        for (let i in tracknames) {
+
+        
+            trackelements[i] = "";
+            shift[i] = 0;
+            outline[i] = {};
+            outline[i].original = [];
+            outline[i].absoluteoriginal = [];
+            outline[i].Top = [];
+            outline[i].absoluteTop = [];
+            outline[i].trackheight = trackheight;
+
+            let lastone = "";
+            let slds = "";
+            if (i == Object.keys(tracknames)[Object.keys(tracknames).length - 1]) {
+                lastone = "lasttrack";
+                slds = "swrap";
+                outline[i].trackheight = (document.getElementById("frontslide").getBoundingClientRect().height - ((Object.keys(tracknames).length - 1) * trackheight)) - scrollbar;
+            }
+
+            codeinsert += `<div id="track${i}" class="outlinetrack ${lastone}">`;
+
+      let quanta = 0;
+      let count = 0;
+      for(let j=0; j<json.length; j++) {
+
+
+        if (i == Object.keys(tracknames)[Object.keys(tracknames).length - 1]) {
+
+           
+
+            codeinsert += `<div class='track ${slds}' style='position: relative; width: ${slidewidth}vw; top: ${j * outline[i].trackheight * -1}px; left: ${j * slidewidth}vw; z-index: ${100+j}; height: ${outline[i].trackheight}px; background-color: ${json[j][i + "fundo"]};'>`;
+
+            if (typeof json[j]['tipo'] == 'undefined' || json[j]['tipo'] == null || json[j]['tipo'] == '') {
+
+              codeinsert += `<iframe frameborder=0 style='width: ${slidewidth}vw; height: ${outline[i].trackheight}px;background-color: ${json[j][i + "fundo"]};' src='${json[j].OLlink}'></iframe>`;
+               
+            }
+
+            if (json[j]['tipo'] == 'imagem') {
+
+              codeinsert += `<div style='width: ${slidewidth}vw; height: ${outline[i].trackheight}px; background-color: ${json[j][i + "fundo"]}; background-repeat: no-repeat; background-size: contain; background-position: center center; background-image: url(${json[j].OLlink});'></div>`;
+               
+            }
+
+            codeinsert += `</div>`;
+
+          } else {
+           
+            codeinsert += `<div class='track ${slds}' style='position: relative; width: ${slidewidth}vw; top: ${count * outline[i].trackheight * -1}px; left: ${j * slidewidth}vw; z-index: ${100+j}; height: ${outline[i].trackheight}px; background-color: ${json[j][i + "fundo"]};'>${json[j]["OL" + i]}</div>`;
+
+            quanta = 0;
+
+            for (let q=j; q<json.length; q++) {
+                if (json[q]["OL" + i] == json[j]["OL" + i]) {
+                    quanta++;
+                }
+            }
+
+            j = j + quanta - 1;
+            count++;
+
+
+          }
+
+    
+        }
+
+      /*
+      codeinsert += `<div id='progressbarwrap' style='position: relative; left: 0; width: ${slidewidth}vw; height: ${progressbarheight};'><div id='progressbar'></div>`;
+      */
+
+      codeinsert += `</div>`;
+
+    }
+
+    document.getElementById("frontslide").innerHTML = codeinsert;
+
+
+        for (let i in tracknames) {
+            trackelements[i] = document.querySelectorAll("#track" + i + " .track");
+        }
+
+        for (let el in trackelements) {
+            for (let i = 0; i < trackelements[el].length; i++) {
+                outline[el].original[i] = parseInt(trackelements[el][i].style.left);
+                outline[el].absoluteoriginal[i] =
+                trackelements[el][i].getBoundingClientRect().left -
+                document.getElementById("frontslide").getBoundingClientRect().left;
+                outline[el].Top[i] = parseInt(trackelements[el][i].style.top);
+                outline[el].absoluteTop[i] =
+                trackelements[el][i].getBoundingClientRect().top;
+            }
+        }
+
+        if (oldscroll >= document.getElementById("frontslide").scrollWidth - window.innerWidth) {
+            document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollWidth - window.innerWidth;
+        } else {
+            document.getElementById("frontslide").scrollLeft = oldscroll;
+        }
+        outlinemanager();
+    }
+
+    // 6 Aplica os eventos
+    window.onresize = resetadefaults;
+    document.getElementById("frontslide").onwheel = makescroll;
+    document.getElementById("frontslide").onscroll = outlinemanager;
+    document.getElementsByTagName("body")[0].onscroll = resetadefaults;
+    
+  </script>
+</div>
