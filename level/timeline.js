@@ -157,7 +157,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     todosslides = dados;
 
     let tituloscode = ``;
-    let contat = 0;
+    let contat = 1;
     let i = 0;
     while (i < dados.length) {
         
@@ -187,7 +187,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     lobody.innerHTML += `<div id='tracktitulos' class='fulltrack' style='width: ${dados.length * 100}vw;'>${tituloscode}</div>`;
 
     let subtituloscode = ``;
-    contat = 0;
+    contat = 1;
     i = 0;
     while (i < dados.length) {
         
@@ -217,7 +217,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
 
     let topicoscode = ``;
-    contat = 0;
+    contat = 1;
     i = 0;
     while (i < dados.length) {
         
