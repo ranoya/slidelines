@@ -311,7 +311,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
         subtituloscode += `<div class="track" style='display: inline-block; position: sticky; margin: 0; padding: 0; top: 0; left: 0; width: 100vw; margin-right: 0; margin-left: ${(contat - 1) * 100}vw; z-index: ${200 + i}; background-color: ${dados[i].subtitulofundo}; color: ${dados[i].subtitulofrente}'><span style='margin-left: var(--meta-margins, 30px);'>${subtituloatual}</span></div>`;
 
-        let contat = 0;
+        contat = 0;
 
         for (let k = i; k < dados.length; k++) {
             
@@ -340,7 +340,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         
         topicoscode += `<div class="track" style='display: inline-block; position: sticky; margin: 0; padding: 0; top: 0; left: 0; width: 100vw; margin-right: 0; margin-left: ${(contat - 1) * 100}vw; z-index: ${200 + i}; background-color: ${dados[i].fundo}; color: ${dados[i].frente}'><span style='margin-left: var(--meta-margins, 30px);'>${subtituloatual}</span></div>`;
 
-        let contat = 0;
+        contat = 0;
 
         for (let k = i; k < dados.length; k++) {
             
