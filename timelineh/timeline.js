@@ -202,12 +202,15 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     todosslides = dados;
 
     let tituloscode = ``;
-    let contat = 0;
+    let contat = 1;
     let i = 0;
     while (i < dados.length) {
         
         let tituloatual = dados[i].titulo;
-        let contat = 0;
+        
+        tituloscode += `<div class="track" style='display: inline-block; position: sticky; margin: 0; padding: 0; top: 0; left: 0; width: 100vw; margin-right: 0; margin-left: ${(contat - 1) * 100}vw; z-index: ${200 + i}; background-color: ${dados[i].titulofundo}; color: ${dados[i].titulofrente}'><span style='margin-left: var(--meta-margins, 30px);'>${tituloatual}</span></div>`;
+
+        contat = 0;
 
         for (let k = i; k < dados.length; k++) {
             
@@ -218,8 +221,6 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
             }
 
         }
-
-        tituloscode += `<div class="track" style='display: inline-block; position: sticky; margin: 0; padding: 0; top: 0; left: 0; width: 100vw; margin-right: ${(contat - 1) * 100}vw; z-index: ${200 + i}; background-color: ${dados[i].titulofundo}; color: ${dados[i].titulofrente}'><span style='margin-left: var(--meta-margins, 30px);'>${tituloatual}</span></div>`;
 
         i = i + contat;
 
@@ -301,11 +302,15 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     
 
     let subtituloscode = ``;
-    contat = 0;
+    contat = 1;
     i = 0;
     while (i < dados.length) {
         
         let subtituloatual = dados[i].subtitulo;
+        
+
+        subtituloscode += `<div class="track" style='display: inline-block; position: sticky; margin: 0; padding: 0; top: 0; left: 0; width: 100vw; margin-right: 0; margin-left: ${(contat - 1) * 100}vw; z-index: ${200 + i}; background-color: ${dados[i].subtitulofundo}; color: ${dados[i].subtitulofrente}'><span style='margin-left: var(--meta-margins, 30px);'>${subtituloatual}</span></div>`;
+
         let contat = 0;
 
         for (let k = i; k < dados.length; k++) {
@@ -318,8 +323,6 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
         }
 
-        subtituloscode += `<div class="track" style='display: inline-block; position: sticky; margin: 0; padding: 0; top: 0; left: 0; width: 100vw; margin-right: ${(contat - 1) * 100}vw; z-index: ${200 + i}; background-color: ${dados[i].subtitulofundo}; color: ${dados[i].subtitulofrente}'><span style='margin-left: var(--meta-margins, 30px);'>${subtituloatual}</span></div>`;
-
         i = i + contat;
 
     }
@@ -329,11 +332,14 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
 
 
     let topicoscode = ``;
-    contat = 0;
+    contat = 1;
     i = 0;
     while (i < dados.length) {
         
         let subtituloatual = dados[i].topicos;
+        
+        topicoscode += `<div class="track" style='display: inline-block; position: sticky; margin: 0; padding: 0; top: 0; left: 0; width: 100vw; margin-right: 0; margin-left: ${(contat - 1) * 100}vw; z-index: ${200 + i}; background-color: ${dados[i].fundo}; color: ${dados[i].frente}'><span style='margin-left: var(--meta-margins, 30px);'>${subtituloatual}</span></div>`;
+
         let contat = 0;
 
         for (let k = i; k < dados.length; k++) {
@@ -345,8 +351,6 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
             }
 
         }
-
-        topicoscode += `<div class="track" style='display: inline-block; position: sticky; margin: 0; padding: 0; top: 0; left: 0; width: 100vw; margin-right: ${(contat - 1) * 100}vw; z-index: ${200 + i}; background-color: ${dados[i].fundo}; color: ${dados[i].frente}'><span style='margin-left: var(--meta-margins, 30px);'>${subtituloatual}</span></div>`;
 
         i = i + contat;
 
