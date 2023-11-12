@@ -8,3 +8,16 @@
   text-transform: uppercase;
   font-weight: lighter;
 }
+
+.slidewrap {
+  height: calc(100vh - (5 * var(--track-height, 60px))) !important;
+}
+
+#indice {
+  top: calc(100vh - 32px - 15px) !important;
+}
+
+#prev,
+#next {
+  top: calc(100vh - 30px - 15px);
+}
