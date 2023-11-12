@@ -2,7 +2,7 @@
 
 :root {
   --track-height: 30px;
-  --md-fontsize: 22px;
+  --md-fontsize: 26px;
   --timeline-font: "Prompt";
 }
 
@@ -32,4 +32,10 @@ html {
 }
 
 .conteudomd {
+  font-weight: lighter;
+  text-align: left !important;
+}
+
+#tracktopicos .track {
+  text-align: center !important;
 }
