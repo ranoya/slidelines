@@ -21,3 +21,8 @@
 #next {
   top: calc(100vh - 30px - 15px);
 }
+
+body,
+html {
+  background-color: var(--track-bg);
+}
