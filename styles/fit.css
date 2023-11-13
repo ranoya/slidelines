@@ -34,4 +34,13 @@ html {
 .conteudomd {
   font-weight: lighter;
   text-align: left !important;
+  font-size: min(2.2vh, 2.2vw) !important;
+}
+
+.conteudomd p {
+  font-size: min(2.2vh, 2.2vw) !important;
+}
+
+.conteudomd h2 {
+  font-size: min(2.6vh, 2.6vw) !important;
 }
