@@ -21,29 +21,35 @@ $_GET = [];
 // FUNÇÃO IMAGE FROM ALL SOURCES
 
 const imagefromallsources = function (murl) {
-    let saida = "";
-    
-    if (murl.match(/https:\/\/drive\.google\.com\/open\?(.*)\&/i)) {
-        let complementa = murl.match(/https:\/\/drive\.google\.com\/open\?(.*)\&/i)[1];
-        saida = "https://drive.google.com/uc?export=view&"+complementa+"&usp=drive_fs"
+    // FUNÇÃO IMAGE FROM ALL SOURCES
+
+  let saida = murl;
+
+  if (murl.match(/https:\/\/drive\.google\.com\/open\?(.*)\&/i)) {
+    let complementa = murl.match(
+      /https:\/\/drive\.google\.com\/open\?(.*)\&/i
+    )[1];
+    saida =
+      "https://drive.google.com/uc?export=view&" +
+      complementa +
+      "&usp=drive_fs";
   }
 
   let nurl = murl.replace(/\&amp;/gi, "&");
 
-  video = nurl.match(
+  let video = nurl.match(
     /(http:|https:|)\/\/(player.|www.|m.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com))\/(video\/|embed\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(\&\S+)?/
   );
 
   if (typeof video != "undefined" && video != null) {
     saida = "https://img.youtube.com/vi/" + video[6] + "/0.jpg";
-  } else if (nurl.match(/\.png|\.svg|\.jpg|\.gif|.webp/i)) {
-      saida = nurl;
-  } else {
-    saida= nurl;
   }
 
-    
-    return saida;
+  if (nurl.match(/\.png|\.svg|\.jpg|\.gif|.webp/i)) {
+    saida = nurl;
+  }
+
+  return saida;
 }
 
 
