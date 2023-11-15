@@ -21,11 +21,11 @@ $_GET = [];
 // FUNÇÃO IMAGE FROM ALL SOURCES
 
 const imagefromallsources = function (murl) {
-    let video = "";
+    let saida = "";
     
     if (murl.match(/https:\/\/drive\.google\.com\/open\?(.*)\&/i)) {
         let complementa = murl.match(/https:\/\/drive\.google\.com\/open\?(.*)\&/i)[1];
-        video = "https://drive.google.com/uc?export=view&"+complementa+"&usp=drive_fs"
+        saida = "https://drive.google.com/uc?export=view&"+complementa+"&usp=drive_fs"
   }
 
   let nurl = murl.replace(/\&amp;/gi, "&");
@@ -35,13 +35,15 @@ const imagefromallsources = function (murl) {
   );
 
   if (typeof video != "undefined" && video != null) {
-    return "https://img.youtube.com/vi/" + video[6] + "/0.jpg";
+    saida = "https://img.youtube.com/vi/" + video[6] + "/0.jpg";
   } else if (nurl.match(/\.png|\.svg|\.jpg|\.gif|.webp/i)) {
-    return nurl;
+      saida = nurl;
   } else {
-    return nurl;
+    saida= nurl;
   }
 
+    
+    return saida;
 }
 
 
