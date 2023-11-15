@@ -19,6 +19,33 @@ $_GET = [];
 })();
 
 
+// FUNÇÃO IMAGE FROM ALL SOURCES
+
+const imagefromallsources = function (murl) {
+    let video = "";
+    
+    if (murl.match(/https:\/\/drive\.google\.com\/open\?(.*)\&/i)) {
+        let complementa = murl.match(/https:\/\/drive\.google\.com\/open\?(.*)\&/i)[1];
+        video = "https://drive.google.com/uc?export=view&"+complementa+"&usp=drive_fs"
+  }
+
+  let nurl = murl.replace(/\&amp;/gi, "&");
+
+  video = nurl.match(
+    /(http:|https:|)\/\/(player.|www.|m.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com))\/(video\/|embed\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(\&\S+)?/
+  );
+
+  if (typeof video != "undefined" && video != null) {
+    return "https://img.youtube.com/vi/" + video[6] + "/0.jpg";
+  } else if (nurl.match(/\.png|\.svg|\.jpg|\.gif|.webp/i)) {
+    return nurl;
+  } else {
+    return nurl;
+  }
+
+}
+
+
 let arr = [];
 let todosslides = [];
 let actualpage = 0;
@@ -217,7 +244,7 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         if (dados[i].tipo == "imagem" || dados[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
             slidescode += `<div id='allslides${i}' onclick="gonext()" class='slidewrap' style='cursor: pointer; background-color: ${fundotrack};'>
 
-            <div class='slideitself' style='background-color: ${dados[i].fundo}; background-image: url(${dados[i].link});'></div>
+            <div class='slideitself' style='background-color: ${dados[i].fundo}; background-image: url(${imagefromallsources(dados[i].link)});'></div>
 
             </div>`;
         } else if (dados[i].link.toString().match(/\.md/i) && dados[i].tipo != "texto") {
@@ -305,7 +332,7 @@ const putslides = function (posicao) {
 
                 if (todosslides[i].tipo == "imagem" || todosslides[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
                     
-                    document.getElementById('allslides' + i).innerHTML = `<div class='slideitself' style='background-color: ${todosslides[i].fundo}; background-image: url(${todosslides[i].link});'></div>`;
+                    document.getElementById('allslides' + i).innerHTML = `<div class='slideitself' style='background-color: ${todosslides[i].fundo}; background-image: url(${imagefromallsources(todosslides[i].link)});'></div>`;
                 } else if (todosslides[i].link.toString().match(/\.md/i) && todosslides[i].tipo != "texto") {
 
                     document.getElementById('allslides' + i).innerHTML = `<iframe class='slideitself' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${todosslides[i].link}'></iframe>`;
