@@ -402,7 +402,7 @@ const putslides = function (posicao) {
 
     }
     
-
+    pegatodosslides = document.getElementsByClassName("slideitself");
     for (let z = 0; z < pegatodosslides.length; z++) {
         
         pegatodosslides[z].style.transform=`translate(${(((document.getElementById("frontslide").scrollLeft - (z * window.innerWidth) )  / 8)) + "px"},0)`;
