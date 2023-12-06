@@ -374,7 +374,7 @@ const putslides = function (posicao) {
                 }
 
                 
-                document.getElementById("its"+i).style.transform=`translate(${(((document.getElementById("frontslide").scrollLeft - (indicefixo * window.innerWidth) )  / 2.5)) + "px"},0)`;
+                document.getElementById("its"+i).style.transform=`translate(${(((document.getElementById("frontslide").scrollLeft - (i * window.innerWidth) )  / 2.5)) + "px"},0)`;
 
             }
 
