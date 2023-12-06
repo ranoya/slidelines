@@ -548,7 +548,7 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
     for (let z = 0; z < pegatodosslides.length; z++) {
         
         compensa = (z * window.innerWidth)
-        pegatodosslides[z].style.transform=`translate(${(((z * window.innerWidth) - (document.getElementById("frontslide").scrollLeft) / 4)) + "px"},0)`;
+        pegatodosslides[z].style.transform=`translate(${(((document.getElementById("frontslide").scrollLeft - (z * window.innerWidth) )  / 8)) + "px"},0)`;
 
     }
 
