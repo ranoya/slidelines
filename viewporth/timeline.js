@@ -64,6 +64,8 @@ let rodandoajeita = false;
 let lobody = document.getElementById("frontslide");
 let fundotrack = ``;
 
+let pegatodosslides = "";
+
 let vai = setTimeout(function () { }, 0);
 
 if ($_GET['s'] != "" && typeof $_GET['s'] != "undefined" && $_GET['s'] != null) {
@@ -300,7 +302,9 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
     lobody.innerHTML += `<div id='slides' class='slides' style='width: ${dados.length * 100}vw;'>${slidescode}</div>`;
 
     setTimeout(
-    acionagoto, 1000);
+        acionagoto, 1000);
+    
+    pegatodosslides = document.getElementsByClassName("slideitself");
 
 });
 
@@ -396,7 +400,14 @@ const putslides = function (posicao) {
 
 
 
-        }
+    }
+    
+
+    for (let z = 0; z < pegatodosslides.length; z++) {
+        
+        pegatodosslides[z].style.transform=`translate(${(((document.getElementById("frontslide").scrollLeft - (z * window.innerWidth) )  / 8)) + "px"},0)`;
+
+    }
 
     
 }
@@ -510,8 +521,8 @@ let ajeita = function (fecha) {
     
 }
 
-let pegatodosslides = document.getElementsByClassName("slideitself");
-let compensa = 0;
+
+
 
 document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
@@ -544,13 +555,6 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
     document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
     document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
     document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
-
-    for (let z = 0; z < pegatodosslides.length; z++) {
-        
-        compensa = (z * window.innerWidth)
-        pegatodosslides[z].style.transform=`translate(${(((document.getElementById("frontslide").scrollLeft - (z * window.innerWidth) )  / 8)) + "px"},0)`;
-
-    }
 
     vai = setTimeout(parou, 500);
 
