@@ -510,6 +510,8 @@ let ajeita = function (fecha) {
     
 }
 
+let pegatodosslides = document.getElementsByClassName("slidewrap");
+
 document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
 
@@ -541,6 +543,12 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
     document.documentElement.style.setProperty('--button-color', arrcolorbg[posicao]);
     document.documentElement.style.setProperty('--track-fg', arrcolorbg[posicao]);
     document.documentElement.style.setProperty('--track-bg', arrcolorfg[posicao]);
+
+    for (let z = 0; z < pegatodosslides.length; z++) {
+        
+        pegatodosslides[z].backgroundPositionX = (document.getElementById("frontslide").scrollLeft / 4) + "px";
+
+    }
 
     vai = setTimeout(parou, 500);
 
