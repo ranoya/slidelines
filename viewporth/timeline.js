@@ -255,13 +255,13 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
         if (dados[i].tipo == "imagem" || dados[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
             slidescode += `<div id='allslides${i}' onclick="gonext()" class='slidewrap' style='cursor: pointer; background-color: ${fundotrack};'>
 
-            <div class='slideitself' id='its${i}' style='background-color: ${dados[i].fundo}; background-image: url(${imagefromallsources(dados[i].link)});'></div>
+            <div class='slideitself' numero='${i}' style='background-color: ${dados[i].fundo}; background-image: url(${imagefromallsources(dados[i].link)});'></div>
 
             </div>`;
         } else if (dados[i].link.toString().match(/\.md/i) && dados[i].tipo != "texto") {
             slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
 
-            <iframe class='slideitself' id='its${i}' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${dados[i].link}'></iframe>
+            <iframe class='slideitself' numero='${i}' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${dados[i].link}'></iframe>
             
             </div>`;
         } else if (dados[i].tipo == "texto") {
@@ -274,13 +274,13 @@ fetch(arquivojson).then(response => response.json()).then((dados) => {
             }
             
             slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
-                <div class='slideitself markd' id='its${i}'>
+                <div class='slideitself markd' numero='${i}'>
                 <div class='conteudomd ${book}'>${code}</div>
                 </div>
             </div>`;
         } else {
             slidescode += `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
-                 <iframe class='slideitself' id='its${i}' frameborder=0 src='${dados[i].link}'></iframe>
+                 <iframe class='slideitself' numero='${i}' frameborder=0 src='${dados[i].link}'></iframe>
             </div>`;
         }
             
@@ -337,7 +337,7 @@ const putslides = function (posicao) {
     document.getElementById("tracktopicos").innerHTML = `<div class="track">${todosslides[posicao].topicos}</div>`;
 
 
-    pegatodosslides = document.getElementsByClassName("slideitself");
+
 
     for (let i = 0; i < todosslides.length; i++) {
 
@@ -345,10 +345,10 @@ const putslides = function (posicao) {
 
                 if (todosslides[i].tipo == "imagem" || todosslides[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)) {
                     
-                    document.getElementById('allslides' + i).innerHTML = `<div class='slideitself' id='its${i}' style='background-color: ${todosslides[i].fundo}; background-image: url(${imagefromallsources(todosslides[i].link)});'></div>`;
+                    document.getElementById('allslides' + i).innerHTML = `<div class='slideitself' numero='${i}' style='background-color: ${todosslides[i].fundo}; background-image: url(${imagefromallsources(todosslides[i].link)});'></div>`;
                 } else if (todosslides[i].link.toString().match(/\.md/i) && todosslides[i].tipo != "texto") {
 
-                    document.getElementById('allslides' + i).innerHTML = `<iframe class='slideitself' id='its${i}' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${todosslides[i].link}'></iframe>`;
+                    document.getElementById('allslides' + i).innerHTML = `<iframe class='slideitself' numero='${i}' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${todosslides[i].link}'></iframe>`;
 
                 } else if (todosslides[i].tipo == "texto") {
 
@@ -362,19 +362,16 @@ const putslides = function (posicao) {
                     
                     document.getElementById('allslides' + i).innerHTML = `<div id='allslides${i}' class='slidewrap' style='background-color: ${fundotrack};'>
 
-                    <div class='slideitself markd' id='its${i}'>
+                    <div class='slideitself markd' numero='${i}'>
                     <div class='conteudomd ${book}'>${code}</div>
                     </div>
 
                     </div>`;
                 } else {
                     
-                    document.getElementById('allslides' + i).innerHTML = `<iframe class='slideitself' id='its${i}' frameborder=0 src='${todosslides[i].link}'></iframe>`;
+                    document.getElementById('allslides' + i).innerHTML = `<iframe class='slideitself' numero='${i}' frameborder=0 src='${todosslides[i].link}'></iframe>`;
 
                 }
-
-                
-                document.getElementById("its"+i).style.transform=`translate(${(((document.getElementById("frontslide").scrollLeft - (i * window.innerWidth) )  / 2.5)) + "px"},0)`;
 
             }
 
@@ -400,20 +397,12 @@ const putslides = function (posicao) {
                 }
 
             }
-        
-            
-    
-
-        
-            
 
 
 
 
     }
     
-    
-
     
 
     
@@ -470,6 +459,8 @@ document.addEventListener("wheel", (event) => {
         vai = setTimeout(parou, 500);
 
         putslides(posicao);
+
+        vport();
         
     }
 });
@@ -525,6 +516,8 @@ let ajeita = function (fecha) {
         ajeita();
     }
 
+    vport();
+
     
 }
 
@@ -567,9 +560,32 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
     putslides(posicao);
 
+    vport();
+    
+
 });
 
 
+const vport = function () {
+    pegatodosslides = document.getElementsByClassName("slideitself");
+    
+    for (let z = 0; z < pegatodosslides.length; z++) {
+
+        if (pegatodosslides[z].innerHTML != "") {
+        
+            indicefixo = parseInt(pegatodosslides[z].getAttribute("numero"));
+
+            /*
+            if (typeof pegatodosslides[z].getAttribute("numero") == "undefined" || pegatodosslides[z].getAttribute("numero") == null) {
+                indicefixo = 0;
+            }
+            */
+
+            pegatodosslides[z].style.transform = `translate(${(((document.getElementById("frontslide").scrollLeft - (indicefixo * window.innerWidth)) / 2.5)) + "px"},0)`;
+        }
+
+    }
+}
 
 
 
