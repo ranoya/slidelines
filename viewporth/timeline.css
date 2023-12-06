@@ -133,7 +133,7 @@ body {
 }
 
 .slideitself {
-  width: 100%;
+  width: 90%;
   height: calc(
     100vh - calc(2 * (var(--track-height, 60px))) - var(--inclui-scroll, 0px)
   );
@@ -143,6 +143,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: center;
+  margin-left: 5%;
 }
 
 #indice {
