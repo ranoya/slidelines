@@ -510,7 +510,7 @@ let ajeita = function (fecha) {
     
 }
 
-let pegatodosslides = document.getElementsByClassName("slidewrap");
+let pegatodosslides = document.getElementsByClassName("slideitself");
 
 document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
