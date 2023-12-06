@@ -413,7 +413,7 @@ const putslides = function (posicao) {
             indicefixo = 0;
         }
 
-        pegatodosslides[z].style.transform=`translate(${(((document.getElementById("frontslide").scrollLeft - (indicefixo * window.innerWidth) )  / 3)) + "px"},0)`;
+        pegatodosslides[z].style.transform=`translate(${(((document.getElementById("frontslide").scrollLeft - (indicefixo * window.innerWidth) )  / 2)) + "px"},0)`;
 
     }
 
