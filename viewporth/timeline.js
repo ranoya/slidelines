@@ -337,7 +337,7 @@ const putslides = function (posicao) {
     document.getElementById("tracktopicos").innerHTML = `<div class="track">${todosslides[posicao].topicos}</div>`;
 
 
-
+    pegatodosslides = document.getElementsByClassName("slideitself");
 
     for (let i = 0; i < todosslides.length; i++) {
 
@@ -373,6 +373,16 @@ const putslides = function (posicao) {
 
                 }
 
+                indicefixo = parseInt(pegatodosslides[i].getAttribute("numero"));
+
+                /*
+                if (typeof pegatodosslides[z].getAttribute("numero") == "undefined" || pegatodosslides[z].getAttribute("numero") == null) {
+                    indicefixo = 0;
+                }
+                */
+
+                pegatodosslides[i].style.transform=`translate(${(((document.getElementById("frontslide").scrollLeft - (indicefixo * window.innerWidth) )  / 2.5)) + "px"},0)`;
+
             }
 
 
@@ -397,25 +407,21 @@ const putslides = function (posicao) {
                 }
 
             }
-
-
-
-
-    }
-    
-    pegatodosslides = document.getElementsByClassName("slideitself");
-    
-    for (let z = 0; z < pegatodosslides.length; z++) {
         
-        indicefixo = parseInt(pegatodosslides[z].getAttribute("numero"));
+            
+    
 
-        if (typeof pegatodosslides[z].getAttribute("numero") == "undefined" || pegatodosslides[z].getAttribute("numero") == null) {
-            indicefixo = 0;
-        }
+        
+            
 
-        pegatodosslides[z].style.transform=`translate(${(((document.getElementById("frontslide").scrollLeft - (indicefixo * window.innerWidth) )  / 2.5)) + "px"},0)`;
+
+
 
     }
+    
+    
+
+    
 
     
 }
