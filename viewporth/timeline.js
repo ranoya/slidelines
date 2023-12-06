@@ -571,7 +571,7 @@ const vport = function () {
     
     for (let z = 0; z < pegatodosslides.length; z++) {
 
-        if (pegatodosslides[z].innerHTML != "") {
+
         
             indicefixo = parseInt(pegatodosslides[z].getAttribute("numero"));
 
@@ -582,7 +582,7 @@ const vport = function () {
             */
 
             pegatodosslides[z].style.transform = `translate(${(((document.getElementById("frontslide").scrollLeft - (indicefixo * window.innerWidth)) / 2.5)) + "px"},0)`;
-        }
+        
 
     }
 }
