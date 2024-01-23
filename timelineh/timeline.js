@@ -29,10 +29,26 @@ const imagefromallsources = function (murl) {
     let complementa = murl.match(
       /https:\/\/drive\.google\.com\/open\?(.*)\&/i
     )[1];
+   
+      saida = "https://lh3.googleusercontent.com/d/" + complementa;
+  }
+    
+  if (murl.match(/https:\/\/drive\.google\.com\/file\/d/i)) {
+    let complementa = murl.match(
+      /https:\/\/drive\.google\.com\/file\/d\/(.*)\/view/i
+    )[1];
+
+    saida = "https://lh3.googleusercontent.com/d/" + complementa;
+  }
+    
+  if (murl.match(/https:\/\/drive\.google\.com\/uc\?export=view/i)) {
+    let complementa = murl.match(
+      /id=(.*)/i
+    )[1];
+    
     saida =
-      "https://drive.google.com/uc?export=view&" +
-      complementa +
-      "&usp=drive_fs";
+      "https://lh3.googleusercontent.com/d/" +
+      complementa;
   }
 
   let nurl = murl.replace(/\&amp;/gi, "&");
