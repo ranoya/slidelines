@@ -28,7 +28,7 @@ const imagefromallsources = function (murl) {
 
   if (murl.match(/https:\/\/drive\.google\.com\/open\?(.*)\&/i)) {
     let complementa = murl.match(
-      /https:\/\/drive\.google\.com\/open\?(.*)\&/i
+      /https:\/\/drive\.google\.com\/open\?id=(.*)\&/i
     )[1];
    
       saida = "https://lh3.googleusercontent.com/d/" + complementa;
