@@ -219,13 +219,89 @@ if (typeof $_GET['followbg'] != 'undefined' && $_GET['followbg'] != null && $_GE
 
 // FUNÇÃO DE FETCH DE ARQUIVO JSON
 
-let arquivojson = "https://opensheet.elk.sh/10UW1pPs4BfNC7q0U4grAEBW8NicLP4evtPLoLyPtY1A/Example";
+let arquivojson = "https://docs.google.com/spreadsheets/d/10UW1pPs4BfNC7q0U4grAEBW8NicLP4evtPLoLyPtY1A/edit#gid=0";
 
 if (typeof $_GET['file'] != "undefined" && $_GET['file'] != null && $_GET['file'] != "") {
     arquivojson = $_GET['file'];
 }
 
-fetch(arquivojson).then(response => response.json()).then((dados) => {
+
+const GoogleSheetCsvURL = function(url) {
+  url = new URL(url);
+  const id = url.pathname.split("/")[3];
+  const gid = new URLSearchParams(url.hash.slice(1)).get("gid") || 0;
+  return `https://docs.google.com/spreadsheets/d/${id}/export?format=csv&gid=${gid}`
+}
+
+fetch(GoogleSheetCsvURL(arquivojson)).then(response => response.text()).then((csvdata) => {
+
+        let total = csvdata.length;
+        let changecsv = "";
+        let quantquotes = 0;
+        for (let r = 0; r < total; r++) {
+          if (csvdata.substring(r, r+1) == '"') {
+            quantquotes++;
+          }
+
+          if (csvdata.substring(r, r+1) == '\n' && quantquotes % 2 != 0) {
+            changecsv = csvdata.substring(0, r) + ' ' + csvdata.substring(r + 1);
+            csvdata = changecsv;
+          }
+
+        }
+
+        let linhas = csvdata.split(/\r?\n|\r|\n/g);
+        let linhadados = "";
+        let valorfinal = "";
+        let temp1 = "";
+        let temp2 = "";
+
+        let heads = linhas[0].split(",");
+
+        let dados = [];
+
+        for (let i = 1; i < linhas.length; i++) {
+          dados[i - 1] = {};
+          linhadados = linhas[i].split(/[,]{1}(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))/);
+
+          for (let k = 0; k < linhadados.length; k++) {
+            linhadados[k].trim();
+
+            if (
+              linhadados[k].substring(0, 1) == '"'
+            ) {
+              temp1 = linhadados[k].substring(1, linhadados[k].length);
+            } else {
+              temp1 = linhadados[k];
+            }
+
+            
+            if (
+              temp1.substring(
+                temp1.length - 2,
+                temp1.length
+              ) == '\"'
+            ) {
+              temp1 = temp1.substring(0, temp1.length - 2);
+            } 
+
+            if (
+              temp1.substring(
+                temp1.length - 1,
+                temp1.length
+              ) == '"'
+            ) {
+              temp2 = temp1.substring(0, temp1.length - 1);
+            } else {
+              temp2 = temp1;
+            }
+
+            valorfinal = temp2.replace(/""/g, '"');
+
+            dados[i - 1][heads[k]] = valorfinal;
+
+          }
+        }
 
     document.getElementById("prev").style.display = "none";
     
