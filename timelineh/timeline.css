@@ -53,6 +53,7 @@ body {
   height: 100vh;
   overflow-y: hidden;
   overflow-x: auto;
+  background-color: var(--track-bg);
 }
 
 #tempo {
@@ -75,6 +76,10 @@ body {
 
 #tempo::-webkit-scrollbar {
   height: 0;
+}
+
+::-webkit-scrollbar-track {
+  background: var(track-bg);
 }
 
 .linhadotempo {
