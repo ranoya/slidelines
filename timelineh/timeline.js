@@ -365,6 +365,8 @@ fetch(GoogleSheetCsvURL(arquivojson))
       }
     }
 
+    document.documentElement.style.setProperty("--track-bg", dados[0].fundo);
+
     todosslides = dados;
 
     let tituloscode = ``;
