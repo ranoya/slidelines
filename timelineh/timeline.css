@@ -78,8 +78,8 @@ body {
   height: 0;
 }
 
-::-webkit-scrollbar-track {
-  background: var(track-bg);
+#tempo::-webkit-scrollbar-track {
+  background: var(--track-bg);
 }
 
 .linhadotempo {
