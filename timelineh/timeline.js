@@ -164,6 +164,16 @@ if (
     $_GET["fixascroll"] != null &&
     $_GET["fixascroll"] != "")
 ) {
+  let v = `var(--base-background, #ffffff);`;
+
+  if (
+    typeof $_GET["bgscroll"] != "undefined" &&
+    $_GET["bgscroll"] != null &&
+    $_GET["bgscroll"] != ""
+  ) {
+    v = `var(--track-bg, #ffffff)`;
+  }
+
   let restora = `
     <style>
 
@@ -174,7 +184,7 @@ if (
         }
 
         ::-webkit-scrollbar-track {
-        background: var(--base-background, #ffffff);
+        background: ${v};
         }
 
         ::-webkit-scrollbar:hover {
@@ -210,21 +220,6 @@ if (
     </style>
 
     `;
-
-  if (
-    typeof $_GET["bgscroll"] != "undefined" &&
-    $_GET["bgscroll"] != null &&
-    $_GET["bgscroll"] != ""
-  ) {
-    restora = `
-    <style>
-        ::-webkit-scrollbar-track {
-            background: var(--track-bg) !important;
-        }
-    <strle>
-
-    `;
-  }
 
   lobody.innerHTML += restora;
 }
