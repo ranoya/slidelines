@@ -698,8 +698,15 @@ const putslides = function (posicao) {
 
 let resetahighlighttimeline = function () {
   todoshighlights = document.getElementsByClassName("highlight");
-  for (let i = 0; i < todoshighlights.length; i++) {
-    todoshighlights[i].classList.remove("highlight");
+
+  if (
+    typeof todoshighlights != "undefined" &&
+    todoshighlights != null &&
+    todoshighlights != ""
+  ) {
+    for (let i = 0; i < todoshighlights.length; i++) {
+      todoshighlights[i].classList.remove("highlight");
+    }
   }
 };
 
