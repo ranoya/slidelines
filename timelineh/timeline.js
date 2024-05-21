@@ -451,7 +451,7 @@ fetch(GoogleSheetCsvURL(arquivojson))
         }vw - 30px); transform: translate(15px,0);`;
       }
 
-      anoscode += `<div class="linhadotempo" onclick='nowgo(${i})' style='display: inline-block; margin: 0; padding: 0; top: 0; left: 0; width: calc(5vw - 1px); margin-right: ${
+      anoscode += `<div class="linhadotempo" id="reg${i}" onclick='nowgo(${i})' style='display: inline-block; margin: 0; padding: 0; top: 0; left: 0; width: calc(5vw - 1px); margin-right: ${
         (contat - 1) * 5
       }vw; z-index: ${
         600 + i
@@ -690,7 +690,21 @@ const putslides = function (posicao) {
         document.getElementById("allslides" + i).innerHTML = ``;
       }
     }
+
+    resetahighlighttimeline();
+    highlighttimeline(actualpage);
   }
+};
+
+let resetahighlighttimeline = function () {
+  todoshighlights = document.getElementsByClassName("highlight");
+  for (let i = 0; i < todoshighlight.length; i++) {
+    todoshighlights[i].classList.remove("highlight");
+  }
+};
+
+let highlighttimeline = function (n) {
+  document.getElementById("reg" + n).classList.add("highlight");
 };
 
 let mudaviatempo = false;
