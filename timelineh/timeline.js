@@ -698,7 +698,7 @@ const putslides = function (posicao) {
 
 let resetahighlighttimeline = function () {
   todoshighlights = document.getElementsByClassName("highlight");
-  for (let i = 0; i < todoshighlight.length; i++) {
+  for (let i = 0; i < todoshighlights.length; i++) {
     todoshighlights[i].classList.remove("highlight");
   }
 };
