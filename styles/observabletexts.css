@@ -77,3 +77,7 @@
   width: calc(100vw - 155px) !important;
   overflow-x: hidden;
 }
+
+.highlight {
+  background-color: #dddddd;
+}
