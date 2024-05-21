@@ -711,7 +711,13 @@ let resetahighlighttimeline = function () {
 };
 
 let highlighttimeline = function (n) {
-  document.getElementById("reg" + n).classList.add("highlight");
+  if (
+    typeof document.getElementById("teg" + n) != "undefined" &&
+    document.getElementById("teg" + n) != null &&
+    document.getElementById("teg" + n) != ""
+  ) {
+    document.getElementById("reg" + n).classList.add("highlight");
+  }
 };
 
 let mudaviatempo = false;
