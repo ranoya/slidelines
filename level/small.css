@@ -10,6 +10,10 @@
   background-color: #0e240b;
 }
 
+#reg0.highlight {
+  background-color: #0e240b00;
+}
+
 .track {
   font-size: 11px;
   text-transform: uppercase;

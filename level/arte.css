@@ -6,6 +6,10 @@
   background-color: #00000005;
 }
 
+#reg0.highlight {
+  background-color: #00000000 !important;
+}
+
 .bigyear {
   font-size: 30px;
   font-weight: bolder;
