@@ -73,4 +73,7 @@
 
 #tempo {
   width: calc(100vw - 150px);
+  left: 20px !important;
+  width: calc(100vw - 155px) !important;
+  overflow-x: hidden;
 }
