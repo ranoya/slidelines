@@ -9,6 +9,10 @@
   --track-height: 20px;
 }
 
+.highlight {
+  color: #e342ff;
+}
+
 body {
   margin: 20px !important;
 }

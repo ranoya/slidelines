@@ -6,6 +6,10 @@
   --back-control-width: 150px;
 }
 
+.highlight {
+  background-color: #0e240b;
+}
+
 .track {
   font-size: 11px;
   text-transform: uppercase;
