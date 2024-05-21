@@ -712,9 +712,9 @@ let resetahighlighttimeline = function () {
 
 let highlighttimeline = function (n) {
   if (
-    typeof document.getElementById("teg" + n) != "undefined" &&
-    document.getElementById("teg" + n) != null &&
-    document.getElementById("teg" + n) != ""
+    typeof document.getElementById("reg" + n) != "undefined" &&
+    document.getElementById("reg" + n) != null &&
+    document.getElementById("reg" + n) != ""
   ) {
     document.getElementById("reg" + n).classList.add("highlight");
   }
