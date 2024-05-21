@@ -15,6 +15,14 @@
   --meta-margins: 55px;
 }
 
+.highlight {
+  background-color: #f610a088;
+}
+
+#reg0.highlight {
+  background-color: #f610a000 !important;
+}
+
 .track {
   font-size: 16px;
   text-transform: uppercase;
