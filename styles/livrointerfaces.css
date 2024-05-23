@@ -79,9 +79,19 @@
 }
 
 .highlight {
-  background-color: #dddddd;
+  /* background-color: #dddddd; */
+  border-left: 3px solid #7552ce !important;
+}
+
+.highlight .registroano {
+  color: #7552ce;
 }
 
 #reg0.highlight {
   background-color: #361e73 !important;
+  border-left: 1px solid #361e73 !important;
+}
+
+#reg0.highlight .registroano {
+  color: #361e73;
 }
