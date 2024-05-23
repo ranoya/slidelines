@@ -1,13 +1,13 @@
 :root {
   --track-height: 40px;
 
-  --timeline-text-over: #77cfe3;
+  --timeline-text-over: #ba890a;
 
   --back-control-width: 150px;
 }
 
 .linhadotempo.nohover {
-  width: 25vw !important;
+  width: calc(10.6vw + 20px) !important;
 }
 
 #tracksubtitulos {
@@ -89,7 +89,7 @@
 }
 
 #reg0.highlight {
-  background-color: #559fd4 !important;
+  background-color: #ba890a !important;
 }
 
 .pq {
