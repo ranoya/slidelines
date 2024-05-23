@@ -49,6 +49,8 @@
 
 .registroano {
   font-weight: bolder;
+  text-transform: uppercase;
+  font-size: 10px;
 }
 
 #prev {
@@ -84,4 +86,10 @@
 
 #reg0.highlight {
   background-color: #559fd4 !important;
+}
+
+.pq {
+  font-size: 7px !important;
+  font-weight: lighter !important;
+  text-transform: uppercase !important;
 }
