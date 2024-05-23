@@ -86,3 +86,9 @@
 #reg0.highlight {
   background-color: #361e73 !important;
 }
+
+.pq {
+  font-size: 7px !important;
+  font-weight: lighter !important;
+  text-transform: uppercase !important;
+}
