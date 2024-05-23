@@ -1,0 +1,93 @@
+#ba890a :root {
+  --track-height: 40px;
+
+  --timeline-text-over: #ba890a;
+
+  --back-control-width: 150px;
+}
+
+#tracksubtitulos {
+  display: none;
+}
+
+#tracktopicos {
+  display: none;
+}
+
+.slideitself {
+  height: calc(
+    100vh - (1 * var(--track-height, 60px)) -
+      var(--timeline-tempo-height, 130px)
+  );
+}
+
+.slides {
+  height: calc(
+    100vh - (1 * var(--track-height, 60px)) -
+      var(--timeline-tempo-height, 130px)
+  );
+}
+
+.slidewrap {
+  height: calc(100vh - (1 * var(--track-height, 60px)));
+}
+
+.track {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+.extrasize {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.linhadotempo {
+  border-left-style: dotted !important;
+}
+
+.registroano {
+  font-weight: bolder;
+  font-size: 12px;
+}
+
+#prev {
+  top: calc(100vh - var(--timeline-tempo-height) + 17px);
+  right: 105px;
+}
+
+#next {
+  top: calc(100vh - var(--timeline-tempo-height) + 17px);
+  right: 70px;
+}
+
+#indice {
+  left: calc(100vw - 45px);
+  top: calc(100vh - var(--timeline-tempo-height) + 15px);
+}
+
+#backcontrol {
+  display: block;
+  right: 0;
+}
+
+#tempo {
+  width: calc(100vw - 150px);
+  left: 20px !important;
+  width: calc(100vw - 155px) !important;
+  overflow-x: hidden;
+}
+
+.highlight {
+  background-color: #dddddd;
+}
+
+#reg0.highlight {
+  background-color: #ba890a !important;
+}
+
+.pq {
+  font-size: 9px !important;
+  font-weight: lighter !important;
+}
