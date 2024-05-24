@@ -21,14 +21,14 @@
 .slideitself {
   height: calc(
     100vh - (1 * var(--track-height, 60px)) -
-      var(--timeline-tempo-height, 130px)
+      var(--timeline-tempo-height, 130px) - 10px
   );
 }
 
 .slides {
   height: calc(
     100vh - (1 * var(--track-height, 60px)) -
-      var(--timeline-tempo-height, 130px)
+      var(--timeline-tempo-height, 130px) - 10px
   );
 }
 
