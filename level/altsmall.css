@@ -1,14 +1,12 @@
 :root {
-  --base-background: #000000;
-  --timeline-text-color: #83e377;
-}
-
-:root {
   --track-height: 40px;
 
   --timeline-text-over: #83e377;
 
   --back-control-width: 150px;
+
+  --base-background: #000000;
+  --timeline-text-color: #83e377;
 }
 
 .highlight {
