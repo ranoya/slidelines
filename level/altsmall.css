@@ -1,0 +1,63 @@
+:root {
+  --base-background: #000000;
+  --timeline-text-color: #83e377;
+}
+
+:root {
+  --track-height: 40px;
+
+  --timeline-text-over: #83e377;
+
+  --back-control-width: 150px;
+}
+
+.highlight {
+  background-color: #0e240b;
+}
+
+#reg0.highlight {
+  background-color: #0e240b00;
+}
+
+.track {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+.extrasize {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.linhadotempo {
+  border-left-style: dotted !important;
+}
+
+.registroano {
+  font-weight: bolder;
+}
+
+#prev {
+  top: calc(100vh - var(--timeline-tempo-height) + 17px);
+  right: 105px;
+}
+
+#next {
+  top: calc(100vh - var(--timeline-tempo-height) + 17px);
+  right: 70px;
+}
+
+#indice {
+  left: calc(100vw - 45px);
+  top: calc(100vh - var(--timeline-tempo-height) + 15px);
+}
+
+#backcontrol {
+  display: block;
+  right: 0;
+}
+
+#tempo {
+  width: calc(100vw - 150px);
+}
