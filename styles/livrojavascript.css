@@ -4,6 +4,8 @@
   --timeline-text-over: #ba890a;
 
   --back-control-width: 150px;
+  --base-background: var(--track-bg);
+  --timeline-text-color: var(--track-fg);
 }
 
 #tracksubtitulos {
