@@ -7,7 +7,7 @@
 }
 
 .linhadotempo.nohover {
-  width: calc(10.6vw + 20px) !important;
+  width: calc(15.8vw + 20px) !important;
 }
 
 #tracksubtitulos {
@@ -52,9 +52,8 @@
 }
 
 .registroano {
-  font-weight: bolder;
-  text-transform: uppercase;
   font-size: 10px;
+  font-weight: lighter !important;
 }
 
 #prev {
