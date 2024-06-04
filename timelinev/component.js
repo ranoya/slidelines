@@ -44,7 +44,7 @@ timelinev = function (oldarr, ano, titulo, conteudo) {
     }
 
     if (anoatual != qualano) {
-      html += `<div class="timeline_ano" style="grid-row: span ${quantosblocos}"><span class="numeroano">${arr[k][ano]}</span></div>`;
+      html += `<div class="timelinev_ano" style="grid-row: span ${quantosblocos}"><span class="numeroano">${arr[k][ano]}</span></div>`;
     }
 
     qualano = anoatual;
@@ -61,12 +61,12 @@ timelinev = function (oldarr, ano, titulo, conteudo) {
     }
 
     if (tituloatual != qualtitulo) {
-      html += `<div class="timeline_titulo" style="grid-row: span ${quantostitulos}">${arr[k][titulo]}</div>`;
+      html += `<div class="timelinve_topic" style="grid-row: span ${quantostitulos}">${arr[k][titulo]}</div>`;
     }
 
     qualtitulo = tituloatual;
 
-    html += `<div class="timelinev_cont_conteiner">${arr[k][conteudo]}</div>`;
+    html += `<div class="timelinev_cont">${arr[k][conteudo]}</div>`;
   }
 
   html += "</div>";
