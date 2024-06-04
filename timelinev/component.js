@@ -44,7 +44,7 @@ timelinev = function (oldarr, ano, titulo, conteudo) {
     }
 
     if (anoatual != qualano) {
-      html += `<div class="timelinev_ano" style="grid-row: span ${quantosblocos}"><span class="numeroano">${arr[k][ano]}</span></div>`;
+      html += `<div class="timelinev_ano" style="grid-row: span ${quantosblocos}"><span class="timelinev_ano_cont">${arr[k][ano]}</span></div>`;
     }
 
     qualano = anoatual;
