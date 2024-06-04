@@ -14,6 +14,8 @@
         "https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit#gid=1520717065",
         function (dados) {
           desenhatabela = timelinev(dados, "ano", "topico", "conteudo");
+
+          document.getElementById("tabela").innerHTML = desenhatabela;
         }
       );
     </script>
