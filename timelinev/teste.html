@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <script src="https://datat.vercel.app/basicsmin.js"></script>
+    <script src="https://slidelines.vercel.app/timelinev/component.js"></script>
+  </head>
+
+  <body>
+    <div id="tabela"></div>
+
+    <script>
+      gsdata(
+        "https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit#gid=1520717065",
+        function (dados) {
+          desenhatabela = timelinev(dados, "ano", "topico", "conteudo");
+        }
+      );
+    </script>
+
+    <style>
+      timelinev {
+        display: grid;
+        grid-template-columns: 80px 300px 1fr;
+        gap: 15px 15px;
+        width: 100%;
+      }
+
+      .timelinev_ano_head {
+        border: 1px solid red;
+        position: sticky;
+        top: 0px;
+        height: 25px;
+        background-color: red;
+        color: white;
+        z-index: 100;
+      }
+
+      .timelinev_ano {
+        border: 1px solid red;
+        position: sticky;
+        top: 25px;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(255, 255, 255, 1) 25%,
+          black 26%,
+          rgba(255, 255, 255, 1) 26%,
+          rgba(255, 255, 255, 1) 100%
+        );
+      }
+
+      .timelinev_topic_head {
+        border: 1px solid red;
+        position: sticky;
+        top: 0px;
+        height: 25px;
+        background-color: red;
+        color: white;
+        z-index: 100;
+      }
+
+      .timelinev_topic {
+        border: 1px solid red;
+        position: sticky;
+        top: 25px;
+        background-color: white;
+      }
+
+      .timelinev_cont_head {
+        border: 1px solid red;
+        position: sticky;
+        top: 0px;
+        height: 25px;
+        background-color: red;
+        color: white;
+        z-index: 100;
+      }
+    </style>
+  </body>
+</html>
