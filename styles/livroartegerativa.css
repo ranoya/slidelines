@@ -1,3 +1,15 @@
+::-webkit-scrollbar-track {
+  background: var(--track-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dbc3c3;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff006a;
+}
+
 #ba890a :root {
   --track-height: 40px;
 
