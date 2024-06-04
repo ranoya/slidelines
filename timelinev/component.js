@@ -61,7 +61,7 @@ timelinev = function (oldarr, ano, titulo, conteudo) {
     }
 
     if (tituloatual != qualtitulo) {
-      html += `<div class="timelinve_topic" style="grid-row: span ${quantostitulos}">${arr[k][titulo]}</div>`;
+      html += `<div class="timelinev_topic" style="grid-row: span ${quantostitulos}">${arr[k][titulo]}</div>`;
     }
 
     qualtitulo = tituloatual;
