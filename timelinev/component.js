@@ -1,16 +1,4 @@
-timelinevalphabetic = function (arr, crit) {
-  let listuniques = unique(arr, crit);
-  listuniques.sort();
-
-  let newarr = sortbylist(arr, listuniques, crit);
-
-  return newarr;
-};
-
-timelinev = function (oldarr, ano, titulo, conteudo) {
-  let arr = [];
-  arr = timelinevalphabetic(oldarr, ano);
-
+timelinev = function (arr, ano, titulo, conteudo) {
   let html = "";
   let htmlfinal = "";
 
