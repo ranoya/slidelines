@@ -54,6 +54,18 @@ timelinev = function (oldarr, ano, titulo, conteudo) {
 
     for (let s = k; s < arr.length; s++) {
       if (s < arr.length - 1) {
+        console.log(
+          s +
+            "/" +
+            (s + 1) +
+            " " +
+            tituloatual +
+            " / " +
+            arr[s + 1][titulo] +
+            " - " +
+            (arr[s + 1][titulo] == tituloatual)
+        );
+
         if (arr[s + 1][titulo] == tituloatual) {
           quantostitulos++;
         }
