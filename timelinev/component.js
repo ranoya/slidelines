@@ -57,7 +57,14 @@ timelinev = function (arr, ano, titulo, conteudo) {
     html += `<div class="timelinev_cont"><span class="timelinev_cont_cont">${arr[k][conteudo]}</span></div>`;
   }
 
-  html += "</div>";
+  html += `
+    
+    <div class="timelinev_ano_end"></div>
+    <div class="timelinev_topic_end"></div>
+    <div class="timelinev_cont_end"></div>
+    
+  
+    </div>`;
 
   htmlfinal = html;
 
