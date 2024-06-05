@@ -27,6 +27,8 @@ timelinev = function (arr, ano, titulo, conteudo) {
       if (s < arr.length - 1) {
         if (arr[s + 1][ano] == anoatual) {
           quantosblocos++;
+        } else {
+          break;
         }
       }
     }
@@ -44,6 +46,8 @@ timelinev = function (arr, ano, titulo, conteudo) {
       if (s < arr.length - 1) {
         if (arr[s + 1][titulo] == tituloatual) {
           quantostitulos++;
+        } else {
+          break;
         }
       }
     }
