@@ -59,9 +59,9 @@ timelinev = function (arr, ano, titulo, conteudo) {
 
   html += `
     
-    <div class="timelinev_ano_end"></div>
-    <div class="timelinev_topic_end"></div>
-    <div class="timelinev_cont_end"></div>
+    <div class="timelinev_ano timelinev_ano_end"></div>
+    <div class="timelinev_topic timelinev_topic_end"></div>
+    <div class="timelinev_cont timelinev_cont_end"></div>
     
   
     </div>`;
