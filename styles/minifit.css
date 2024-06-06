@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,200;0,400;0,600;0,700;1,200;1,400;1,700&display=swap");
+
+:root {
+  --track-height: 30px;
+  --md-fontsize: 26px;
+  --timeline-font: "Prompt";
+
+  --base-background: var(--track-bg);
+  --timeline-text-color: var(--track-fg);
+}
+
+#tracksubtitulos {
+  display: none;
+}
+
+.track {
+  font-size: 11px;
+  line-height: 30px;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+.slidewrap {
+  height: calc(100vh - (4 * var(--track-height, 60px))) !important;
+}
+
+#indice {
+  top: calc(100vh - 32px - 15px) !important;
+}
+
+#prev,
+#next {
+  top: calc(100vh - 30px - 15px);
+}
+
+body,
+html {
+  background-color: var(--track-bg);
+}
+
+.conteudomd {
+  font-weight: lighter;
+  text-align: left !important;
+  font-size: min(2.2vh, 2.2vw) !important;
+}
+
+.conteudomd p {
+  font-size: min(2.2vh, 2.2vw) !important;
+}
+
+.conteudomd h2 {
+  font-size: min(2.6vh, 2.6vw) !important;
+}
