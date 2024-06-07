@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <script src="https://datat.vercel.app/basicsmin.js"></script>
+    <script src="https://slidelines.vercel.app/timelinev/component.js"></script>
+  </head>
+
+  <body>
+    <br /><br /><br /><br /><br />
+
+    <div id="tabela"></div>
+
+    <script>
+      gsdata(
+        "https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit#gid=1520717065",
+        function (dados) {
+          desenhatabela = timelinev(dados, "ano", "topico", "conteudo");
+
+          document.getElementById("tabela").innerHTML = desenhatabela;
+        }
+      );
+    </script>
+
+    <style>
+      .timelinev {
+        display: grid;
+        grid-template-columns: 60px 60px 1fr;
+        gap: 25px 25px;
+        width: 100%;
+      }
+
+      .timelinev_ano_head {
+        top: -46px;
+        height: 45px;
+        z-index: 100;
+        font-size: 11px;
+        text-transform: uppercase;
+        height: 25px;
+        background-color: white;
+        font-size: 11px;
+        line-height: 25px;
+        text-transform: uppercase;
+      }
+
+      .timelinev_ano_head_cont {
+        padding-left: 15px;
+        padding-top: 15px;
+        display: inline-block;
+      }
+
+      .timelinev_ano {
+        position: sticky;
+        top: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(255, 255, 255, 1) 51%,
+          black 51%,
+          rgba(255, 255, 255, 1) 53%,
+          rgba(255, 255, 255, 1) 100%
+        );
+      }
+
+      .timelinev_ano_cont {
+        padding: 15px;
+        background-color: white;
+        display: inline-block;
+        transform: rotate(-90deg);
+      }
+
+      .timelinev_topic_head {
+        font-size: 11px;
+        text-transform: uppercase;
+        height: 45px;
+        background-color: white;
+        z-index: 100;
+        font-size: 11px;
+        line-height: 25px;
+        text-transform: uppercase;
+      }
+
+      .timelinev_topic_head_cont {
+        padding-left: 15px;
+        padding-top: 15px;
+        display: inline-block;
+      }
+
+      .timelinev_topic {
+        position: sticky;
+        top: 20px;
+        background-color: white;
+      }
+
+      .timelinev_topic_cont {
+        padding-left: 15px;
+        width: 300px;
+        padding-top: 15px;
+        display: inline-block;
+        transform-origin: top right;
+        transform: translate(-100%) rotate(-90deg);
+        text-align: right;
+      }
+
+      .timelinev_cont_head {
+        font-size: 11px;
+        text-transform: uppercase;
+        height: 45px;
+        background-color: white;
+        z-index: 100;
+        font-size: 11px;
+        line-height: 25px;
+        text-transform: uppercase;
+      }
+
+      .timelinev_cont_head_cont {
+        padding-left: 15px;
+        padding-top: 15px;
+        display: inline-block;
+      }
+
+      .timelinev_cont {
+        position: sticky;
+        top: 20px;
+        background-color: white;
+      }
+
+      .timelinev_cont_cont {
+        padding-left: 15px;
+        padding-top: 15px;
+        display: inline-block;
+      }
+
+      .timelinev_ano_end {
+        border-top: 1px dotted black;
+      }
+    </style>
+  </body>
+</html>
