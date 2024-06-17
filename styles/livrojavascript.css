@@ -12,18 +12,6 @@
   background: var(--track-bg, #ffffff) !important;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--track-fg, #777777);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--timeline-text-over, #ff0000);
-}
-
-::-webkit-scrollbar:hover {
-  background-color: var(--track-bg, #ffffff);
-}
-
 #tracksubtitulos {
   display: none;
 }
