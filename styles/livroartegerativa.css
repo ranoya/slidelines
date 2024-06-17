@@ -1,11 +1,3 @@
-::-webkit-scrollbar-track {
-  background: var(--track-bg);
-}
-
-::-webkit-scrollbar-thumb {
-  background: #dbc3c3;
-}
-
 ::-webkit-scrollbar-thumb:hover {
   background: #ff006a;
 }
@@ -18,6 +10,18 @@
   --back-control-width: 150px;
   --base-background: var(--track-bg);
   --timeline-text-color: var(--track-fg);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--track-bg, #ffffff) !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(
+    in srgb,
+    var(--track-bg) 50%,
+    var(--valor-tempo) 50%
+  ) !important;
 }
 
 #tracksubtitulos {
