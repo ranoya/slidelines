@@ -9,11 +9,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--track-fg, #ffffff);
+  background: var(--track-bg, #ffffff) !important;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--track-bg, #777777);
+  background: var(--track-fg, #777777);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -21,7 +21,7 @@
 }
 
 ::-webkit-scrollbar:hover {
-  background-color: var(--track-fg, #ffffff);
+  background-color: var(--track-bg, #ffffff);
 }
 
 #tracksubtitulos {
