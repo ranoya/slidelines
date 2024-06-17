@@ -8,6 +8,22 @@
   --timeline-text-color: var(--track-fg);
 }
 
+::-webkit-scrollbar-track {
+  background: var(--track-bg, #ffffff) !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(
+    in srgb,
+    var(--track-bg) 50%,
+    var(--valor-tempo) 50%
+  ) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--track-fg, #000000) !important;
+}
+
 #tracksubtitulos {
   display: none;
 }
