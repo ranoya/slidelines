@@ -15,6 +15,18 @@
   --meta-margins: 55px;
 }
 
+::-webkit-scrollbar-track {
+  background: var(--track-bg, #ffffff) !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--track-fg) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--track-fg, #000000) !important;
+}
+
 .highlight {
   background-color: #f610a088;
 }
