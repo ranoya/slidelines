@@ -7,9 +7,7 @@ timelinev = function (arr, ano, titulo, conteudo, instance) {
   let html = "";
   let htmlfinal = "";
 
-  html = `<div class='timelineh' style='width: calc(100% * ${
-    arr.length + 2
-  });'>`;
+  html = `<div class='timelineh'>`;
   htmlfinal = "";
 
   let qualano = "";
