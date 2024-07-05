@@ -1,4 +1,4 @@
-timelinev = function (arr, ano, titulo, conteudo, instance) {
+timelineh = function (arr, ano, titulo, conteudo, instance) {
   let instancename = "";
   if (typeof instance != "undefined" && instance != "" && instance != null) {
     instancename = instance;
@@ -18,9 +18,9 @@ timelinev = function (arr, ano, titulo, conteudo, instance) {
   let tituloatual = "";
   let quantostitulos = 1;
 
-  let htmlano = `<div class="timelinev_ano_head ${instancename}"><span class="timelinev_ano_head_cont ${instancename}">${ano}</span></div>`;
-  let htmltopico = `<div class="timelinev_topic_head ${instancename}"><span class="timelinev_topic_head_cont ${instancename}">${titulo}</span></div>`;
-  let htmlcont = `<div class="timelinev_cont_head ${instancename}"><span class="timelinev_cont_head_cont ${instancename}">${conteudo}</span></div>`;
+  let htmlano = `<div class="timelineh_ano_head ${instancename}"><span class="timelineh_ano_head_cont ${instancename}">${ano}</span></div>`;
+  let htmltopico = `<div class="timelineh_topic_head ${instancename}"><span class="timelineh_topic_head_cont ${instancename}">${titulo}</span></div>`;
+  let htmlcont = `<div class="timelineh_cont_head ${instancename}"><span class="timelineh_cont_head_cont ${instancename}">${conteudo}</span></div>`;
 
   let ultimo = "";
 
@@ -49,7 +49,7 @@ timelinev = function (arr, ano, titulo, conteudo, instance) {
     }
 
     if (anoatual != qualano) {
-      htmlano += `<div class="timelinev_ano ${ultimo} ${instancename}" style="grid-column: span ${quantosblocos}"><span class="timelinev_ano_cont ${instancename}">${arr[k][ano]}</span></div>`;
+      htmlano += `<div class="timelineh_ano ${ultimo} ${instancename}" style="grid-column: span ${quantosblocos}"><span class="timelineh_ano_cont ${instancename}">${arr[k][ano]}</span></div>`;
     }
 
     qualano = anoatual;
@@ -78,7 +78,7 @@ timelinev = function (arr, ano, titulo, conteudo, instance) {
     }
 
     if (tituloatual != qualtitulo) {
-      htmltopico += `<div class="timelinev_topic ${ultimo} ${instancename}" style="grid-column: span ${quantostitulos}"><span class="timelinev_topic_cont ${instancename}">${arr[k][titulo]}</span></div>`;
+      htmltopico += `<div class="timelineh_topic ${ultimo} ${instancename}" style="grid-column: span ${quantostitulos}"><span class="timelineh_topic_cont ${instancename}">${arr[k][titulo]}</span></div>`;
     }
 
     qualtitulo = tituloatual;
@@ -88,12 +88,12 @@ timelinev = function (arr, ano, titulo, conteudo, instance) {
       ultimo = "ultimo";
     }
 
-    htmlcont += `<div class="timelinev_cont ${ultimo} ${instancename}"><span class="timelinev_cont_cont ${instancename}">${arr[k][conteudo]}</span></div>`;
+    htmlcont += `<div class="timelineh_cont ${ultimo} ${instancename}"><span class="timelineh_cont_cont ${instancename}">${arr[k][conteudo]}</span></div>`;
   }
 
-  htmlano += `<div class="timelinev_ano timelinev_ano_end ${instancename}"></div>`;
-  htmltopico += `<div class="timelinev_topic timelinev_topic_end ${instancename}"></div>`;
-  htmlcont += `<div class="timelinev_cont timelinev_cont_end ${instancename}"></div>`;
+  htmlano += `<div class="timelineh_ano timelineh_ano_end ${instancename}"></div>`;
+  htmltopico += `<div class="timelineh_topic timelineh_topic_end ${instancename}"></div>`;
+  htmlcont += `<div class="timelineh_cont timelineh_cont_end ${instancename}"></div>`;
 
   html += htmlano + htmltopico + htmlcont + `</div>`;
 
