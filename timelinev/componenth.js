@@ -95,7 +95,7 @@ timelinev = function (arr, ano, titulo, conteudo, instance) {
   htmltopico += `<div class="timelinev_topic timelinev_topic_end ${instancename}"></div>`;
   htmlcont += `<div class="timelinev_cont timelinev_cont_end ${instancename}"></div>`;
 
-  html = htmlano + htmltopico + htmlcont + `</div>`;
+  html += htmlano + htmltopico + htmlcont + `</div>`;
 
   htmlfinal = html;
 
