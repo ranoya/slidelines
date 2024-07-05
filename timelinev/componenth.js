@@ -1,6 +1,6 @@
 timelinev = function (arr, ano, titulo, conteudo, instance) {
   let instancename = "";
-  if (typeof instance != "undefined" || instance != "" || instance != null) {
+  if (typeof instance != "undefined" && instance != "" && instance != null) {
     instancename = instance;
   }
 
