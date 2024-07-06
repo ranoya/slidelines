@@ -37,11 +37,10 @@
 
       #tabela {
         overflow: auto;
-        width: calc(100vw - 40px);
+        width: calc(100% - 40px);
         margin-left: 20px;
         margin-right: 20px;
-        padding-bottom: 20px;
-        height: calc(100vh - 166px);
+        height: calc(100dvh - 166px);
         overflow-y: hidden;
       }
 
@@ -63,8 +62,8 @@
       .timelineh {
         display: grid;
         grid-auto-columns: 100%;
-        grid-template-rows: 40px 40px 600px;
-        gap: 25px 25px;
+        grid-template-rows: 25px 25px calc(100dvh - 216px);
+        gap: 6px 10px;
         width: 100%;
       }
 
@@ -117,27 +116,30 @@
 
       .timelineh_ano {
         grid-row: 1;
+        align-content: center;
       }
 
       .timelineh_ano_cont {
-        padding: 15px;
         background-color: var(--bg-color, #f8f9fa);
         display: inline-block;
         position: sticky;
-        left: 20px;
+        left: 0px;
+        text-transform: uppercase;
+        font-size: 11px;
       }
 
       .timelineh_topic {
         background-color: var(--bg-color, #f8f9fa);
         grid-row: 2;
+        align-content: center;
       }
 
       .timelineh_topic_cont {
-        padding-left: 15px;
-        padding-top: 15px;
         display: inline-block;
         position: sticky;
-        left: 20px;
+        left: 0px;
+        text-transform: uppercase;
+        font-size: 11px;
       }
 
       .timelineh_cont {
