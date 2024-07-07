@@ -46,7 +46,7 @@ let timelinemovehandler = function (who, arr) {
     resto > tamanhoslideindividual - 300 &&
     resto < tamanhoslideindividual - 5
   ) {
-    timelinemoveto(who, tlmdelta + resto);
+    timelinemoveto(who, tlmdelta + (tamanhoslideindividual - resto));
   }
 
   clearTimeout(tlmhandl);
