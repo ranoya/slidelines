@@ -1,11 +1,16 @@
+let evencontrolstart = true;
+
 let eventcontrol = function (w, nam) {
-  document.querySelector(w).onscroll = function (e) {
-    console.log(
-      document.querySelector(w).getBoundingClientRect().left +
-        " | " +
-        document.querySelector(w).getBoundingClientRect().width
-    );
-  };
+  if (eventcontrolstart) {
+    document.querySelector(w).onscroll = function (e) {
+      console.log(
+        document.querySelector(w).getBoundingClientRect().left +
+          " | " +
+          document.querySelector(w).getBoundingClientRect().width
+      );
+      eventcontrolstart = false;
+    };
+  }
 
   document.querySelector(w + " .timelineh " + nam).onscroll = function (e) {
     console.log(
