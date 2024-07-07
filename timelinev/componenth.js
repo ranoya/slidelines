@@ -1,6 +1,7 @@
 let timelinemoveto = function (who, where) {
+  console.log("indo para " + where);
   document.querySelector(who).scrollTo({
-    left: where,
+    left: -1 * where,
     behavior: "smooth",
   });
 };
