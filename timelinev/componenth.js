@@ -67,7 +67,7 @@ let snapToGrid = function (w, a) {
       clearTimeout(tlmhandl);
       tlmhandl = setTimeout(function () {
         timelinemovehandler(w, a);
-      }, 1500);
+      }, 1000);
     };
   }
 };
