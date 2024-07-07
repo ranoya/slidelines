@@ -9,19 +9,16 @@ let eventcontrol = function (w, nam) {
           document.querySelector(w).getBoundingClientRect().width
       );
 
-      document.querySelector(w + " .timelineh " + nam).onscroll = function (e) {
-        console.log(
+      console.log(
+        document.querySelector(w + " .timelineh " + nam).getBoundingClientRect()
+          .left +
+          " | " +
           document
             .querySelector(w + " .timelineh " + nam)
-            .getBoundingClientRect().left +
-            " | " +
-            document
-              .querySelector(w + " .timelineh " + nam)
-              .getBoundingClientRect().width
-        );
+            .getBoundingClientRect().width
+      );
 
-        eventcontrolstart = false;
-      };
+      eventcontrolstart = false;
     };
   }
 
