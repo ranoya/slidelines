@@ -63,7 +63,9 @@ let timelinemovehandler = function (who, arr) {
 };
 
 let eventcontrolstart = true;
-let snapToGrid = function (w, a) {
+let timelineactualarr = "";
+
+let snapToGrid = function (w) {
   if (eventcontrolstart) {
     eventcontrolstart = false;
 
@@ -72,13 +74,15 @@ let snapToGrid = function (w, a) {
 
       clearTimeout(tlmhandl);
       tlmhandl = setTimeout(function () {
-        timelinemovehandler(w, a);
+        timelinemovehandler(w, timelineactualarr);
       }, 1000);
     };
   }
 };
 
 let timelineh = function (arr, ano, titulo, conteudo) {
+  timelineactualarr = arr;
+
   let instancename = "";
   if (typeof instance != "undefined" && instance != "" && instance != null) {
     instancename = instance;
