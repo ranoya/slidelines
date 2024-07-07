@@ -17,7 +17,7 @@ let timelinemovehandler = function (who, arr) {
 
   let tamanhoslideindividual = parseFloat(
     (document.querySelector(who + " .timelineh").scrollWidth +
-      document.querySelector(who + " .timelineh").scrollWidth * 0.00015) /
+      document.querySelector(who + " .timelineh").scrollWidth * 0.00018) /
       arr.length
   );
 
