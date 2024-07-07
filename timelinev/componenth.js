@@ -40,27 +40,29 @@ let timelinemovehandler = function (who, arr) {
 };
 
 let eventcontrolstart = true;
-
 let eventcontrol = function (w, a) {
   if (eventcontrolstart) {
-    timelinemovehandler(w, a);
-    /*
-    document.querySelector(w).onscroll = function (e) {
-      console.log(
-        document.querySelector(w).getBoundingClientRect().left +
-          " | " +
-          document.querySelector(w).getBoundingClientRect().width
-      );
-
-      console.log(
-        document.querySelector(w + " .timelineh").getBoundingClientRect().left +
-          " | " +
-          document.querySelector(w + " .timelineh").getBoundingClientRect()
-            .width
-      );
-      */
-
     eventcontrolstart = false;
+
+    /*
+      document.querySelector(w).onscroll = function (e) {
+        console.log(
+          document.querySelector(w).getBoundingClientRect().left +
+            " | " +
+            document.querySelector(w).getBoundingClientRect().width
+        );
+  
+        console.log(
+          document.querySelector(w + " .timelineh").getBoundingClientRect().left +
+            " | " +
+            document.querySelector(w + " .timelineh").getBoundingClientRect()
+              .width
+        );
+        */
+
+    document.querySelector(w).onscroll = function (e) {
+      timelinemovehandler(w, a);
+    };
   }
 };
 
