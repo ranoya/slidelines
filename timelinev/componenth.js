@@ -91,6 +91,10 @@ let timelineh = function (arr, ano, titulo, conteudo, instance) {
   let tituloatual = "";
   let quantostitulos = 1;
 
+  let htmlano = "";
+  let htmltopico = "";
+  let htmlcont = "";
+
   let ultimo = "";
 
   for (let k = 0; k < arr.length; k++) {
