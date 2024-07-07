@@ -7,37 +7,33 @@ let timelinemoveto = function (who, where) {
 
 let tlmhandl = "";
 let timelinemovehandler = function (who, arr) {
-  tlmhandl = setTimeout(function () {
-    let tlmdelta =
+  let tlmdelta =
+    document.querySelector(who + " .timelineh").getBoundingClientRect().left +
+    document.querySelector(who).getBoundingClientRect().left;
+  let tamanhoslidetotal = document
+    .querySelector(who + " .timelineh")
+    .getBoundingClientRect().width;
+  let tamanhoslideindividual = tamanhoslidetotal / arr.length;
+  let slideatual = parseInt(tlmdelta / tamanhoslideindividual);
+  let resto = tlmdelta % tamanhoslideindividual;
+
+  console.log("o delta para o snap é: " + resto);
+
+  if (resto > -300) {
+    timelinemoveto(
+      who,
       document.querySelector(who + " .timelineh").getBoundingClientRect().left +
-      document.querySelector(who).getBoundingClientRect().left;
-    let tamanhoslidetotal = document
-      .querySelector(who + " .timelineh")
-      .getBoundingClientRect().width;
-    let tamanhoslideindividual = tamanhoslidetotal / arr.length;
-    let slideatual = parseInt(tlmdelta / tamanhoslideindividual);
-    let resto = tlmdelta % tamanhoslideindividual;
+        -1 * resto
+    );
+  }
 
-    console.log("o delta para o snap é: " + resto);
-
-    if (resto > -300) {
-      timelinemoveto(
-        who,
-        document.querySelector(who + " .timelineh").getBoundingClientRect()
-          .left +
-          -1 * resto
-      );
-    }
-
-    if (resto < -1 * tamanhoslideindividual + 300) {
-      timelinemoveto(
-        who,
-        document.querySelector(who + " .timelineh").getBoundingClientRect()
-          .left -
-          -1 * resto
-      );
-    }
-  }, 1500);
+  if (resto < -1 * tamanhoslideindividual + 300) {
+    timelinemoveto(
+      who,
+      document.querySelector(who + " .timelineh").getBoundingClientRect().left -
+        -1 * resto
+    );
+  }
 };
 
 let eventcontrolstart = true;
@@ -64,7 +60,7 @@ let eventcontrol = function (w, a) {
     document.querySelector(w).onscroll = function (e) {
       console.log("ativou");
       clearTimeout(tlmhandl);
-      timelinemovehandler(w, a);
+      tlmhandl = setTimeout(timelinemovehandler(w, a), 3000);
     };
   }
 };
