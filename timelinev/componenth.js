@@ -27,6 +27,11 @@ let timelinemovehandler = function (who, arr) {
       tlmdelta +
       " | " +
       tamanhoslideindividual +
+      " |- limite: " +
+      (tamanhoslideindividual - 300) +
+      " " +
+      (tamanhoslideindividual - 5) +
+      " -| " +
       " ? " +
       (resto > tamanhoslideindividual - 300) +
       " ? " +
