@@ -7,7 +7,6 @@ let timelinemoveto = function (who, where) {
 
 let tlmhandl = "";
 let timelinemovehandler = function (who, arr) {
-  clearTimeout(tlmhandl);
   tlmhandl = setTimeout(function () {
     let tlmdelta =
       document.querySelector(who + " .timelineh").getBoundingClientRect().left +
@@ -18,6 +17,8 @@ let timelinemovehandler = function (who, arr) {
     let tamanhoslideindividual = tamanhoslidetotal / arr.length;
     let slideatual = parseInt(tlmdelta / tamanhoslideindividual);
     let resto = tlmdelta % tamanhoslideindividual;
+
+    console.log("o delta para o snap é: " + resto);
 
     if (resto > -300) {
       timelinemoveto(
@@ -61,6 +62,8 @@ let eventcontrol = function (w, a) {
         */
 
     document.querySelector(w).onscroll = function (e) {
+      console.log("ativou");
+      clearTimeout(tlmhandl);
       timelinemovehandler(w, a);
     };
   }
