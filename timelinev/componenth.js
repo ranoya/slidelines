@@ -60,7 +60,9 @@ let eventcontrol = function (w, a) {
     document.querySelector(w).onscroll = function (e) {
       console.log("ativou");
       clearTimeout(tlmhandl);
-      tlmhandl = setTimeout(timelinemovehandler(w, a), 3000);
+      tlmhandl = setTimeout(function () {
+        timelinemovehandler(w, a);
+      }, 3000);
     };
   }
 };
