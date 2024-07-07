@@ -87,7 +87,7 @@ let timelineh = function (arr, ano, titulo, conteudo) {
   let html = "";
   let htmlfinal = "";
 
-  html = `<div style='gap: 0 0 !important' class='timelineh ${instancename}'>`;
+  html = `<div style='gap: 0 0 !important; display: grid !important; grid-auto-columns: 100% !important; width: 100% !important; grid-template-rows: 40px 40px 400px;' class='timelineh'>`;
   htmlfinal = "";
 
   let qualano = "";
@@ -129,7 +129,7 @@ let timelineh = function (arr, ano, titulo, conteudo) {
     }
 
     if (anoatual != qualano) {
-      htmlano += `<div class="timelineh_ano ${ultimo} ${instancename}" style="grid-column: span ${quantosblocos}"><span class="timelineh_ano_cont ${instancename}">${arr[k][ano]}</span></div>`;
+      htmlano += `<div class="timelineh_track1 ${ultimo}" style="grid-column: span ${quantosblocos}"><span class="timelineh_track1_cont">${arr[k][ano]}</span></div>`;
     }
 
     qualano = anoatual;
@@ -158,7 +158,7 @@ let timelineh = function (arr, ano, titulo, conteudo) {
     }
 
     if (tituloatual != qualtitulo) {
-      htmltopico += `<div class="timelineh_topic ${ultimo} ${instancename}" style="grid-column: span ${quantostitulos}"><span class="timelineh_topic_cont ${instancename}">${arr[k][titulo]}</span></div>`;
+      htmltopico += `<div class="timelineh_track2 ${ultimo}" style="grid-column: span ${quantostitulos}"><span class="timelineh_track2_cont">${arr[k][titulo]}</span></div>`;
     }
 
     qualtitulo = tituloatual;
@@ -168,7 +168,7 @@ let timelineh = function (arr, ano, titulo, conteudo) {
       ultimo = "ultimo";
     }
 
-    htmlcont += `<div class="timelineh_cont ${ultimo} ${instancename}"><span class="timelineh_cont_cont ${instancename}">${arr[k][conteudo]}</span></div>`;
+    htmlcont += `<div class="timelineh_track3 ${ultimo}"><span class="timelineh_track3_cont}">${arr[k][conteudo]}</span></div>`;
   }
 
   html += htmlano + htmltopico + htmlcont + `</div>`;
