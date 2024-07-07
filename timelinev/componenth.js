@@ -1,5 +1,6 @@
 let timelinemoveto = function (who, where) {
-  console.log("indo para " + where);
+  //console.log("indo para " + where);
+
   document.querySelector(who).scrollTo({
     left: where,
     behavior: "smooth",
@@ -66,7 +67,7 @@ let snapToGrid = function (w, a) {
       clearTimeout(tlmhandl);
       tlmhandl = setTimeout(function () {
         timelinemovehandler(w, a);
-      }, 3000);
+      }, 1500);
     };
   }
 };
