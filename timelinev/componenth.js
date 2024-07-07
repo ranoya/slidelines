@@ -1,4 +1,4 @@
-let evencontrolstart = true;
+let eventcontrolstart = true;
 
 let eventcontrol = function (w, nam) {
   if (eventcontrolstart) {
