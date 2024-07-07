@@ -26,7 +26,11 @@ let timelinemovehandler = function (who, arr) {
       " | " +
       tlmdelta +
       " | " +
-      tamanhoslideindividual
+      tamanhoslideindividual +
+      " ? " +
+      (resto > tamanhoslideindividual - 300) +
+      " ? " +
+      (resto > tamanhoslideindividual - 5)
   );
 
   if (resto < 300 && resto > 5) {
