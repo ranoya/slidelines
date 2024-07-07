@@ -7,19 +7,19 @@
   </head>
 
   <body>
-    <br /><br /><br /><br /><br />
-
     <input type="text" id="MyInputElement" />
 
-    <div id="tabela"></div>
+    <br /><br />
+
+    <div id="slide"></div>
 
     <script>
       omnifilter = function (arr) {
-        desenhatabela = timelineh(arr, "ano", "topico", "conteudo", "expo");
+        slidestructure = timelineh(arr, "year", "artist", "content");
 
-        document.getElementById("tabela").innerHTML = desenhatabela;
+        document.getElementById("slide").innerHTML = slidestructure;
 
-        snapToGrid("#tabela", arr);
+        snapToGrid("#slide", arr);
       };
 
       omnifilterfetchcsvdata(
@@ -31,7 +31,7 @@
     </script>
 
     <style>
-      #tabela {
+      #slide {
         width: 70%;
         height: 750px;
         border: 1px solid red;
