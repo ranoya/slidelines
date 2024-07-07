@@ -55,8 +55,8 @@ let timelinemovehandler = function (who, arr) {
   clearTimeout(tlmhandl);
 };
 
-let snapToGrid = true;
-let eventcontrol = function (w, a) {
+let eventcontrolstart = true;
+let snapToGrid = function (w, a) {
   if (eventcontrolstart) {
     eventcontrolstart = false;
 
