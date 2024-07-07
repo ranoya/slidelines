@@ -16,9 +16,10 @@ let timelinemovehandler = function (who, arr) {
     .querySelector(who + " .timelineh")
     .getBoundingClientRect().left;
 
-  let tamanhoslideindividual = document
-    .querySelector(who + " .timelineh")
-    .getBoundingClientRect().width;
+  //let tamanhoslideindividual = document.querySelector(who + " .timelineh").getBoundingClientRect().width;
+
+  let tamanhoslideindividual =
+    document.querySelector(who + " .timelineh").scrollWidth / arr.length;
 
   // let tamanhoslideindividual = tamanhoslidetotal / arr.length;
   // let slideatual = parseInt(tlmdelta / tamanhoslideindividual);
