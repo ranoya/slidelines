@@ -4,24 +4,18 @@ let timelinemoveto = function (who, where) {
     left: where,
     behavior: "smooth",
   });
+
+  clearTimeout(tlmhandl);
 };
 
 let tlmhandl = "";
 let timelinemovehandler = function (who, arr) {
   clearTimeout(tlmhandl);
 
-  // let tlmdelta = document.querySelector(who + " .timelineh").getBoundingClientRect().left + document.querySelector(who).getBoundingClientRect().left;
-
-  //let tlmdelta = document.querySelector(who + " .timelineh").getBoundingClientRect().left;
-
   let tlmdelta = document.querySelector(who).scrollLeft;
-
-  //let tamanhoslideindividual = document.querySelector(who + " .timelineh").getBoundingClientRect().width;
 
   let tamanhoslideindividual =
     document.querySelector(who + " .timelineh").scrollWidth / arr.length;
-
-  // let tamanhoslideindividual = tamanhoslidetotal / arr.length;
 
   let resto = tlmdelta % tamanhoslideindividual;
 
@@ -52,22 +46,6 @@ let eventcontrolstart = true;
 let eventcontrol = function (w, a) {
   if (eventcontrolstart) {
     eventcontrolstart = false;
-
-    /*
-      document.querySelector(w).onscroll = function (e) {
-        console.log(
-          document.querySelector(w).getBoundingClientRect().left +
-            " | " +
-            document.querySelector(w).getBoundingClientRect().width
-        );
-  
-        console.log(
-          document.querySelector(w + " .timelineh").getBoundingClientRect().left +
-            " | " +
-            document.querySelector(w + " .timelineh").getBoundingClientRect()
-              .width
-        );
-        */
 
     document.querySelector(w).onscroll = function (e) {
       console.log("ativou");
