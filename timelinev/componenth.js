@@ -39,7 +39,7 @@ let timelinemovehandler = function (who, arr) {
 
   if (
     resto > tamanhoslideindividual - 300 &&
-    resto > tamanhoslideindividual - 5
+    resto < tamanhoslideindividual - 5
   ) {
     timelinemoveto(who, tlmdelta + resto);
   }
