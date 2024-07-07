@@ -48,12 +48,12 @@ let timelinemovehandler = function (who, arr) {
 
   */
 
-  if (resto < parseInt(tamanhoslideindividual / 3) && resto > 5) {
+  if (resto <= parseInt(tamanhoslideindividual / 2) && resto > 5) {
     timelinemoveto(who, tlmdelta - resto);
   }
 
   if (
-    resto > tamanhoslideindividual - parseInt(tamanhoslideindividual / 3) &&
+    resto > tamanhoslideindividual - parseInt(tamanhoslideindividual / 2) &&
     resto < tamanhoslideindividual - 5
   ) {
     timelinemoveto(who, tlmdelta + (tamanhoslideindividual - resto));
