@@ -12,11 +12,13 @@ let timelinemovehandler = function (who, arr) {
   let tlmdelta =
     document.querySelector(who + " .timelineh").getBoundingClientRect().left +
     document.querySelector(who).getBoundingClientRect().left;
-  let tamanhoslidetotal = document
+  let tamanhoslideindividual = document
     .querySelector(who + " .timelineh")
     .getBoundingClientRect().width;
-  let tamanhoslideindividual = tamanhoslidetotal / arr.length;
-  let slideatual = parseInt(tlmdelta / tamanhoslideindividual);
+
+  // let tamanhoslideindividual = tamanhoslidetotal / arr.length;
+  // let slideatual = parseInt(tlmdelta / tamanhoslideindividual);
+
   let resto = tlmdelta % tamanhoslideindividual;
 
   console.log(
@@ -43,6 +45,8 @@ let timelinemovehandler = function (who, arr) {
         -1 * resto
     );
   }
+
+  clearTimeout(tlmhandl);
 };
 
 let eventcontrolstart = true;
