@@ -15,10 +15,14 @@ let timelinemovehandler = function (who, arr) {
 
   let tlmdelta = document.querySelector(who).scrollLeft;
 
-  let tamanhoslideindividual = parseFloat(
+  /* let tamanhoslideindividual = parseFloat(
     (document.querySelector(who + " .timelineh").scrollWidth +
       document.querySelector(who + " .timelineh").scrollWidth * 0.0004) /
       arr.length
+  ); */
+
+  let tamanhoslideindividual = parseFloat(
+    document.querySelector(who + " .timelineh").scrollWidth / arr.length
   );
 
   let resto = parseFloat(tlmdelta % tamanhoslideindividual);
@@ -83,7 +87,7 @@ let timelineh = function (arr, ano, titulo, conteudo, instance) {
   let html = "";
   let htmlfinal = "";
 
-  html = `<div class='timelineh ${instancename}'>`;
+  html = `<div style='gap: 0 0 !important' class='timelineh ${instancename}'>`;
   htmlfinal = "";
 
   let qualano = "";
