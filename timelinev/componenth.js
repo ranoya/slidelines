@@ -1,7 +1,50 @@
+let timelinemoveto = function (who, where) {
+  document.querySelector(who).scrollTo({
+    left: where,
+    behavior: "smooth",
+  });
+};
+
+let tlmhandl = "";
+let timelinemovehandler = function (who, arr) {
+  clearTimeout(tlmhandl);
+  tlmhandl = setTimeout(function () {
+    let tlmdelta =
+      document.querySelector(who + " .timelineh").getBoundingClientRect().left +
+      document.querySelector(who).getBoundingClientRect().left;
+    let tamanhoslidetotal = document
+      .querySelector(who + " .timelineh")
+      .getBoundingClientRect().width;
+    let tamanhoslideindividual = tamanhoslidetotal / arr.length;
+    let slideatual = parseInt(tlmdelta / tamanhoslideindividual);
+    let resto = tlmdelta % tamanhoslideindividual;
+
+    if (resto > -300) {
+      timelinemoveto(
+        who,
+        document.querySelector(who + " .timelineh").getBoundingClientRect()
+          .left +
+          -1 * resto
+      );
+    }
+
+    if (resto < -1 * tamanhoslideindividual + 300) {
+      timelinemoveto(
+        who,
+        document.querySelector(who + " .timelineh").getBoundingClientRect()
+          .left -
+          -1 * resto
+      );
+    }
+  }, 1500);
+};
+
 let eventcontrolstart = true;
 
-let eventcontrol = function (w, nam) {
+let eventcontrol = function (w, a) {
   if (eventcontrolstart) {
+    timelinemovehandler(w, a);
+    /*
     document.querySelector(w).onscroll = function (e) {
       console.log(
         document.querySelector(w).getBoundingClientRect().left +
@@ -10,19 +53,15 @@ let eventcontrol = function (w, nam) {
       );
 
       console.log(
-        document.querySelector(w + " .timelineh " + nam).getBoundingClientRect()
-          .left +
+        document.querySelector(w + " .timelineh").getBoundingClientRect().left +
           " | " +
-          document
-            .querySelector(w + " .timelineh " + nam)
-            .getBoundingClientRect().width
+          document.querySelector(w + " .timelineh").getBoundingClientRect()
+            .width
       );
+      */
 
-      eventcontrolstart = false;
-    };
+    eventcontrolstart = false;
   }
-
-  // window.addEventListener("resize", carregacoisas);
 };
 
 let timelineh = function (arr, ano, titulo, conteudo, instance) {
