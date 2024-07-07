@@ -15,10 +15,12 @@
 
     <script>
       omnifilter = function (arr) {
-        desenhatabela = timelineh(arr, "ano", "topico", "conteudo");
+        desenhatabela = timelineh(arr, "ano", "topico", "conteudo", "expo");
 
         document.getElementById("tabela").innerHTML = desenhatabela;
       };
+
+      eventcontrol("#tabela", ".expo");
 
       omnifilterfetchcsvdata(
         GoogleSheetCsvURL(

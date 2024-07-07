@@ -1,4 +1,26 @@
-timelineh = function (arr, ano, titulo, conteudo, instance) {
+let eventcontrol = function (w, nam) {
+  document.querySelector(w).onscroll = function (e) {
+    console.log(
+      document.querySelector(w).getBoundingClientRect().left +
+        " | " +
+        document.querySelector(w).getBoundingClientRect().width
+    );
+  };
+
+  document.querySelector(w + " .timelineh " + nam).onscroll = function (e) {
+    console.log(
+      document.querySelector(w + " .timelineh " + nam).getBoundingClientRect()
+        .left +
+        " | " +
+        document.querySelector(w + " .timelineh " + nam).getBoundingClientRect()
+          .width
+    );
+  };
+
+  // window.addEventListener("resize", carregacoisas);
+};
+
+let timelineh = function (arr, ano, titulo, conteudo, instance) {
   let instancename = "";
   if (typeof instance != "undefined" && instance != "" && instance != null) {
     instancename = instance;
@@ -7,7 +29,7 @@ timelineh = function (arr, ano, titulo, conteudo, instance) {
   let html = "";
   let htmlfinal = "";
 
-  html = `<div class='timelineh'>`;
+  html = `<div class='timelineh ${instancename}'>`;
   htmlfinal = "";
 
   let qualano = "";
