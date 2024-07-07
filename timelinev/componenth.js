@@ -10,9 +10,12 @@ let tlmhandl = "";
 let timelinemovehandler = function (who, arr) {
   clearTimeout(tlmhandl);
 
-  let tlmdelta =
-    document.querySelector(who + " .timelineh").getBoundingClientRect().left +
-    document.querySelector(who).getBoundingClientRect().left;
+  // let tlmdelt = document.querySelector(who + " .timelineh").getBoundingClientRect().left + document.querySelector(who).getBoundingClientRect().left;
+
+  let tlmdelt = document
+    .querySelector(who + " .timelineh")
+    .getBoundingClientRect().left;
+
   let tamanhoslideindividual = document
     .querySelector(who + " .timelineh")
     .getBoundingClientRect().width;
@@ -31,7 +34,7 @@ let timelinemovehandler = function (who, arr) {
       tamanhoslideindividual
   );
 
-  if (resto > -300) {
+  if (resto > -300 && resto < -5) {
     timelinemoveto(
       who,
       document.querySelector(who + " .timelineh").getBoundingClientRect().left +
@@ -39,7 +42,10 @@ let timelinemovehandler = function (who, arr) {
     );
   }
 
-  if (resto < -1 * tamanhoslideindividual + 300) {
+  if (
+    resto < -1 * tamanhoslideindividual + 300 &&
+    resto > -1 * tamanhoslideindividual + 5
+  ) {
     timelinemoveto(
       who,
       document.querySelector(who + " .timelineh").getBoundingClientRect().left -
