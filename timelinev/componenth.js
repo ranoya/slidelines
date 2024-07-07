@@ -10,9 +10,9 @@ let tlmhandl = "";
 let timelinemovehandler = function (who, arr) {
   clearTimeout(tlmhandl);
 
-  // let tlmdelt = document.querySelector(who + " .timelineh").getBoundingClientRect().left + document.querySelector(who).getBoundingClientRect().left;
+  // let tlmdelta = document.querySelector(who + " .timelineh").getBoundingClientRect().left + document.querySelector(who).getBoundingClientRect().left;
 
-  let tlmdelt = document
+  let tlmdelta = document
     .querySelector(who + " .timelineh")
     .getBoundingClientRect().left;
 
