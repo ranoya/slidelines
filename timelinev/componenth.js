@@ -20,6 +20,7 @@ let timelinemovehandler = function (who, arr) {
 
   let resto = parseInt(tlmdelta % tamanhoslideindividual);
 
+  /*
   console.log(
     "o delta para o snap é: " +
       resto +
@@ -38,12 +39,14 @@ let timelinemovehandler = function (who, arr) {
       (resto < tamanhoslideindividual - 5)
   );
 
-  if (resto < 300 && resto > 5) {
+  */
+
+  if (resto < parseInt(tamanhoslideindividual / 3) && resto > 5) {
     timelinemoveto(who, tlmdelta - resto);
   }
 
   if (
-    resto > tamanhoslideindividual - 300 &&
+    resto > tamanhoslideindividual - parseInt(tamanhoslideindividual / 3) &&
     resto < tamanhoslideindividual - 5
   ) {
     timelinemoveto(who, tlmdelta + (tamanhoslideindividual - resto));
@@ -52,13 +55,14 @@ let timelinemovehandler = function (who, arr) {
   clearTimeout(tlmhandl);
 };
 
-let eventcontrolstart = true;
+let snapToGrid = true;
 let eventcontrol = function (w, a) {
   if (eventcontrolstart) {
     eventcontrolstart = false;
 
     document.querySelector(w).onscroll = function (e) {
-      console.log("ativou");
+      // console.log("ativou");
+
       clearTimeout(tlmhandl);
       tlmhandl = setTimeout(function () {
         timelinemovehandler(w, a);
@@ -86,10 +90,6 @@ let timelineh = function (arr, ano, titulo, conteudo, instance) {
   let qualtitulo = "";
   let tituloatual = "";
   let quantostitulos = 1;
-
-  let htmlano = `<div class="timelineh_ano_head ${instancename}"><span class="timelineh_ano_head_cont ${instancename}">${ano}</span></div>`;
-  let htmltopico = `<div class="timelineh_topic_head ${instancename}"><span class="timelineh_topic_head_cont ${instancename}">${titulo}</span></div>`;
-  let htmlcont = `<div class="timelineh_cont_head ${instancename}"><span class="timelineh_cont_head_cont ${instancename}">${conteudo}</span></div>`;
 
   let ultimo = "";
 
@@ -159,10 +159,6 @@ let timelineh = function (arr, ano, titulo, conteudo, instance) {
 
     htmlcont += `<div class="timelineh_cont ${ultimo} ${instancename}"><span class="timelineh_cont_cont ${instancename}">${arr[k][conteudo]}</span></div>`;
   }
-
-  htmlano += `<div class="timelineh_ano timelineh_ano_end ${instancename}"></div>`;
-  htmltopico += `<div class="timelineh_topic timelineh_topic_end ${instancename}"></div>`;
-  htmlcont += `<div class="timelineh_cont timelineh_cont_end ${instancename}"></div>`;
 
   html += htmlano + htmltopico + htmlcont + `</div>`;
 
