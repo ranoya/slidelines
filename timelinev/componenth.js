@@ -15,11 +15,11 @@ let timelinemovehandler = function (who, arr) {
 
   let tlmdelta = document.querySelector(who).scrollLeft;
 
-  let tamanhoslideindividual = parseInt(
+  let tamanhoslideindividual = parseFloat(
     document.querySelector(who + " .timelineh").scrollWidth / arr.length
   );
 
-  let resto = parseInt(tlmdelta % tamanhoslideindividual);
+  let resto = parseFloat(tlmdelta % tamanhoslideindividual);
 
   /*
   console.log(
