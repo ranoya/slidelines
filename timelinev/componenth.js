@@ -14,10 +14,11 @@ let timelinemovehandler = function (who, arr) {
 
   let tlmdelta = document.querySelector(who).scrollLeft;
 
-  let tamanhoslideindividual =
-    document.querySelector(who + " .timelineh").scrollWidth / arr.length;
+  let tamanhoslideindividual = parseInt(
+    document.querySelector(who + " .timelineh").scrollWidth / arr.length
+  );
 
-  let resto = tlmdelta % tamanhoslideindividual;
+  let resto = parseInt(tlmdelta % tamanhoslideindividual);
 
   console.log(
     "o delta para o snap é: " +
