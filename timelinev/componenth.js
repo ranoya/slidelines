@@ -78,7 +78,7 @@ let snapToGrid = function (w, a) {
   }
 };
 
-let timelineh = function (arr, ano, titulo, conteudo, instance) {
+let timelineh = function (arr, ano, titulo, conteudo) {
   let instancename = "";
   if (typeof instance != "undefined" && instance != "" && instance != null) {
     instancename = instance;
