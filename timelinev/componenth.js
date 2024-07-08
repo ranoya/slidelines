@@ -1,5 +1,14 @@
+let timelineactualarr = [];
+let eventcontrolstart = [];
+
+let slidelvh = function (elid, arr, track1, track2, track3) {
+  timelineactualarr[elid] = [];
+  timelineactualarr[elid] = arr;
+  eventcontrolstart[elid] = true;
+};
+
 let timelineh_moveto = function (who, where) {
-  document.querySelector(who).scrollTo({
+  document.getElementById(who).scrollTo({
     left: where,
     behavior: "smooth",
   });
@@ -11,10 +20,11 @@ let tlmhandl = "";
 let timelineh_movehandler = function (who, arr) {
   clearTimeout(tlmhandl);
 
-  let tlmdelta = document.querySelector(who).scrollLeft;
+  let tlmdelta = document.getElementById(who).scrollLeft;
 
   let tamanhoslideindividual = parseFloat(
-    document.querySelector(who + " .slidelinelvh").scrollWidth / arr.length
+    document.querySelector("#" + who + " .slidelinelvh").scrollWidth /
+      arr.length
   );
 
   let resto = parseFloat(tlmdelta % tamanhoslideindividual);
@@ -33,26 +43,21 @@ let timelineh_movehandler = function (who, arr) {
   clearTimeout(tlmhandl);
 };
 
-let eventcontrolstart = true;
-let timelineactualarr = "";
-
 let snapToGrid = function (w) {
-  if (eventcontrolstart) {
-    eventcontrolstart = false;
+  if (eventcontrolstart[w]) {
+    eventcontrolstart[w] = false;
 
-    document.querySelector(w).onscroll = function (e) {
-      // console.log("ativou");
-
+    document.documentGetElementById(w).onscroll = function (e) {
       clearTimeout(tlmhandl);
       tlmhandl = setTimeout(function () {
-        timelineh_movehandler(w, timelineactualarr);
+        timelineh_movehandler(w, timelineactualarr[w]);
       }, 1000);
     };
   }
 };
 
-let timelineh = function (arr, ano, titulo, conteudo) {
-  timelineactualarr = arr;
+let timelineh = function (id, arr, ano, titulo, conteudo) {
+  timelineactualarr[id] = arr;
 
   let instancename = "";
   if (typeof instance != "undefined" && instance != "" && instance != null) {
