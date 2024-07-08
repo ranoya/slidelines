@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <script src="https://datat.vercel.app/basicsmin.js"></script>
+    <script src="https://slidelines.vercel.app/slideslvhmin.js"></script>
+  </head>
+
+  <body>
+    <br /><br />
+
+    <input type="text" id="MyInputElement" />
+
+    <br /><br />
+
+    <div id="slide"></div>
+
+    <script>
+      omnifilter = function (arr) {
+        slidelvh("slide", arr, "year", "artist", "content", true);
+      };
+
+      omnifilterfetchcsvdata(
+        GoogleSheetCsvURL(
+          "https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit#gid=1520717065"
+        ),
+        "MyInputElement"
+      );
+    </script>
+
+    <style>
+      #slide {
+        width: 70%;
+        height: 700px;
+        border: 1px solid red;
+        overflow: auto;
+      }
+
+      .slidelinelvh {
+        display: grid;
+        grid-auto-columns: 100%;
+        grid-template-rows: 40px 60px 400px !important;
+        width: 100%;
+      }
+
+      .slidelinelvh_track1 {
+        grid-row: 1 !important;
+      }
+
+      .slidelinelvh_track1_cont {
+        padding: 15px;
+        background-color: white;
+        display: inline-block;
+        position: sticky;
+        left: 20px;
+      }
+
+      .slidelinelvh_track2 {
+        background-color: white;
+        grid-row: 2 !important;
+      }
+
+      .slidelinelvh_track2_cont {
+        padding-left: 15px;
+        padding-top: 10px;
+        display: inline-block;
+        position: sticky;
+        left: 20px;
+      }
+
+      .slidelinelvh_track3 {
+        grid-row: 3 !important;
+      }
+
+      .slidelinelvh_track3_cont {
+        padding-left: 0;
+        padding-top: 15px;
+        display: inline-block;
+      }
+    </style>
+  </body>
+</html>
