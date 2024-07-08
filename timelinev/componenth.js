@@ -1,5 +1,9 @@
+// matrizes de controle de conteúdo para múltiplas instâncias
+
 let timelinehactualarr = [];
 let eventcontrolhstart = [];
+
+// função criadora dos slides
 
 let slidelvh = function (elid, arr, track1, track2, track3, snap) {
   let snapon = true;
@@ -24,6 +28,8 @@ let slidelvh = function (elid, arr, track1, track2, track3, snap) {
   }
 };
 
+// função para mover até um ponto específico do scroll
+
 let timelineh_moveto = function (who, where) {
   document.getElementById(who).scrollTo({
     left: where,
@@ -32,6 +38,8 @@ let timelineh_moveto = function (who, where) {
 
   clearTimeout(tlmhandl);
 };
+
+// função para lidar com o evento de scroll no elemento
 
 let tlmhandl = "";
 let timelineh_movehandler = function (who, arr) {
@@ -60,6 +68,8 @@ let timelineh_movehandler = function (who, arr) {
   clearTimeout(tlmhandl);
 };
 
+// função de ajuste para mover até o ponto do slide
+
 let snapToGrid = function (w) {
   if (eventcontrolhstart[w]) {
     eventcontrolhstart[w] = false;
@@ -72,6 +82,8 @@ let snapToGrid = function (w) {
     };
   }
 };
+
+// função geradora do grid
 
 let timelineh = function (id, arr, ano, titulo, conteudo) {
   timelinehactualarr[id] = arr;
