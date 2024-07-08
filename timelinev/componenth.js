@@ -1,5 +1,5 @@
-let timelineactualarr = [];
-let eventcontrolstart = [];
+let timelinehactualarr = [];
+let eventcontrolhstart = [];
 
 let slidelvh = function (elid, arr, track1, track2, track3, snap) {
   let snapon = true;
@@ -7,9 +7,9 @@ let slidelvh = function (elid, arr, track1, track2, track3, snap) {
     snapon = snap;
   }
 
-  timelineactualarr[elid] = [];
-  timelineactualarr[elid] = arr;
-  eventcontrolstart[elid] = true;
+  timelinehactualarr[elid] = [];
+  timelinehactualarr[elid] = arr;
+  eventcontrolhstart[elid] = true;
 
   slidestructure = document.getElementById(elid).innerHTML = timelineh(
     elid,
@@ -61,20 +61,20 @@ let timelineh_movehandler = function (who, arr) {
 };
 
 let snapToGrid = function (w) {
-  if (eventcontrolstart[w]) {
-    eventcontrolstart[w] = false;
+  if (eventcontrolhstart[w]) {
+    eventcontrolhstart[w] = false;
 
     document.getElementById(w).onscroll = function (e) {
       clearTimeout(tlmhandl);
       tlmhandl = setTimeout(function () {
-        timelineh_movehandler(w, timelineactualarr[w]);
+        timelineh_movehandler(w, timelinehactualarr[w]);
       }, 1000);
     };
   }
 };
 
 let timelineh = function (id, arr, ano, titulo, conteudo) {
-  timelineactualarr[id] = arr;
+  timelinehactualarr[id] = arr;
 
   let instancename = "";
   if (typeof instance != "undefined" && instance != "" && instance != null) {
