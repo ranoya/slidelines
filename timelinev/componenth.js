@@ -126,7 +126,7 @@ let timelineh = function (id, arr, ano, titulo, conteudo) {
     }
 
     if (anoatual != qualano) {
-      htmlano += `<div class="slidelinelvh_track1 ${ultimo}" style="grid-row: 1; grid-column: span ${quantosblocos}"><span class="slidelinelvh_track1_cont">${arr[k][ano]}</span></div>`;
+      htmlano += `<div class="slidelinelvh_track1 ${ultimo}" style="grid-row: 1; grid-column: span ${quantosblocos}"><div class="slidelinelvh_track1_cont">${arr[k][ano]}</div></div>`;
     }
 
     qualano = anoatual;
@@ -155,7 +155,7 @@ let timelineh = function (id, arr, ano, titulo, conteudo) {
     }
 
     if (tituloatual != qualtitulo) {
-      htmltopico += `<div class="slidelinelvh_track2 ${ultimo}" style="grid-row: 2; grid-column: span ${quantostitulos}"><span class="slidelinelvh_track2_cont">${arr[k][titulo]}</span></div>`;
+      htmltopico += `<div class="slidelinelvh_track2 ${ultimo}" style="grid-row: 2; grid-column: span ${quantostitulos}"><div class="slidelinelvh_track2_cont">${arr[k][titulo]}</div></div>`;
     }
 
     qualtitulo = tituloatual;
@@ -165,7 +165,7 @@ let timelineh = function (id, arr, ano, titulo, conteudo) {
       ultimo = "ultimo";
     }
 
-    htmlcont += `<div class="slidelinelvh_track3 ${ultimo}" style="grid-row: 3;"><span class="slidelinelvh_track3_cont}">${arr[k][conteudo]}</span></div>`;
+    htmlcont += `<div class="slidelinelvh_track3 ${ultimo}" style="grid-row: 3;"><div class="slidelinelvh_track3_cont}">${arr[k][conteudo]}</div></div>`;
   }
 
   html += htmlano + htmltopico + htmlcont + `</div>`;
