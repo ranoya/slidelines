@@ -64,7 +64,7 @@ let snapToGrid = function (w) {
   if (eventcontrolstart[w]) {
     eventcontrolstart[w] = false;
 
-    document.documentGetElementById(w).onscroll = function (e) {
+    document.getElementById(w).onscroll = function (e) {
       clearTimeout(tlmhandl);
       tlmhandl = setTimeout(function () {
         timelineh_movehandler(w, timelineactualarr[w]);
