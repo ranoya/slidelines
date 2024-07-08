@@ -1,4 +1,4 @@
-let timelinemoveto = function (who, where) {
+let timelineh_moveto = function (who, where) {
   document.querySelector(who).scrollTo({
     left: where,
     behavior: "smooth",
@@ -8,7 +8,7 @@ let timelinemoveto = function (who, where) {
 };
 
 let tlmhandl = "";
-let timelinemovehandler = function (who, arr) {
+let timelineh_movehandler = function (who, arr) {
   clearTimeout(tlmhandl);
 
   let tlmdelta = document.querySelector(who).scrollLeft;
@@ -20,14 +20,14 @@ let timelinemovehandler = function (who, arr) {
   let resto = parseFloat(tlmdelta % tamanhoslideindividual);
 
   if (resto <= parseInt(tamanhoslideindividual / 2) && resto > 5) {
-    timelinemoveto(who, tlmdelta - resto);
+    timelineh_moveto(who, tlmdelta - resto);
   }
 
   if (
     resto > tamanhoslideindividual - parseInt(tamanhoslideindividual / 2) &&
     resto < tamanhoslideindividual - 5
   ) {
-    timelinemoveto(who, tlmdelta + (tamanhoslideindividual - resto));
+    timelineh_moveto(who, tlmdelta + (tamanhoslideindividual - resto));
   }
 
   clearTimeout(tlmhandl);
@@ -45,7 +45,7 @@ let snapToGrid = function (w) {
 
       clearTimeout(tlmhandl);
       tlmhandl = setTimeout(function () {
-        timelinemovehandler(w, timelineactualarr);
+        timelineh_movehandler(w, timelineactualarr);
       }, 1000);
     };
   }
