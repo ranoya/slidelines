@@ -1,6 +1,4 @@
 let timelinemoveto = function (who, where) {
-  //console.log("indo para " + where);
-
   document.querySelector(who).scrollTo({
     left: where,
     behavior: "smooth",
@@ -15,38 +13,11 @@ let timelinemovehandler = function (who, arr) {
 
   let tlmdelta = document.querySelector(who).scrollLeft;
 
-  /* let tamanhoslideindividual = parseFloat(
-    (document.querySelector(who + " .timelineh").scrollWidth +
-      document.querySelector(who + " .timelineh").scrollWidth * 0.0004) /
-      arr.length
-  ); */
-
   let tamanhoslideindividual = parseFloat(
-    document.querySelector(who + " .timelineh").scrollWidth / arr.length
+    document.querySelector(who + " .slidelinelvh").scrollWidth / arr.length
   );
 
   let resto = parseFloat(tlmdelta % tamanhoslideindividual);
-
-  /*
-  console.log(
-    "o delta para o snap é: " +
-      resto +
-      " | " +
-      tlmdelta +
-      " | " +
-      tamanhoslideindividual +
-      " |- limite: " +
-      (tamanhoslideindividual - 300) +
-      " " +
-      (tamanhoslideindividual - 5) +
-      " -| " +
-      " ? " +
-      (resto > tamanhoslideindividual - 300) +
-      " ? " +
-      (resto < tamanhoslideindividual - 5)
-  );
-
-  */
 
   if (resto <= parseInt(tamanhoslideindividual / 2) && resto > 5) {
     timelinemoveto(who, tlmdelta - resto);
@@ -91,7 +62,7 @@ let timelineh = function (arr, ano, titulo, conteudo) {
   let html = "";
   let htmlfinal = "";
 
-  html = `<div style='gap: 0 0 !important; display: grid !important; grid-auto-columns: 100% !important; width: 100% !important; grid-template-rows: 40px 40px 400px;' class='timelineh'>`;
+  html = `<div style='gap: 0 0 !important; display: grid !important; grid-auto-columns: 100% !important; width: 100% !important; grid-template-rows: 40px 40px 400px;' class='slidelinelvh'>`;
   htmlfinal = "";
 
   let qualano = "";
@@ -133,7 +104,7 @@ let timelineh = function (arr, ano, titulo, conteudo) {
     }
 
     if (anoatual != qualano) {
-      htmlano += `<div class="timelineh_track1 ${ultimo}" style="grid-column: span ${quantosblocos}"><span class="timelineh_track1_cont">${arr[k][ano]}</span></div>`;
+      htmlano += `<div class="slidelinelvh_track1 ${ultimo}" style="grid-row: 1; grid-column: span ${quantosblocos}"><span class="slidelinelvh_track1_cont">${arr[k][ano]}</span></div>`;
     }
 
     qualano = anoatual;
@@ -162,7 +133,7 @@ let timelineh = function (arr, ano, titulo, conteudo) {
     }
 
     if (tituloatual != qualtitulo) {
-      htmltopico += `<div class="timelineh_track2 ${ultimo}" style="grid-column: span ${quantostitulos}"><span class="timelineh_track2_cont">${arr[k][titulo]}</span></div>`;
+      htmltopico += `<div class="slidelinelvh_track2 ${ultimo}" style="grid-row: 2; grid-column: span ${quantostitulos}"><span class="slidelinelvh_track2_cont">${arr[k][titulo]}</span></div>`;
     }
 
     qualtitulo = tituloatual;
@@ -172,7 +143,7 @@ let timelineh = function (arr, ano, titulo, conteudo) {
       ultimo = "ultimo";
     }
 
-    htmlcont += `<div class="timelineh_track3 ${ultimo}"><span class="timelineh_track3_cont}">${arr[k][conteudo]}</span></div>`;
+    htmlcont += `<div class="slidelinelvh_track3 ${ultimo}" style="grid-row: 3;"><span class="slidelinelvh_track3_cont}">${arr[k][conteudo]}</span></div>`;
   }
 
   html += htmlano + htmltopico + htmlcont + `</div>`;
