@@ -1,10 +1,27 @@
 let timelineactualarr = [];
 let eventcontrolstart = [];
 
-let slidelvh = function (elid, arr, track1, track2, track3) {
+let slidelvh = function (elid, arr, track1, track2, track3, snap) {
+  let snapon = true;
+  if (typeof snap != "undefined" && snap != "" && snap != null) {
+    snapon = snap;
+  }
+
   timelineactualarr[elid] = [];
   timelineactualarr[elid] = arr;
   eventcontrolstart[elid] = true;
+
+  slidestructure = document.getElementById(elid).innerHTML = timelineh(
+    elid,
+    arr,
+    track1,
+    track2,
+    track3
+  );
+
+  if (snapon) {
+    snapToGrid(elid);
+  }
 };
 
 let timelineh_moveto = function (who, where) {

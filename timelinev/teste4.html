@@ -17,11 +17,7 @@
 
     <script>
       omnifilter = function (arr) {
-        slidestructure = timelineh(arr, "year", "artist", "content");
-
-        document.getElementById("slide").innerHTML = slidestructure;
-
-        snapToGrid("#slide");
+        slidelvh("slide", arr, "year", "artist", "content", true);
       };
 
       omnifilterfetchcsvdata(
