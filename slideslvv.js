@@ -24,7 +24,7 @@ let slidelvv = function (elid, arr, track1, track2, track3, snap) {
   );
 
   if (snapon) {
-    snapToGrid(elid);
+    VsnapToGrid(elid);
   }
 };
 
@@ -36,14 +36,14 @@ let timelinev_moveto = function (who, where) {
     behavior: "smooth",
   });
 
-  clearTimeout(tlmhandl);
+  clearTimeout(vtlmhandl);
 };
 
 // função para lidar com o evento de scroll no elemento
 
-let tlmhandl = "";
+let vtlmhandl = "";
 let timelinev_movehandler = function (who, arr) {
-  clearTimeout(tlmhandl);
+  clearTimeout(vtlmhandl);
 
   let tlmdelta = document.getElementById(who).scrollTop;
 
@@ -65,18 +65,18 @@ let timelinev_movehandler = function (who, arr) {
     timelinev_moveto(who, tlmdelta + (tamanhoslideindividual - resto));
   }
 
-  clearTimeout(tlmhandl);
+  clearTimeout(vtlmhandl);
 };
 
 // função de ajuste para mover até o ponto do slide
 
-let snapToGrid = function (w) {
+let VsnapToGrid = function (w) {
   if (eventcontrolvstart[w]) {
     eventcontrolvstart[w] = false;
 
     document.getElementById(w).onscroll = function (e) {
-      clearTimeout(tlmhandl);
-      tlmhandl = setTimeout(function () {
+      clearTimeout(vtlmhandl);
+      vtlmhandl = setTimeout(function () {
         timelinev_movehandler(w, timelinevactualarr[w]);
       }, 1000);
     };
