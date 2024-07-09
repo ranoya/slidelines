@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <script src="https://datat.vercel.app/basicsmin.js"></script>
+    <script src="https://slidelines.vercel.app/slideslvv.js"></script>
+  </head>
+
+  <body>
+    <br /><br />
+
+    <input type="text" id="MyInputElement" />
+
+    <br /><br />
+
+    <div id="slide"></div>
+
+    <script>
+      omnifilter = function (arr) {
+        slidelvv("slide", arr, "year", "artist", "content", true);
+      };
+
+      omnifilterfetchcsvdata(
+        GoogleSheetCsvURL(
+          "https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit#gid=1520717065"
+        ),
+        "MyInputElement"
+      );
+    </script>
+
+    <style>
+      #slide {
+        width: 80%;
+        height: 540px;
+        border: 1px solid red;
+        overflow: auto;
+        margin-left: 30px;
+      }
+
+      .slidelinelvv {
+        grid-template-rows: 40px 60px 400px !important;
+      }
+
+      .slidelinelvv_track1 {
+        grid-column: 1 !important;
+      }
+
+      .slidelinelvv_track1_cont {
+        background-color: white;
+      }
+
+      .slidelinelvv_track2 {
+        background-color: white;
+      }
+
+      .slidelinelvv_track2_cont {
+        background-color: white;
+      }
+
+      .slidelinelvv_track3 {
+        background-color: white;
+      }
+
+      .slidelinelvv_track3_cont {
+        background-color: white;
+      }
+    </style>
+  </body>
+</html>
