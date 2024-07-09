@@ -48,7 +48,7 @@ let timelinev_movehandler = function (who, arr) {
   let tlmdelta = document.getElementById(who).scrollTop;
 
   let tamanhoslideindividual = parseFloat(
-    document.querySelector("#" + who + " .slidelinelvv").scrollWidth /
+    document.querySelector("#" + who + " .slidelinelvv").scrollHeight /
       arr.length
   );
 
