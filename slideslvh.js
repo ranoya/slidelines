@@ -88,15 +88,10 @@ let snapToGrid = function (w) {
 let timelineh = function (id, arr, ano, titulo, conteudo) {
   timelinehactualarr[id] = arr;
 
-  let instancename = "";
-  if (typeof instance != "undefined" && instance != "" && instance != null) {
-    instancename = instance;
-  }
-
   let html = "";
   let htmlfinal = "";
 
-  html = `<div style='gap: 0 0 !important; display: grid !important; grid-auto-columns: 100% !important; width: 100% !important; grid-template-rows: 40px 40px 400px;' class='slidelinelvh'>`;
+  html = `<div style='column-gap: 0 !important; display: grid !important; grid-auto-columns: 100% !important; width: 100% !important; grid-template-rows: 40px 40px 400px;' class='slidelinelvh'>`;
   htmlfinal = "";
 
   let qualano = "";
