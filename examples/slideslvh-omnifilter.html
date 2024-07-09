@@ -17,12 +17,19 @@
 
     <script>
       omnifilter = function (arr) {
-        slidelvh("slide", arr, "year", "artist", "content", true);
+        slidelvh(
+          "slide",
+          arr,
+          "ano",
+          "subtitulo",
+          "customcodeforcomponent",
+          true
+        );
       };
 
       omnifilterfetchcsvdata(
         GoogleSheetCsvURL(
-          "https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit#gid=1520717065"
+          "https://docs.google.com/spreadsheets/d/1aZ7zU_DnhI5lbj9A9Cfaa0IhsnoLyggUuqXb279-Jyg/edit?gid=0#gid=0"
         ),
         "MyInputElement"
       );
