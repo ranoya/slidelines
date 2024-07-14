@@ -1,0 +1,37 @@
+:root {
+  --track-height: 25px;
+  --md-fontsize: 26px;
+  --timeline-font: "Prompt";
+}
+
+.track {
+  font-size: 11px;
+  line-height: 25px;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--track-bg, #ffffff) !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--track-fg) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--track-fg, #000000) !important;
+}
+
+.slidewrap {
+  height: calc(100vh - (5 * var(--track-height, 60px))) !important;
+}
+
+#indice {
+  top: calc(100vh - 32px - 15px) !important;
+}
+
+#prev,
+#next {
+  top: calc(100vh - 30px - 15px);
+}
