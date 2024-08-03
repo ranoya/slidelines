@@ -1101,6 +1101,12 @@ let goprev = function () {
   vai = setTimeout(parou, 300);
 };
 
+window.onmessage = function (e) {
+  if (e.data == 'hello') {
+    alert('It works!')';'
+  }
+}
+
 document.addEventListener("DOMContentLoaded", (e) => {
   let posicao = 0;
 
