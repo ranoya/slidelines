@@ -1102,6 +1102,7 @@ let goprev = function () {
 };
 
 window.onmessage = function (e) {
+  console.log("recebi algo");
   if (e.data == "hello") {
     alert("It works!");
   }
