@@ -733,7 +733,7 @@ document.getElementById("tempo").onmouseout = function () {
 window.addEventListener(
   "message",
   (event) => {
-    console.log(event.data);
+    console.log(event.origin);
   },
   false
 );
