@@ -1102,10 +1102,10 @@ let goprev = function () {
 };
 
 window.onmessage = function (e) {
-  if (e.data == 'hello') {
-    alert('It works!')';'
+  if (e.data == "hello") {
+    alert("It works!");
   }
-}
+};
 
 document.addEventListener("DOMContentLoaded", (e) => {
   let posicao = 0;
