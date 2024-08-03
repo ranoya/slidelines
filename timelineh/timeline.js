@@ -730,14 +730,6 @@ document.getElementById("tempo").onmouseout = function () {
   mudaviatempo = false;
 };
 
-document.addEventListener(
-  "message",
-  (event) => {
-    console.log(event);
-  },
-  false
-);
-
 document.addEventListener("wheel", (event) => {
   if (
     typeof $_GET["allowverticalscroll"] != "undefined" &&
