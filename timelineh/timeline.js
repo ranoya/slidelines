@@ -1102,8 +1102,13 @@ let goprev = function () {
 };
 
 window.onmessage = function (e) {
-  console.log("recebi algo");
-  nowgo(parseInt(e.data));
+  if (e.data == "p") {
+    goprev();
+  } else if (e.data == "n") {
+    gonext();
+  } else {
+    nowgo(parseInt(e.data));
+  }
 };
 
 document.addEventListener("DOMContentLoaded", (e) => {
