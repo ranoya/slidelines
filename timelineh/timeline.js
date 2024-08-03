@@ -730,10 +730,10 @@ document.getElementById("tempo").onmouseout = function () {
   mudaviatempo = false;
 };
 
-window.addEventListener(
+document.addEventListener(
   "message",
   (event) => {
-    console.log(event.origin);
+    console.log(event);
   },
   false
 );
