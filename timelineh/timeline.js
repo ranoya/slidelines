@@ -832,9 +832,10 @@ let ajeita = function (fecha) {
     window.innerWidth / 1.99
   ) {
     posicao = parseInt(
-      document.getElementById("frontslide").scrollLeft / window.innerWidth
+      0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
     );
 
+    /* tentando entender problema de mobile
     alert(
       document.getElementById("frontslide").scrollLeft +
         " / " +
@@ -842,6 +843,8 @@ let ajeita = function (fecha) {
         " = " +
         posicao
     );
+
+    */
 
     let onde = window.innerWidth * posicao;
 
@@ -865,8 +868,10 @@ let ajeita = function (fecha) {
     window.innerWidth / 2.01
   ) {
     posicao = parseInt(
-      document.getElementById("frontslide").scrollLeft / window.innerWidth
+      0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
     );
+
+    /* tentando entender problema de mobile
 
     alert(
       document.getElementById("frontslide").scrollLeft +
@@ -875,6 +880,8 @@ let ajeita = function (fecha) {
         " = " +
         posicao
     );
+
+    /*
 
     let onde = window.innerWidth * (posicao + 1);
 
