@@ -631,6 +631,10 @@ const putslides = function (posicao) {
     document.getElementById("next").style.display = "block";
   }
 
+  // tentando resolver problema da cor do timeline no mobile
+  document.documentElement.style.setProperty("--track-fg", arrcolorbg[posicao]);
+  document.documentElement.style.setProperty("--track-bg", arrcolorfg[posicao]);
+
   for (let i = 0; i < todosslides.length; i++) {
     if (
       i >= actualpage - 3 &&
