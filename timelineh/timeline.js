@@ -831,7 +831,6 @@ let ajeita = function (fecha) {
     document.getElementById("frontslide").scrollLeft % window.innerWidth <
     window.innerWidth / 1.99
   ) {
-    s;
     posicao = parseInt(
       document.getElementById("frontslide").scrollLeft / window.innerWidth
     );
