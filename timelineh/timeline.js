@@ -827,6 +827,13 @@ let ajeita = function (fecha) {
 
   let posicao = 0;
 
+  console.log(
+    "-----> " +
+      window.innerWidth +
+      " / " +
+      (document.getElementById("frontslide").scrollLeft % window.innerWidth)
+  );
+
   if (
     document.getElementById("frontslide").scrollLeft % window.innerWidth <
     window.innerWidth / 2
