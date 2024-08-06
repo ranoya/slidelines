@@ -870,10 +870,17 @@ let ajeita = function (fecha) {
     // document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft - (document.getElementById("frontslide").scrollLeft % window.innerWidth);
   }
 
+  console.log(
+    "---> " +
+      (document.getElementById("frontslide").scrollLeft % window.innerWidth) >
+      window.innerWidth / 2
+  );
+
   if (
     document.getElementById("frontslide").scrollLeft % window.innerWidth >
-    window.innerWidth / 1.5
+    window.innerWidth / 2
   ) {
+    console.log("foi");
     posicao = parseInt(
       0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
     );
