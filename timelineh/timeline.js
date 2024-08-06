@@ -838,7 +838,9 @@ let ajeita = function (fecha) {
     alert(
       document.getElementById("frontslide").scrollLeft +
         " / " +
-        window.innerWidth
+        window.innerWidth +
+        " = " +
+        posicao
     );
 
     let onde = window.innerWidth * posicao;
@@ -869,7 +871,9 @@ let ajeita = function (fecha) {
     alert(
       document.getElementById("frontslide").scrollLeft +
         " / " +
-        window.innerWidth
+        window.innerWidth +
+        " = " +
+        posicao
     );
 
     let onde = window.innerWidth * (posicao + 1);
