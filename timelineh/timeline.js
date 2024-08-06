@@ -741,7 +741,7 @@ document.addEventListener("wheel", (event) => {
     $_GET["allowverticalscroll"] != ""
   ) {
     let posicao = parseInt(
-      document.getElementById("frontslide").scrollLeft / window.innerWidth
+      0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
     );
 
     if (!rodandoajeita) {
@@ -915,7 +915,7 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
   clearTimeout(vai);
 
   let posicao = parseInt(
-    document.getElementById("frontslide").scrollLeft / window.innerWidth
+    0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
   );
 
   if (!mudaviatempo) {
@@ -989,7 +989,7 @@ onkeydown = onkeyup = function (e) {
   keymapping[e.keyCode] = e.type == "keydown";
 
   let posicao = parseInt(
-    document.getElementById("frontslide").scrollLeft / window.innerWidth
+    0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
   );
 
   clearTimeout(vai);
@@ -1090,7 +1090,7 @@ let gonext = function () {
   let posicao = 0;
 
   posicao = parseInt(
-    document.getElementById("frontslide").scrollLeft / window.innerWidth
+    0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
   );
 
   clearTimeout(vai);
@@ -1111,7 +1111,7 @@ let goprev = function () {
   let posicao = 0;
 
   posicao = parseInt(
-    document.getElementById("frontslide").scrollLeft / window.innerWidth
+    0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
   );
 
   clearTimeout(vai);
