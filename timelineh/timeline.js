@@ -829,7 +829,7 @@ let ajeita = function (fecha) {
 
   if (
     document.getElementById("frontslide").scrollLeft % window.innerWidth <
-    window.innerWidth / 1.99
+    window.innerWidth / 2
   ) {
     posicao = parseInt(
       0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
@@ -865,7 +865,7 @@ let ajeita = function (fecha) {
 
   if (
     document.getElementById("frontslide").scrollLeft % window.innerWidth >
-    window.innerWidth / 2.01
+    window.innerWidth / 1.5
   ) {
     posicao = parseInt(
       0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
