@@ -829,10 +829,17 @@ let ajeita = function (fecha) {
 
   if (
     document.getElementById("frontslide").scrollLeft % window.innerWidth <
-    window.innerWidth / 2.5
+    window.innerWidth / 1.99
   ) {
+    s;
     posicao = parseInt(
       document.getElementById("frontslide").scrollLeft / window.innerWidth
+    );
+
+    alert(
+      document.getElementById("frontslide").scrollLeft +
+        " / " +
+        window.innerWidth
     );
 
     let onde = window.innerWidth * posicao;
@@ -854,10 +861,16 @@ let ajeita = function (fecha) {
 
   if (
     document.getElementById("frontslide").scrollLeft % window.innerWidth >
-    600
+    window.innerWidth / 2.01
   ) {
     posicao = parseInt(
       document.getElementById("frontslide").scrollLeft / window.innerWidth
+    );
+
+    alert(
+      document.getElementById("frontslide").scrollLeft +
+        " / " +
+        window.innerWidth
     );
 
     let onde = window.innerWidth * (posicao + 1);
