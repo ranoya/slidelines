@@ -1081,6 +1081,9 @@ let gonext = function () {
     behavior: "smooth",
   });
 
+  // no tablet ele tá se perdendo onde foi parar.
+  posicao++;
+
   vai = setTimeout(parou, 300);
 };
 
@@ -1101,6 +1104,9 @@ let goprev = function () {
     left: onde,
     behavior: "smooth",
   });
+
+  // no tablet ele tá se perdendo onde foi parar.
+  posicao--;
 
   vai = setTimeout(parou, 300);
 };
