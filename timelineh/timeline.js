@@ -877,8 +877,6 @@ let ajeita = function (fecha) {
 
   putslides(posicao);
 
-  alert(posicao);
-
   if (!rodandoajeita) {
     ajeita();
   }
