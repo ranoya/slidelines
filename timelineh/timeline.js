@@ -830,7 +830,6 @@ let ajeita = function (fecha) {
     0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
   );
 
-  alert(document.getElementById("frontslide").scrollLeft % window.innerWidth);
   if (
     document.getElementById("frontslide").scrollLeft % window.innerWidth <
       window.innerWidth / 2 &&
