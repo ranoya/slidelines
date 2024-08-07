@@ -875,7 +875,8 @@ let ajeita = function (fecha) {
       window.innerWidth - 2
   ) {
     posicao = parseInt(
-      0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
+      -0.2 +
+        document.getElementById("frontslide").scrollLeft / window.innerWidth
     );
 
     /* tentando entender problema de mobile
