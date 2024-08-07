@@ -829,7 +829,8 @@ let ajeita = function (fecha) {
 
   if (
     document.getElementById("frontslide").scrollLeft % window.innerWidth <
-    window.innerWidth / 2
+      window.innerWidth / 2 &&
+    document.getElementById("frontslide").scrollLeft % window.innerWidth > 2
   ) {
     posicao = parseInt(
       0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
@@ -862,6 +863,8 @@ let ajeita = function (fecha) {
 
     // document.getElementById("frontslide").scrollLeft = document.getElementById("frontslide").scrollLeft - (document.getElementById("frontslide").scrollLeft % window.innerWidth);
   }
+
+  alert(document.getElementById("frontslide").scrollLeft % window.innerWidth);
 
   if (
     document.getElementById("frontslide").scrollLeft % window.innerWidth >
