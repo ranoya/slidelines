@@ -67,6 +67,7 @@
 
 #indice {
   right: 0 !important;
+  left: unset !important;
   top: 2px;
 }
 
