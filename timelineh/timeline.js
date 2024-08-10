@@ -427,6 +427,7 @@ fetch(GoogleSheetCsvURL(arquivojson))
 
     let milestone = "";
     let ultimotitulo = "";
+    let estilo = "";
 
     if (
       typeof $_GET["allblocks"] != "undefined" &&
@@ -434,11 +435,12 @@ fetch(GoogleSheetCsvURL(arquivojson))
       $_GET["allblocks"] != ""
     ) {
       while (i < dados.length) {
-        milestone = "";
+        estilo = "";
 
         let imprimetitulo = dados[i].ano;
         if (imprimetitulo == ultimotitulo) {
           imprimetitulo = "";
+          estilo = "border-left-style: none !important;";
         }
 
         /*
@@ -454,7 +456,7 @@ fetch(GoogleSheetCsvURL(arquivojson))
         
         */
 
-        anoscode += `<div class="linhadotempo" style="border-left-style: none !important;" id="reg${i}" onclick='nowgo(${i})' style='display: inline-block; margin: 0; padding: 0; top: 0; left: 0; width: calc(5vw - 1px); z-index: ${
+        anoscode += `<div class="linhadotempo" style="${estilo}" id="reg${i}" onclick='nowgo(${i})' style='display: inline-block; margin: 0; padding: 0; top: 0; left: 0; width: calc(5vw - 1px); z-index: ${
           600 + i
         };'><div class='registroano'>${imprimetitulo}</div></div>`;
 
