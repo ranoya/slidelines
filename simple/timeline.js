@@ -507,7 +507,7 @@ document.addEventListener("wheel", (event) => {
     $_GET["allowverticalscroll"] != ""
   ) {
     let posicao = parseInt(
-      document.getElementById("frontslide").scrollLeft / window.innerWidth
+      0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
     );
 
     if (
@@ -599,13 +599,17 @@ let ajeita = function (fecha) {
   }
 
   let posicao = 0;
+  posicao = parseInt(
+    0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
+  );
 
   if (
     document.getElementById("frontslide").scrollLeft % window.innerWidth <
-    window.innerWidth / 2.5
+      window.innerWidth / 2 &&
+    document.getElementById("frontslide").scrollLeft % window.innerWidth > 2
   ) {
     posicao = parseInt(
-      document.getElementById("frontslide").scrollLeft / window.innerWidth
+      0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
     );
 
     let onde = window.innerWidth * posicao;
@@ -618,10 +622,13 @@ let ajeita = function (fecha) {
 
   if (
     document.getElementById("frontslide").scrollLeft % window.innerWidth >
-    600
+      window.innerWidth / 2 &&
+    document.getElementById("frontslide").scrollLeft % window.innerWidth <
+      window.innerWidth - 2
   ) {
     posicao = parseInt(
-      document.getElementById("frontslide").scrollLeft / window.innerWidth
+      -0.2 +
+        document.getElementById("frontslide").scrollLeft / window.innerWidth
     );
 
     let onde = window.innerWidth * (posicao + 1);
@@ -647,7 +654,7 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
   clearTimeout(vai);
 
   let posicao = parseInt(
-    document.getElementById("frontslide").scrollLeft / window.innerWidth
+    0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
   );
 
   if (
@@ -795,7 +802,7 @@ let gonext = function () {
   let posicao = 0;
 
   posicao = parseInt(
-    document.getElementById("frontslide").scrollLeft / window.innerWidth
+    0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
   );
 
   clearTimeout(vai);
@@ -816,7 +823,7 @@ let goprev = function () {
   let posicao = 0;
 
   posicao = parseInt(
-    document.getElementById("frontslide").scrollLeft / window.innerWidth
+    0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
   );
 
   clearTimeout(vai);
