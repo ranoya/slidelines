@@ -454,7 +454,7 @@ fetch(GoogleSheetCsvURL(arquivojson))
         
         */
 
-        anoscode += `<div class="linhadotempo" style="border-left-style: 0 !imporant;" id="reg${i}" onclick='nowgo(${i})' style='display: inline-block; margin: 0; padding: 0; top: 0; left: 0; width: calc(5vw - 1px); z-index: ${
+        anoscode += `<div class="linhadotempo" style="border-left-style: none !imporant;" id="reg${i}" onclick='nowgo(${i})' style='display: inline-block; margin: 0; padding: 0; top: 0; left: 0; width: calc(5vw - 1px); z-index: ${
           600 + i
         };'><div class='registroano'>${imprimetitulo}</div></div>`;
 
