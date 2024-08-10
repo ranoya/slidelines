@@ -426,38 +426,74 @@ fetch(GoogleSheetCsvURL(arquivojson))
     i = 0;
 
     let milestone = "";
+    let ultimotitulo = "";
 
-    while (i < dados.length) {
-      milestone = "";
+    if (
+      typeof $_GET["allblocks"] != "undefined" &&
+      $_GET["allblocks"] != null &&
+      $_GET["allblocks"] != ""
+    ) {
+      while (i < dados.length) {
+        milestone = "";
 
-      let tituloatual = dados[i].ano;
-      let contat = 0;
-
-      for (let k = i; k < dados.length; k++) {
-        if (dados[k].ano == dados[i].ano) {
-          contat++;
-        } else {
-          break;
+        let imprimetitulo = dados[i].ano;
+        if (imprimetitulo == ultimotitulo) {
+          imprimetitulo = "";
         }
+
+        /*
+        if (
+          typeof $_GET["milestone"] != "undefined" &&
+          $_GET["milestone"] != null &&
+          $_GET["milestone"] != ""
+        ) {
+          milestone = `display: block; position: absolute; z-index: 10000; width: calc(${
+            contat * 5
+          }vw - 30px); transform: translate(15px,0);`;
+        }
+        
+        */
+
+        anoscode += `<div class="linhadotempo" style="border-left-style: 0 !imporant;" id="reg${i}" onclick='nowgo(${i})' style='display: inline-block; margin: 0; padding: 0; top: 0; left: 0; width: calc(5vw - 1px); z-index: ${
+          600 + i
+        };'><div class='registroano'>${imprimetitulo}</div></div>`;
+
+        ultimotitulo = dados[i].ano;
+        i++;
       }
+    } else {
+      while (i < dados.length) {
+        milestone = "";
 
-      if (
-        typeof $_GET["milestone"] != "undefined" &&
-        $_GET["milestone"] != null &&
-        $_GET["milestone"] != ""
-      ) {
-        milestone = `display: block; position: absolute; z-index: 10000; width: calc(${
-          contat * 5
-        }vw - 30px); transform: translate(15px,0);`;
+        let tituloatual = dados[i].ano;
+        let contat = 0;
+
+        for (let k = i; k < dados.length; k++) {
+          if (dados[k].ano == dados[i].ano) {
+            contat++;
+          } else {
+            break;
+          }
+        }
+
+        if (
+          typeof $_GET["milestone"] != "undefined" &&
+          $_GET["milestone"] != null &&
+          $_GET["milestone"] != ""
+        ) {
+          milestone = `display: block; position: absolute; z-index: 10000; width: calc(${
+            contat * 5
+          }vw - 30px); transform: translate(15px,0);`;
+        }
+
+        anoscode += `<div class="linhadotempo" id="reg${i}" onclick='nowgo(${i})' style='display: inline-block; margin: 0; padding: 0; top: 0; left: 0; width: calc(5vw - 1px); margin-right: ${
+          (contat - 1) * 5
+        }vw; z-index: ${
+          600 + i
+        };'><div class='registroano' style='${milestone}'>${tituloatual}</div></div>`;
+
+        i = i + contat;
       }
-
-      anoscode += `<div class="linhadotempo" id="reg${i}" onclick='nowgo(${i})' style='display: inline-block; margin: 0; padding: 0; top: 0; left: 0; width: calc(5vw - 1px); margin-right: ${
-        (contat - 1) * 5
-      }vw; z-index: ${
-        600 + i
-      };'><div class='registroano' style='${milestone}'>${tituloatual}</div></div>`;
-
-      i = i + contat;
     }
 
     if (
