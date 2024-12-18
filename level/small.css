@@ -67,4 +67,5 @@
 
 #tempo {
   width: calc(100vw - 150px);
+  left: 10px !important;
 }
