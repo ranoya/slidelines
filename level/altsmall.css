@@ -42,6 +42,7 @@
 
 .linhadotempo {
   border-left-style: dotted !important;
+  width: 5vw !important;
 }
 
 .registroano {
@@ -70,4 +71,5 @@
 
 #tempo {
   width: calc(100vw - 150px);
+  left: 10px !important;
 }
