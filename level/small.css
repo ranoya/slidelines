@@ -39,6 +39,7 @@
 
 .linhadotempo {
   border-left-style: dotted !important;
+  width: 5vw !important;
 }
 
 .registroano {
