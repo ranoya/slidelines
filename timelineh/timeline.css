@@ -84,7 +84,9 @@ body {
 
 .linhadotempo {
   height: calc(var(--timeline-tempo-height) - 25px);
-  width: calc(5vw - 1px);
+  /* width: calc(5vw - 1px); 
+  Deu problema com timelines grandes como a de Pixel Art */
+  width: 5vw;
   display: inline-block;
   background-color: var(--timeline-tempo, grey);
   color: var(--valor-tempo, white);
