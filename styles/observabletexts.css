@@ -64,6 +64,8 @@
 
 .linhadotempo {
   border-left-style: dotted !important;
+  /* não sei por que mudou! */
+  height: calc(var(--timeline-tempo-height) - 18px) !important;
 }
 
 .registroano {
