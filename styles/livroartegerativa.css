@@ -63,7 +63,12 @@
 
 .linhadotempo {
   border-left-style: dotted !important;
-  height: calc(var(--timeline-tempo-height) - 18px) !important;
+  height: calc(var(--timeline-tempo-height) - 25px) !important;
+}
+
+#fulltempo {
+  height: calc(var(--timeline-tempo-height) - 25px) !important;
+  overflow-y: hidden;
 }
 
 .registroano {
