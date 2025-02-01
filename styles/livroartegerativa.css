@@ -63,7 +63,7 @@
 
 .linhadotempo {
   border-left-style: dotted !important;
-  height: calc(var(--timeline-tempo-height) - 25px) !important;
+  margin-bottom: 7px;
 }
 
 #fulltempo {
