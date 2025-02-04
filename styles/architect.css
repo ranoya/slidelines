@@ -21,6 +21,10 @@ body {
   font-size: 11px !important;
 }
 
+.linhadotempo {
+  margin-bottom: 18px;
+}
+
 #tempo {
   left: 20px !important;
   width: calc(100vw - 40px) !important;
