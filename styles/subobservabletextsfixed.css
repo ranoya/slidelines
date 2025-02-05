@@ -6,6 +6,10 @@
   --back-control-width: 150px;
 }
 
+.linhadotempo.nohover {
+  width: 5px !important;
+}
+
 #tracksubtitulos {
   display: none;
 }
