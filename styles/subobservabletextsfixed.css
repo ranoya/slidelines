@@ -1,0 +1,104 @@
+:root {
+  --track-height: 40px;
+
+  --timeline-text-over: #ba890a;
+
+  --back-control-width: 150px;
+}
+
+#tracksubtitulos {
+  display: none;
+}
+
+#tracktopicos {
+  display: none;
+}
+
+.slideitself {
+  height: calc(
+    100vh - (1 * var(--track-height, 60px)) -
+      var(--timeline-tempo-height, 130px) - 10px
+  );
+}
+
+.slides {
+  height: calc(
+    100vh - (1 * var(--track-height, 60px)) -
+      var(--timeline-tempo-height, 130px) - 10px
+  );
+}
+
+.slidewrap {
+  height: calc(100vh - (1 * var(--track-height, 60px)));
+}
+
+.track {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+.extrasize {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.linhadotempo {
+  border-left-style: dotted !important;
+  height: calc(var(--timeline-tempo-height)) !important;
+}
+
+.registroano {
+  font-size: 10px;
+  font-weight: lighter !important;
+}
+
+#prev {
+  top: calc(100vh - var(--timeline-tempo-height) + 17px);
+  right: 105px;
+}
+
+#next {
+  top: calc(100vh - var(--timeline-tempo-height) + 17px);
+  right: 70px;
+}
+
+#indice {
+  left: calc(100vw - 45px);
+  top: calc(100vh - var(--timeline-tempo-height) + 15px);
+}
+
+#backcontrol {
+  display: block;
+  right: 0;
+}
+
+#tempo {
+  left: 20px !important;
+  width: calc(100vw - 155px) !important;
+  overflow-x: hidden;
+}
+
+#fulltempo {
+  width: calc(-155px + 100vw) !important;
+}
+
+.highlight {
+  background-color: #dddddd;
+}
+
+#reg0.highlight {
+  background-color: #dddddd !important;
+}
+
+.pq {
+  font-size: 7px !important;
+  font-weight: lighter !important;
+  text-transform: uppercase !important;
+}
+
+::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  background-color: var(--base-background, #ffffff);
+}
