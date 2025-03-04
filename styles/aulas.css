@@ -9,6 +9,12 @@
   --track-height: 20px;
 }
 
+.linhadotempo.nohover {
+  position: absolute;
+  z-index: 1;
+  bottom: 7px;
+}
+
 body {
   margin: 20px !important;
 }
