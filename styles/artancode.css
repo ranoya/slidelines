@@ -54,6 +54,11 @@
   font-size: 11px;
   text-transform: uppercase;
   font-weight: lighter;
+  text-align: right;
+}
+
+.track span {
+  margin-right: var(--meta-margins, 30px);
 }
 
 .extrasize {
