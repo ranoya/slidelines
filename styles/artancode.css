@@ -1,0 +1,112 @@
+:root {
+  --track-height: 40px;
+
+  --timeline-text-over: #7552ce;
+
+  --back-control-width: 150px;
+  --base-background: var(--track-bg);
+  --timeline-text-color: var(--track-fg);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--track-bg, #ffffff) !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(
+    in srgb,
+    var(--track-bg) 50%,
+    var(--valor-tempo) 50%
+  ) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--track-fg, #000000) !important;
+}
+
+#tracksubtitulos {
+  display: none;
+}
+
+#tracktopicos {
+  display: none;
+}
+
+.slideitself {
+  height: calc(
+    100vh - (1 * var(--track-height, 60px)) -
+      var(--timeline-tempo-height, 130px)
+  );
+}
+
+.slides {
+  height: calc(
+    100vh - (1 * var(--track-height, 60px)) -
+      var(--timeline-tempo-height, 130px)
+  );
+}
+
+.slidewrap {
+  height: calc(100vh - (1 * var(--track-height, 60px)));
+}
+
+.track {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+.extrasize {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.linhadotempo {
+  border-left-style: dotted !important;
+  width: 4.1vw !important;
+}
+
+.registroano {
+  font-weight: bolder;
+  font-size: 12px;
+}
+
+#prev {
+  top: calc(100vh - var(--timeline-tempo-height) + 17px);
+  right: 105px;
+}
+
+#next {
+  top: calc(100vh - var(--timeline-tempo-height) + 17px);
+  right: 70px;
+}
+
+#indice {
+  left: calc(100vw - 45px);
+  top: calc(100vh - var(--timeline-tempo-height) + 15px);
+}
+
+#backcontrol {
+  display: block;
+  right: 0;
+}
+
+#tempo {
+  width: calc(100vw - 150px);
+  left: 20px !important;
+  width: calc(100vw - 155px) !important;
+  overflow-x: hidden;
+}
+
+.highlight {
+  background-color: #ffe09d55;
+}
+
+#reg0.highlight {
+  background-color: transparent !important;
+}
+
+.pq {
+  font-size: 9px !important;
+  font-weight: lighter !important;
+}
