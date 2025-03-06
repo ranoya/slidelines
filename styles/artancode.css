@@ -97,12 +97,8 @@
 }
 
 #tempo {
-  width: calc(100vw - 150px);
+  width: calc(100vw - 170px);
   left: 20px !important;
-  /* teste
-  width: calc(100vw - 155px) !important;
-  overflow-x: hidden;
-  */
 }
 
 .highlight {
