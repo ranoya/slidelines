@@ -68,7 +68,7 @@
 
 .linhadotempo {
   border-left-style: dotted !important;
-  width: 4.1vw !important;
+  width: 5vw !important;
 }
 
 .registroano {
@@ -99,8 +99,10 @@
 #tempo {
   width: calc(100vw - 150px);
   left: 20px !important;
+  /* teste
   width: calc(100vw - 155px) !important;
   overflow-x: hidden;
+  */
 }
 
 .highlight {
