@@ -99,6 +99,7 @@
 #tempo {
   width: calc(100vw - 170px);
   left: 20px !important;
+  overflow-x: hidden;
 }
 
 .highlight {
