@@ -100,8 +100,8 @@
   width: calc(100vw - 170px);
   left: 20px !important;
   overflow-x: hidden;
-  opacity: 0.4;
-  transition: opacity 2s ease-in;
+  opacity: 0.3;
+  transition: opacity 0.4s ease-out;
 }
 
 #tempo:hover {
