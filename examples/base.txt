@@ -2,7 +2,7 @@
 
 Cada parágrafo de texto em markdown é separado e espaçado automaticamente. Cada interpretador de markdown aplicará um estilo próprio ao texto (tamanhos, cores, corpo tipográfico, etc.), mas respeitará os princípios de marcação.
 
-Um paragrafo este texto inicial do subtítulo.
+Um paragrafo separando este texto inicial do subtítulo.
 
 ## Subtítulo
 
