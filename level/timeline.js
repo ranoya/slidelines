@@ -202,6 +202,56 @@ if (
   arquivojson = $_GET["file"];
 }
 
+// FUNÇÕES DE FILTRO DO DATAT (selecte)
+
+const select = function (arr, fun, arr2) {
+  let newarr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    fun(newarr, arr[i], arr2);
+  }
+
+  return newarr;
+};
+
+const multipatterncheck_exclude = function (n, arr, patt) {
+  if (patt != "" || typeof patt != "undefined") {
+    let multipatt = patt.split(" ");
+    let regextrans = "";
+    let allcheck = [];
+    let mark = true;
+
+    for (let i = 0; i < multipatt.length; i++) {
+      allcheck[multipatt[i]] = false;
+    }
+
+    for (let k = 0; k < Object.keys(arr).length; k++) {
+      for (let m = 0; m < multipatt.length; m++) {
+        regextrans = new RegExp(multipatt[m], "i");
+        if (regextrans.test(arr[Object.keys(arr)[k]])) {
+          allcheck[multipatt[m]] = true;
+        }
+      }
+    }
+
+    for (let i = 0; i < multipatt.length; i++) {
+      if (allcheck[multipatt[i]] == false) {
+        mark = false;
+      }
+    }
+
+    if (mark) {
+      n.push(arr);
+    }
+  } else {
+    n.push(arr);
+  }
+};
+
+const selecte = function (oldarray, str) {
+  return select(oldarray, multipatterncheck_exclude, str);
+};
+
 const GoogleSheetCsvURL = function (url) {
   url = new URL(url);
   const id = url.pathname.split("/")[3];
