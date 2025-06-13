@@ -330,6 +330,9 @@ fetch(GoogleSheetCsvURL(arquivojson))
       $_GET["filtra"] != ""
     ) {
       csvdata = selecte(jsondata, decodeURI($_GET["filtra"]));
+      console.table(jsondata);
+      console.log("----------------------------");
+      console.table(csvdata);
     }
 
     let total = csvdata.length;
