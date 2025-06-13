@@ -386,9 +386,6 @@ fetch(GoogleSheetCsvURL(arquivojson))
       $_GET["filtra"] != ""
     ) {
       dados = selecte(dadosc, decodeURI($_GET["filtra"]));
-      console.table(dadosc);
-      console.log("----------------------------");
-      console.table(dados);
     }
 
     document.getElementById("prev").style.display = "none";
