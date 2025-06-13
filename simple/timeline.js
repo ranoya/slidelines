@@ -269,6 +269,7 @@ fetch(GoogleSheetCsvURL(arquivojson))
     let heads = linhas[0].split(",");
 
     let dados = [];
+    let dadosc = [];
 
     for (let i = 1; i < linhas.length; i++) {
       dados[i - 1] = {};
@@ -297,8 +298,20 @@ fetch(GoogleSheetCsvURL(arquivojson))
 
         valorfinal = temp2.replace(/""/g, '"');
 
-        dados[i - 1][heads[k]] = valorfinal;
+        dadosc[i - 1][heads[k]] = valorfinal;
       }
+    }
+
+    // FILTRA DADOS POR URL
+
+    dados = dadosc;
+
+    if (
+      typeof $_GET["filtra"] != "undefined" &&
+      $_GET["filtra"] != null &&
+      $_GET["filtra"] != ""
+    ) {
+      dados = selecte(dadosc, decodeURI($_GET["filtra"]));
     }
 
     todosslides = dados;
