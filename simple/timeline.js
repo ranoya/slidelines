@@ -322,7 +322,7 @@ fetch(GoogleSheetCsvURL(arquivojson))
     let dadosc = [];
 
     for (let i = 1; i < linhas.length; i++) {
-      dados[i - 1] = {};
+      dadosc[i - 1] = {};
       linhadados = linhas[i].split(
         /[,]{1}(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))/
       );
