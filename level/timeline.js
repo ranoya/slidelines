@@ -252,6 +252,45 @@ const selecte = function (oldarray, str) {
   return select(oldarray, multipatterncheck_exclude, str);
 };
 
+const unique = function (arr, crit) {
+  let newarr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    newarr[arr[i][crit]] = 0;
+  }
+
+  let list = [];
+
+  for (let key in newarr) {
+    list.push(key);
+  }
+
+  return list;
+};
+
+const sortbylist = function (arr, list, crit) {
+  let newarr = [];
+
+  for (let l = 0; l < list.length; l++) {
+    for (let a = 0; a < arr.length; a++) {
+      if (arr[a][crit] == list[l]) {
+        newarr.push(arr[a]);
+      }
+    }
+  }
+
+  return newarr;
+};
+
+const alphabetic = function (arr, crit) {
+  let listuniques = unique(arr, crit);
+  listuniques.sort();
+
+  let newarr = sortbylist(arr, listuniques, crit);
+
+  return newarr;
+};
+
 const GoogleSheetCsvURL = function (url) {
   url = new URL(url);
   const id = url.pathname.split("/")[3];
@@ -286,6 +325,7 @@ fetch(GoogleSheetCsvURL(arquivojson))
 
     let dados = [];
     let dadosc = [];
+    let dadosb = [];
 
     for (let i = 1; i < linhas.length; i++) {
       dadosc[i - 1] = {};
@@ -321,6 +361,7 @@ fetch(GoogleSheetCsvURL(arquivojson))
     // FILTRA DADOS POR URL
 
     dados = dadosc;
+    dadosb = dadosc;
 
     if (
       typeof $_GET["filtra"] != "undefined" &&
@@ -328,6 +369,15 @@ fetch(GoogleSheetCsvURL(arquivojson))
       $_GET["filtra"] != ""
     ) {
       dados = selecte(dadosc, decodeURI($_GET["filtra"]));
+      dadosb = dados;
+    }
+
+    if (
+      typeof $_GET["order"] != "undefined" &&
+      $_GET["order"] != null &&
+      $_GET["order"] != ""
+    ) {
+      dados = alphabetic(dadosb, decodeURI($_GET["filtra"]));
     }
 
     document.getElementById("prev").style.display = "none";
