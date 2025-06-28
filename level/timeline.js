@@ -377,7 +377,7 @@ fetch(GoogleSheetCsvURL(arquivojson))
       $_GET["order"] != null &&
       $_GET["order"] != ""
     ) {
-      dados = alphabetic(dadosb, decodeURI($_GET["filtra"]));
+      dados = alphabetic(dadosb, decodeURI($_GET["order"]));
     }
 
     document.getElementById("prev").style.display = "none";
