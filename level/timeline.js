@@ -399,6 +399,7 @@ fetch(GoogleSheetCsvURL(arquivojson))
     ) {
       dados = selecta(dadosa, decodeURI($_GET["include"]));
       dadosa = dados;
+      dadosb = dados;
     }
 
     if (
