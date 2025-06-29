@@ -248,6 +248,33 @@ const multipatterncheck_exclude = function (n, arr, patt) {
   }
 };
 
+const multipatterncheck_add = function (n, arr, patt) {
+  if (patt != "" || typeof patt != "undefined") {
+    let mark = false;
+    let multipatt = patt.split(" ");
+    let regextrans = "";
+
+    for (let m = 0; m < multipatt.length; m++) {
+      for (let k = 0; k < Object.keys(arr).length; k++) {
+        regextrans = new RegExp(multipatt[m], "i");
+        if (regextrans.test(arr[Object.keys(arr)[k]])) {
+          mark = true;
+        }
+      }
+    }
+
+    if (mark) {
+      n.push(arr);
+    }
+  } else {
+    n.push(arr);
+  }
+};
+
+const selecta = function (oldarray, str) {
+  return select(oldarray, multipatterncheck_add, str);
+};
+
 const selecte = function (oldarray, str) {
   return select(oldarray, multipatterncheck_exclude, str);
 };
@@ -324,6 +351,7 @@ fetch(GoogleSheetCsvURL(arquivojson))
     let heads = linhas[0].split(",");
 
     let dados = [];
+    let dadosa = [];
     let dadosc = [];
     let dadosb = [];
 
@@ -362,13 +390,23 @@ fetch(GoogleSheetCsvURL(arquivojson))
 
     dados = dadosc;
     dadosb = dadosc;
+    dadosa = dadosc;
+
+    if (
+      typeof $_GET["include"] != "undefined" &&
+      $_GET["include"] != null &&
+      $_GET["include"] != ""
+    ) {
+      dados = selecte(dadosa, decodeURI($_GET["include"]));
+      dadosa = dados;
+    }
 
     if (
       typeof $_GET["filtra"] != "undefined" &&
       $_GET["filtra"] != null &&
       $_GET["filtra"] != ""
     ) {
-      dados = selecte(dadosc, decodeURI($_GET["filtra"]));
+      dados = selecte(dadosa, decodeURI($_GET["filtra"]));
       dadosb = dados;
     }
 
