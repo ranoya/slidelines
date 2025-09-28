@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
+
+:root {
+  --timeline-font: "IBM Plex Mono";
+  --meta-font: "IBM Plex Mono";
+  --timeline-text-over: #ffffff;
+  --base-background: var(--track-bg, #000000);
+  --meta-margins: 0px;
+  --track-height: 20px;
+}
+
+.linhadotempo.nohover {
+  position: absolute;
+  z-index: 1;
+  bottom: 7px;
+  top: initial !important;
+}
+
+body {
+  margin: 20px !important;
+}
+
+.track {
+  font-size: 11px !important;
+}
+
+#tempo {
+  left: 20px !important;
+  width: calc(100vw - 40px) !important;
+  overflow-x: hidden;
+}
+
+.slideitself {
+  height: calc(
+    100vh - (2 * var(--track-height, 60px)) -
+      var(--timeline-tempo-height, 130px) - 50px
+  ) !important;
+  width: calc(100% - 40px) !important;
+}
+
+.slides {
+  margin-top: 0px !important;
+  height: calc(
+    100vh - (2 * var(--track-height, 60px)) -
+      var(--timeline-tempo-height, 130px)
+  );
+}
+
+#frontslide {
+  width: calc(100vw - 40px) !important;
+}
+
+#next {
+  right: 35px !important;
+  top: calc(100vh - 45px) !important;
+}
+
+#indice {
+  left: auto !important;
+  right: 55px !important;
+  top: calc(100vh - 47px) !important;
+}
+
+#prev {
+  right: 86px !important;
+  top: calc(100vh - 45px) !important;
+}
+
+.registroano {
+  font-size: 10px !important;
+}
+
+#tracktopicos {
+  display: none;
+}
