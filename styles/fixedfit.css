@@ -32,7 +32,7 @@ body {
 
 .slideitself {
   height: calc(
-    100vh - (2 * var(--track-height, 60px)) -
+    100vh - (1 * var(--track-height, 60px)) -
       var(--timeline-tempo-height, 130px) - 50px
   ) !important;
   width: calc(100% - 40px) !important;
@@ -41,9 +41,16 @@ body {
 .slides {
   margin-top: 0px !important;
   height: calc(
-    100vh - (2 * var(--track-height, 60px)) -
+    100vh - (1 * var(--track-height, 60px)) -
       var(--timeline-tempo-height, 130px)
   );
+}
+
+.slidewrap {
+  height: calc(
+    100vh - (1 * var(--track-height, 60px)) -
+      var(--timeline-tempo-height, 130px) - 50px
+  ) !important;
 }
 
 #frontslide {
