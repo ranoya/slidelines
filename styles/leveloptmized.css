@@ -1,0 +1,96 @@
+@font-face {
+  font-family: "Atari";
+  src: url("./AtariST8x16SystemFont.ttf");
+}
+
+:root {
+  --track-height: 25px;
+
+  --timeline-text-over: #ff006a;
+
+  --back-control-width: 150px;
+  --timeline-font: Atari;
+  --meta-font: Atari;
+
+  --meta-margins: 55px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--track-bg, #ffffff) !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--track-fg) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--track-fg, #000000) !important;
+}
+
+#tracksubtitulos {
+  display: none !important;
+}
+
+#tracktitulos .track {
+  padding-top: 9px !important;
+}
+
+#tracktopicos {
+  height: 8px !important;
+}
+
+#tracktopicos .track {
+  height: 9px !important;
+}
+
+.slides,
+.slidewrap {
+  height: calc(100vh - (1 * var(--track-height, 60px))) !important;
+}
+
+.highlight {
+  background-color: #f610a088;
+}
+
+#reg0.highlight {
+  background-color: #f610a000 !important;
+}
+
+.track {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+.linhadotempo {
+  border-left-style: dotted !important;
+}
+
+.registroano {
+  font-size: 10px;
+}
+
+#prev {
+  top: 12px;
+  right: 105px;
+}
+
+#next {
+  top: 12px;
+  right: 70px;
+}
+
+#indice {
+  left: calc(100vw - 45px);
+  top: 10px;
+}
+
+#backcontrol {
+  display: block;
+  right: 0;
+  top: 0;
+}
+
+#tempo {
+  width: calc(100vw - 150px);
+}
