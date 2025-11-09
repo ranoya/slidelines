@@ -71,14 +71,14 @@
 }
 
 #prev {
-  display: none;
-  top: 12px;
+  display: none !important;
+  top: -102px;
   right: 105px;
 }
 
 #next {
-  display: none;
-  top: 12px;
+  display: none !important;
+  top: -102px;
   right: 70px;
 }
 
