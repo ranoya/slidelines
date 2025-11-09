@@ -71,11 +71,13 @@
 }
 
 #prev {
+  display: none;
   top: 12px;
   right: 105px;
 }
 
 #next {
+  display: none;
   top: 12px;
   right: 70px;
 }
