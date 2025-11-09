@@ -1005,3 +1005,12 @@ let acionagoto = function () {
     }, 1000);
   }
 };
+
+let nowgo = function (sl) {
+  let onde = window.innerWidth * sl;
+
+  document.getElementById("frontslide").scrollTo({
+    left: onde,
+    behavior: "smooth",
+  });
+};
