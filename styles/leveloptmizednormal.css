@@ -13,6 +13,9 @@
   --meta-font: Atari;
 
   --meta-margins: 55px;
+
+  --track-bg: #ffffff00;
+  --timeline-text-over: #ffffff;
 }
 
 ::-webkit-scrollbar-track {
