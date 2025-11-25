@@ -22,7 +22,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #77cfe3 !important;
+  background: var(--track-fg, #ffffff) !important;
 }
 
 #tracksubtitulos {
