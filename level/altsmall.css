@@ -13,6 +13,12 @@
   background-color: #0e240b;
 }
 
+.pq {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: lighter !important;
+}
+
 #reg0.highlight {
   background-color: #0e240b00;
 }
