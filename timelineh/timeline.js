@@ -905,6 +905,17 @@ const putslides = function (posicao) {
     resetahighlighttimeline();
     highlighttimeline(actualpage);
   }
+
+  if (
+    typeof $_GET["inverttopicos"] != "undefined" &&
+    $_GET["inverttopicos"] != null &&
+    $_GET["inverttopicos"] != ""
+  ) {
+    swapElements(
+      document.getElementById("slides"),
+      document.getElementById("tracktopicos")
+    );
+  }
 };
 
 let resetahighlighttimeline = function () {
@@ -1186,17 +1197,6 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
   putslides(posicao);
 });
-
-if (
-  typeof $_GET["inverttopicos"] != "undefined" &&
-  $_GET["inverttopicos"] != null &&
-  $_GET["inverttopicos"] != ""
-) {
-  swapElements(
-    document.getElementById("slides"),
-    document.getElementById("tracktopicos")
-  );
-}
 
 document.getElementById("tempo").addEventListener("scroll", (event) => {
   if (mudaviatempo) {
