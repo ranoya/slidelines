@@ -821,6 +821,17 @@ fetch(GoogleSheetCsvURL(arquivojson))
       dados.length * 100
     }vw;'>${slidescode}</div>`;
 
+    if (
+      typeof $_GET["inverttopicos"] != "undefined" &&
+      $_GET["inverttopicos"] != null &&
+      $_GET["inverttopicos"] != ""
+    ) {
+      swapElements(
+        document.getElementById("slides"),
+        document.getElementById("tracktopicos")
+      );
+    }
+
     setTimeout(acionagoto, 1000);
   });
 
@@ -904,17 +915,6 @@ const putslides = function (posicao) {
 
     resetahighlighttimeline();
     highlighttimeline(actualpage);
-  }
-
-  if (
-    typeof $_GET["inverttopicos"] != "undefined" &&
-    $_GET["inverttopicos"] != null &&
-    $_GET["inverttopicos"] != ""
-  ) {
-    swapElements(
-      document.getElementById("slides"),
-      document.getElementById("tracktopicos")
-    );
   }
 };
 
