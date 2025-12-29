@@ -20,6 +20,21 @@ $_GET = [];
   }
 })();
 
+let swapElements = function (obj1, obj2) {
+  // create marker element and insert it where obj1 is
+  var temp = document.createElement("div");
+  obj1.parentNode.insertBefore(temp, obj1);
+
+  // move obj1 to right before obj2
+  obj2.parentNode.insertBefore(obj1, obj2);
+
+  // move obj2 to right before where obj1 used to be (the temp marker)
+  temp.parentNode.insertBefore(obj2, temp);
+
+  // remove temporary marker node
+  temp.parentNode.removeChild(temp);
+};
+
 // FUNÇÃO IMAGE FROM ALL SOURCES
 
 const imagefromallsources = function (murl) {
@@ -1171,6 +1186,17 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
   putslides(posicao);
 });
+
+if (
+  typeof $_GET["inverttopicos"] != "undefined" &&
+  $_GET["inverttopicos"] != null &&
+  $_GET["inverttopicos"] != ""
+) {
+  swapElements(
+    document.getElementById("slides"),
+    document.getElementById("tracktopicos")
+  );
+}
 
 document.getElementById("tempo").addEventListener("scroll", (event) => {
   if (mudaviatempo) {
