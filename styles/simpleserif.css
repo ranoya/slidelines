@@ -45,9 +45,12 @@
   overflow: hidden;
 }
 
+.slides {
+  margin-top: 9px !important;
+}
 .slides,
 .slidewrap {
-  height: calc(100vh - (1 * var(--track-height, 60px)) - 13px) !important;
+  height: calc(100vh - (1 * var(--track-height, 60px)) - 19px) !important;
 }
 
 .highlight {
