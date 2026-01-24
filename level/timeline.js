@@ -14,7 +14,7 @@ $_GET = [];
     for (arg in argumentos) {
       let argCorte = argumentos[arg].indexOf("=");
       $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[arg].substring(
-        argCorte + 1
+        argCorte + 1,
       );
     }
   }
@@ -29,7 +29,7 @@ const imagefromallsources = function (murl) {
 
   if (murl.match(/https:\/\/drive\.google\.com\/open\?(.*)\&/i)) {
     let complementa = murl.match(
-      /https:\/\/drive\.google\.com\/open\?id=(.*)\&/i
+      /https:\/\/drive\.google\.com\/open\?id=(.*)\&/i,
     )[1];
 
     saida = "https://lh3.googleusercontent.com/d/" + complementa;
@@ -37,7 +37,7 @@ const imagefromallsources = function (murl) {
 
   if (murl.match(/https:\/\/drive\.google\.com\/file\/d/i)) {
     let complementa = murl.match(
-      /https:\/\/drive\.google\.com\/file\/d\/(.*)\/view/i
+      /https:\/\/drive\.google\.com\/file\/d\/(.*)\/view/i,
     )[1];
 
     saida = "https://lh3.googleusercontent.com/d/" + complementa;
@@ -52,7 +52,7 @@ const imagefromallsources = function (murl) {
   let nurl = murl.replace(/\&amp;/gi, "&");
 
   let video = nurl.match(
-    /(http:|https:|)\/\/(player.|www.|m.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com))\/(video\/|embed\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(\&\S+)?/
+    /(http:|https:|)\/\/(player.|www.|m.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com))\/(video\/|embed\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(\&\S+)?/,
   );
 
   if (typeof video != "undefined" && video != null) {
@@ -358,7 +358,7 @@ fetch(GoogleSheetCsvURL(arquivojson))
     for (let i = 1; i < linhas.length; i++) {
       dadosc[i - 1] = {};
       linhadados = linhas[i].split(
-        /[,]{1}(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))/
+        /[,]{1}(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))/,
       );
 
       for (let k = 0; k < linhadados.length; k++) {
@@ -526,7 +526,10 @@ fetch(GoogleSheetCsvURL(arquivojson))
       if (i >= actualpage - 3 && i <= actualpage + 3) {
         if (
           dados[i].tipo == "imagem" ||
-          dados[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)
+          (dados[i].link.toString().match(/(\.png|\.jpg|\.svg)/i) &&
+            (typeof dados[i].tipo == "undefined" ||
+              dados[i].tipo == null ||
+              dados[i].tipo == ""))
         ) {
           slidescode += `<div id='allslides${i}' onclick="gonext()" class='slidewrap' style='cursor: pointer; background-color: ${
             dados[i].fundo
@@ -535,8 +538,8 @@ fetch(GoogleSheetCsvURL(arquivojson))
             <div class='slideitself' style='background-color: ${
               dados[i].fundo
             }; background-image: url(${imagefromallsources(
-            dados[i].link
-          )});'></div>
+              dados[i].link,
+            )});'></div>
 
             </div>`;
         } else if (
@@ -573,7 +576,10 @@ fetch(GoogleSheetCsvURL(arquivojson))
       } else {
         if (
           dados[i].tipo == "imagem" ||
-          dados[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)
+          (dados[i].link.toString().match(/(\.png|\.jpg|\.svg)/i) &&
+            (typeof dados[i].tipo == "undefined" ||
+              dados[i].tipo == null ||
+              dados[i].tipo == ""))
         ) {
           slidescode += `<div id='allslides${i}' onclick="gonext()" class='slidewrap' style='cursor: pointer; background-color: ${dados[i].fundo};'></div>`;
         } else if (dados[i].link.toString().match(/\.md/i)) {
@@ -619,17 +625,15 @@ const putslides = function (posicao) {
         todosslides[i].tipo == "imagem" ||
         todosslides[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)
       ) {
-        document.getElementById(
-          "allslides" + i
-        ).innerHTML = `<div class='slideitself' style='background-color: ${
-          todosslides[i].fundo
-        }; background-image: url(${imagefromallsources(
-          todosslides[i].link
-        )});'></div>`;
+        document.getElementById("allslides" + i).innerHTML =
+          `<div class='slideitself' style='background-color: ${
+            todosslides[i].fundo
+          }; background-image: url(${imagefromallsources(
+            todosslides[i].link,
+          )});'></div>`;
       } else if (todosslides[i].link.toString().match(/\.md/i)) {
-        document.getElementById(
-          "allslides" + i
-        ).innerHTML = `<iframe class='slideitself' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${todosslides[i].link}'></iframe>`;
+        document.getElementById("allslides" + i).innerHTML =
+          `<iframe class='slideitself' frameborder=0 src='https://www.ranoya.com/aulas/tryit/markdown2/slimTransp.html?embed=plain&file=${todosslides[i].link}'></iframe>`;
       } else if (todosslides[i].tipo == "texto") {
         let text = todosslides[i].link;
         let code = converter.makeHtml(text);
@@ -644,9 +648,8 @@ const putslides = function (posicao) {
                     <div class='conteudomd ${book}'>${code}</div>
                     </div>`;
       } else {
-        document.getElementById(
-          "allslides" + i
-        ).innerHTML = `<iframe class='slideitself' frameborder=0 src='${todosslides[i].link}'></iframe>`;
+        document.getElementById("allslides" + i).innerHTML =
+          `<iframe class='slideitself' frameborder=0 src='${todosslides[i].link}'></iframe>`;
       }
     }
 
@@ -674,7 +677,8 @@ document.addEventListener("wheel", (event) => {
     $_GET["allowverticalscroll"] != ""
   ) {
     let posicao = parseInt(
-      0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
+      0.2 +
+        document.getElementById("frontslide").scrollLeft / window.innerWidth,
     );
 
     if (!rodandoajeita) {
@@ -692,20 +696,20 @@ document.addEventListener("wheel", (event) => {
 
     document.documentElement.style.setProperty(
       "--button-color",
-      arrcolorbg[posicao]
+      arrcolorbg[posicao],
     );
     document.documentElement.style.setProperty(
       "--track-fg",
-      arrcolorbg[posicao]
+      arrcolorbg[posicao],
     );
     document.documentElement.style.setProperty(
       "--track-bg",
-      arrcolorfg[posicao]
+      arrcolorfg[posicao],
     );
 
     document.documentElement.style.setProperty(
       "--timeline-text-over",
-      arrcolorbg[posicao]
+      arrcolorbg[posicao],
     );
 
     vai = setTimeout(parou, 300);
@@ -727,7 +731,7 @@ let ajeita = function (fecha) {
 
   let posicao = 0;
   posicao = parseInt(
-    0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
+    0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth,
   );
 
   if (
@@ -736,7 +740,8 @@ let ajeita = function (fecha) {
     document.getElementById("frontslide").scrollLeft % window.innerWidth > 2
   ) {
     posicao = parseInt(
-      0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
+      0.2 +
+        document.getElementById("frontslide").scrollLeft / window.innerWidth,
     );
 
     let onde = window.innerWidth * posicao;
@@ -757,7 +762,7 @@ let ajeita = function (fecha) {
   ) {
     posicao = parseInt(
       -0.2 +
-        document.getElementById("frontslide").scrollLeft / window.innerWidth
+        document.getElementById("frontslide").scrollLeft / window.innerWidth,
     );
 
     let onde = window.innerWidth * (posicao + 1);
@@ -785,7 +790,7 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
   clearTimeout(vai);
 
   let posicao = parseInt(
-    0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
+    0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth,
   );
 
   document.getElementById("indice").innerHTML = posicao + 1;
@@ -794,14 +799,14 @@ document.getElementById("frontslide").addEventListener("scroll", (event) => {
 
   document.documentElement.style.setProperty(
     "--button-color",
-    arrcolorbg[posicao]
+    arrcolorbg[posicao],
   );
   document.documentElement.style.setProperty("--track-fg", arrcolorbg[posicao]);
   document.documentElement.style.setProperty("--track-bg", arrcolorfg[posicao]);
 
   document.documentElement.style.setProperty(
     "--timeline-text-over",
-    arrcolorbg[posicao]
+    arrcolorbg[posicao],
   );
 
   vai = setTimeout(parou, 300);
@@ -815,7 +820,7 @@ onkeydown = onkeyup = function (e) {
   keymapping[e.keyCode] = e.type == "keydown";
 
   let posicao = parseInt(
-    0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
+    0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth,
   );
 
   clearTimeout(vai);
@@ -916,7 +921,7 @@ let gonext = function () {
   let posicao = 0;
 
   posicao = parseInt(
-    0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
+    0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth,
   );
 
   clearTimeout(vai);
@@ -937,7 +942,7 @@ let goprev = function () {
   let posicao = 0;
 
   posicao = parseInt(
-    0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth
+    0.2 + document.getElementById("frontslide").scrollLeft / window.innerWidth,
   );
 
   clearTimeout(vai);
@@ -973,14 +978,14 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   document.documentElement.style.setProperty(
     "--button-color",
-    arrcolorbg[posicao]
+    arrcolorbg[posicao],
   );
   document.documentElement.style.setProperty("--track-fg", arrcolorbg[posicao]);
   document.documentElement.style.setProperty("--track-bg", arrcolorfg[posicao]);
 
   document.documentElement.style.setProperty(
     "--timeline-text-over",
-    arrcolorbg[posicao]
+    arrcolorbg[posicao],
   );
 });
 
