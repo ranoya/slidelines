@@ -623,7 +623,10 @@ const putslides = function (posicao) {
     ) {
       if (
         todosslides[i].tipo == "imagem" ||
-        todosslides[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)
+        (todosslides[i].link.toString().match(/(\.png|\.jpg|\.svg)/i) &&
+          (typeof todosslides[i].tipo == "undefined" ||
+            todosslides[i].tipo == null ||
+            todosslides[i].tipo == ""))
       ) {
         document.getElementById("allslides" + i).innerHTML =
           `<div class='slideitself' style='background-color: ${
@@ -656,7 +659,10 @@ const putslides = function (posicao) {
     if (i < actualpage - 3 || i > actualpage + 3) {
       if (
         todosslides[i].tipo == "imagem" ||
-        todosslides[i].link.toString().match(/(\.png|\.jpg|\.svg)/i)
+        (todosslides[i].link.toString().match(/(\.png|\.jpg|\.svg)/i) &&
+          (typeof todosslides[i].tipo == "undefined" ||
+            todosslides[i].tipo == null ||
+            todosslides[i].tipo == ""))
       ) {
         document.getElementById("allslides" + i).innerHTML = ``;
       } else if (todosslides[i].link.toString().match(/\.md/i)) {
