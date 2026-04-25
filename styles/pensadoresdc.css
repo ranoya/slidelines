@@ -25,7 +25,7 @@
 }
 
 .highlight {
-  background-color: #0e240b;
+  background-color: #0e240b55;
 }
 
 .pq {
@@ -43,6 +43,10 @@
   text-transform: uppercase;
   font-weight: lighter;
   text-align: right;
+}
+
+.track span {
+  margin-right: var(--meta-margins, 30px);
 }
 
 /* Modificações feitas para consertar a História das Interfaces ... verificar impactos em outras apresentações */
