@@ -49,6 +49,10 @@
   margin-right: var(--meta-margins, 30px);
 }
 
+#tracktopicos .track {
+  text-align: left !important;
+}
+
 /* Modificações feitas para consertar a História das Interfaces ... verificar impactos em outras apresentações */
 
 #tracktopicos {
