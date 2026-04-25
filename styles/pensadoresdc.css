@@ -1,0 +1,104 @@
+:root {
+  --track-height: 40px;
+  --timeline-text-over: #7552ce;
+
+  --back-control-width: 150px;
+
+  --base-background: var(--track-bg);
+  --timeline-text-color: var(--track-fg);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--track-bg, #ffffff) !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(
+    in srgb,
+    var(--track-bg) 50%,
+    var(--valor-tempo) 50%
+  ) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--track-fg, #000000) !important;
+}
+
+.highlight {
+  background-color: #0e240b;
+}
+
+.pq {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: lighter !important;
+}
+
+#reg0.highlight {
+  background-color: #0e240b00;
+}
+
+.track {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  text-align: right;
+}
+
+/* Modificações feitas para consertar a História das Interfaces ... verificar impactos em outras apresentações */
+
+#tracktopicos {
+  /* margin-top: -60px !important; */
+}
+
+.slidewrap {
+  /* margin-top: 60px !important; */
+}
+
+/* Modificações feitas para consertar a História das Interfaces ... verificar impactos em outras apresentações */
+
+.extrasize {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.linhadotempo {
+  border-left-style: dotted !important;
+  width: 5vw !important;
+}
+
+.registroano {
+  font-weight: bolder;
+}
+
+#prev {
+  top: calc(100vh - var(--timeline-tempo-height) + 17px);
+  right: 105px;
+}
+
+#next {
+  top: calc(100vh - var(--timeline-tempo-height) + 17px);
+  right: 70px;
+}
+
+#indice {
+  left: calc(100vw - 45px);
+  top: calc(100vh - var(--timeline-tempo-height) + 15px);
+}
+
+#backcontrol {
+  display: block;
+  right: 0;
+}
+
+#tempo {
+  width: calc(100vw - 170px);
+  left: 20px !important;
+  overflow-x: hidden;
+  opacity: 0.6;
+  transition: opacity 0.4s ease-out;
+}
+
+#tempo:hover {
+  opacity: 1;
+}
