@@ -148,6 +148,14 @@
           estilo += `aspect-ratio: ${Aspect}; height: unset !important;`;
         }
 
+        if (
+          typeof arr[i].Decor != "undefined" &&
+          arr[i].Link != "" &&
+          arr[i].Link == null
+        ) {
+          estilo += ` box-shadow: unset;`;
+        }
+
         code += `<iframe frameborder="0" src="${arr[i].Link}" style="${estilo}"></iframe>`;
       }
 
