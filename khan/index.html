@@ -202,6 +202,15 @@
         }
 
         if (
+          typeof $_GET["awry"] != "undefined" &&
+          $_GET["awry"] != "" &&
+          $_GET["awry"] != null
+        ) {
+          let torto = Math.random() - 0.5;
+          estilo += ` transform: rotate(${torto}deg);`;
+        }
+
+        if (
           typeof $_GET["nolabel"] != "undefined" &&
           $_GET["nolabel"] != "" &&
           $_GET["nolabel"] != null
