@@ -206,7 +206,7 @@
           $_GET["awry"] != "" &&
           $_GET["awry"] != null
         ) {
-          let torto = Math.random() - 0.5;
+          let torto = Math.random() * 1.5 - 0.75;
           estilo += ` transform: rotate(${torto}deg);`;
         }
 
