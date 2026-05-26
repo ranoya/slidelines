@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kahn</title>
+    <script src="https://datat.vercel.app/basicsmin.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+
+      #overlap {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        display: none;
+      }
+
+      #wrap {
+        padding-top: 30px;
+        padding-left: 30px;
+        padding-bottom: 20px;
+        padding-right: 40px;
+        display: flex;
+        gap: 60px;
+        width: calc(100% - 70px);
+        height: calc(100dvh - 50px);
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: flex-start;
+        justify-content: flex-start;
+        align-items: flex-start;
+        overflow-y: hidden;
+        /* background-size: 14px 14px;
+        background-color: #f0f0f0; */
+        /* background: radial-gradient(
+            circle at 1px 1px,
+            rgba(0, 0, 0, 0.35) 1px,
+            transparent 0px
+          )
+          0% 0% / 20px 20px rgb(255, 255, 255); */
+
+        /* background-image: repeating-linear-gradient(
+          45deg,
+          #adadad 0,
+          #383838 0.4px,
+          #fffef5 0,
+          #fffef5 25%
+        ); */
+
+        background-size: 2px 2px;
+        background-image: repeating-linear-gradient(
+          0deg,
+          rgb(215, 215, 215),
+          rgb(215, 215, 215) 0.6px,
+          rgb(244, 244, 244) 0.6px,
+          rgb(244, 244, 244)
+        );
+      }
+
+      #wrap::-webkit-scrollbar {
+        height: 12px;
+        background-size: 4px 4px;
+        background-color: #f0f0f0;
+
+        background-image: repeating-linear-gradient(
+          45deg,
+          #adadad 0,
+          #383838 0.4px,
+          #fffef5 0,
+          #fffef5 25%
+        );
+      }
+
+      #wrap::-webkit-scrollbar-thumb {
+        background-color: #999999;
+      }
+
+      #wrap div {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        background-color: transparent;
+        flex-shrink: 0;
+        max-height: calc(100dvh - 70px);
+        height: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+
+      #wrap iframe {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        flex-shrink: 0;
+        max-height: calc(100dvh - 70px);
+        height: calc(100dvh - 70px);
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="overlap"></div>
+
+    <div id="wrap"></div>
+  </body>
+
+  <script>
+    let distribui = function (arr) {
+      let code = "";
+
+      for (let i = 0; i < arr.length; i++) {
+        code += `<iframe frameborder="0" src="${arr[i].Link}" style="width: ${arr[i].Size};"></iframe>`;
+      }
+
+      document.getElementById("wrap").innerHTML = code;
+    };
+
+    gsdata(
+      "https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?usp=sharing",
+      distribui,
+    );
+  </script>
+</html>
