@@ -115,9 +115,40 @@
       console.table(arr);
 
       let code = "";
+      let Aspect = "";
+      let Size = "";
+      let estilo = "";
 
       for (let i = 0; i < arr.length; i++) {
-        code += `<iframe frameborder="0" src="${arr[i].Link}" style="width: ${arr[i].Size};"></iframe>`;
+        Aspect = "";
+        Size = "100%";
+        estilo = "";
+
+        if (
+          typeof arr[i].Aspect != "undefined" &&
+          arr[i].Aspect != "" &&
+          arr[i].Aspect != null
+        ) {
+          Aspect = arr[i].Aspect;
+        }
+
+        if (
+          typeof arr[i].Size != "undefined" &&
+          arr[i].Size != "" &&
+          arr[i].Size != null
+        ) {
+          Size = arr[i].Size;
+        }
+
+        if (Size != "") {
+          estilo = `width: ${Size}; `;
+        }
+
+        if (Aspect != "") {
+          estilo += `aspect-ratio: ${Aspect}; height: unset !important;`;
+        }
+
+        code += `<iframe frameborder="0" src="${arr[i].Link}" style="${estilo}"></iframe>`;
       }
 
       document.getElementById("wrap").innerHTML = code;
