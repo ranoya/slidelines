@@ -88,21 +88,32 @@
       #wrap iframe {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         flex-shrink: 0;
-        max-height: calc(100dvh - 70px);
-        height: calc(100dvh - 70px);
+
+        max-height: calc(100dvh - 160px);
+        height: calc(100dvh - 160px);
+
         overflow-y: auto;
         overflow-x: hidden;
       }
 
+      .nolabel {
+        max-height: calc(100dvh - 70px);
+        height: calc(100dvh - 70px);
+      }
+
       h1 {
-        margin-bottom: 90px;
+        margin-bottom: 70px;
         text-align: right;
         background-image: none;
-        margin-top: -20px;
+        margin-top: -10px;
         font-size: 5.9rem;
         line-height: 4rem;
+
+        font-size: 4.5rem;
+        line-height: 2rem;
+
         font-weight: 400;
-        color: var(--ranoyav2-big, #e38e16);
+        color: #580909;
         font-family: "Covered By Your Grace", cursive;
         font-weight: 400;
         transform-origin: right bottom;
@@ -113,10 +124,12 @@
       }
 
       h1 .marker {
-        color: black;
+        color: #580909;
         margin-top: 10rem;
         font-family: "Covered By Your Grace", cursive;
         font-style: normal !important;
+        box-shadow: inset 0px min(-5rem, -100px) #ff464682;
+        padding-left: 30px;
       }
     </style>
   </head>
@@ -173,12 +186,23 @@
           estilo += ` box-shadow: unset;`;
         }
 
-        code += `
+        if (
+          typeof $_GET["nolabel"] != "undefined" &&
+          $_GET["nolabel"] != "" &&
+          $_GET["nolabel"] != null
+        ) {
+          code += `
         <div>
-        <h1 id="mtitulo"><span class="marker">Pinboard</span></h1>
+          <iframe class="nolabel" frameborder="0" src="${arr[i].Link}" style="${estilo}"></iframe>
+        </div>`;
+        } else {
+          code += `
+        <div>
+        <h1 id="mtitulo"><span class="marker">${arr[i].Label}</span></h1>
         
         <iframe frameborder="0" src="${arr[i].Link}" style="${estilo}"></iframe>
         </div>`;
+        }
       }
 
       document.getElementById("wrap").innerHTML = code;
