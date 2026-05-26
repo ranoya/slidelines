@@ -223,9 +223,17 @@
       document.getElementById("wrap").innerHTML = code;
     };
 
-    gsdata(
-      "https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=538306670#gid=538306670",
-      distribui,
-    );
+    let datadefault =
+      "https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=538306670#gid=538306670";
+
+    if (
+      typeof $_GET["materiais"] != "undefined" &&
+      $_GET["materiais"] != "" &&
+      $_GET["materiais"] != null
+    ) {
+      datadefault = decodeURIComponent($_GET["materiais"]);
+    }
+
+    gsdata(datadefault, distribui);
   </script>
 </html>
