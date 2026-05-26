@@ -7,6 +7,8 @@
     <script src="https://datat.vercel.app/basicsmin.js"></script>
 
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap");
+
       * {
         margin: 0;
         padding: 0;
@@ -83,16 +85,6 @@
         background-color: #999999;
       }
 
-      #wrap div {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        background-color: transparent;
-        flex-shrink: 0;
-        max-height: calc(100dvh - 70px);
-        height: auto;
-        overflow-y: auto;
-        overflow-x: hidden;
-      }
-
       #wrap iframe {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         flex-shrink: 0;
@@ -100,6 +92,31 @@
         height: calc(100dvh - 70px);
         overflow-y: auto;
         overflow-x: hidden;
+      }
+
+      h1 {
+        margin-bottom: 90px;
+        text-align: right;
+        background-image: none;
+        margin-top: -20px;
+        font-size: 5.9rem;
+        line-height: 4rem;
+        font-weight: 400;
+        color: var(--ranoyav2-big, #e38e16);
+        font-family: "Covered By Your Grace", cursive;
+        font-weight: 400;
+        transform-origin: right bottom;
+        transform: rotate(-2.5deg);
+        font-style: normal !important;
+        background-position: right bottom;
+        transition: 0.4s ease-in;
+      }
+
+      h1 .marker {
+        color: black;
+        margin-top: 10rem;
+        font-family: "Covered By Your Grace", cursive;
+        font-style: normal !important;
       }
     </style>
   </head>
@@ -156,7 +173,12 @@
           estilo += ` box-shadow: unset;`;
         }
 
-        code += `<iframe frameborder="0" src="${arr[i].Link}" style="${estilo}"></iframe>`;
+        code += `
+        <div>
+        <h1 id="mtitulo"><span class="marker">Pinboard</span></h1>
+        
+        <iframe frameborder="0" src="${arr[i].Link}" style="${estilo}"></iframe>
+        </div>`;
       }
 
       document.getElementById("wrap").innerHTML = code;
