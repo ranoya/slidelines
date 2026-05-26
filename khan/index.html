@@ -148,14 +148,11 @@
           estilo += `aspect-ratio: ${Aspect}; height: unset !important;`;
         }
 
-        console.log(i + " -> " + arr[i].Decor);
-
         if (
           typeof arr[i].Decor != "undefined" &&
           arr[i].Decor != "" &&
-          arr[i].Decor == null
+          arr[i].Decor != null
         ) {
-          console.log("sem decor");
           estilo += ` box-shadow: unset;`;
         }
 
