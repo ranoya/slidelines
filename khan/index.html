@@ -9,6 +9,14 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap");
 
+      ::root {
+        --cor-crepe: #ff464682;
+        --cor-high: #d7d7d7;
+        --cor-low: #f4f4f4;
+        --cor-verylow: #999999;
+        --cor-fg: #580909;
+      }
+
       * {
         margin: 0;
         padding: 0;
@@ -40,49 +48,24 @@
         justify-content: flex-start;
         align-items: flex-start;
         overflow-y: hidden;
-        /* background-size: 14px 14px;
-        background-color: #f0f0f0; */
-        /* background: radial-gradient(
-            circle at 1px 1px,
-            rgba(0, 0, 0, 0.35) 1px,
-            transparent 0px
-          )
-          0% 0% / 20px 20px rgb(255, 255, 255); */
-
-        /* background-image: repeating-linear-gradient(
-          45deg,
-          #adadad 0,
-          #383838 0.4px,
-          #fffef5 0,
-          #fffef5 25%
-        ); */
 
         background-size: 2px 2px;
         background-image: repeating-linear-gradient(
           0deg,
-          rgb(215, 215, 215),
-          rgb(215, 215, 215) 0.6px,
-          rgb(244, 244, 244) 0.6px,
-          rgb(244, 244, 244)
+          var(--cor-high),
+          var(--cor-high) 0.6px,
+          var(--cor-low) 0.6px,
+          var(--cor-low)
         );
       }
 
       #wrap::-webkit-scrollbar {
         height: 12px;
-        background-size: 4px 4px;
-        background-color: #f0f0f0;
-
-        background-image: repeating-linear-gradient(
-          45deg,
-          #adadad 0,
-          #383838 0.4px,
-          #fffef5 0,
-          #fffef5 25%
-        );
+        background-color: transparent;
       }
 
       #wrap::-webkit-scrollbar-thumb {
-        background-color: #999999;
+        background-color: var(--cor-verylow);
       }
 
       #wrap iframe {
@@ -113,7 +96,7 @@
         line-height: 2rem;
 
         font-weight: 400;
-        color: #580909;
+        color: var(--cor-fg);
         font-family: "Covered By Your Grace", cursive;
         font-weight: 400;
         transform-origin: right bottom;
@@ -124,11 +107,11 @@
       }
 
       h1 .marker {
-        color: #580909;
+        color: var(--cor-fg);
         margin-top: 10rem;
         font-family: "Covered By Your Grace", cursive;
         font-style: normal !important;
-        box-shadow: inset 0px min(-5rem, -100px) #ff464682;
+        box-shadow: inset 0px min(-5rem, -100px) var(--cor-crepe);
         padding-left: 30px;
       }
     </style>
@@ -155,6 +138,58 @@
         }
       }
     })();
+
+    if (
+      typeof $_GET["bg"] != "undefined" &&
+      $_GET["bg"] != "" &&
+      $_GET["bg"] != null
+    ) {
+      document.documentElement.style.setProperty(
+        "--cor-low",
+        "#" + $_GET["bg"],
+      );
+    }
+
+    if (
+      typeof $_GET["hg"] != "undefined" &&
+      $_GET["hg"] != "" &&
+      $_GET["hg"] != null
+    ) {
+      document.documentElement.style.setProperty(
+        "--cor-crepe",
+        "#" + $_GET["hg"],
+      );
+    }
+
+    if (
+      typeof $_GET["bar"] != "undefined" &&
+      $_GET["bar"] != "" &&
+      $_GET["bar"] != null
+    ) {
+      document.documentElement.style.setProperty(
+        "--cor-verylow",
+        "#" + $_GET["bar"],
+      );
+    }
+
+    if (
+      typeof $_GET["fg"] != "undefined" &&
+      $_GET["fg"] != "" &&
+      $_GET["fg"] != null
+    ) {
+      document.documentElement.style.setProperty("--cor-fg", "#" + $_GET["fg"]);
+    }
+
+    if (
+      typeof $_GET["mark"] != "undefined" &&
+      $_GET["mark"] != "" &&
+      $_GET["mark"] != null
+    ) {
+      document.documentElement.style.setProperty(
+        "--cor-high",
+        "#" + $_GET["mark"],
+      );
+    }
 
     let distribui = function (arr) {
       console.table(arr);
