@@ -249,9 +249,11 @@
         }
 
         if (
-          typeof $_GET["nolabel"] != "undefined" &&
-          $_GET["nolabel"] != "" &&
-          $_GET["nolabel"] != null
+          (typeof $_GET["nolabel"] != "undefined" &&
+            $_GET["nolabel"] != "" &&
+            $_GET["nolabel"] != null) ||
+          arr[i].Label == "" ||
+          arr[i].Label == " "
         ) {
           code += `
         <div>
