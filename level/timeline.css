@@ -80,6 +80,11 @@ body {
   transition: all 0.3s ease-in;
 }
 
+.markactive {
+    background-color: var(--track-fg, #ffffff) !important;
+    color: var(--track-bg, #000000) !important;
+}
+
 .slides {
   height: calc(100vh - (3 * var(--track-height, 60px)));
   margin: 0;
